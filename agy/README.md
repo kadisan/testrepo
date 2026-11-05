@@ -6,6 +6,8 @@ Utolsó frissítés: 2026-11-05
 
 Ez a mappa a projekt tartós háttértudása. A weboldal forráskódjától külön kezeli a tényeket, döntéseket és munkaszövegeket.
 
+Aktuális helyzet: [Munkamenet és állapot](munkamenet-es-allapot.md).
+
 Olvasási sorrend: [Iránytű](00-iranytu.md) → [Döntésnapló](dontesnaplo.md) → a szükséges közös dokumentumok → az adott oldal vagy ajánlat mappája.
 
 - `kozos/`: bemutatkozás, márkahang, arculat, bizonyítékok, elérhetőségek, többnyelvűség.

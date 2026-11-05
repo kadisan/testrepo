@@ -19,6 +19,8 @@ A `sarkadisandor.hu` az általános főoldal. A `zarandoklat.sarkadisandor.hu` �
 A meglévő első HTML-változat még egyetlen oldalon mutatja a tevékenységeket és a Tavaszi ívet. A főoldal–landing szétválasztás, a későbbi szerkezeti javaslatok és a többnyelvűség még nincsenek megvalósítva. Ezek a dokumentumok nem állítják, hogy elkészültek.
 
 ## Munkamenet
+A részletes sorrend és az aktuális előrehaladás a [munkamenet és állapot](munkamenet-es-allapot.md) dokumentumban követhető.
+
 1. Ellenőrzött ajánlati adatok és hiánylista.
 2. Oldalváz: minden blokknak legyen konkrét feladata.
 3. Magyar munkaszöveg és szerzői jóváhagyás.
