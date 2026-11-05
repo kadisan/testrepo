@@ -20,3 +20,5 @@ Egy feladathoz csak a szükséges közös és ajánlati dokumentumokat töltsd b
 Jelölések: **SZERZŐI DÖNTÉS**, **BRIEFBŐL ÁTVETT / MEGERŐSÍTENDŐ**, **JAVASLAT**, **HIÁNYZIK**. A „szerzői döntés” az ebben a beszélgetésben kifejezetten közölt felhasználói szándékot jelenti. A brief szövege nem bizonyítja az aktuális adatot.
 
 A `landing-vaz.md` javasolt szerkezet, a `landing-szoveg.md` munkaszöveg; egyik sem válik automatikusan jóváhagyottá. Az ajánlati adatokat az `ajanlat.md` fájlban kell karbantartani. A hiányzó adatokhoz ne találj ki értéket.
+
+Szövegírás előtt: [ajánlati kérdések és szükséges kontextus](kozos/szovegiras-elokeszitese.md).

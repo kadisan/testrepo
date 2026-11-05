@@ -16,3 +16,14 @@ Magyar, angol, német, olasz. Részletek: [többnyelvűség](../../kozos/tobbnye
 [Ajánlat](ajanlat.md), [célcsoport](celcsoport.md), [kérdések](kerdesek.md), [váz](landing-vaz.md), [szöveg](landing-szoveg.md).
 
 URL és teljes ajánlati tartalom: még nem végleges. A landing nincs külön megvalósítva.
+
+## Szövegírás előtti állapot
+
+| Kérdés | Jelenlegi állapot |
+|---|---|
+| Mit kínálunk? | Tai Chi Flow; helyszín és időpont a briefben szerepel, aktuális adatok megerősítendők. |
+| Kinek? | HIÁNYZIK a saját ajánlati célcsoport és részvételi feltételek. |
+| Mennyiért? | HIÁNYZIK az ár, bérlet és próbaalkalom feltétele. |
+| Mit tegyen a látogató? | HIÁNYZIK a végleges jelentkezési lépés és csatorna. |
+
+A fenti összefoglaló az [ajánlati adatokra](ajanlat.md) és a [célcsoportra](celcsoport.md) épül. Közös háttér: [szövegírás előkészítése](../../kozos/szovegiras-elokeszitese.md). A bizonyítékok és saját szövegminták jelenleg hiányosak; ezeket a közös dokumentumok jelzik.

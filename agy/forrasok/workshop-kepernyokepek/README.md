@@ -11,5 +11,6 @@ Forrás: a beszélgetésben feltöltött workshopképernyőképek. A képfájlok
 3. **Receptek kategóriánként:** a szolgáltatásoldal jó kiindulópont: hero, ajánlat, hiteles visszajelzés, bemutatkozás, GYIK, CTA. A sorrend az ajánlathoz igazítandó.
 4. **Két rétegben írsz:** előbb blokkfeladatok és sorrend, utána szöveg szakaszról szakaszra.
 5. **Agy mappa:** közös személyes/márkaanyag és külön ajánlati dokumentumok; áttekintés, ajánlat, célcsoport, bizonyítékok és arculat.
+6. **Mikor kezdhetsz írni?** A landing két alapja az ajánlat (mit kínálsz, kinek, mennyiért, mit tegyen a látogató) és a kontextus (személy/szervezet, márkahang, bizonyítékok, célcsoport). A fájlok létrehozása nem igazolja a tartalmuk teljességét. A jelenlegi hiányokat ajánlatonként jelezzük; a hiányzó tényeket nem pótoljuk kitalált állításokkal.
 
 A workshop bézs/lila/piros színei nem írják felül a kért finom zöld arculatot. A Vikingo-vázépítő nem része a referenciaanyagnak.
