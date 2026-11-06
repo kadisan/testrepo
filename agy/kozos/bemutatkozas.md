@@ -7,7 +7,7 @@ Utolsó frissítés: 2026-11-06
 ## A szerző által 2026-11-06-án pontosított adatok
 - 2014-ben résztvevőként kezdett zarándokolni.
 - 2015 óta vezet utakat. Ez felülírja az új brief „tizenöt éve kísérek” munkamondatát.
-- Molnár Szilvia teljes neve a szerző legutóbbi közlése alapján ismert. Sándor hivatalos vezetéknevének írásképét a hangátirat eltérése miatt még visszaellenőrizzük; a meglévő projektben Sarkadi Sándor szerepel.
+- Megerősített hivatalos névhasználat: **Molnár Szilvia és Sarkadi Sándor**. A korábbi hangátirat eltérő írásképe nem névváltoztatás.
 
 ## A briefekben szereplő további adatok — megerősítendők
 - Tai Chi Flow II. szint.
@@ -17,4 +17,4 @@ Utolsó frissítés: 2026-11-06
 - A Fák Bölcsessége közös program Szilvivel. Írásmód: „Szilvi és Sándor”.
 
 ## Hiányzik
-Szerző által jóváhagyott rövid és hosszú bemutatkozás, szakmai adatok ellenőrzése, saját portré és felhasználási engedély. A hivatalos és közvetlen névhasználat végleges írásképét a szerzővel ellenőrizzük.
+Szerző által jóváhagyott rövid és hosszú bemutatkozás, szakmai adatok ellenőrzése, saját portré és felhasználási engedély. A közvetlen szövegekben használt becenév eltérhet; a hivatalos névhasználatot a szerző megerősítette.

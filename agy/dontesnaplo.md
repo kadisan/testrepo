@@ -20,6 +20,8 @@ Utolsó frissítés: 2026-11-06
 | 2026-11-06 | SZERZŐI PONTOSÍTÁS | Az egyéni kísérés napidíja 20 000 Ft / nap; a kétórás/csúszóskálás korábbi munkaváltozat felülírva. |
 | 2026-11-06 | SZERZŐI PONTOSÍTÁS | Csillagtúrán 15–20 km-es körök lehetségesek; terhelés programonként pontosítandó. |
 | 2026-11-06 | SZERZŐI KÉRÉS | A foglaló/előleg jogi minősítése ellenőrizendő; egyik címkét sem rögzítjük ellenőrzés nélkül. Ideiglenes megnevezés: a részvételi díj első részlete. |
-| 2026-11-06 | NYITOTT | Pontos lemondási és átviteli határidők; saját csillagtúra szolgáltatási csomagja; hivatalos névírás visszaellenőrzése. |
+| 2026-11-06 | RÉSZBEN TISZTÁZVA | Az indulás előtt két nap a visszafizetési határ; az átvitel a következő szezonra szól. Konkrét dátumok, jogi minősítés és az összeg későbbi megtartása ellenőrzendő. |
+| 2026-11-06 | SZERZŐI PONTOSÍTÁS | Hivatalos nevek: Molnár Szilvia és Sarkadi Sándor. |
+| 2026-11-06 | SZERZŐI PONTOSÍTÁS | A csillagtúra szállását és étkezését a résztvevő közvetlenül a szolgáltatónak fizeti; a tényleges szervezési folyamat jogi besorolása ettől még nyitott. |
 
 A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban rögzíts; korábbi döntés felülírását nevezd meg.
