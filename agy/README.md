@@ -24,3 +24,5 @@ Jelölések: **SZERZŐI DÖNTÉS**, **BRIEFBŐL ÁTVETT / MEGERŐSÍTENDŐ**, **
 A `landing-vaz.md` javasolt szerkezet, a `landing-szoveg.md` munkaszöveg; egyik sem válik automatikusan jóváhagyottá. Az ajánlati adatokat az `ajanlat.md` fájlban kell karbantartani. A hiányzó adatokhoz ne találj ki értéket.
 
 Szövegírás előtt: [ajánlati kérdések és szükséges kontextus](kozos/szovegiras-elokeszitese.md).
+
+Új, ellenőrzésre váró feltételek: [befizetés és lemondás](kozos/befizetes-es-lemondas-tervezet.md). Megerősített [egyéni kísérési napidíj](ajanlatok/egyeni-kiseres/ajanlat.md).
