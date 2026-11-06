@@ -26,3 +26,5 @@ A `landing-vaz.md` javasolt szerkezet, a `landing-szoveg.md` munkaszöveg; egyik
 Szövegírás előtt: [ajánlati kérdések és szükséges kontextus](kozos/szovegiras-elokeszitese.md).
 
 Új, ellenőrzésre váró feltételek: [befizetés és lemondás](kozos/befizetes-es-lemondas-tervezet.md). Megerősített [egyéni kísérési napidíj](ajanlatok/egyeni-kiseres/ajanlat.md).
+
+Tervezői átadás: [tájékoztató brief és bemásolható Claude-prompt](atadas/claude-tervezoi-brief-es-prompt.md).
