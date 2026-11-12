@@ -25,3 +25,7 @@
 @media(max-width:600px){.books{grid-template-columns:1fr}.book-cover{max-width:300px}.taichi-facts>div{grid-template-columns:1fr}}
 .writing .section-heading>div{flex:1 1 auto}.writing .section-heading>p{max-width:520px}
 .book>.text-link{margin-top:auto;align-self:flex-start}
+/* Claude, 2026-11-12: Tai Chi-landing */
+.principles{grid-template-columns:repeat(3,1fr)}.principles .door h3{font-size:22px;line-height:1.35}.principle-src{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:19px;letter-spacing:.3px;color:var(--green)}.steps#menet li p{font-size:16.5px}
+@media(max-width:900px){.principles{grid-template-columns:1fr}}
+.hero-taichi h1>span{white-space:normal}@media(max-width:600px){.hero-taichi h1{font-size:88px}.hero-taichi h1>span{font-size:.5em}}

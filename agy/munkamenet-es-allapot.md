@@ -71,3 +71,18 @@ Nyitott: könyvek ára és vásárlási linkje (a gombok most a kapcsolatra muta
 - A „Fák Bölcsessége" kikerült a főmenüből (a kapu és a testvéroldal viszi).
 - Ellenőrzés: `npm test` 18/18, build, Playwright 39/39.
 - 2026-11-12 14:10: linkek bekötve — A zarándoklat anatómiája: https://payhip.com/b/oSLWu · Aki otthon van az úton: https://payhip.com/b/Prb7e · Substack: https://belsout.substack.com/ (borító és „Megveszem" is a Payhipre visz, új lapon).
+
+## 2026-11-12 — Claude: Tai Chi-landing (`/tai-chi/`)
+
+- Új oldal: `tai-chi/index.html` (Vite multi-page bejegyzés: `taichi`), közös `src/main.js` és `src/style.css`, azonos visszahíváskérő űrlappal.
+- Szerkezet: nyitás (TAI CHI · Tengely és tempó, „Figyelmet használj, erő helyett.") → Ismerős? (ülőmunka, a szerző saját tapasztalataként) → három alapelv a szerző fordításában → egy óra menete (mindig a nyitással kezd) → tanulási út → tudnivalók → a tanár → GYIK → kapcsolat.
+- A főoldali Tai Chi-kapu és -sáv a `/tai-chi/` oldalra visz.
+- Új teszt: `tests/browser/taichi.spec.js` (360/768/1440 px, kapu → landing). Összesen 43/43 Playwright, 18/18 egységteszt, build sikeres.
+
+**Szerzői megerősítésre vár (a Tai Chi-oldalon most így szerepel):**
+- az óra négy lépése (nyitás · bemelegítés és alapok · forma · csendes zárás) — a szerző naptárbejegyzéseiből és gyakorlási szokásaiból összerakva;
+- a tanulási út három szakasza (első hetek / első hónapok / hosszabb távon, 48-as forma) — a szerző oktatói vizsgaanyagából levezetve, nem tőle szó szerint;
+- „Hozd magaddal: kényelmes, réteges ruha, lapos talpú cipő, egy kis víz" — általános javaslat;
+- „Egyéni óra: egyeztetés szerint, 5–6 000 Ft / óra" — a szerző piaci óradíj-közléséből;
+- „Az első alkalom előtt írj vagy hívj, hogy tudjak rólad" — szervezési javaslat;
+- a „tanár" blokk képe most a téli Tai Chi-fotó (`tai-chi-telen.webp`).
