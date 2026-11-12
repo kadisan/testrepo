@@ -70,3 +70,4 @@ Nyitott: könyvek ára és vásárlási linkje (a gombok most a kapcsolatra muta
 - Írások, könyvek: a borítóra kattintva lehet vásárolni (`public/images/konyvek/`, a könyvek PDF-jéből kinyert saját borítók). **A vásárlási linkek hiányoznak** — a borítók most a `#kapcsolat`-ra mutatnak, `data-buy="anatomia|otthon"` jelöléssel. „Egyéb írások" → Substack (ingyenes); **a Substack-link hiányzik** (`data-link="substack"`).
 - A „Fák Bölcsessége" kikerült a főmenüből (a kapu és a testvéroldal viszi).
 - Ellenőrzés: `npm test` 18/18, build, Playwright 39/39.
+- 2026-11-12 14:10: linkek bekötve — A zarándoklat anatómiája: https://payhip.com/b/oSLWu · Aki otthon van az úton: https://payhip.com/b/Prb7e · Substack: https://belsout.substack.com/ (borító és „Megveszem" is a Payhipre visz, új lapon).

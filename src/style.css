@@ -24,3 +24,4 @@
 @media(max-width:900px){.taichi-strip{grid-template-columns:1fr}.taichi-note,.taichi-strip .text-link{grid-column:1}.books{grid-template-columns:1fr 1fr}.book-other{grid-column:1/-1}}
 @media(max-width:600px){.books{grid-template-columns:1fr}.book-cover{max-width:300px}.taichi-facts>div{grid-template-columns:1fr}}
 .writing .section-heading>div{flex:1 1 auto}.writing .section-heading>p{max-width:520px}
+.book>.text-link{margin-top:auto;align-self:flex-start}
