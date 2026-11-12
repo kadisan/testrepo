@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 for(const width of [360,390,768,1440])test(`layout and local assets at ${width}px`,async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));const failures=[];page.on('response',r=>{if(r.status()>=400)failures.push(r.url())});
  await page.setViewportSize({width,height:950});await page.goto('/');await page.evaluate(()=>document.fonts.ready);
- await expect(page.locator('h1')).toContainText('LÉPJ BE');await expect(page.locator('.faq details').nth(1)).toHaveAttribute('open','');
+ await expect(page.locator('h1')).toContainText('Lépj be a fák közé');await expect(page.locator('.faq details').nth(1)).toHaveAttribute('open','');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
  expect(errors).toEqual([]);expect(failures).toEqual([]);
  await page.screenshot({path:`/tmp/sarkadi-${width}.png`,fullPage:true});
