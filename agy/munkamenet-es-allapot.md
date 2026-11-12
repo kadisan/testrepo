@@ -86,3 +86,4 @@ Nyitott: könyvek ára és vásárlási linkje (a gombok most a kapcsolatra muta
 - „Egyéni óra: egyeztetés szerint, 5–6 000 Ft / óra" — a szerző piaci óradíj-közléséből;
 - „Az első alkalom előtt írj vagy hívj, hogy tudjak rólad" — szervezési javaslat;
 - a „tanár" blokk képe most a téli Tai Chi-fotó (`tai-chi-telen.webp`).
+- 2026-11-12 14:30: a Tai Chi-oldal „A tanár" blokkja a szerző saját bemutatkozó szövegéből (Sarkadi_Sandor_bemutatkozas_1.docx) és kerti Tai Chi-fotójából (`public/images/taichi/`) készült. Szándékosan kimaradt a szerző szövegéből: „gyógyulás", „energia harmonizálása" (tiltólista), „Erdőmerülő vezető" (szerzői döntés: nem használjuk). Facebook: Kardosi András (facebook.com/kardosiandras).

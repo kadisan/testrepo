@@ -29,3 +29,4 @@
 .principles{grid-template-columns:repeat(3,1fr)}.principles .door h3{font-size:22px;line-height:1.35}.principle-src{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:19px;letter-spacing:.3px;color:var(--green)}.steps#menet li p{font-size:16.5px}
 @media(max-width:900px){.principles{grid-template-columns:1fr}}
 .hero-taichi h1>span{white-space:normal}@media(max-width:600px){.hero-taichi h1{font-size:88px}.hero-taichi h1>span{font-size:.5em}}
+.small-note{font-size:16px;color:var(--muted)}.small-note a{text-decoration:underline;text-underline-offset:3px}.about .portrait img{object-position:50% 30%}
