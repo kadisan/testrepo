@@ -1,13 +1,12 @@
-# Javasolt oldaltérkép
+# Aktuális oldaltérkép és szerepek
 
-Állapot: JAVASLAT — nincs végleges URL-rendszer
+Utolsó frissítés: 2026-11-12
 
-Utolsó frissítés: 2026-11-09
+- `/` — személyes főoldal; bemutat, választást kínál, a konkrét ajánlatokra továbbvezet. Fejlesztési előnézet.
+- `/tai-chi/` — Tai Chi, Tengely és tempó; szerdai óra, saját szemlélet, órai jelzés. Fejlesztési előnézet.
+- `/eletutak-talalkozasa/` — három bakonyi hétvége; már éles ajánlati landing.
+- `zarandoklat.com` — külső partneroldal; zarándokutak.
+- `fakbolcsessege.com` — Molnár Szilvia és Sarkadi Sándor közös programja, külső oldal.
+- `/eletutak-talalkozasa/adatkezeles/` és `/eletutak-talalkozasa/impresszum/` — meglévő tájékoztatók; az órai jelzéssel kapcsolatos forrásbővítés még a fejlesztési ág része.
 
-- Főoldal: személy, szemlélet, tevékenységek, továbbvezetés.
-- Zarándoklat és gyalogló utak: áttekintés és konkrét ajánlatokra mutató linkek.
-- Tai Chi: önálló ajánlati landing.
-- Fák Bölcsessége: saját ajánlati kontextus, a meglévő testvéroldal szerepének tisztázásával.
-- Kapcsolat, impresszum, adatkezelési tájékoztató.
-
-A `zarandoklat.sarkadisandor.hu` és `taichi.sarkadisandor.hu` továbbra is javaslat; a további ajánlatok aldomainje vagy alkönyvtára még eldöntendő. Az Életutak külön `/eletutak-talalkozasa/` útvonala és annak `en/`, `de/`, `it/` változatai már elkészültek. A további idegen nyelvi munka most parkoltatva van, a magyar szöveg aktív szerkesztés alatt áll.
+Az Életutak EN/DE/IT technikai oldalai megmaradnak; további fordítás parkoltatva. A korábbi aldomain-javaslatok nem új követelmények. A bérletrendszer, online klub, sétáló beszélgetés és további ajánlatok a talonfájlokban vannak. Új URL vagy kész szolgáltatás nem következik egy talonba tett ötletből.

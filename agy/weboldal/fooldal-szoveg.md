@@ -1,6 +1,6 @@
 # Főoldal — magyar munkaszöveg v1
 
-Állapot: MUNKASZÖVEG (Claude) — a szerző 2026-11-12-én átnézte, megvalósítva a `site/claude-fooldal` ágon; — a szerző 2026-11-12-i szóbeli válaszaiból; szerzői átdolgozásra vár, nem jóváhagyott
+Állapot: TÖRTÉNETI MUNKASZÖVEG — a korábbi szerzői forrás megőrizve. Az aktuális szerkesztett változat az `index.html`; a november 12-i új kérések a döntésnaplóban és az állapotfájlban szerepelnek.
 
 Utolsó frissítés: 2026-11-12
 

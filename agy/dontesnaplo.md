@@ -56,3 +56,13 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | 2026-11-12 | SZERZŐI DÖNTÉS | A főoldal elosztó: a Tai Chi saját landinget kap; a főoldalon csak kapuk. Kísérés → Életutak, zarándoklat → zarandoklat.com, erdei jelenlét → fakbolcsessege.com. Az „erdőmerülés" szó nem használandó. |
 | 2026-11-12 | SZERZŐI DÖNTÉS | Tai Chi: szerda 10:00–11:30, Kesztyűgyár (VIII., Mátyás tér); adomány alapú, min. 1 000 Ft; piaci érték 5–6 000 Ft/óra. A pontos cím ellenőrizendő. |
 | 2026-11-12 | SZERZŐI DÖNTÉS | Könyvek: borítóra kattintva vásárlás; egyéb írások → Substack (jelenleg ingyenes). Linkek a szerzőtől. |
+
+## 2026. november 12. — a két referencia alkalmazása
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | A Dominique Ara-oldalról kapott szöveges elemzés és az Annie P. Woods-oldal két külön referencia. Mindkettő megérkezett; a szerző az összevetés után kérte a megvalósítás elindítását. |
+| SZERZŐI KÉRÉS | Az első látogató tekintetét egyszerű sorrend vezesse; a négy kapu kerüljön feljebb. |
+| SZERZŐI KÉRÉS | Térjen vissza a zöldes tónus; a portré aránya változzon, a kép erdei háttérbe folytatódjon. Mobilon a nyitókép legyen alacsonyabb, az első gomb ne vágódjon le. |
+| SZERZŐI KÉRÉS | A Rólam rész mutassa meg Sándor saját Tai Chi-szemléletét; a jelentkezés legyen ésszerű és az órához kapcsolódó. |
+| SZERZŐI ELFOGADÁS | Az Életutak nagyobb betűmérete legyen a főoldal és a Tai Chi-oldal olvashatósági alapja is. |

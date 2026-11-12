@@ -10,7 +10,9 @@ import '@fontsource/cormorant-garamond/latin-ext-300.css';
 import '@fontsource/cormorant-garamond/latin-300.css';
 import '@fontsource/cormorant-garamond/latin-300-italic.css';
 import './style.css';
+import './site-refinement.css';
 import {isConfigured, validPhone, validEmail, prefilledFormUrl} from './form.js';
+import {initTaiChiForm} from './taichi-form.js';
 const icons = {
   leaf:'<path d="M34 6C16 5 6 15 9 29c16 6 28-3 25-23Z"/><path d="M7 38 28 16M17 28l-1-9m7 2 8-1"/>',
   path:'<path d="M9 39c0-12 23-8 23-19S15 12 19 4M7 33l4 3-1 4M29 11l4 3-1 4"/><circle cx="22" cy="6" r="2"/>',
@@ -33,7 +35,8 @@ document.querySelectorAll('.dialog-close,.dialog-done').forEach(b=>b.addEventLis
 dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close()}});
 const form=document.querySelector('#callback-form'),status=document.querySelector('.form-status'),submit=form.querySelector('[type=submit]');
 if(isConfigured(config)){document.querySelector('.draft-note').hidden=true;}
-form.addEventListener('submit',e=>{e.preventDefault();status.classList.remove('error');status.textContent='';form.querySelectorAll('.invalid').forEach(el=>{el.classList.remove('invalid');el.removeAttribute('aria-invalid')});
+if(form.dataset.program==='tai-chi') initTaiChiForm(form,config);
+else form.addEventListener('submit',e=>{e.preventDefault();status.classList.remove('error');status.textContent='';form.querySelectorAll('.invalid').forEach(el=>{el.classList.remove('invalid');el.removeAttribute('aria-invalid')});
  const required=[...form.querySelectorAll('[required]')];const invalid=required.filter(el=>el.type==='checkbox'?!el.checked:!el.value.trim()||(el.name==='phone'&&!validPhone(el.value))||(el.name==='email'&&!validEmail(el.value)));
  if(invalid.length){invalid.forEach(el=>{el.classList.add('invalid');el.setAttribute('aria-invalid','true')});status.textContent='Kérlek, töltsd ki a jelölt mezőket, adj meg érvényes telefonszámot és e-mail-címet, és jelezd, hogy kéred a visszahívást.';status.classList.add('error');invalid[0].focus();return}
  if(!isConfigured(config)){status.textContent='A visszahíváskérés még nem aktív. Az adataidat nem küldtük el és nem mentettük. Addig a megadott telefonon vagy e-mailben elérsz.';status.classList.add('error');return}

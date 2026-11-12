@@ -1,6 +1,6 @@
 # Főoldal — tartalmi váz v2 (digitális névjegy)
 
-Állapot: JAVASLAT (Claude) — szerzői átnézésre vár; a `fooldal-vaz.md` (2026-11-09) továbbgondolása
+Állapot: TÖRTÉNETI TERV — a november 12-i korábbi váz megőrizve. Az aktuális megvalósítás a `site/chatgpt-figyelemvezetes` ágon, az `index.html` fájlban és az állapotfájl legutolsó bejegyzésében található. Az alábbi hiánylisták nem aktuális feladatlisták.
 
 Utolsó frissítés: 2026-11-12
 

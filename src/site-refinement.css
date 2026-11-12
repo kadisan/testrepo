@@ -1,0 +1,221 @@
+/* Közös, olvasható alap a személyes főoldalhoz és a Tai Chi-oldalhoz. */
+:root {font-size:20px;--bg:#edf4ed;--soft:#e1eddf;--accent:#d8a342;--accent-ink:#193527;scroll-padding-top:24px}
+body {line-height:1.6}
+.section {padding-block:76px;overflow-wrap:anywhere}
+.section p,.section li,.section dd {font-size:1rem;line-height:1.65}
+.section .eyebrow,.eyebrow {font-size:.85rem;line-height:1.5;letter-spacing:.12em}
+.section h2 {font-size:clamp(1.7rem,3.2vw,2.35rem);line-height:1.25;letter-spacing:-.025em}
+.section h3 {font-size:1.25rem;line-height:1.35}
+.button {font-size:1rem;min-height:56px;white-space:normal;line-height:1.35;overflow-wrap:anywhere}
+h1,h2,h3 {overflow-wrap:break-word}
+.button span,.text-link span {flex-shrink:0}
+.text-link {font-size:1rem;min-height:48px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.brand {font-size:18px}
+nav {gap:22px}
+nav>a,.nav-cta {font-size:18px}
+.header {height:auto;min-height:88px;padding-block:12px}
+.section-heading {gap:36px;margin-bottom:30px;align-items:flex-start}
+.section-heading>p {font-size:1rem;max-width:400px}
+.contact .field-help,.form-status,.consent,.trust-line,.small-note,.taichi-note,.gift-more,.gift-free {font-size:.9rem!important;line-height:1.6}
+label,.optional-fields label {font-size:1rem}
+input:not([type=checkbox]),select,textarea {font-size:1rem;min-height:56px}
+input[type=date] {min-width:0;max-width:100%;appearance:none}
+.direct-contact a {font-size:1rem;overflow-wrap:anywhere}
+.draft-note {font-size:.9rem!important}
+.book .book-sub,.book>p:not(.eyebrow):not(.book-sub),.book .text-link,.door p,.door-link {font-size:1rem}
+.badges>span {font-size:.8rem;max-width:100%;overflow-wrap:anywhere}
+.section .promise {font-size:1rem}
+.contact,.about,.accompany {gap:56px}
+.section>*,.section-heading>*,.taichi-facts>div>* {min-width:0}
+.contact {align-items:start}
+.contact form {min-width:0}
+.contact-copy h2 {margin-bottom:22px}
+.contact-note {margin-block:22px}
+.contact-copy .draft-note {margin-bottom:0}
+.form-status.error {margin-top:20px}
+
+/* A portré az erdei háttérbe fut; az eredeti arcképet nem alakítjuk át. */
+.hero-person {display:block;position:relative;isolation:isolate;overflow:hidden;min-height:630px;max-height:none;color:#183b2c;background:linear-gradient(90deg,rgba(225,239,218,.30),rgba(229,241,220,.83) 51%,rgba(233,243,224,.94) 80%),url('/images/eletutak/napfenyes-erdei-hatter.webp') center/cover}
+.hp-photo {position:absolute;inset:0 auto 0 0;width:54%;height:100%;margin:0;mask-image:linear-gradient(90deg,#000 28%,rgba(0,0,0,.9) 46%,transparent 91%);-webkit-mask-image:linear-gradient(90deg,#000 28%,rgba(0,0,0,.9) 46%,transparent 91%)}
+.hp-photo img {width:100%;height:100%;object-fit:cover;object-position:left 22%;display:block}
+.hp-copy {position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;min-height:630px;max-height:none;margin-left:43%;padding:52px max(5vw,calc((100vw - 1280px)/2)) 54px 0}
+.hero-person .eyebrow {color:#36583f;margin-bottom:17px;font-size:.8rem}
+.hero-person h1 {font-family:Lora,serif;font-weight:500;font-size:clamp(2.2rem,4.5vw,3.25rem);line-height:1.12;letter-spacing:-.045em;margin:0 0 25px;white-space:normal;color:#183b2c}
+.hero-person h1>span {display:block}
+.hp-last {color:inherit;white-space:normal}
+.hero-person .brush {color:#bb8421;bottom:-.2em}
+.hp-lead {font-size:1.1rem;line-height:1.55;max-width:28rem;margin:0 0 25px;color:#254c36}
+.hp-actions {display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.hero-person .hero-note {display:inline-flex;align-items:center;padding:7px 0;margin:0;min-height:48px;font-size:.9rem;color:#254c36}
+.hero-person .button {gap:20px}
+
+/* A választás közvetlenül a nyitás után következik. */
+.intro#utak {padding-top:58px;padding-bottom:64px;background:#edf4ed}
+.doors {grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.door {min-width:0;display:flex;flex-direction:column;padding:28px 23px 18px;background:#f6faf3}
+.door .line-icon {margin-bottom:24px}
+.door h3 {font-size:1.2rem;margin-bottom:14px}
+.door p {line-height:1.55;margin-bottom:24px}
+.door .door-link {margin-top:auto;gap:12px;font-size:.9rem}
+.door-number {font-size:.75rem}
+.about .portrait {height:540px}
+.about .about-lead {font-size:1.15rem;line-height:1.6}
+.about>div>p {max-width:36rem}
+.connect {padding-block:52px}
+.connect .connect-copy {max-width:46rem}
+.connect blockquote {font-family:Lora,serif;font-size:1.35rem;line-height:1.55;margin:0 0 22px}
+.connect cite {font-size:.85rem;font-style:normal;color:var(--muted)}
+.found {gap:56px}
+.found .found-close {font-size:1.05rem}
+.found-photo {height:360px}
+.found-list li {font-size:1rem}
+.taichi-facts>div {font-size:1rem;grid-template-columns:110px minmax(0,1fr)}
+.writing .books {grid-template-columns:repeat(3,minmax(0,1fr))}
+.book {min-width:0}
+.steps li p {font-size:1rem!important}
+.steps ol {gap:30px}
+.faq summary {font-size:1rem;min-height:76px}
+.faq details p {font-size:1rem}
+.closing-band {min-height:360px}
+.closing-band .cb-copy {padding:54px 45px}
+.social a,.footer button {font-size:.9rem}
+.footer>* {min-width:0}
+.footer>div {flex-wrap:wrap}
+
+/* A Tai Chi-nyitásban már a döntéshez szükséges adatok is szerepelnek. */
+.hero.hero-taichi {min-height:0;max-height:none;height:auto;padding:60px max(6vw,calc((100vw - 1240px)/2)) 55px;text-align:left;justify-content:flex-start;align-items:flex-start;background:linear-gradient(90deg,rgba(14,45,29,.94),rgba(15,48,30,.75) 55%,rgba(15,48,30,.35)),url('/images/eletutak/napfenyes-erdei-hatter.webp') center/cover}
+.hero-taichi .hero-content {width:100%;padding:0;max-width:51rem}
+.hero-taichi .hero-shade,.hero-taichi .hero-bottom {display:none}
+.hero-taichi .eyebrow {font-size:.85rem;margin-bottom:20px;letter-spacing:.12em}
+.hero-taichi h1 {font-family:Lora,serif;font-weight:500;font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.13;letter-spacing:-.035em;white-space:normal}
+.hero-taichi h1>span {font-family:'Source Sans 3',sans-serif;font-size:.52em;letter-spacing:.035em;margin-top:15px;white-space:normal}
+.hero-taichi .hero-subtitle {font-family:'Source Sans 3',sans-serif;font-size:1.1rem;line-height:1.6;max-width:34rem;margin:25px 0;color:#eef6e9}
+.quick-facts {display:flex;flex-wrap:wrap;gap:12px 24px;margin:0 0 28px;color:#f2f7ed}
+.quick-facts>div {display:block;border-top:0;border-left:2px solid #b6c9a8;padding:0 0 0 15px;min-width:0}
+.quick-facts dt {font-size:.85rem;font-weight:400;color:#d6e7cf}
+.quick-facts dd {font-size:1rem;line-height:1.5;margin:3px 0 0;font-weight:600}
+.hero-taichi .hero-note {display:inline-flex;align-items:center;min-height:48px;font-size:.9rem;margin-top:8px;padding-left:0}
+.hero-taichi .button {background:var(--accent);border-color:var(--accent);color:var(--accent-ink);min-height:56px}
+.offer {padding-top:54px;padding-bottom:54px}
+.offer .section-heading {margin-bottom:24px}
+.trial {margin-bottom:0;padding:28px;gap:30px}
+.trial p {max-width:42rem}
+.trial .button {flex-shrink:0}
+.offer-note {font-size:.9rem!important}
+.class-contact {grid-template-columns:.8fr 1.2fr;background:#e2eddf}
+.class-contact .contact-copy p {max-width:27rem}
+.class-contact form {padding:30px;background:#f6faf3;border:1px solid var(--line);border-radius:12px}
+.class-contact .date-summary {font-size:.9rem;color:var(--green);font-weight:600}
+.class-contact .optional-label {font-weight:400;font-size:.9rem;color:var(--muted)}
+.class-contact .trust-line {padding-left:0}
+.class-contact .trust-line:before {display:none}
+.class-contact .form-row {grid-template-columns:1fr 1fr;gap:20px}
+.class-contact .form-row label {min-width:0}
+.class-contact .date-field {margin-bottom:26px}
+.class-contact .consent {margin-top:25px}
+.principles {grid-template-columns:repeat(3,minmax(0,1fr))}
+.principles .door {cursor:default}
+.principles .door h3 {font-size:1.2rem}
+.principle-src {font-size:1rem!important}
+.gift-inner {padding:32px;gap:32px}
+.gift-actions {max-width:100%;min-width:0;flex-shrink:1}
+
+@media (max-width:1150px) {
+  .header {padding-inline:4%}
+  .menu-toggle {display:flex;align-items:center;gap:12px;background:transparent;border:1px solid var(--line);border-radius:4px;padding:10px 14px;min-height:48px;font-size:18px;color:var(--ink)}
+  nav {display:none;position:absolute;top:100%;left:0;right:0;background:#eaf4e9;padding:20px 5%;border-bottom:1px solid var(--line);box-shadow:0 10px 20px #102c2010}
+  nav.is-open {display:flex;flex-direction:column;align-items:stretch;gap:4px}
+  nav>a {font-size:20px;min-height:50px}
+  .nav-cta {margin:10px 0 0;justify-content:space-between}
+  .doors {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hp-copy {margin-left:42%;padding-right:5%;min-height:590px}
+  .hero-person {min-height:590px}
+  .hero-person h1 {font-size:clamp(2rem,4.6vw,3rem)}
+  .principles {grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:900px) {
+  .section {padding-block:58px}
+  .hero-person {display:block;min-height:0}
+  .hp-photo {position:absolute;inset:0 auto 0 0;width:50%;height:100%;order:initial;mask-image:linear-gradient(90deg,#000 20%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,#000 20%,transparent 100%)}
+  .hp-copy {margin:0 0 0 38%;padding:42px 5vw 42px 0;min-height:560px}
+  .hero-person h1 {font-size:2.1rem}
+  .hp-lead {font-size:1rem}
+  .section-heading {display:block}
+  .section-heading>p {max-width:36rem;margin:18px 0 0}
+  .contact,.class-contact,.about,.accompany,.found,.taichi-strip {grid-template-columns:minmax(0,1fr);gap:32px}
+  .about {display:grid}
+  .about .portrait {height:420px;max-width:530px}
+  .class-contact .contact-copy {margin-bottom:0}
+  .principles,.writing .books {grid-template-columns:1fr}
+  .principles .door {padding:25px}
+  .gift-inner {display:block}
+  .gift-actions {margin-top:24px}
+  .quick-facts {gap:18px}
+}
+@media (max-width:600px) {
+  .header {min-height:74px;height:auto;padding:11px 20px}
+  .brand {font-size:14px;letter-spacing:1.6px;gap:7px}
+  .brand small {font-size:10px;letter-spacing:1.6px}
+  .brand-symbol {font-size:38px}
+  .menu-toggle {font-size:18px;padding:9px 11px;gap:10px}
+  .section {padding:46px 20px}
+  .section .eyebrow {font-size:.8rem}
+  .hero-person {background:linear-gradient(180deg,rgba(225,239,218,.16),rgba(225,239,218,.95) 48%,rgba(231,241,224,.98)),url('/images/eletutak/napfenyes-erdei-hatter.webp') 70% top/auto 540px no-repeat #e7f1e0}
+  .hp-photo {position:relative;inset:auto;width:100%;height:220px;mask-image:linear-gradient(180deg,#000 82%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
+  .hp-photo img {position:absolute;left:20px;top:-10px;width:300px;height:auto;max-width:none;object-fit:initial;mask-image:linear-gradient(90deg,#000 32%,transparent 90%);-webkit-mask-image:linear-gradient(90deg,#000 32%,transparent 90%)}
+  .hp-copy {margin:0;min-height:0;padding:4px 20px 34px;max-height:none}
+  .hero-person h1 {font-size:1.8rem;line-height:1.13;letter-spacing:-.035em;margin-bottom:19px}
+  .hero-person h1>span:last-child {display:block}
+  .hero-person .eyebrow {margin-bottom:12px;font-size:.75rem}
+  .hp-lead {font-size:1rem;line-height:1.5;margin-bottom:22px}
+  .hp-actions {align-items:stretch;gap:3px}
+  .hp-actions .button {width:100%;justify-content:space-between;gap:15px;padding:13px 17px;font-size:1rem}
+  .hero-person .hero-note {font-size:.9rem;justify-content:center}
+  .intro#utak {padding:40px 20px 46px}
+  .doors,.doors-3 {grid-template-columns:minmax(0,1fr);gap:14px}
+  .door {padding:23px 22px 17px}
+  .door .line-icon {width:35px;height:35px;margin-bottom:14px}
+  .door h3 {font-size:1.25rem;margin-bottom:8px}
+  .door p {font-size:1rem;margin-bottom:16px;line-height:1.55}
+  .door-link {font-size:.9rem;min-height:48px;padding-top:12px}
+  .door-number {font-size:.75rem;right:21px;top:26px}
+  .found-photo {height:250px}
+  .found-list li {font-size:1rem;padding-left:24px}
+  .about .portrait {height:350px}
+  .connect blockquote {font-size:1.15rem}
+  .steps ol {grid-template-columns:1fr;gap:22px}
+  .steps li>span {font-size:1.6rem}
+  .steps li h3 {margin-top:4px}
+  .hero.hero-taichi {padding:35px 20px 34px}
+  .hero-taichi h1 {font-size:2.1rem}
+  .hero-taichi h1>span {font-size:.54em}
+  .hero-taichi .hero-subtitle {font-size:1rem;line-height:1.5;margin:21px 0}
+  .hero-taichi .eyebrow {font-size:.75rem;margin-bottom:16px}
+  .quick-facts {display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:22px}
+  .quick-facts>div {padding-left:12px}
+  .quick-facts dt {font-size:.8rem}
+  .quick-facts dd {font-size:1rem;line-height:1.4}
+  .hero-taichi .button {width:100%;justify-content:space-between;font-size:1rem}
+  .hero-taichi .hero-note {font-size:.9rem;width:100%;justify-content:center}
+  .trial {display:block;padding:24px 20px}
+  .trial .button {margin-top:21px;width:100%;justify-content:space-between}
+  .class-contact form {padding:23px 18px}
+  .class-contact .form-row {grid-template-columns:1fr;gap:0}
+  .form-row {grid-template-columns:1fr}
+  .taichi-facts>div {grid-template-columns:minmax(0,1fr)}
+  .gift-inner {padding:26px 20px}
+  .gift .button {width:100%;justify-content:space-between}
+  .closing-band {min-height:380px}
+  .closing-band .cb-copy {padding:35px 23px}
+  .footer .brand {font-size:15px}
+  .footer .brand small {font-size:10px}
+  .footer {grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:360px) {
+  .hp-photo {height:195px}
+  .hp-photo img {width:265px;top:-8px}
+  .hero-person h1 {font-size:1.65rem}
+  .brand {font-size:12px;letter-spacing:1px}
+  .brand small {font-size:9px}
+  .menu-toggle {gap:7px;padding-inline:8px}
+}

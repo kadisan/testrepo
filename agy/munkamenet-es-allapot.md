@@ -2,6 +2,8 @@
 
 Utolsó frissítés: 2026. november 12.
 
+**Aktuális megvalósítás ezen az ágon:** `site/chatgpt-figyelemvezetes`, kiinduló Claude-commit `3312e9a`. Az új nyitás, az előrehozott négy kapu, az olvashatóság és a célzott Tai Chi-jelzés ezen az ágon olvasható. A korábbi Claude-bejegyzések dátumozott előzmények, nem új hiánylisták.
+
 ## Közös kiinduló ág
 
 Repó: https://github.com/kadisan/testrepo
@@ -117,3 +119,28 @@ A szerző példája: 5 000 Ft/alkalom, havi 18 000 Ft. A korábbi „adomány al
 - 2026-11-12 19:15: **színes nyitóportré** (szerzői kérés): a szerző eredeti, éles fotójáról kivágva (a képen szereplő másik személy nem kerül fel, a forrásfotó nincs a repóban), háttér a szerző korábbi „Lépj be a fák közé" borítójának lombkorona-fotója, szöveg nélkül, elmosva. A póló sötétkékről finoman zöldes tónusra árnyalva. A nyitás újra sötétzöld, világos szöveggel. Továbbra is montázs (beltéri fény).
 - 2026-11-12 19:05: a szerző döntése: a portré-montázsok (fekete-fehér, erdei, színes) **visszavonva**, a nyitás a 18:20-as állapotra áll vissza (eredeti portré, sötétzöld, kétoszlopos). A plakát-elrendezés ötlete él, a szerző jobb fotót keres hozzá.
 - 2026-11-12 19:25: **új nyitóportré, valódi fotó** (a szerző 2026-os, természetes fényű szelfije egy fa előtt; nincs montázs, csak egy háttérben lévő ablak retusálva és a fal színével kiegészítve jobbra). Plakát-elrendezés: az arc kétharmada a bal szélen, a kép krémszínű háttérbe olvad, a szöveg ráúszik. A nyitás krémszínű, sötétzöld szöveggel. A szerző további fotói (erdei írás, fa-ölelés, csoportkép, kertes ház) még nincsenek beépítve.
+
+## 2026-11-12 — ChatGPT: figyelemvezetés és órai jelzés
+
+Kiinduló ág: `site/claude-fooldal`, commit: `3312e9a`. Saját munkaág: `site/chatgpt-figyelemvezetes`.
+
+- Referenciák: Dominique Ara a szerző által küldött elemzésből; Annie P. Woods nyilvános oldala asztali és mobilos böngészőnézetben. Következetes természeti motívum, konkrét meghívás, rövid út a választásig. Nem veszünk át üzleti célcsoportot, ajánlatot vagy ügyfélvéleményt.
+- Főoldali sorrend: portrés nyitás konkrét tevékenységekkel → négy kapu → rövid ráismerés → Rólam (saját Tai Chi-szövegből) → szerzői mottó → további háttér, könyvek, kapcsolat.
+- A zöld hátteret a repóban már szereplő `napfenyes-erdei-hatter.webp` adja. A jelenlegi természetes fényű portré változatlan kép; a méretezés és az áttűnés CSS-ben történik. A korábban csatolt külön ködös, zöld erdő eredeti fájlja a hozzáférhető képállományban nem volt azonosítható; annak újracsatolása után cserélhető a háttér.
+- Közös, olvasható alap: `src/site-refinement.css`, 20 px törzsszöveg, 18 px segédszöveg; a díszítő címkék és a márkajelzés ettől eltérhetnek.
+- Tai Chi: a nyitásban idő, hely, hozzájárulás; korábban látható próbaóra; hangsúlyos saját bemutatkozás. A nem megerősített egyéni óradíj helyett egyeztetés szerepel. A 28 napos kihívás a talonban marad, a nyitott kiküldést nem ígéri az oldal.
+- Célzott jelzés: választott szerda, név, e-mail, telefon, hozzájárulás; kérdés opcionálisan. Gyaloglási kérdés és hívási idősáv nincs a saját Tai Chi-felületen. A Google fogadó űrlap kötelező elérhetőségi mezői miatt az e-mail és a telefon megmaradt. A kiválasztott óra és az egyeztetési cél automatikusan kerül a meglévő Google-űrlap megfelelő mezőibe.
+- A véglegesítés továbbra is a közös Google-űrlapon történik. Annak opcionális gyaloglási kérdései ott még megjelenhetnek; új Google-űrlap nem jött létre, fiókbeállítást nem változtattunk. Az átadás nem igazolt beérkezés és nem Meta Lead.
+- Az adatkezelési forrástervezet az órai jelzés dátumát és egyeztetési célját is leírja; a korábban jóváhagyott élő szöveg nem változott telepítés nélkül.
+- A fejlesztői `formEnabled` és `metaPixelEnabled` kapcsolók változatlanul kikapcsoltak. A teljes főoldal és Tai Chi élesítése, valamint az ajándék Substack-kiküldése továbbra is külön beállítás. A meglévő Életutak kódja, Worker, DNS és kampány nem változik.
+
+Ellenőrzés: az alább rögzített végső ellenőrzési eredmény az aktuális; a korábbi tesztszámok történetiek.
+
+### Az új változat végső ellenőrzése
+
+- `npm test`: **20/20 sikeres**. A naptári dátumválasztás és a Google-átadás új egységtesztet kapott.
+- `npm run build`: sikeres.
+- Az érintett főoldali, Tai Chi- és új regressziós böngészőtesztek végső futása: **19/19 sikeres**. Benne: 320/390/768/1440 px, látható első gomb, előrehozott kapuk, saját Tai Chi-szöveg, órai adatok, dátumellenőrzés, helyben elfogott Google-átadás, adatot nem küldő előnézet, 40 px-es gyökér-betűmérettel kétszeresre nagyított szöveg, menü és billentyűzet.
+- A teljes ellenőrzési körben a meglévő 33 Életutak-, marketing- és olvashatósági próba sikeres volt. A főoldali nagyítás során talált hosszú szavas és láblécbeli kilógásokat javítottuk; az érintett 19 próbát ezután külön újrafuttattuk. Egy korábbi betűbetöltési időtúllépés a végső futásban nem ismétlődött.
+- A külső Google-kéréseket a tesztek elfogták; valódi jelentkezést nem küldtünk. Éles telepítés nem történt.
+- Vizuális előnézet és képek külön helyi műtermékként készültek; nem részei a nyilvános forráscommitnak.
