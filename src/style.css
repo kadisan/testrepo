@@ -42,3 +42,5 @@
 /* Claude, 2026-11-12: ajándék-sáv, szövegközi link */
 .gift{padding-top:60px;padding-bottom:60px}.gift-inner{display:flex;align-items:center;justify-content:space-between;gap:50px;padding:34px 36px;border:1.5px solid var(--line);outline:1px solid var(--line);outline-offset:-7px;border-radius:var(--radius);background:rgba(244,251,243,.6)}.gift h2{margin-bottom:14px}.gift-inner p:not(.eyebrow){color:var(--muted);max-width:620px;margin:0}.gift-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex-shrink:0}.inline-link{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:900px){.gift-inner{display:block}.gift-actions{margin-top:24px}}@media(max-width:600px){.gift-inner{padding:26px 20px}.gift .button{width:100%;justify-content:space-between}}
+.path-photo{margin:36px 0 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);max-width:420px}.path-photo img{display:block;width:100%;height:auto}.gift-more{margin-top:12px!important;font-size:16px}.gift-free{font-size:14px;color:var(--muted)}
+@media(max-width:900px){.path-photo{max-width:none}}

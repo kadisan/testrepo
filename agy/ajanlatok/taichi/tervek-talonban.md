@@ -21,3 +21,12 @@ Szekvenciálisan, külön-külön indítva: **irodai Tai Chi** (az ülőmunka t�
 
 ## Online előfizetés — árviszonyítás
 A szerző mesterének online klubja (taichiflow.hu): 6 900 Ft/hó, 25+ kurzus, 90+ videó (2026-11-12-i állapot). A saját online platform árazásánál ehhez mérnek.
+
+## Szerzői anyagok talonban (2026-11-12)
+A teljes szöveg a szerző Google Drive-ján van (ITC › Könyvírás), mert a repó nyilvános:
+- „Tai Chi talon – Oktatói trükkök (6. fejezet, eredeti)" — elvek, mozgásminőségek, instrukciók, protokoll. Nyilvános felhasználás előtt a fasciás állítások (hidratáció, kollagén-spirál, biotensegritás) a fascia-kézikönyv mércéjével átfogalmazandók.
+- „Tai Chi talon – 28 napos integrál kihívás (eredeti)" — napi keret + 4 hetes pipálós terv (Tai Chi Flow 1–3. szint, jógalégzés, pránájáma). **Jutalom a hosszabb ideje feliratkozottaknak.** Kiadás előtt: biztonsági figyelmeztetés a légzéstechnikákhoz és a fordított pózokhoz. (A fájlnév „26 hetes" volt, a tartalom 28 napos.)
+- Oklevél: `agy/forrasok/oklevel/`.
+
+## Feliratkozási ajándék — beállítandó
+A Tai Chi-oldal „Feliratkozom" gombja a Substackra visz (belsout.substack.com/subscribe). A Substack üdvözlő levelébe (Settings → Emails → Welcome email) kell beírni a PDF linkjét: https://sarkadisandor.hu/letoltes/ot-perc-reggel-a-nyitas.pdf (élesítés után él). A 28 napos kihívás kiküldése „hosszabb idő" után: kézi vagy ütemezett levél — a szabály (pl. 4 hét feliratkozás után) a szerző döntése.
