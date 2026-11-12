@@ -84,3 +84,11 @@
 .hero-person{display:flex;flex-direction:column;background:linear-gradient(180deg,#cbcbc5 0%,#e6e5e0 55%,#f3f2ee 100%)}.hp-photo{order:-1}
 }
 @media(min-width:901px) and (max-width:1200px){.hp-copy{margin-left:43%;padding-right:5vw}}
+/* Claude, 2026-11-12: színes nyitóportré lombkorona-háttérrel — a nyitás újra sötétzöld */
+.hero-person{background:linear-gradient(90deg,#0f2f1b 0%,#0d2a18 45%,#0b2315 100%);color:#eef5ec}
+.hero-person .eyebrow{color:#b9cfb6}
+.hero-person h1,.hp-last{color:#f3f7f0}
+.hero-person .brush{color:var(--accent)}
+.hp-motto{color:#d5e5d1}
+.hero-person .hero-note{color:#e3eedf}
+@media(max-width:900px){.hero-person{background:linear-gradient(180deg,#0f2f1b 0%,#0c2717 60%,#0b2315 100%)}}
