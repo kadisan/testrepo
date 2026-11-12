@@ -182,3 +182,5 @@ A szerző új ZIP-et küldött (`tai_chi_6_valogatott_kep.zip`): hat gyakorlási
 - Mindkét kerti fotó és a főoldal tartalma változatlan maradt. A fogadás és a Meta Pixel továbbra is kikapcsolt előnézeti beállítás.
 
 Ellenőrzés: `npm test` 20/20; build sikeres; az érintett meglévő böngészőtesztek 13/13 sikeresek. Külön galériaellenőrzés 320/390/768/1440 px-en: hat betöltött fotó, nincs teljes oldalas vízszintes kilógás, mobilon a hatodik fotó billentyűzettel is elérhető, a teljes kép új lapon megnyílik, kétszeres szövegnagyításnál is helyben marad a tartalom. Valódi jelentkezés nem ment ki.
+
+A `161db64` forráscommit webes előnézete elkészült, ugyanezekkel a galériaellenőrzésekkel a nyilvános címen is: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/tai-chi/#mozdulatsor . Rögzített változat: https://75a5627b.eletutak-talalkozasa.pages.dev/tai-chi/ . A Cloudflare API igazolta, hogy a produkciós telepítés az előnézeti feltöltés alatt változatlan maradt. A DNS, a Worker és a főág nem módosult.
