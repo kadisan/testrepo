@@ -15,3 +15,9 @@ A Fák Bölcsessége csomaglogikája szerint, kb. 10% kedvezménnyel + hozzáado
 - Gond: a vendég nem jön el, pedig készült rá a szerző → kell egy **jelzés / időpontfoglaló**, hogy számíthasson a résztvevőre (most: „Jelzem, hogy jövök" → visszahíváskérő űrlap; később valódi foglalási eszköz).
 - Később: magasabb árú (high ticket) jegyek, és **online előfizetéses platform**: a résztvevő akkor gyakorol, amikor neki jó; emellett offline kapcsolódhat a rendszeres órákhoz.
 - Minden csomaghoz legyen hozzáadott érték.
+
+## Célzott Tai Chi-órák (szerzői terv, 2026-11-12)
+Szekvenciálisan, külön-külön indítva: **irodai Tai Chi** (az ülőmunka témájára; intézményi megbízó), **rehab Tai Chi**, **szenior Tai Chi** (a szerző szerint kiemelten jó, növekvő piac). Mindegyikhez külön landing/ajánlat kellhet.
+
+## Online előfizetés — árviszonyítás
+A szerző mesterének online klubja (taichiflow.hu): 6 900 Ft/hó, 25+ kurzus, 90+ videó (2026-11-12-i állapot). A saját online platform árazásánál ehhez mérnek.

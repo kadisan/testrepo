@@ -39,3 +39,6 @@
 .trust-line{font-size:15px;color:var(--muted);margin:14px 0 4px;padding-left:22px;position:relative}.trust-line:before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
 .social{display:flex;gap:20px;flex-wrap:wrap}.social a{font-size:14px;color:var(--muted);min-height:48px;display:flex;align-items:center;text-decoration:underline;text-underline-offset:4px}.social a:hover{color:var(--ink)}
 .doors-3{grid-template-columns:repeat(3,1fr)}@media(max-width:900px){.doors-3{grid-template-columns:1fr}}
+/* Claude, 2026-11-12: ajándék-sáv, szövegközi link */
+.gift{padding-top:60px;padding-bottom:60px}.gift-inner{display:flex;align-items:center;justify-content:space-between;gap:50px;padding:34px 36px;border:1.5px solid var(--line);outline:1px solid var(--line);outline-offset:-7px;border-radius:var(--radius);background:rgba(244,251,243,.6)}.gift h2{margin-bottom:14px}.gift-inner p:not(.eyebrow){color:var(--muted);max-width:620px;margin:0}.gift-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex-shrink:0}.inline-link{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.gift-inner{display:block}.gift-actions{margin-top:24px}}@media(max-width:600px){.gift-inner{padding:26px 20px}.gift .button{width:100%;justify-content:space-between}}
