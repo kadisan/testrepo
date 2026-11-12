@@ -49,3 +49,24 @@ A korábbi, november 10-i alkalmazásellenőrzésben 33 böngészőteszt sikeres
 A következő érdemi feladat a teljes magyar főoldal és a szolgáltatási útvonalak véglegesítése, majd megvalósítás saját agentágakon. Az EN/DE/IT technikai változatok megmaradnak, további szerkesztésük parkoltatva van.
 
 A kódcommitba nem kerül privát levelezés, helyi képernyőképes audit, hitelesítési adat vagy az eredeti fotók újabb másolata. A teljes korábbi helyi pillanatkép a `site/prototipus-teljes-helyi` helyi ágon megmaradt. A régi dokumentumok hiánylistái és dátumozott munkaszövegei nem írják felül ezt az aktuális állapotot.
+
+## 2026-11-12 — Claude: főoldal-névjegy (`site/claude-fooldal`)
+
+Kiinduló commit: `ccf0974` (`site/prototipus`).
+
+- Tartalmi váz: `agy/weboldal/fooldal-vaz-v2.md`; magyar munkaszöveg: `agy/weboldal/fooldal-szoveg.md` (a szerző szóbeli válaszaiból, átnézve).
+- `index.html` főoldal átírva: a Tavaszi ív-szekció kikerült (a döntésnapló szerint a főoldal nem ajánlati landing); új sorrend: nyitás (mottó) → bemutatkozás saját portréval → Ami összeköt → négy út → Hogyan kísérek / Kinek szól → Tai Chi (tengely és tempó) → Fák Bölcsessége → Írások, könyvek (+ haiku) → első lépés → GYIK → kapcsolat.
+- Lábléc-/hero-javítások: „Erdőmerülés" → „erdei jelenlét"; „Zarándokkísérő" helyett „Utak · csend · jelenlét"; képzettség-címkék a szerzői szóhasználattal.
+- Új stílusok a `src/style.css` végén (megjelölve). A visszahíváskérő űrlap logikája változatlan.
+- `playwright.config.js`: a Chromium útvonala `CHROMIUM_PATH` környezeti változóval felülírható (alapértelmezés változatlan: `/usr/bin/chromium`).
+- Ellenőrzés: `npm test` 18/18, `npm run build` sikeres, Playwright 39/39 (Claude környezetében, Chromium 1243).
+
+Nyitott: könyvek ára és vásárlási linkje (a gombok most a kapcsolatra mutatnak), előrendelés, saját Tai Chi-oldal, Tai Chi időpont/ár megerősítése, a főoldali GYIK szerzői átnézése, a torii-kép joga (a haiku most kép nélkül, szövegként szerepel).
+
+### 2026-11-12 délután — szerzői pontosítások beépítve
+
+- Főoldal = elosztó: a Tai Chi és a Fák Bölcsessége nagy szekciója kikerült; a négy kapu visz tovább (Tai Chi → saját landing, készül; kísérés → Életutak; zarándoklat → zarandoklat.com; erdei jelenlét → fakbolcsessege.com). Amíg a Tai Chi-landing nincs kész, egy rövid gyakorlati sáv (`#tai-chi`) áll a főoldalon.
+- Tai Chi: szerdánként 10:00–11:30, Kesztyűgyár Közösségi Ház, Budapest VIII., Mátyás tér 15.; adomány alapú, legalább 1 000 Ft/alkalom; egy óra piaci ára 5–6 000 Ft (így kommunikálva).
+- Írások, könyvek: a borítóra kattintva lehet vásárolni (`public/images/konyvek/`, a könyvek PDF-jéből kinyert saját borítók). **A vásárlási linkek hiányoznak** — a borítók most a `#kapcsolat`-ra mutatnak, `data-buy="anatomia|otthon"` jelöléssel. „Egyéb írások" → Substack (ingyenes); **a Substack-link hiányzik** (`data-link="substack"`).
+- A „Fák Bölcsessége" kikerült a főmenüből (a kapu és a testvéroldal viszi).
+- Ellenőrzés: `npm test` 18/18, build, Playwright 39/39.

@@ -47,3 +47,12 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI DÖNTÉS | A repó a közös „agy”: ChatGPT és Claude a döntésnaplóból és az állapotfájlból indulnak, saját munkaágakon dolgoznak. |
 | HOZZÁFÉRÉSI ÁLLAPOT | Claude jelenleg olvasási hozzáféréssel rendelkezik a szerző közlése szerint. Írási jogosultság akkor szükséges, ha saját változását fel is tölti. A mostani kódmegosztás már az olvasási hozzáférést is használhatóvá teszi. |
 | FELADATHATÁR | Az ág feltöltése forrásmegosztás; a főág és az élő weboldal nem módosul. A teljes főoldal későbbi felépítése a külön ajánlati landingekre vezető szerkezetet követi. |
+| 2026-11-12 | SZERZŐI DÖNTÉS | A főoldal Sándor digitális névjegye; négy egyenrangú ág: Tai Chi, Életutak találkozása (kísérés), zarándoklat (zarandoklat.com), Fák Bölcsessége (fakbolcsessege.com). |
+| 2026-11-12 | SZERZŐI DÖNTÉS | A Tai Chi-oldal neve „Tai Chi", alcíme „Tengely és tempó" (módszertani név is). |
+| 2026-11-12 | SZERZŐI DÖNTÉS | Főoldali mottó és sorrend: test → elme → lélek („Hagyd, hogy a tested tanítsa az elmédet, és az elméd megtanuljon figyelni a lelkedre." — A zarándoklat anatómiája). |
+| 2026-11-12 | SZERZŐI DÖNTÉS | Új főoldali blokk: Írások, könyvek — könyvvásárlás, később előrendelés; hírlevél. |
+| 2026-11-12 | SZERZŐI DÖNTÉS | Iránytűszavak: hiteles, mély, csendes. A kísérés a szerző szavával: szolgálat. |
+| 2026-11-12 | NYITOTT | Könyvek ára, formátuma, vásárlási linkje (Payhip vagy Stripe); előrendelési feltételek; a torii-fotó felhasználási joga; Tai Chi aktuális időpont és ár. |
+| 2026-11-12 | SZERZŐI DÖNTÉS | A főoldal elosztó: a Tai Chi saját landinget kap; a főoldalon csak kapuk. Kísérés → Életutak, zarándoklat → zarandoklat.com, erdei jelenlét → fakbolcsessege.com. Az „erdőmerülés" szó nem használandó. |
+| 2026-11-12 | SZERZŐI DÖNTÉS | Tai Chi: szerda 10:00–11:30, Kesztyűgyár (VIII., Mátyás tér); adomány alapú, min. 1 000 Ft; piaci érték 5–6 000 Ft/óra. A pontos cím ellenőrizendő. |
+| 2026-11-12 | SZERZŐI DÖNTÉS | Könyvek: borítóra kattintva vásárlás; egyéb írások → Substack (jelenleg ingyenes). Linkek a szerzőtől. |
