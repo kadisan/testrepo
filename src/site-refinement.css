@@ -136,6 +136,7 @@ input[type=date] {min-width:0;max-width:100%;appearance:none}
 .sequence-photos a:focus-visible {outline:4px solid var(--accent);outline-offset:-4px}
 .sequence-photos img {display:block;width:100%;height:auto;aspect-ratio:4/5}
 .sequence-photos figcaption {display:flex;justify-content:space-between;gap:12px;padding:14px 18px;font-size:.9rem;line-height:1.45}
+.sequence-photos figcaption>span:last-child {display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 
 @media (max-width:900px) {
   .sequence-photos {grid-template-columns:repeat(2,minmax(0,1fr))}
