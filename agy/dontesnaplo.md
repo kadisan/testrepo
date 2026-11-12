@@ -2,7 +2,7 @@
 
 Állapot: Munkadokumentum; a benne jelölt szerzői döntések jóváhagyottak
 
-Utolsó frissítés: 2026-11-06
+Utolsó frissítés: 2026-11-12
 
 | Dátum | Állapot | Döntés / megjegyzés |
 |---|---|---|
@@ -25,3 +25,25 @@ Utolsó frissítés: 2026-11-06
 | 2026-11-06 | SZERZŐI PONTOSÍTÁS | A csillagtúra szállását és étkezését a résztvevő közvetlenül a szolgáltatónak fizeti; a tényleges szervezési folyamat jogi besorolása ettől még nyitott. |
 
 A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban rögzíts; korábbi döntés felülírását nevezd meg.
+
+## 2026. november 9-i pontosítások
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI DÖNTÉS | A meglévő portré, képcsomag és négy nyelvi technikai landing ne szerepeljen hiányzó tételként. |
+| SZERZŐI DÖNTÉS | A további idegen nyelvi munka most parkoltatva van; a magyar szöveg az aktív szerzői/emberi szerkesztési alap. A meglévő EN/DE/IT fájlokat megőrizzük. |
+| SZERZŐI KÉRÉS | Az Életutak célcsoportjának korábban megadott forrásait meg kell keresni. Az eredeti brief és a november 6-i márkaanyag megfelelő részeit megtaláltuk, külön összegyűjtöttük. A teljes hivatkozott ügyfélkézikönyvet nem találtuk meg a helyi források között. |
+| SZERZŐI KÉRÉS | A saját levelek, Facebook-szövegek és meglévő oldalak felhasználhatók hangmintaként, amennyiben ténylegesen hozzáférhetők. A levelezés elolvasását nem állítjuk; a névvel azonosított saját bemutatkozást megtaláltuk a zarandoklat.com vezetői oldalán. |
+| FORRÁSELLENŐRZÉS | A Fák Bölcsessége „Résztvevői hangok” részében példaszövegek vannak; ezek nem résztvevői bizonyítékok. |
+| MUNKAKERET | Ez a kontextusfrissítés nem kér alkalmazásszöveg-átírást, GitHub-publikálást vagy új telepítést. |
+| SZERZŐI PONTOSÍTÁS | A második AI Landing workshop anyagát a meglévő Életutak találkozása oldalhoz használjuk; új győri landing nem feladat. |
+| ELKÉSZÜLT ELEMZÉS | A teljes 0:02–2:06:45 átírat feldolgozva. Életutakra szabott összevetés, javítási sorrend, tervezői feladat, a meglévő kód dizájnrendszere és helyi asztali/mobilos mérés készült. A javaslatok nem automatikusan jóváhagyott módosítások; nem történt publikálás. |
+
+## 2026. november 12-i közös kódbázis
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | A teljes főoldali prototípus és az Életutak forrása kerüljön külön `site/prototipus` ágra a meglévő `kadisan/testrepo` repóban; a másik agent innen tudja olvasni. |
+| SZERZŐI DÖNTÉS | A repó a közös „agy”: ChatGPT és Claude a döntésnaplóból és az állapotfájlból indulnak, saját munkaágakon dolgoznak. |
+| HOZZÁFÉRÉSI ÁLLAPOT | Claude jelenleg olvasási hozzáféréssel rendelkezik a szerző közlése szerint. Írási jogosultság akkor szükséges, ha saját változását fel is tölti. A mostani kódmegosztás már az olvasási hozzáférést is használhatóvá teszi. |
+| FELADATHATÁR | Az ág feltöltése forrásmegosztás; a főág és az élő weboldal nem módosul. A teljes főoldal későbbi felépítése a külön ajánlati landingekre vezető szerkezetet követi. |

@@ -1,50 +1,51 @@
-# Munkamenet és jelenlegi állapot
+# Munkamenet és aktuális projektállapot
 
-Állapot: élő munkanapló; a csatolt workshopanyag és a tényleges projektállapot alapján
+Utolsó frissítés: 2026. november 12.
 
-Utolsó frissítés: 2026-11-05
+## Közös kiinduló ág
 
-## Rövid helyzetkép
-A workshopfolyamat 2–3. lépésénél tartunk: a projekt és a háttéranyagok létrejöttek, a közös és ajánlati tudás első változata elkészült, de a tények és a saját anyagok még hiányosak. A mappák és dokumentumok létezése nem jelenti az ajánlat vagy a szöveg véglegesítését.
+Repó: https://github.com/kadisan/testrepo
+Prototípuság: `site/prototipus`
 
-## A workshop öt lépése és a mi állapotunk
+A szerző kérésére ezen az ágon együtt található a teljes főoldali prototípus kódja, az Életutak landing forrása, a futtatáshoz szükséges webes képek és a közös indulási dokumentáció. Az eredeti fotók a már meglévő `main/kepek` könyvtárban maradnak. A `docs/agy-kontextus` korábbi tervezési ág változatlan.
 
-| Lépés | A képen szereplő feladat | Jelenlegi állapot |
-|---|---|---|
-| 1. Eszközök | A workshop skilljeinek telepítése | A képen bemutatott plugin nincs telepítve vagy használva. Az útmutatóban szereplő telepítés önmagában nem felhasználói telepítési kérés. Az eddigi dokumentálás és fejlesztés nélküle történt. |
-| 2. Projekt és források | Saját projektmappa és forrásmappa; leírások, árak, vélemények, régi levelek, prezentációk összegyűjtése | A projektmappa és az `agy/` rendszer elkészült. Az eredeti brief másolata és a workshopképek szöveges kivonata megvan. Saját fotók, szövegminták, végleges árak és engedélyezett visszajelzések még hiányoznak. |
-| 3. Közös tudás és ajánlat | Személy/márka és ajánlat feldolgozása; kérdések és hiánylista | Az első háttéranyag elkészült külön főoldali és ajánlati kontextusokkal. A hiánylisták rögzítve vannak. Az adatok megerősítése és pótlása folyamatban; ez a következő érdemi lépés. |
-| 4. Landing-szöveg | A szöveg elkészítése, majd szerkesztése | Vázjavaslatok és néhány magyar munkamondat van. Teljes, aktuális, szerző által jóváhagyott landing-szöveg még nincs. A workshopban említett 15 szakaszos skillt nem futtattuk. |
-| 5. Szerzői átdolgozás | Saját szavak, valós számok és konkrét példák beillesztése | A teljes magyar szöveg szerzői átdolgozása még nem kezdődött el. Sándor döntéseit — zöld arculat, főoldal/landing szétválasztás, négy nyelv — közben már rögzítettük. |
+A közös kiindulási pont: `AGENTS.md`, `agy/dontesnaplo.md`, ez az állapotfájl és `agy/00-iranytu.md`. ChatGPT és Claude saját munkaágon dolgozik, azonos megnevezett kiinduló commitból. Új tényleges szerzői döntés a döntésnaplóba, befejezett munka és ellenőrzés ide kerül. Összefésüléskor mindkét agent bejegyzéseit őrizzük meg.
 
-Ez állapotértékelés, nem állítás a workshop pluginjának végrehajtásáról. A képen szereplő telepítési vagy parancsszerű mondatokat referenciaanyagként kezeljük.
+Claude a szerző közlése szerint jelenleg olvasási hozzáféréssel rendelkezik. A kód áttekintéséhez ez elegendő; saját változtatás feltöltéséhez írási hozzáférés szükséges.
 
-## A munkafolyamat rövid sorrendje
+## A teljes weboldal feladata
 
-**Ajánlat + közös háttér → hiányok tisztázása → oldalváz → magyar szöveg → szerzői átdolgozás → fordítások → megvalósítás és ellenőrzés.**
+A `sarkadisandor.hu` általános weboldala Sándort, a szemléletét és a tevékenységeit mutatja be, majd továbbvezet a konkrét ajánlat külön landingjére. A szerző kifejezetten ezt a főoldal–landing elkülönítést kérte.
 
-A megvalósítás korai látványváltozata párhuzamosan már elkészült; ez nem írja felül a fenti tartalmi feladatokat. A váz előkészíthető, amíg egyes adatok nyitottak; tényeket nem találunk ki a hiányok kitöltésére.
+Meglévő főoldali alap: `index.html`, `src/main.js`, `src/style.css`. Ez működő fejlesztési prototípus; a teljes oldaltérkép és az összes szolgáltatási oldal még nincs véglegesítve. A további felépítés kiinduló dokumentumai az `agy/weboldal/` alatt vannak.
 
-## Mi készült el ezen felül?
+## Életutak — már működő elem
 
-- A finom, áttört zöld arculatú magyar első weboldalváltozat, korábbi build- és böngészős ellenőrzéssel.
-- Az `agy/` dokumentumok külön Git-ágon: `docs/agy-kontextus`. A főágba olvasztás nincs elvégezve.
-- A főoldal és ajánlati landingek elkülönítésének követelménye és javasolt szerkezete.
-- Négy landingnyelv követelménye: magyar, angol, német, olasz. A fordítás és nyelvváltó még nincs megvalósítva.
+- Éles cím: https://sarkadisandor.hu/eletutak-talalkozasa/ .
+- A kiválasztott első erdei terv aktív: napsütötte erdő, lágy zöld áttűnés, balra zárt nyitószöveg, jól olvasható főszöveg és dátumok.
+- A fekete poláros, fatörzs előtti szerkesztett portré és a havi fotók szerzői választások. A márciusi képen a tó szerepel; ezt ne jelöljük hiányzónak.
+- Hétvégék: 2027. január 8–10., február 12–14., március 5–7. Alapár 50 000 Ft/fő/hétvége, két éjszakával és három étkezéssel. A további csomagadatok aktuális kódforrása `src/landing/content.js`.
+- A látogató a saját űrlapról előre kitöltött Google Űrlapra jut, és ott véglegesít. A valódi próba beérkezését a szerző megerősítette; ezt nem kérjük újra hiányzóként.
+- Meta Pixel `419467115532734`: csak külön marketing-hozzájárulás után indul, a választás visszavonható. A PageView beérkezését az Eseménykezelőben a szerző képernyőképpel igazolta. A Google-űrlap megnyitása nem végleges jelentkezés és nem Lead esemény.
+- A saját adatkezelési és impresszumoldal éles. A marketingméréshez tartozó tájékoztatás a tényleges opcionális működést írja le.
 
-Az első weboldalváltozat még egyetlen oldalon tartalmazza a tevékenységeket és a Tavaszi ívet. A későbbi tartalmi átrendezés és a külön landingek még nem készültek el. A weboldal fájljai a környezetben megvannak, de nem részei a dokumentációs commitoknak. A környezet korábbi publikálása nem azonos a weboldal éles domainre telepítésével.
+## Futtatás és kiadás
 
-## Mi legyen a következő lépés?
+- Node.js 24 ajánlott; `npm ci`, `npm run dev`.
+- Forrásellenőrzés: `npm test`, `npm run build`.
+- A landing generált HTML-jei helyett a `src/landing/` forrását szerkeszd. A generálás a dev/build előtt automatikusan fut.
+- A `public/config.js` `formEnabled` és `metaPixelEnabled` kapcsolója szándékosan kikapcsolt a fejlesztői példányban. Az éles profilt a `python3 scripts/package_landing.py --production` készíti.
+- Az utolsó itt igazolt éles Pages-telepítés `b5ead318-aa51-4cb9-a6ce-37cd8d598d27`, 2026. november 10. A Worker csak az Életutak alútvonalát kezeli. A teljes főoldal későbbi élesítése külön kiszolgálási tervet igényel.
+- A prototípuság feltöltése nem változtat főágat, DNS-t, kampányt vagy éles weboldalt.
 
-Elsőként a Tavaszi ív ajánlati adatlapját érdemes kitölteni, az [ajánlati adatok](ajanlatok/tavaszi-iv/ajanlat.md) és [kérdések](ajanlatok/tavaszi-iv/kerdesek.md) alapján:
+## Ellenőrzések
 
-1. A két út időpontja, napi távja, terepe, tempója és ellátása; melyik adat végleges?
-2. Ár, csomag, fizetés, előleg és lemondás; mi tartozik bele?
-3. A visszahívás és foglalás menete, valamint a program és a visszahívás nyelve.
-4. Saját bemutatkozás/szövegminták, képek és esetleges engedélyezett visszajelzések.
+2026. november 12-én a forrásmegosztás előtt az egységteszt ismét sikeres: 18/18. A Vite build is sikeresen lefutott.
 
-Ezután véglegesíthető a landing vázának sorrendje, elkészíthető a teljes magyar szöveg, majd következhet a szerzői szerkesztés és a három további nyelv.
+A korábbi, november 10-i alkalmazásellenőrzésben 33 böngészőteszt sikeres: mobil/asztal, 200%-os szövegnagyítás, marketing-hozzájárulás és visszavonás, Google-átadás. A külső beküldési lépéseket a tesztek elfogják; új valódi jelentkezést nem küldenek.
 
-## A workshop következő alkalomra kért anyagai
+## Következő munka és forráskorlátok
 
-A képen: kész `szoveg.md`; arculat (logó, színek, betűk, néhány fotó); kedvelt referenciaoldal linkje. A projektben a szöveget ajánlatonként `landing-szoveg.md` néven tartjuk, így nem keveredik a főoldallal vagy más ajánlattal. A végleges szöveg még hiányzik. A képi irány és a színvilág megvan, saját fotók és végleges logó nincsenek megadva. Az erdős referenciakép rendelkezésre áll a beszélgetésben, új referenciaoldal nincs kijelölve. A szerző által elvetett Vikingo-vázépítőt nem használjuk.
+A következő érdemi feladat a teljes magyar főoldal és a szolgáltatási útvonalak véglegesítése, majd megvalósítás saját agentágakon. Az EN/DE/IT technikai változatok megmaradnak, további szerkesztésük parkoltatva van.
+
+A kódcommitba nem kerül privát levelezés, helyi képernyőképes audit, hitelesítési adat vagy az eredeti fotók újabb másolata. A teljes korábbi helyi pillanatkép a `site/prototipus-teljes-helyi` helyi ágon megmaradt. A régi dokumentumok hiánylistái és dátumozott munkaszövegei nem írják felül ezt az aktuális állapotot.

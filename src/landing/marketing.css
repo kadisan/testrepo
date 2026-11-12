@@ -1,0 +1,30 @@
+.lp-marketing-consent {
+  position: fixed;
+  z-index: 100;
+  inset: auto 1rem 1rem;
+  margin-inline: auto;
+  max-width: 56rem;
+  max-height: 80svh;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 1.5rem;
+  border: 1px solid #54735b;
+  border-radius: 5px;
+  background: #f3f8ed;
+  color: #203d30;
+  box-shadow: 0 .5rem 2rem #16312233;
+}
+.lp-marketing-consent[hidden] { display: none; }
+.lp-marketing-consent h2 { font: 600 1.5rem/1.35 'Source Sans 3',sans-serif; margin-bottom: .75rem; }
+.lp-marketing-consent p { font-size: 1.125rem; line-height: 1.55; }
+.lp-marketing-consent .lp-marketing-current:empty { display: none; }
+.lp-marketing-consent .lp-marketing-current { margin-top: .5rem; }
+.lp-marketing-consent a { display: inline-flex; min-height: 3rem; align-items: center; font-size: 1.125rem; text-decoration: underline; text-underline-offset: .2em; }
+.lp-marketing-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem; }
+.lp-marketing-actions button { flex: 1 1 12rem; justify-content: center; text-align: center; font-size: 1.125rem; background: #f3f8ed; color: #203d30; border-color: #54735b; }
+.lp-marketing-actions button:hover { background: #e0ecd8; }
+.lp-footer-bottom>div { flex-wrap: wrap; }
+@media(max-width:480px) {
+  .lp-marketing-consent { inset-inline: .75rem; bottom: .75rem; padding: 1.125rem; }
+  .lp-marketing-actions button { flex-basis: 100%; }
+}

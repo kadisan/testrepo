@@ -2,7 +2,7 @@
 
 Állapot: Munkadokumentum; a benne jelölt szerzői döntések jóváhagyottak
 
-Utolsó frissítés: 2026-11-05
+Utolsó frissítés: 2026-11-09
 
 ## Szerzői döntés
 A sarkadisandor.hu általános weboldal különüljön el az egyes ajánlati landingektől.
@@ -11,4 +11,6 @@ Feladata: bemutatni Sándort, szemléletét, tevékenységeit; bizalmat építen
 
 A Tai Chi, a zarándoklat és a Fák Bölcsessége nem egymás űrlapjába vezetik az érdeklődőt. Általános kapcsolat és ajánlatspecifikus jelentkezés külön feladat.
 
-Nyitott: végleges oldaltérkép, domainstruktúra, általános kapcsolat módja, főoldali többnyelvűség. A korábbi egyoldalas változat átszervezése még nem történt meg.
+Megvalósult: a főoldali prototípus rövid ajánlóval külön Életutak landingre vezet. A teljes általános oldaltérkép és az összes szolgáltatás saját oldala ettől még nincs véglegesítve. A megadott telefon és e-mail a helyi következő változatban kattintható.
+
+Nyitott: a főoldal végleges tartalmi felépítése, a további ajánlatok URL-rendszere és a működő jelentkezési csatorna. A meglévő Életutak négy nyelvi változatának további munkája parkoltatva van; a magyar szöveg aktív szerkesztése az elsődleges.

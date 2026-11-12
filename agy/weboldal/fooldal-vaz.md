@@ -1,8 +1,8 @@
 # Főoldal — javasolt váz
 
-Állapot: JAVASLAT — átszervezés még nincs megvalósítva
+Állapot: JAVASLAT — a végleges főoldali szerkezet terve; a meglévő prototípus és külön Életutak-bemutató mellett
 
-Utolsó frissítés: 2026-11-05
+Utolsó frissítés: 2026-11-09
 
 1. Erdős nyitórész: „Lépj be a fák közé”, rövid személyes meghívás.
 2. Tevékenységek: zarándoklat és gyaloglás, Tai Chi, Fák Bölcsessége — saját továbbvezető linkekkel.

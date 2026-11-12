@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.playwright/
+test-results/
+
+deploy/
+
+# Local credentials, generated output and private handoff evidence.
+.env
+.env.*
+!.env.example
+.wrangler/
+.codex/
+.claude/settings.local.json
+*.log
+/atadas/
+agy/forrasok/sajat-szovegek/elkuldott-levelek-elemzesi-megbizas.md
+agy/forrasok/workshop-2/atirat.txt
+agy/forrasok/workshop-2-ellenorzes/*.png
+agy/forrasok/workshop-2-ellenorzes/*.json
+*.mbox

@@ -1,30 +1,32 @@
 # Iránytű
 
-Állapot: Munkadokumentum; a benne jelölt szerzői döntések jóváhagyottak
+**2026. november 12-i aktuális munkairány:** a teljes főoldal prototípusa és az Életutak forrása közösen a `site/prototipus` ágon található. A közös indulási pont a döntésnapló, az állapotfájl és az `AGENTS.md`. A teljes főoldalból külön ajánlati landingekre vezetünk; a további magyar weboldalépítés a következő feladat. Az alábbi november 9-i megállapítások dátumozott előzmények.
 
-Utolsó frissítés: 2026-11-05
+Állapot: aktuális munkairány a szerzői döntések és az elkészült megvalósítás alapján
+
+Utolsó frissítés: 2026-11-09
 
 ## Szerzői döntések
-- A fő weboldal és a konkrét ajánlatok landingoldalai elkülönülnek.
-- A főoldal Sarkadi Sándort és tevékenységeit mutatja be; az ajánlati landing egyetlen ajánlatot és annak következő lépését szolgálja.
-- A látvány alapja az erdős referenciakép és a finom, áttört, áttetsző hatású zöld. Papírszínű arculatot a szerző elvetett.
-- A workshopképernyőképek tanulságai is számítanak: előbb váz, aztán szöveg; a látogató döntési kérdéseire építünk.
-- A Vikingo-vázépítő linkjét a szerző elvetette; nem referencia és nem függőség.
-- A landingek négy nyelven készüljenek: magyar, angol, német, olasz. A legutóbbi felsorolás felülírja a korábbi „három nyelv” darabszámot.
+- A személyes főoldal és a konkrét ajánlatok landingoldalai külön feladatot kapnak.
+- Vizuális alap: erdő, légies feliratok, finom áttört és áttetsző hatású zöldek. Papírszínt a szerző elvetett.
+- A workshopanyag módszertani referencia: előbb váz, aztán szöveg; a látogató döntési kérdéseiből indulunk.
+- A második workshop teljes átíratát a szerző pontosítása szerint a **meglévő Életutak találkozása** landingre alkalmazzuk. A [feldolgozott forrás](forrasok/workshop-2/README.md) és az [Életutak saját javítási terve](ajanlatok/eletutak-talalkozasa/workshop-2-alkalmazas.md) elkészült; új győri eseményoldal nem feladat.
+- A Vikingo-vázépítő elhagyott referencia.
+- A korábbi négy nyelvi változat technikailag elkészült. A szerző 2026-11-09-i döntése szerint a többnyelvű munkát most parkoltatjuk. Az aktív szerkesztési alap a magyar szöveg. Az angol, német és olasz változat megmarad; további fordítási munka új szerzői kérésig nem aktuális.
+- A már meglévő portrét, képcsomagot és négynyelvű technikai megvalósítást nem jelöljük hiányzónak.
 
-## Oldalak és címek
-A `sarkadisandor.hu` az általános főoldal. A `zarandoklat.sarkadisandor.hu` és a `taichi.sarkadisandor.hu` korábbi asszisztensi címjavaslat; a pontos URL-struktúra nincs véglegesítve. A nyelvi útvonalak sem véglegesek.
+## Tényleges megvalósítás
+Az általános magyar főoldal prototípusa mellett külön Életutak találkozása landing készült: `/eletutak-talalkozasa/`. Magyar, angol, német és olasz útvonala, valamint nyelvváltója van. Ez a kész technikai alap nem jelenti a fordítások végleges nyelvi jóváhagyását. A mostani tartalmi munka a magyar változatra szól.
 
-## Jelenlegi megvalósítás
-A meglévő első HTML-változat még egyetlen oldalon mutatja a tevékenységeket és a Tavaszi ívet. A főoldal–landing szétválasztás, a későbbi szerkezeti javaslatok és a többnyelvűség még nincsenek megvalósítva. Ezek a dokumentumok nem állítják, hogy elkészültek.
+A GitHub `kepek/` mappájába a november 9-i új feltöltéssel összesen 26 képfájl érkezett. A feltöltött mosolygós portré és négy programkép az Életutak bemutatójában szerepel. A nyitó erdőillusztráció külön képi elem. A többi ajánlat önálló landingje nem válik késznek az Életutak elkészültével.
 
-## Munkamenet
-A részletes sorrend és az aktuális előrehaladás a [munkamenet és állapot](munkamenet-es-allapot.md) dokumentumban követhető.
+Az utolsó igazolt nyilvános bemutató és a helyi, még nem publikált módosítások külön állapotok. Részletek: [munkamenet és állapot](munkamenet-es-allapot.md).
 
-1. Ellenőrzött ajánlati adatok és hiánylista.
-2. Oldalváz: minden blokknak legyen konkrét feladata.
-3. Magyar munkaszöveg és szerzői jóváhagyás.
-4. Többnyelvű megvalósítás, fordítás és nyelvi ellenőrzés.
-5. Mobilos, funkcionális és jelentkezési teszt.
+## Olvasási sorrend
+1. Ez az iránytű és a [döntésnapló](dontesnaplo.md).
+2. A [munkamenet és állapot](munkamenet-es-allapot.md).
+3. A szükséges közös márkaanyagok.
+4. Az adott ajánlat saját áttekintése, ajánlata, célcsoportja és magyar szövege.
+5. Dátumozott eredeti források és szükség esetén a kód.
 
-A környezetet a felhasználó publikálta, és külön kérte, hogy korábbi módosításokat ne alkalmazzunk újra, illetve ne publikáljunk automatikusan. A kontextusfájlok GitHubra feltöltése külön mostani kérés; környezetpublikálás nem része.
+A későbbi, egyértelmű szerzői pontosítás felülírja a régebbi, ugyanarra vonatkozó állítást. Egy régi átadási ZIP vagy workshop-állapot nem írja felül az aktuális állapotleírást. Közzététel és nyilvános GitHub-feltöltés továbbra sem automatikus feladat.
