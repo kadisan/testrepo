@@ -87,3 +87,19 @@ Nyitott: könyvek ára és vásárlási linkje (a gombok most a kapcsolatra muta
 - „Az első alkalom előtt írj vagy hívj, hogy tudjak rólad" — szervezési javaslat;
 - a „tanár" blokk képe most a téli Tai Chi-fotó (`tai-chi-telen.webp`).
 - 2026-11-12 14:30: a Tai Chi-oldal „A tanár" blokkja a szerző saját bemutatkozó szövegéből (Sarkadi_Sandor_bemutatkozas_1.docx) és kerti Tai Chi-fotójából (`public/images/taichi/`) készült. Szándékosan kimaradt a szerző szövegéből: „gyógyulás", „energia harmonizálása" (tiltólista), „Erdőmerülő vezető" (szerzői döntés: nem használjuk). Facebook: Kardosi András (facebook.com/kardosiandras).
+
+### 2026-11-12 14:45 — Tai Chi-ajánlat és bérletrendszer (MUNKAVÁLTOZAT, szerzői jóváhagyásra vár)
+
+Szerzői irány: landing → látszódjon, mit kap; első alkalom jelképes, kötelezettség nélkül; bérletek a Fák Bölcsessége mintájára, látványos árcsökkentés nélkül (~10%), hozzáadott értékkel a szerző meglévő eszközeiből.
+
+| Bérlet | Alkalom | Ár | Helyett | Hozzáadott érték |
+|---|---|---|---|---|
+| Próbaóra | 1 | min. 1 000 Ft | — | kötelezettség nélkül |
+| Alkalmi jegy | 1 | 5 000 Ft | — | — |
+| Havi | 4 | 18 000 Ft | 20 000 Ft | 1 e-könyv |
+| Negyedéves | 12 | 54 000 Ft | 60 000 Ft | 1 e-könyv, 1 egyéni óra |
+| Féléves | 24 | 108 000 Ft | 120 000 Ft | 2 e-könyv, 2 egyéni óra, 15% Fák Bölcsessége |
+| Háromnegyed éves | 36 | 162 000 Ft | 180 000 Ft | 2 e-könyv, 3 egyéni óra, 15% Fák, 10% zarándokút (vezetői díj) |
+| Éves | 48 | 216 000 Ft | 240 000 Ft | 2+következő e-könyv, 4 egyéni óra, 15% Fák, 15% zarándokút (vezetői díj) |
+
+A szerző példája: 5 000 Ft/alkalom, havi 18 000 Ft. A korábbi „adomány alapú, min. 1 000 Ft" közlés helyére ez lépett (a főoldali sávon is). **Nyitott:** érvényességi idő (javaslat: alkalomszám + ráhagyás), a zarándokút-kedvezmény pontos alapja (csak Sándor vezetői díja, a zarandoklat.com-os szerződés Zsolttal), a „következő e-könyv" vállalása, a Kesztyűgyár mint helyszín elfogadja-e a fizetős bérletet.
