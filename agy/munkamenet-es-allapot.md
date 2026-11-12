@@ -171,3 +171,14 @@ Csak a Tai Chi-oldal használja az új képet. A főoldalon maradt az eredeti ke
 Ellenőrzés: `npm test` 20/20, build sikeres, a Tai Chi böngészőtesztek 4/4 sikeresek. Külön asztali és mobilos képméret- és megjelenésellenőrzés is készült. A `f1d703b` forráscommit frissítése felkerült a már ismert külön Cloudflare-előnézeti ágra. A webes címen 390 és 1440 px-en is betölt a két teljes alakos kép, nincs képkivágás, vízszintes kilógás vagy hibás erőforrás. A Cloudflare API igazolta az éles telepítés változatlanságát; a főág és a fogadási beállítások nem változtak.
 
 Frissített Tai Chi-előnézet: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/tai-chi/#tanar . Rögzített változat: https://f57bab33.eletutak-talalkozasa.pages.dev/tai-chi/ .
+
+### 2026-11-12 — Külön hatképes mozdulatsor
+
+A szerző új ZIP-et küldött (`tai_chi_6_valogatott_kep.zip`): hat gyakorlási pillanat, mindegyikhez közeli kivágás és teljes képkocka. A szerző a külön képsort választotta, a két kerti kép mellett.
+
+- Új `#mozdulatsor` blokk az óra menete után: asztalon három-, tableten kétoszlopos galéria; mobilon egy sorban, oldalra lapozható képek. Nincs automatikus lejátszás vagy új JavaScript.
+- A hat közeli kép maradt az eredeti sorrendben. A teljes képkocka kattintásra új lapon nyílik. Nincsenek kitalált mozdulatnevek vagy résztvevői állítások.
+- Webes képek: `public/images/taichi/mozdulatsor/`; 480×600 px bélyegképek és 720×1280 px teljes képek, WebP-formátumba kódolva. Nem történt új képkivágás, fényelés vagy generatív átalakítás. A hat bélyegkép összesen kb. 201 KiB, késleltetett betöltéssel.
+- Mindkét kerti fotó és a főoldal tartalma változatlan maradt. A fogadás és a Meta Pixel továbbra is kikapcsolt előnézeti beállítás.
+
+Ellenőrzés: `npm test` 20/20; build sikeres; az érintett meglévő böngészőtesztek 13/13 sikeresek. Külön galériaellenőrzés 320/390/768/1440 px-en: hat betöltött fotó, nincs teljes oldalas vízszintes kilógás, mobilon a hatodik fotó billentyűzettel is elérhető, a teljes kép új lapon megnyílik, kétszeres szövegnagyításnál is helyben marad a tartalom. Valódi jelentkezés nem ment ki.

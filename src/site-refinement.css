@@ -122,6 +122,32 @@ input[type=date] {min-width:0;max-width:100%;appearance:none}
 .gift-inner {padding:32px;gap:32px}
 .gift-actions {max-width:100%;min-width:0;flex-shrink:1}
 
+/* A saját gyakorlás képsora; mobilon természetes, vízszintes lapozással. */
+.practice-sequence {background:#e4eee1}
+.practice-sequence .section-heading {margin-bottom:18px}
+.sequence-help {font-size:.9rem;color:var(--muted);margin:0 0 24px}
+.sequence-mobile-hint {display:none}
+.sequence-window {border-radius:var(--radius)}
+.sequence-window:focus-visible {outline:3px solid var(--green);outline-offset:6px}
+.sequence-photos {list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin:0;padding:0}
+.sequence-photos li {min-width:0}
+.sequence-photos figure {margin:0;border:1px solid var(--line);border-radius:18px;background:#f3f7ee;overflow:hidden}
+.sequence-photos a {display:block}
+.sequence-photos a:focus-visible {outline:4px solid var(--accent);outline-offset:-4px}
+.sequence-photos img {display:block;width:100%;height:auto;aspect-ratio:4/5}
+.sequence-photos figcaption {display:flex;justify-content:space-between;gap:12px;padding:14px 18px;font-size:.9rem;line-height:1.45}
+
+@media (max-width:900px) {
+  .sequence-photos {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px) {
+  .sequence-mobile-hint {display:inline}
+  .sequence-window {overflow-x:auto;scroll-snap-type:x proximity;scrollbar-color:var(--green) #c8d9c4;scroll-padding-inline:2px;padding:4px 2px 18px}
+  .sequence-photos {grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;gap:16px}
+  .sequence-photos li {scroll-snap-align:start}
+  .sequence-photos figcaption {padding:12px 14px;flex-wrap:wrap}
+}
+
 @media (max-width:1150px) {
   .header {padding-inline:4%}
   .menu-toggle {display:flex;align-items:center;gap:12px;background:transparent;border:1px solid var(--line);border-radius:4px;padding:10px 14px;min-height:48px;font-size:18px;color:var(--ink)}

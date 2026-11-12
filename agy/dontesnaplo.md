@@ -74,3 +74,9 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | Állapot | Döntés / megjegyzés |
 | --- | --- |
 | SZERZŐI KÉRÉS | A Tai Chi-oldal két mozdulatfotóján egységes, egyszerű, letisztult kert jelenjen meg, mezítlábas gyakorlásra alkalmas gyeppel. A két különböző mozdulat és az azonos ruházat maradjon meg. |
+
+## 2026. november 12. — Hatképes gyakorlási sor
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI DÖNTÉS | A `tai_chi_6_valogatott_kep.zip` hat fotója külön mozdulatsorként kerüljön a Tai Chi-oldalra, a két meglévő kerti kép mellett. |
