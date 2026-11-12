@@ -150,3 +150,14 @@ Ellenőrzés: az alább rögzített végső ellenőrzési eredmény az aktuális
 A szerző a munka közben újracsatolta a sötétzöld lombkoronás borítót. A háttérből a fehér feliratokat és a betűbe épített rajzot képszerkesztő modell távolította el. Az új webes kép 1670×941 px, WebP; a portré arca nem változott. Mindkét új nyitás ezt a lombkoronát használja, világos szöveggel és sötétzöld kontrasztréteggel.
 
 Ellenőrzés a háttércsere után: sikeres build és **19/19 sikeres érintett böngészőteszt** (a végső futás 2026-11-12 19:23 UTC-kor zárult). A friss asztali és mobilos képeken nincs hiányzó kép vagy vízszintes kilógás. A külön HTML-előnézet képei is ezt a változatot mutatják. Az élő oldal és a főág változatlan.
+
+### 2026-11-12 — Megnyitható webes előnézet
+
+A szerző külön webes előnézetet kért. A `f57b2d9` forráscommit tesztelt buildje a meglévő Cloudflare Pages-projekt **preview** környezetébe került, a `site/chatgpt-figyelemvezetes` ágra.
+
+- Főoldal: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/
+- Tai Chi: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/tai-chi/
+- Rögzített változat: https://78550be2.eletutak-talalkozasa.pages.dev/
+- A feltöltött csomagban a fogadás és a Meta Pixel kikapcsolva maradt. Külön `robots.txt` és `X-Robots-Tag` tiltja az előnézet keresőindexelését; ezek csak az előnézeti csomag kiegészítései.
+- Valódi böngészős ellenőrzés a webes címen: 1440 és 390 px, nincs vízszintes kilógás, hiányzó kép, JavaScript-hiba vagy hibás erőforrás. A főgomb teljesen látszik, a főoldal → Tai Chi navigáció működik; a próbaűrlap nem küld adatot.
+- A Cloudflare API igazolta, hogy a produkciós telepítés továbbra is `b5ead318-aa51-4cb9-a6ce-37cd8d598d27`. A sarkadisandor.hu, a Worker és a DNS nem változott.
