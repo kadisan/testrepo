@@ -168,4 +168,6 @@ A szerző a két mozdulatfotó hátterének egységesítését kérte. A széles
 
 Csak a Tai Chi-oldal használja az új képet. A főoldalon maradt az eredeti kerti fotó. A `#tanar` portrékerete követi a kép teljes arányát, hogy a kéz és a mezítlábas állás mobilon se vágódjon le.
 
-Ellenőrzés: `npm test` 20/20, build sikeres, a Tai Chi böngészőtesztek 4/4 sikeresek. Külön asztali és mobilos képméret- és megjelenésellenőrzés is készült. A frissítés a már ismert külön Cloudflare-előnézeti ágra kerül; a főágat, az élő domaint és a fogadási beállításokat nem módosítja.
+Ellenőrzés: `npm test` 20/20, build sikeres, a Tai Chi böngészőtesztek 4/4 sikeresek. Külön asztali és mobilos képméret- és megjelenésellenőrzés is készült. A `f1d703b` forráscommit frissítése felkerült a már ismert külön Cloudflare-előnézeti ágra. A webes címen 390 és 1440 px-en is betölt a két teljes alakos kép, nincs képkivágás, vízszintes kilógás vagy hibás erőforrás. A Cloudflare API igazolta az éles telepítés változatlanságát; a főág és a fogadási beállítások nem változtak.
+
+Frissített Tai Chi-előnézet: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/tai-chi/#tanar . Rögzített változat: https://f57bab33.eletutak-talalkozasa.pages.dev/tai-chi/ .
