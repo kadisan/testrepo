@@ -35,18 +35,18 @@ input[type=date] {min-width:0;max-width:100%;appearance:none}
 .form-status.error {margin-top:20px}
 
 /* A portré az erdei háttérbe fut; az eredeti arcképet nem alakítjuk át. */
-.hero-person {display:block;position:relative;isolation:isolate;overflow:hidden;min-height:630px;max-height:none;color:#183b2c;background:linear-gradient(90deg,rgba(225,239,218,.30),rgba(229,241,220,.83) 51%,rgba(233,243,224,.94) 80%),url('/images/eletutak/napfenyes-erdei-hatter.webp') center/cover}
-.hp-photo {position:absolute;inset:0 auto 0 0;width:54%;height:100%;margin:0;mask-image:linear-gradient(90deg,#000 28%,rgba(0,0,0,.9) 46%,transparent 91%);-webkit-mask-image:linear-gradient(90deg,#000 28%,rgba(0,0,0,.9) 46%,transparent 91%)}
+.hero-person {display:block;position:relative;isolation:isolate;overflow:hidden;min-height:630px;max-height:none;color:#f0f6ea;background:linear-gradient(90deg,rgba(8,31,22,.2),rgba(8,31,22,.78) 48%,rgba(8,31,22,.9) 85%),url('/images/lombkorona-hatter.webp') center/cover}
+.hp-photo {position:absolute;inset:0 auto 0 0;width:54%;height:100%;margin:0;mask-image:linear-gradient(90deg,#000 27%,rgba(0,0,0,.92) 33%,transparent 53%);-webkit-mask-image:linear-gradient(90deg,#000 27%,rgba(0,0,0,.92) 33%,transparent 53%)}
 .hp-photo img {width:100%;height:100%;object-fit:cover;object-position:left 22%;display:block}
 .hp-copy {position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;min-height:630px;max-height:none;margin-left:43%;padding:52px max(5vw,calc((100vw - 1280px)/2)) 54px 0}
-.hero-person .eyebrow {color:#36583f;margin-bottom:17px;font-size:.8rem}
-.hero-person h1 {font-family:Lora,serif;font-weight:500;font-size:clamp(2.2rem,4.5vw,3.25rem);line-height:1.12;letter-spacing:-.045em;margin:0 0 25px;white-space:normal;color:#183b2c}
+.hero-person .eyebrow {color:#d2e4c8;margin-bottom:17px;font-size:.8rem}
+.hero-person h1 {font-family:Lora,serif;font-weight:500;font-size:clamp(2.2rem,4.5vw,3.25rem);line-height:1.12;letter-spacing:-.045em;margin:0 0 25px;white-space:normal;color:#f0f6ea}
 .hero-person h1>span {display:block}
 .hp-last {color:inherit;white-space:normal}
 .hero-person .brush {color:#bb8421;bottom:-.2em}
-.hp-lead {font-size:1.1rem;line-height:1.55;max-width:28rem;margin:0 0 25px;color:#254c36}
+.hp-lead {font-size:1.1rem;line-height:1.55;max-width:28rem;margin:0 0 25px;color:#e3eedc}
 .hp-actions {display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.hero-person .hero-note {display:inline-flex;align-items:center;padding:7px 0;margin:0;min-height:48px;font-size:.9rem;color:#254c36}
+.hero-person .hero-note {display:inline-flex;align-items:center;padding:7px 0;margin:0;min-height:48px;font-size:.9rem;color:#e3eedc}
 .hero-person .button {gap:20px}
 
 /* A választás közvetlenül a nyitás után következik. */
@@ -83,7 +83,7 @@ input[type=date] {min-width:0;max-width:100%;appearance:none}
 .footer>div {flex-wrap:wrap}
 
 /* A Tai Chi-nyitásban már a döntéshez szükséges adatok is szerepelnek. */
-.hero.hero-taichi {min-height:0;max-height:none;height:auto;padding:60px max(6vw,calc((100vw - 1240px)/2)) 55px;text-align:left;justify-content:flex-start;align-items:flex-start;background:linear-gradient(90deg,rgba(14,45,29,.94),rgba(15,48,30,.75) 55%,rgba(15,48,30,.35)),url('/images/eletutak/napfenyes-erdei-hatter.webp') center/cover}
+.hero.hero-taichi {min-height:0;max-height:none;height:auto;padding:60px max(6vw,calc((100vw - 1240px)/2)) 55px;text-align:left;justify-content:flex-start;align-items:flex-start;background:linear-gradient(90deg,rgba(14,45,29,.94),rgba(15,48,30,.75) 55%,rgba(15,48,30,.35)),url('/images/lombkorona-hatter.webp') center/cover}
 .hero-taichi .hero-content {width:100%;padding:0;max-width:51rem}
 .hero-taichi .hero-shade,.hero-taichi .hero-bottom {display:none}
 .hero-taichi .eyebrow {font-size:.85rem;margin-bottom:20px;letter-spacing:.12em}
@@ -160,9 +160,9 @@ input[type=date] {min-width:0;max-width:100%;appearance:none}
   .menu-toggle {font-size:18px;padding:9px 11px;gap:10px}
   .section {padding:46px 20px}
   .section .eyebrow {font-size:.8rem}
-  .hero-person {background:linear-gradient(180deg,rgba(225,239,218,.16),rgba(225,239,218,.95) 48%,rgba(231,241,224,.98)),url('/images/eletutak/napfenyes-erdei-hatter.webp') 70% top/auto 540px no-repeat #e7f1e0}
+  .hero-person {background:linear-gradient(180deg,rgba(8,31,22,.18),rgba(8,31,22,.88) 42%,rgba(10,34,24,.97)),url('/images/lombkorona-hatter.webp') center top/cover #0a2218}
   .hp-photo {position:relative;inset:auto;width:100%;height:220px;mask-image:linear-gradient(180deg,#000 82%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
-  .hp-photo img {position:absolute;left:20px;top:-10px;width:300px;height:auto;max-width:none;object-fit:initial;mask-image:linear-gradient(90deg,#000 32%,transparent 90%);-webkit-mask-image:linear-gradient(90deg,#000 32%,transparent 90%)}
+  .hp-photo img {position:absolute;left:20px;top:-10px;width:300px;height:auto;max-width:none;object-fit:initial;mask-image:linear-gradient(90deg,#000 29%,transparent 61%);-webkit-mask-image:linear-gradient(90deg,#000 29%,transparent 61%)}
   .hp-copy {margin:0;min-height:0;padding:4px 20px 34px;max-height:none}
   .hero-person h1 {font-size:1.8rem;line-height:1.13;letter-spacing:-.035em;margin-bottom:19px}
   .hero-person h1>span:last-child {display:block}

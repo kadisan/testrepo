@@ -66,3 +66,5 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI KÉRÉS | Térjen vissza a zöldes tónus; a portré aránya változzon, a kép erdei háttérbe folytatódjon. Mobilon a nyitókép legyen alacsonyabb, az első gomb ne vágódjon le. |
 | SZERZŐI KÉRÉS | A Rólam rész mutassa meg Sándor saját Tai Chi-szemléletét; a jelentkezés legyen ésszerű és az órához kapcsolódó. |
 | SZERZŐI ELFOGADÁS | Az Életutak nagyobb betűmérete legyen a főoldal és a Tai Chi-oldal olvashatósági alapja is. |
+
+| SZERZŐI KÉPREFERENCIA | A szerző újracsatolta a „Lépj be a fák közé” borítót: a kívánt háttér ennek sötétzöld, felülnézeti lombkoronaképe. Ez felváltja az ideiglenesen használt napsütötte erdőt a főoldal és a Tai Chi új nyitásában. |

@@ -126,7 +126,7 @@ Kiinduló ág: `site/claude-fooldal`, commit: `3312e9a`. Saját munkaág: `site/
 
 - Referenciák: Dominique Ara a szerző által küldött elemzésből; Annie P. Woods nyilvános oldala asztali és mobilos böngészőnézetben. Következetes természeti motívum, konkrét meghívás, rövid út a választásig. Nem veszünk át üzleti célcsoportot, ajánlatot vagy ügyfélvéleményt.
 - Főoldali sorrend: portrés nyitás konkrét tevékenységekkel → négy kapu → rövid ráismerés → Rólam (saját Tai Chi-szövegből) → szerzői mottó → további háttér, könyvek, kapcsolat.
-- A zöld hátteret a repóban már szereplő `napfenyes-erdei-hatter.webp` adja. A jelenlegi természetes fényű portré változatlan kép; a méretezés és az áttűnés CSS-ben történik. A korábban csatolt külön ködös, zöld erdő eredeti fájlja a hozzáférhető képállományban nem volt azonosítható; annak újracsatolása után cserélhető a háttér.
+- A szerző közben újracsatolta a pontos háttérreferenciát: a „Lépj be a fák közé” borító sötétzöld lombkoronája. A `public/images/lombkorona-hatter.webp` ennek képalkotó eszközzel feliratmentesített változata; az eredeti borító a `main/kepek/mi vagyok.png`. A természetes fényű portré képfájlja változatlan; a méretezés és a lombkoronába futó áttűnés CSS-ben történik. A napsütötte átmeneti háttér már nincs az új nyitásokon.
 - Közös, olvasható alap: `src/site-refinement.css`, 20 px törzsszöveg, 18 px segédszöveg; a díszítő címkék és a márkajelzés ettől eltérhetnek.
 - Tai Chi: a nyitásban idő, hely, hozzájárulás; korábban látható próbaóra; hangsúlyos saját bemutatkozás. A nem megerősített egyéni óradíj helyett egyeztetés szerepel. A 28 napos kihívás a talonban marad, a nyitott kiküldést nem ígéri az oldal.
 - Célzott jelzés: választott szerda, név, e-mail, telefon, hozzájárulás; kérdés opcionálisan. Gyaloglási kérdés és hívási idősáv nincs a saját Tai Chi-felületen. A Google fogadó űrlap kötelező elérhetőségi mezői miatt az e-mail és a telefon megmaradt. A kiválasztott óra és az egyeztetési cél automatikusan kerül a meglévő Google-űrlap megfelelő mezőibe.
@@ -144,3 +144,9 @@ Ellenőrzés: az alább rögzített végső ellenőrzési eredmény az aktuális
 - A teljes ellenőrzési körben a meglévő 33 Életutak-, marketing- és olvashatósági próba sikeres volt. A főoldali nagyítás során talált hosszú szavas és láblécbeli kilógásokat javítottuk; az érintett 19 próbát ezután külön újrafuttattuk. Egy korábbi betűbetöltési időtúllépés a végső futásban nem ismétlődött.
 - A külső Google-kéréseket a tesztek elfogták; valódi jelentkezést nem küldtünk. Éles telepítés nem történt.
 - Vizuális előnézet és képek külön helyi műtermékként készültek; nem részei a nyilvános forráscommitnak.
+
+### A pontos háttérreferencia beérkezése
+
+A szerző a munka közben újracsatolta a sötétzöld lombkoronás borítót. A háttérből a fehér feliratokat és a betűbe épített rajzot képszerkesztő modell távolította el. Az új webes kép 1670×941 px, WebP; a portré arca nem változott. Mindkét új nyitás ezt a lombkoronát használja, világos szöveggel és sötétzöld kontrasztréteggel.
+
+Ellenőrzés a háttércsere után: sikeres build és **19/19 sikeres érintett böngészőteszt** (a végső futás 2026-11-12 19:23 UTC-kor zárult). A friss asztali és mobilos képeken nincs hiányzó kép vagy vízszintes kilógás. A külön HTML-előnézet képei is ezt a változatot mutatják. Az élő oldal és a főág változatlan.
