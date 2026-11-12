@@ -59,6 +59,8 @@ input[type=date] {min-width:0;max-width:100%;appearance:none}
 .door .door-link {margin-top:auto;gap:12px;font-size:.9rem}
 .door-number {font-size:.75rem}
 .about .portrait {height:540px}
+.about#tanar .portrait {height:auto}
+.about#tanar .portrait img {height:auto;object-fit:contain}
 .about .about-lead {font-size:1.15rem;line-height:1.6}
 .about>div>p {max-width:36rem}
 .connect {padding-block:52px}

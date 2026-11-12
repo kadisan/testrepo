@@ -68,3 +68,9 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI ELFOGADÁS | Az Életutak nagyobb betűmérete legyen a főoldal és a Tai Chi-oldal olvashatósági alapja is. |
 
 | SZERZŐI KÉPREFERENCIA | A szerző újracsatolta a „Lépj be a fák közé” borítót: a kívánt háttér ennek sötétzöld, felülnézeti lombkoronaképe. Ez felváltja az ideiglenesen használt napsütötte erdőt a főoldal és a Tai Chi új nyitásában. |
+
+## 2026. november 12. — Egységes kert a Tai Chi-fotókon
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | A Tai Chi-oldal két mozdulatfotóján egységes, egyszerű, letisztult kert jelenjen meg, mezítlábas gyakorlásra alkalmas gyeppel. A két különböző mozdulat és az azonos ruházat maradjon meg. |

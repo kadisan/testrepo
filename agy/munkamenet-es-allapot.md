@@ -161,3 +161,11 @@ A szerző külön webes előnézetet kért. A `f57b2d9` forráscommit tesztelt b
 - A feltöltött csomagban a fogadás és a Meta Pixel kikapcsolva maradt. Külön `robots.txt` és `X-Robots-Tag` tiltja az előnézet keresőindexelését; ezek csak az előnézeti csomag kiegészítései.
 - Valódi böngészős ellenőrzés a webes címen: 1440 és 390 px, nincs vízszintes kilógás, hiányzó kép, JavaScript-hiba vagy hibás erőforrás. A főgomb teljesen látszik, a főoldal → Tai Chi navigáció működik; a próbaűrlap nem küld adatot.
 - A Cloudflare API igazolta, hogy a produkciós telepítés továbbra is `b5ead318-aa51-4cb9-a6ce-37cd8d598d27`. A sarkadisandor.hu, a Worker és a DNS nem változott.
+
+### 2026-11-12 — A Tai Chi-fotók közös kerti háttere
+
+A szerző a két mozdulatfotó hátterének egységesítését kérte. A széles állást mutató kép egyszerű, füves kertje lett a referencia. Ehhez készült az egylábas mozdulat háttércseréje képszerkesztő modellel: `public/images/taichi/sarkadi-sandor-tai-chi-kert-egyseges.webp`. A modell a két saját forrásfotót kapta, a mozdulat, az arc és a ruházat megőrzésére szóló utasítással. Az eredeti képfájlok megmaradtak; a széles állás képét nem kellett újragenerálni.
+
+Csak a Tai Chi-oldal használja az új képet. A főoldalon maradt az eredeti kerti fotó. A `#tanar` portrékerete követi a kép teljes arányát, hogy a kéz és a mezítlábas állás mobilon se vágódjon le.
+
+Ellenőrzés: `npm test` 20/20, build sikeres, a Tai Chi böngészőtesztek 4/4 sikeresek. Külön asztali és mobilos képméret- és megjelenésellenőrzés is készült. A frissítés a már ismert külön Cloudflare-előnézeti ágra kerül; a főágat, az élő domaint és a fogadási beállításokat nem módosítja.
