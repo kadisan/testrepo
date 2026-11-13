@@ -2,6 +2,9 @@
 window.SARKADI_CONFIG = {
   metaPixelEnabled: false, // A mérés csak a látogató engedélyével indul; éles profilban bekapcsolva.
   metaPixelId: '419467115532734',
+  // Az API elérhetőségét külön ellenőrizzük; fogadó nélkül nincs beküldés.
+  callbackEnabled: true,
+  callbackEndpoint: '/eletutak-talalkozasa/api/callback',
   formEnabled: false, // Csak a fogadás és a végleges tájékoztató ellenőrzése után.
   formAction: 'https://docs.google.com/forms/d/e/1FAIpQLSedMILa7IZE3Jx86ikaW4asKFDW2-Z-haClJwkU46LLfIJ-ww/formResponse',
   entries: {

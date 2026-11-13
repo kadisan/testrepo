@@ -230,3 +230,18 @@ A szerző Claude Designnal dolgozik a főoldal ritmusán. Brief: `agy/weboldal/c
 A szerző a Claude Design három ritmusiránya közül a B · Csendes könyv irányt választotta. A szerző kérésére ez külön ágra került: `site/csendes-konyv` (referencia-HTML, a kerti Tai Chi-kép fekvő kivágása, README a beépítendő eltérésekkel). Ezen az ágon kód nem változott. Átadás: `agy/atadas/claude-2026-11-13-csendes-konyv.md`.
 
 Következő lépés: a B ritmusának beépítése az `index.html`/`src/` szerkezetbe a `site/csendes-konyv` ágon; ÁSZF-oldal a befizetési és lemondási tervezetből, jogi ellenőrzés után.
+
+
+## 2026-11-13 — Életutak: új érdeklődők, külön landingág
+
+A szerző kifejezett kérésére külön ág: `codex/eletutak-landing-2026-11-13`, kiinduló commit `fcdc6c5` a `site/chatgpt-figyelemvezetes` ágról. A főoldali és Tai Chi-forrásokat nem szerkesztettük. A magyar landing új, elkülönített `conversion-*` modulokat kapott; a régi EN/DE/IT változatok megmaradtak. Az új magyar oldal nem kínál nyelvváltást az eltérő, történeti árú fordításokra.
+
+Elkészült: világos önismereti ajánlat új érdeklődőknek, napsütötte erdei kép és meglévő fotók, átrendezett döntési sorrend, kiemelt egyhétvégés ajánlat, új 60/100/160/200 ezer Ft-os árak, egyszerű visszahívó űrlap, dátum-/csomagválasztás megőrzése, telefonos és e-mailes kapcsolat, mobilos elérhető CTA, visszafogott animáció és csökkentett mozgás támogatása. A pontos résztvevői idézet hiányában nincs kitalált vélemény.
+
+A régi Google Űrlap kötelező e-mailt kér; ezért az új magyar minimális űrlaphoz saját API és Google Apps Script fogadó készült, elkülönített privát táblázattal és tulajdonosi e-mail-értesítéssel. Az API csak a tartós rögzítés igazolása után ad sikert, azonos kérés ismétlése nem hoz létre új sort. A saját domain Worker külön kezeli az API-útvonalat, a domain többi útvonala továbbra is az eredeti tárhelyre jut. Marketingengedéllyel igazolt beküldésből Lead esemény képezhető; személyes mezők nem kerülnek a Metához.
+
+**Még nincs élesítve:** a Google Apps Script tulajdonosi telepítése, a `CALLBACK_WEBHOOK_URL` és `CALLBACK_SECRET` Cloudflare-beállítása és az új oldal/API éles telepítése. A környezethez nem tartozik Apps Script-telepítési vagy Cloudflare-fiókhozzáférés. Fogadó nélkül a felület nem állít sikert; közvetlen telefon és e-mail áll rendelkezésre. A beállítás pontos lépései: `integrations/callback/README.md`. Valódi érdeklődőt vagy értesítő levelet a fejlesztés nem küldött.
+
+Ellenőrzés: `npm test` **37/37 sikeres**; Vite build sikeres; statikus landingcsomagolás és erőforrás-ellenőrzés sikeres. A Playwright-tesztek listázása/szintaktikai betöltése sikeres, 67 tesztet azonosít. Az új magyar megjelenési, visszahívási, hibakezelési, újrapróbálási és hozzájárulásos Lead-tesztek elkészültek. **Böngészős futtatás és vizuális képernyőképes ellenőrzés nem történt:** a kezelt környezetben nem áll rendelkezésre a Sites-útmutató által előírt `cua_repl` böngészőeszköz; az útmutató ilyen esetben nem enged előnézeti szervert vagy kerülő böngészővezérlést indítani.
+
+Következő lépés: böngészős ellenőrzés elérhető környezetben, a tulajdonosi fogadó bekötése, majd külön ellenőrzött élesítés. A külön ág feltöltése önmagában nem éles telepítés.

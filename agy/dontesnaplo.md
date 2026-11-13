@@ -114,3 +114,22 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | Állapot | Döntés / megjegyzés |
 | --- | --- |
 | SZERZŐI DÖNTÉS | A Claude Design három főoldali ritmusiránya közül a **B · Csendes könyv** megy tovább, a szerző kérésére külön ágon: `site/csendes-konyv`. Részletek: `agy/atadas/claude-2026-11-13-csendes-konyv.md`. |
+
+
+## 2026. november 13. — Életutak: új érdeklődőknek szóló landing, külön ág
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | A meglévő Életutak-oldal hatékony, esztétikus, érdeklődőszerzésre alkalmas átalakítása szabad tervezői kézzel; a szerző külön új ágat kért. Ez erre a munkára felülírja a közös ágra dolgozás korábbi döntését. Munkaág: `codex/eletutak-landing-2026-11-13`. |
+| SZERZŐI PONTOSÍTÁS | Elsődleges közönség: újak, akik még nem jártak Sándorral; változásban vannak és még nem látják a következő lépést. A cél visszahíváskérés; a részvételről a beszélgetés után döntenek. |
+| SZERZŐI MEGNEVEZÉS | „Önismereti hétvége a természetben” és „Vezetett elcsendesedés gyaloglással, Tai Chival és erdei jelenléttel.” Mindkettő része az ajánlatnak. |
+| SZERZŐI PONTOSÍTÁS | A telefonban közösen tisztázzák, mivel érkezik a résztvevő. Aki igényli, annak külön négyszemközti beszélgetési idő jut a hétvégén. Kész válasz nem ígéret; saját időt, a fontos dolgokra való ránézés és egy lehetséges következő lépés megfogalmazásának lehetőségét adja. |
+| SZERZŐI PONTOSÍTÁS | Nincs külön vallásos programelem; a keresztény gyökér a személyes háttérhez tartozik. |
+| SZERZŐI PONTOSÍTÁS | A gyalogtáv hétvégénként eltér; a konkrét távot előre megadja. A megadott 15–30 km-t nem állítjuk automatikusan napi vagy teljes hétvégi távnak. |
+| SZERZŐI VÁLLALÁS | Hétköznap 9–19 között érkező kérésre egy órán belül visszahív. Magyarországi idő. |
+| SZERZŐI PONTOSÍTÁS | Kötelező mezők: név, telefonszám, adatkezelési hozzájárulás. „Mi hozott most ide?” opcionális, telefonon is elmondható. E-mail nem kötelező. |
+| SZERZŐI ÁRAK | Egy hétvége 60 000 Ft/fő; kettő 100 000 Ft/fő; három 160 000 Ft/fő; Bónusz 200 000 Ft/fő. Felülírják a magyar ajánlat korábbi 50 000 / 95 000 / 139 000 / 180 000 Ft-os árait. |
+| SZERZŐI MEGERŐSÍTÉS | A hétvégi ár programot, két éjszaka szállást és három étkezést tartalmaz. Bónusz: mindhárom hétvége, egy egyéni kísérési nap, négy Tai Chi-alkalom és 30% kedvezmény a megnevezett tavaszi programdíjból. |
+| SZERZŐI MEGERŐSÍTÉS | Maradnak a 2027. január 8–10., február 12–14., március 5–7. időpontok, az Ősfenyves Vendégházak és a legfeljebb 12 fős csoport. |
+| SZERZŐI FORRÁS | Van engedéllyel közölhető korábbi zarándokúti résztvevői visszajelzés. A pontos idézet ebben a munkában nem érkezett meg; ezért nincs kitalált idézet az oldalon. |
+| TECHNIKAI MEGÁLLAPÍTÁS | A régi Google Űrlap e-mailt kér kötelezően. Az új minimális űrlaphoz külön, saját API → Google Apps Script → privát táblázat fogadás készült. A tulajdonosi bekötés és éles telepítés nem történt meg. |
