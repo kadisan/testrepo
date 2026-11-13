@@ -89,3 +89,12 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI IRÁNY | A tagolás túl monoton. Kreatívabb, dinamikusabb, a tekintetet tudatosan vezető weboldal szükséges. |
 | KÉSŐBBI TARTALMI IRÁNY | Videók is kerülnek az oldalra, várhatóan YouTube-videók vagy reels-ek. Konkrét videólinket a szerző még nem adott meg ehhez a bekötéshez. |
 | MOSTANI FELADAT | Külső webfejlesztő szemszögéből értékelés és konkrét javítási javaslatok. Az egyes elrendezési és animációs ötletek fejlesztői javaslatok, nem külön elfogadott szerzői döntések. |
+
+## 2026. november 13. — Kapuk és központi alapgondolat
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | A négy kapu meglévő vékony jelképe a kattintható felület közepén, halvány vízjelként jelenjen meg. Rámutatáskor négy eltérő mélyzöld árnyalat, fehér szöveg és a jelkép erősödő kontrasztja szükséges. Ez pontosítja a korábbi fotós kapukra tett ajánlást. |
+| SZERZŐI IRÁNY | A központi üzenetet és metaforát kell alapul venni a vizuálhoz. A szerző a fejlesztési és ritmusjavítási munka megkezdését kérte, Claude számára követhető állapottal. |
+| SZERZŐI PONTOSÍTÁS | A saját út és a saját/belső hang meghallása mellett a lényegi alap a testesítés: „Hagyd, hogy a tested tanítsa az elmédet, és az elméd megtanuljon figyelni a lelkedre.” A kísérés abban segít, hogy a résztvevő ezt észrevegye. |
+| TERVEZŐI LEVEZETÉS | A központi metafora munkamegnevezése: „a test mint tanító”. Részletes alap: `agy/kozos/kozponti-uzenet-es-metafora.md`; a megnevezés tervezői értelmezés, a mottó szerzői forrás. |

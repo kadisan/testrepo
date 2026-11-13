@@ -194,3 +194,19 @@ Friss, valódi böngészős vizsgálat a főoldalon és a Tai Chi-oldalon, aszta
 Javaslati sorrend: új vizuális ritmus → képes, azonos rangú négy kapu → rövidebb személyes rész → célzott mozgás, helyben nyíló képek és cserélhető videómodul. Ezek fejlesztői ajánlások; a mostani körben kizárólag a dokumentáció frissült. A felület, a meglévő előnézet és az éles telepítés nem módosult; ezért buildet vagy regressziós teszteket nem futtattunk újra.
 
 A saját domain friss, böngészős ellenőrzése: főoldal és `/tai-chi/` 404; `/eletutak-talalkozasa/` 200. A kritika a működő külön előnézet alapján készült. Helyi képernyőképek és mérések: `/workspace/artifacts/fejlesztoi-attekintes-2026-11-13/` (nem része a nyilvános commitnak).
+
+### 2026-11-13 — Központi mottó és működő, jelképes kapuk
+
+A szerző a fejlesztés megkezdését kérte. Közben pontosította a központi üzenetet: saját/belső hang, majd a testesítés és a saját mottó test–elme–lélek kapcsolata. A szerzői alap és a tervezői értelmezés külön rögzítve: `agy/kozos/kozponti-uzenet-es-metafora.md`. A tervezői munkamegnevezés „a test mint tanító”; a nyilvános nyitás a saját mottót használja.
+
+Elkészült első kör:
+
+- Mottó a nyitásban, külön sorban a Tai Chi, gyaloglás és erdei jelenlét; a korábbi külön mottósáv ismétlése megszűnt. A portré továbbra is átmeneti.
+- A négy kapu közepén a meglévő, vékony vonalas jelkép vízjelként. Rámutatáskor négy külön mélyzöld háttér, fehér felirat és erősebb jelkép; finom emelkedés. A szerző konkrétan ezt kérte a korábbi fotós kapujavaslat helyett.
+- Billentyűs kijelöléskor ugyanaz a kiemelés és jól látható fókusz. Telefonon egy érintés továbbvezet; a rámutatásra épülő állapot nem akadályozza a linket. A csökkentett mozgást kérő beállítás érvényesül.
+- Mobilon két oszlop, a legkeskenyebb nézetben egy. 390 px-en a kapurész 1456-ról 931 px-re rövidült; a teljes főoldal a mért nézetben 14773-ról 13900 px-re, a fő szakaszok száma 12-ről 11-re. A teljes ritmus-áttervezés még nincs lezárva.
+- A kapuk önálló stílusa `src/gates.css`; csak a főoldali `path-gates` elemeket érinti. Az ajánlati céloldalak, a Tai Chi-képek, a hatképes sor és a fogadás beállításai megmaradtak.
+
+Ellenőrzés: `npm test` 20/20; build sikeres; az érintett böngészős próbák 23/23 sikeresek. Az új négy próba a különböző színeket, a fehér szöveget, a középre igazított vízjelet, a vízjel fölötti legalább 4,5:1 kontrasztot, a billentyűs továbblépést, a mozgáscsökkentést és az egy érintéses megnyitást ellenőrzi. A korábbi próbákban 320/390/768/1440 px, látható első gomb, kétszeres szöveg és adatot nem küldő próbaűrlap is szerepel.
+
+Claude számára külön átadás készült: `agy/atadas/claude-2026-11-13-kapuk.md`. A további ritmusjavítás, helyben nyíló képnéző, videómodul és szerkeszthető tartalomforrás feladatai ott szerepelnek; működő videóbekötés még nincs. Helyi képernyőképek: `/workspace/artifacts/kapuk-2026-11-13/` (nem része a nyilvános forráscommitnak).

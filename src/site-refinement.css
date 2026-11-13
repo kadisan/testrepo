@@ -45,6 +45,7 @@ input[type=date] {min-width:0;max-width:100%;appearance:none}
 .hp-last {color:inherit;white-space:normal}
 .hero-person .brush {color:#bb8421;bottom:-.2em}
 .hp-lead {font-size:1.1rem;line-height:1.55;max-width:28rem;margin:0 0 25px;color:#e3eedc}
+.hp-practices {font-size:1rem;line-height:1.5;margin:0 0 26px;color:#e3eedc}
 .hp-actions {display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .hero-person .hero-note {display:inline-flex;align-items:center;padding:7px 0;margin:0;min-height:48px;font-size:.9rem;color:#e3eedc}
 .hero-person .button {gap:20px}

@@ -11,6 +11,7 @@ import '@fontsource/cormorant-garamond/latin-300.css';
 import '@fontsource/cormorant-garamond/latin-300-italic.css';
 import './style.css';
 import './site-refinement.css';
+import './gates.css';
 import {isConfigured, validPhone, validEmail, prefilledFormUrl} from './form.js';
 import {initTaiChiForm} from './taichi-form.js';
 const icons = {
