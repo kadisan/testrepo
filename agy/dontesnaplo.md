@@ -98,3 +98,13 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI IRÁNY | A központi üzenetet és metaforát kell alapul venni a vizuálhoz. A szerző a fejlesztési és ritmusjavítási munka megkezdését kérte, Claude számára követhető állapottal. |
 | SZERZŐI PONTOSÍTÁS | A saját út és a saját/belső hang meghallása mellett a lényegi alap a testesítés: „Hagyd, hogy a tested tanítsa az elmédet, és az elméd megtanuljon figyelni a lelkedre.” A kísérés abban segít, hogy a résztvevő ezt észrevegye. |
 | TERVEZŐI LEVEZETÉS | A központi metafora munkamegnevezése: „a test mint tanító”. Részletes alap: `agy/kozos/kozponti-uzenet-es-metafora.md`; a megnevezés tervezői értelmezés, a mottó szerzői forrás. |
+
+## 2026. november 13. — Egy közös ág, nyitás, kihívások
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI DÖNTÉS | ChatGPT és Claude egy közös ágon dolgozik, hogy közös legyen az értés: `site/chatgpt-figyelemvezetes`. A külön agent-ágak lezárva. |
+| SZERZŐI DÖNTÉS | A főoldali nyitás háttere a sötét lombkorona. A meglévő portrék egyike sem illik rá; új arcfotó készül. A portrécsere addig pihen. |
+| SZERZŐI DÖNTÉS | A feliratkozásért járó anyag mellé egy 14 és egy 28 napos gyakorlási kihívás készül, további feliratkozásért, adatokért, feladatokért járó ajándékként. A weboldalra egyelőre **nem** kerülnek vissza. |
+| SZERZŐI DÖNTÉS | A saját domain (főoldal, `/tai-chi/`) még nincs élesítve; a 404-gyel most nem foglalkozunk. |
+| NYITOTT | Mely szerdákon nincs Tai Chi-óra. Törvényes ünnep 2027 végéig nem esik szerdára; a Kesztyűgyár saját zárva tartása (különösen 2026. december 23. és 30.) még egyeztetendő. Részletek: `agy/atadas/chatgpt-2026-11-13-kerdesek.md`. |

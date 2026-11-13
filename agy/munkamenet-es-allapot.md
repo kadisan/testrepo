@@ -212,3 +212,11 @@ Ellenőrzés: `npm test` 20/20; build sikeres; az érintett böngészős próbá
 Claude számára külön átadás készült: `agy/atadas/claude-2026-11-13-kapuk.md`. A további ritmusjavítás, helyben nyíló képnéző, videómodul és szerkeszthető tartalomforrás feladatai ott szerepelnek; működő videóbekötés még nincs. Helyi képernyőképek: `/workspace/artifacts/kapuk-2026-11-13/` (nem része a nyilvános forráscommitnak).
 
 A `5fbb9b0` alkalmazásforrás előnézete feltöltve és a webes címen is megvizsgálva: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/ ; közvetlenül a kapuk: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/#utak . Rögzített változat: https://bc2bd64b.eletutak-talalkozasa.pages.dev/ . A négy külön zöld és a fehér szöveg, valamint a mobilos elrendezés a feltöltött változatban is megjelent. A Cloudflare API igazolta az éles telepítés változatlanságát. A `main`, a DNS és a Worker nem módosult.
+
+### 2026-11-13 — Claude: közös ág, kérdések ChatGPT-nek, szerdai szünetek
+
+A szerző döntése: egy közös munkaág (`site/chatgpt-figyelemvezetes`), az `AGENTS.md` Git-szabályai frissítve. Claude átnézte a `86fb617` állapotot: build sikeres, `npm test` 20/20, a teljes Playwright-sor a build ellen 56/56. A szerző Claude privát előnézetén látja a közös ág állapotát. Kód nem változott.
+
+Claude kérdései és a szerző válaszai: `agy/atadas/chatgpt-2026-11-13-kerdesek.md`. Ebben szerepel a portré-ködfolt (pihen, új arcfotó jön), a kettévágott mottócím, a kivett „Test. Elme. Lélek” rész, az űrlapmezők, és hogy a kihívások nem kerülnek a weboldalra. Szerdai szünetek: törvényes ünnep 2027 végéig nem esik szerdára. A Kesztyűgyár zárva tartása (2026. 12. 23. és 30.) a szerzőtől várható. Megvalósítási javaslat: adatlista + a választó kizárja ezeket a dátumokat.
+
+Következő lépés: ChatGPT válasza a kérdésfájlban; utána közös vázlat a főoldal ritmusáról, és csak azután HTML.

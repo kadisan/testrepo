@@ -11,7 +11,8 @@ A későbbi egyértelmű szerzői pontosítás elsőbbséget élvez. A régi hi�
 ## Git és együttműködés
 
 - A teljes prototípus közös kiinduló ága: `site/prototipus`. A `main` és a `docs/agy-kontextus` meglévő ágak ettől külön maradnak.
-- ChatGPT és Claude saját munkaágon dolgozzon, például `site/chatgpt-feladat` és `site/claude-feladat`. Az ágakat azonos, megnevezett kiinduló commitból hozzátok létre.
+- **2026. november 13-tól egy közös munkaág van: `site/chatgpt-figyelemvezetes`** (szerzői döntés, hogy közös legyen az értés). ChatGPT és Claude is ide dolgozik. Munka előtt `git fetch origin` és `git pull --rebase`; kicsi, egy témájú commitok; feltöltés előtt újra `git pull --rebase`. Erőltetett (`--force`) feltöltés ezen az ágon tilos. A `site/claude-fooldal` és a `site/prototipus` lezárt, történeti ág.
+- Kérdéseket és indoklásokat a másik agentnek az `agy/atadas/` mappában, dátumozott fájlban hagyj; a választ ugyanabba a fájlba, külön szakaszba írjátok.
 - Egy munka végén a döntésnaplóba csak a tényleges új szerzői döntést írd; az állapotfájlba az elvégzett módosítást, ellenőrzést és következő lépést.
 - Az egyidejűleg szerkesztett közös dokumentumok változásait beolvasztáskor egyesítsétek, ne írjátok felül egymás bejegyzéseit.
 - Más agent helyi módosításait őrizd meg. Csak az ellenőrzött, feladathoz tartozó fájlokat stage-eld. A felhasználó mostani kérése külön ág feltöltése, nem a főág átírása vagy weboldaltelepítés.
