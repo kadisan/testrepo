@@ -184,3 +184,13 @@ A szerző új ZIP-et küldött (`tai_chi_6_valogatott_kep.zip`): hat gyakorlási
 Ellenőrzés: `npm test` 20/20; build sikeres; az érintett meglévő böngészőtesztek 13/13 sikeresek. Külön galériaellenőrzés 320/390/768/1440 px-en: hat betöltött fotó, nincs teljes oldalas vízszintes kilógás, mobilon a hatodik fotó billentyűzettel is elérhető, a teljes kép új lapon megnyílik, kétszeres szövegnagyításnál is helyben marad a tartalom. Valódi jelentkezés nem ment ki.
 
 A `161db64` forráscommit webes előnézete elkészült, ugyanezekkel a galériaellenőrzésekkel a nyilvános címen is: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/tai-chi/#mozdulatsor . Rögzített változat: https://75a5627b.eletutak-talalkozasa.pages.dev/tai-chi/ . A Cloudflare API igazolta, hogy a produkciós telepítés az előnézeti feltöltés alatt változatlan maradt. A DNS, a Worker és a főág nem módosult.
+
+### 2026-11-13 — Fejlesztői kritika, dinamikusabb vizuális irány
+
+A szerző változatosabb tagolást és dinamikusabb weboldalt kér, a tekintet tudatos vezetésével. Rögzítve a döntésnaplóban: a nyitóportré átmeneti; később YouTube-videók vagy reels-ek érkezhetnek. Konkrét videólink még nincs.
+
+Friss, valódi böngészős vizsgálat a főoldalon és a Tai Chi-oldalon, asztalon és mobilon. Eredmény és megvalósítási javaslat: `agy/weboldal/fejlesztoi-velemeny-2026-11-13.md`. A főoldal 12, a Tai Chi 13 fő szakasz; 390×844 px-en körülbelül 17,5 és 19,4 képernyőnyi tartalom. A felület fő problémája az ismétlődő elrendezés és a hasonló vizuális súly, különösen a bemutatkozásnál és könyveknél.
+
+Javaslati sorrend: új vizuális ritmus → képes, azonos rangú négy kapu → rövidebb személyes rész → célzott mozgás, helyben nyíló képek és cserélhető videómodul. Ezek fejlesztői ajánlások; a mostani körben kizárólag a dokumentáció frissült. A felület, a meglévő előnézet és az éles telepítés nem módosult; ezért buildet vagy regressziós teszteket nem futtattunk újra.
+
+A saját domain friss, böngészős ellenőrzése: főoldal és `/tai-chi/` 404; `/eletutak-talalkozasa/` 200. A kritika a működő külön előnézet alapján készült. Helyi képernyőképek és mérések: `/workspace/artifacts/fejlesztoi-attekintes-2026-11-13/` (nem része a nyilvános commitnak).

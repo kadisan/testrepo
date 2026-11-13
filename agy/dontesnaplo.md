@@ -80,3 +80,12 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | Állapot | Döntés / megjegyzés |
 | --- | --- |
 | SZERZŐI DÖNTÉS | A `tai_chi_6_valogatott_kep.zip` hat fotója külön mozdulatsorként kerüljön a Tai Chi-oldalra, a két meglévő kerti kép mellett. |
+
+## 2026. november 13. — Élőbb megjelenés, átmeneti portré
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI PONTOSÍTÁS | A jelenlegi főoldali nyitóportré átmeneti; a szerző nem tekinti megfelelő végleges portrénak. Cseréjét nyitott feladatként kell kezelni. |
+| SZERZŐI IRÁNY | A tagolás túl monoton. Kreatívabb, dinamikusabb, a tekintetet tudatosan vezető weboldal szükséges. |
+| KÉSŐBBI TARTALMI IRÁNY | Videók is kerülnek az oldalra, várhatóan YouTube-videók vagy reels-ek. Konkrét videólinket a szerző még nem adott meg ehhez a bekötéshez. |
+| MOSTANI FELADAT | Külső webfejlesztő szemszögéből értékelés és konkrét javítási javaslatok. Az egyes elrendezési és animációs ötletek fejlesztői javaslatok, nem külön elfogadott szerzői döntések. |
