@@ -30,3 +30,7 @@ A teljes szöveg a szerző Google Drive-ján van (ITC › Könyvírás), mert a 
 
 ## Feliratkozási ajándék — beállítandó
 A Tai Chi-oldal „Feliratkozom" gombja a Substackra visz (belsout.substack.com/subscribe). A Substack üdvözlő levelébe (Settings → Emails → Welcome email) kell beírni a PDF linkjét: https://sarkadisandor.hu/letoltes/ot-perc-reggel-a-nyitas.pdf (élesítés után él). A 28 napos kihívás kiküldése „hosszabb idő" után: kézi vagy ütemezett levél — a szabály (pl. 4 hét feliratkozás után) a szerző döntése.
+
+## 2026-11-13 — 14 és 28 napos kihívás (ajándéklépcső)
+
+A szerző döntése: feliratkozásért az „Öt perc reggel” PDF jár; egy újabb lépésért (adatok, kérdőív, feladat) a 14 napos kihívás; a hosszabb ideje gyakorlóknak a 28 napos integrál kihívás. Mindkettő munkaváltozat a szerző Drive-ján (Könyvírás mappa), szerzői átnézésre vár. A 14 napos változatban nincs légzésvisszatartás, kapálabhátí és fordított testhelyzet; a 28 napos biztonsági jelzéseket kapott. **A weboldalra egyelőre nem kerülnek.**
