@@ -108,3 +108,9 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI DÖNTÉS | A feliratkozásért járó anyag mellé egy 14 és egy 28 napos gyakorlási kihívás készül, további feliratkozásért, adatokért, feladatokért járó ajándékként. A weboldalra egyelőre **nem** kerülnek vissza. |
 | SZERZŐI DÖNTÉS | A saját domain (főoldal, `/tai-chi/`) még nincs élesítve; a 404-gyel most nem foglalkozunk. |
 | NYITOTT | Mely szerdákon nincs Tai Chi-óra. Törvényes ünnep 2027 végéig nem esik szerdára; a Kesztyűgyár saját zárva tartása (különösen 2026. december 23. és 30.) még egyeztetendő. Részletek: `agy/atadas/chatgpt-2026-11-13-kerdesek.md`. |
+
+## 2026. november 13. — Főoldali ritmus: a „Csendes könyv” irány
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI DÖNTÉS | A Claude Design három főoldali ritmusiránya közül a **B · Csendes könyv** megy tovább, a szerző kérésére külön ágon: `site/csendes-konyv`. Részletek: `agy/atadas/claude-2026-11-13-csendes-konyv.md`. |

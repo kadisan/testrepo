@@ -224,3 +224,9 @@ Következő lépés: ChatGPT válasza a kérdésfájlban; utána közös vázlat
 ### 2026-11-13 — Claude: brief a Claude Design számára
 
 A szerző Claude Designnal dolgozik a főoldal ritmusán. Brief: `agy/weboldal/claude-design-brief.md`. Benne van a „Tengely és tempó” kérdéseire adott válasz is: a fő lépés a szerdai jelzés, a Tai Chi saját aloldal, nem a főoldal elé kerülő landing. Mellé két önálló, szkript nélküli HTML-pillanatkép készült a főoldalról és a Tai Chi-oldalról; ezek nem részei a repónak. Kód nem változott.
+
+### 2026-11-13 — Claude: a főoldal a „Csendes könyv” irányban, külön ágon
+
+A szerző a Claude Design három ritmusiránya közül a B · Csendes könyv irányt választotta. A szerző kérésére ez külön ágra került: `site/csendes-konyv` (referencia-HTML, a kerti Tai Chi-kép fekvő kivágása, README a beépítendő eltérésekkel). Ezen az ágon kód nem változott. Átadás: `agy/atadas/claude-2026-11-13-csendes-konyv.md`.
+
+Következő lépés: a B ritmusának beépítése az `index.html`/`src/` szerkezetbe a `site/csendes-konyv` ágon; ÁSZF-oldal a befizetési és lemondási tervezetből, jogi ellenőrzés után.
