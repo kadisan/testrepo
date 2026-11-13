@@ -62,7 +62,7 @@ test('only name, phone and consent are required; a reason and email are not need
 test('package and date choices are carried to the request and can be cleared',async({page})=>{
  const submissions=await callbackApi(page);await page.goto(path);
  await page.locator('[data-et-package=plus]').click();await expect(page.locator('.et-selection')).toBeVisible();
- await expect(page.locator('#et-selection-text')).toContainText('Bónusz');
+ await expect(page.locator('#et-selection-text')).toContainText('Télből tavaszba');
  await page.locator('[data-et-weekend="1"]').click();await expect(page.locator('#et-selection-text')).toContainText('február 12–14.');
  await page.locator('#et-clear-selection').click();await expect(page.locator('.et-selection')).toBeHidden();
  await page.locator('[data-et-package=plus]').click();await fillCallback(page,{reason:'A márciusi hétvége érdekel.'});

@@ -259,3 +259,8 @@ A privát, közvetlenül megnyitható előnézet külön Sites-projektben él: `
 ### 2026-11-13 — Erdőzöld személyes logó a fejlécben és láblécben
 
 A kiválasztott 2. logó finoman lekerekített, átlátszó sarkú változata `public/images/eletutak/sarkadi-sandor-logo.webp` alatt került be. A webes kódolás veszteségmentes; a teljes logó mobilon is arányosan skálázódik, és szöveges alternatívával rendelkezik. A logó az oldal tetejére navigál.
+
+
+### 2026-11-13 — Csomagnév és alcím javítása
+
+A 200 000 Ft-os `plus` csomag megjelenő neve „Télből tavaszba”; alcíme „A teljes téli sorozat személyes folytatással.”. A kártya, a kiválasztási összefoglaló és a Google-fogadó értesítőjének megnevezése összhangban frissült. A kézírásos névhez a szerző saját mintája még szükséges; a logókép most nem változott.

@@ -11,9 +11,9 @@ A szerző szabad kezet adott az új érdeklődőknek szóló landing átalakít�
 - Elsődleges közönség: új érdeklődő, aki változásban van, és még nem látja a következő lépést.
 - Elsődleges cél: visszahíváskérés, utána személyes döntés a részvételről.
 - 2027. január 8–10., február 12–14., március 5–7.; legfeljebb 12 fő; Ősfenyves Vendégházak.
-- Egy hétvége 60 000 Ft/fő, kettő 100 000 Ft/fő, három 160 000 Ft/fő, Bónusz 200 000 Ft/fő.
+- Egy hétvége 60 000 Ft/fő, kettő 100 000 Ft/fő, három 160 000 Ft/fő, Télből tavaszba 200 000 Ft/fő.
 - Egy hétvége tartalma: program, két éjszaka szállás és három étkezés.
-- Bónusz: mindhárom hétvége, egy egyéni kísérési nap, négy Tai Chi-alkalom és 30% kedvezmény a megnevezett tavaszi út programdíjából.
+- Télből tavaszba: mindhárom hétvége, egy egyéni kísérési nap, négy Tai Chi-alkalom és 30% kedvezmény a megnevezett tavaszi út programdíjából.
 - Négyszemközti beszélgetésre az igénylőknek külön idő jut. Nincs külön vallásos programelem; a keresztény háttér személyes bemutatkozási adat.
 - A gyalogtáv hétvégénként eltér, a konkrét távot és terepet Sándor előre megadja. A 15–30 km értelmezését nem találtuk ki napi vagy teljes hétvégi távként.
 - Hétköznap 9–19 között érkező kérésre a szerző egy órán belüli visszahívást vállalt.

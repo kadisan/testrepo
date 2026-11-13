@@ -143,3 +143,8 @@ A szerző az első új előnézetet gyengének és túl merevnek ítélte; a ré
 ## 2026. november 13. — Kiválasztott személyes logó
 
 A szerző a négy zöld hátterű változat közül a 2., erdőzöld színátmenetes, világos feliratú S/út-jelet választotta. Finoman lekerekített sarkokat kért, majd kifejezetten kérte az oldalra helyezését. A magyar landing fejlécében és láblécében ez váltja fel a korábbi ágacskás névjegyet.
+
+
+## 2026. november 13. — Télből tavaszba; kézírásos logónév
+
+A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba” nevet adta meg, „A teljes téli sorozat személyes folytatással.” alcímmel. Az ár és a tartalom változtatását nem kérte. A logón a nevét kézírással kéri; saját írásmintát ajánlott fel. A kézírásos logómódosítás az írásminta beérkezéséig nyitott.

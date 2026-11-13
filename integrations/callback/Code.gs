@@ -158,7 +158,7 @@ function sameCallbackSecret_(actual, expected) {
 }
 
 function callbackPackage_(value) {
-  return { one: 'Egy hétvége', two: 'Két hétvége', series: 'Három hétvége', plus: 'Bónusz' }[value] || 'Telefonon egyeztetjük';
+  return { one: 'Egy hétvége', two: 'Két hétvége', series: 'Három hétvége', plus: 'Télből tavaszba' }[value] || 'Telefonon egyeztetjük';
 }
 
 function callbackWeekends_(values) {

@@ -17,7 +17,7 @@ export const conversionOffer = {
     {id: 'one', name: 'Egy hétvége', price: 60000, label: 'Egy szabadon választott alkalom', note: 'Első találkozásnak is', features: ['Vezetett hétvégi program', 'Két éjszaka szállás', 'Három étkezés', 'Tai Chi és erdei jelenlét', 'Igény szerint négyszemközti beszélgetés']},
     {id: 'two', name: 'Két hétvége', price: 100000, label: 'Két szabadon választott alkalom', note: '20 000 Ft kedvezmény', features: ['Két teljes hétvége', 'Összesen négy éjszaka és hat étkezés']},
     {id: 'series', name: 'Három hétvége', price: 160000, label: 'A teljes téli sorozat', note: '20 000 Ft kedvezmény', features: ['Mindhárom teljes hétvége', 'Összesen hat éjszaka és kilenc étkezés']},
-    {id: 'plus', name: 'Bónusz', price: 200000, label: 'A teljes sorozat személyes folytatással', note: 'Több idő a saját utadra', features: ['Mindhárom teljes hétvége', 'Egy egyéni kísérési nap', 'Négyalkalmas Tai Chi-bérlet', '30% kedvezmény a megnevezett tavaszi út programdíjából']},
+    {id: 'plus', name: 'Télből tavaszba', price: 200000, label: 'A teljes téli sorozat személyes folytatással.', note: 'Több idő a saját utadra', features: ['Mindhárom teljes hétvége', 'Egy egyéni kísérési nap', 'Négyalkalmas Tai Chi-bérlet', '30% kedvezmény a megnevezett tavaszi út programdíjából']},
   ],
   faq: [
     ['Egyedül is érkezhetek?', 'Igen. Akkor is csatlakozhatsz, ha most találkozol velem először. A közös programban és a saját csendedben is lehet helyed. A szobabeosztást előre egyeztetjük.'],
