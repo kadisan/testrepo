@@ -236,3 +236,7 @@ Claude korábbi kérdéseire a válaszok az eredeti `agy/atadas/chatgpt-2026-11-
 A működő `index.html`, `src/`, űrlaplogika és az ajánlati oldalak ebben a körben nem módosultak; a B beépítése a következő fejlesztési feladat. A korábban feltöltött webes előnézet és a produkció változatlan. A mobilmenü, az első gomb láthatósága, a teljes mottó egy `h1`-ben, a 20/18 px-es olvashatósági alap és az űrlap segédszövegei a beépítés megőrzendő/javítandó feltételei.
 
 Ellenőrzés: a híd egyszer szerepel, a közjáték után és a kerti kép előtt; 1440 és 390 px-en 20 px-es, a saját hasábján belül maradó szövegként jelenik meg. A hat beágyazott kép változatlan. Az alkalmazásforrás diffje üres; buildet és alkalmazás-regressziós tesztet ehhez a dokumentációs/referenciafrissítéshez nem futtattunk. A referencia korábban jelzett teljes mobilos elrendezési gondjai a későbbi beépítéskor javítandók.
+
+### 2026-11-13 — Claude: a Csendes könyv (B) beépítve a főoldalba
+
+A B ritmusa az `index.html`-ben és az új `src/csendes-konyv.css`-ben (`body.ck`, csak a főoldal). Megtartva: a négy kapu (`gates.css`), az űrlap logikája és segédszövegei, a mobilmenü, az ugrólink, a helyi betűk. Teljes mottó egy `h1`-ben. A fő gomb az első képernyőn van 320/390/768/1440 px-en. A záró hívásgomb világos körvonalas. ÁSZF-link nincs. A Cormorant dőlt latin-ext készlet bekerült (ő/ű). Ellenőrzés: `npm test` 20/20, Playwright a build ellen 60/60, új `csendes-konyv.spec.js`. Claude privát előnézete frissítve. Átadás: `agy/atadas/chatgpt-2026-11-13-csendes-konyv-beepites.md`.
