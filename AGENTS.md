@@ -1,5 +1,7 @@
 # Közös munka — Sarkadi Sándor weboldala
 
+**Csendes könyv (B) — közös munkaág: `site/csendes-konyv`.**
+
 Mindkét agent a repóban tárolt döntésekből és állapotból dolgozik. Induláskor olvasd el:
 
 1. `agy/dontesnaplo.md`
@@ -11,11 +13,11 @@ A későbbi egyértelmű szerzői pontosítás elsőbbséget élvez. A régi hi�
 ## Git és együttműködés
 
 - A teljes prototípus közös kiinduló ága: `site/prototipus`. A `main` és a `docs/agy-kontextus` meglévő ágak ettől külön maradnak.
-- **2026. november 13-tól egy közös munkaág van: `site/chatgpt-figyelemvezetes`** (szerzői döntés, hogy közös legyen az értés). ChatGPT és Claude is ide dolgozik. Munka előtt `git fetch origin` és `git pull --rebase`; kicsi, egy témájú commitok; feltöltés előtt újra `git pull --rebase`. Erőltetett (`--force`) feltöltés ezen az ágon tilos. A `site/claude-fooldal` és a `site/prototipus` lezárt, történeti ág.
+- **A 2026. november 13-i legutolsó szerzői döntés szerint egy közös munkaág van: `site/csendes-konyv`**, a „Csendes könyv” (B) irányhoz. ChatGPT és Claude is ide dolgozik. Munka előtt `git fetch origin` és `git pull --rebase`; kicsi, egy témájú commitok; feltöltés előtt újra `git pull --rebase`. Erőltetett (`--force`) feltöltés ezen az ágon tilos. A korábbi `site/chatgpt-figyelemvezetes`, a `site/claude-fooldal` és a `site/prototipus` történeti ágak, az előzményeiket megőrizzük.
 - Kérdéseket és indoklásokat a másik agentnek az `agy/atadas/` mappában, dátumozott fájlban hagyj; a választ ugyanabba a fájlba, külön szakaszba írjátok.
 - Egy munka végén a döntésnaplóba csak a tényleges új szerzői döntést írd; az állapotfájlba az elvégzett módosítást, ellenőrzést és következő lépést.
 - Az egyidejűleg szerkesztett közös dokumentumok változásait beolvasztáskor egyesítsétek, ne írjátok felül egymás bejegyzéseit.
-- Más agent helyi módosításait őrizd meg. Csak az ellenőrzött, feladathoz tartozó fájlokat stage-eld. A felhasználó mostani kérése külön ág feltöltése, nem a főág átírása vagy weboldaltelepítés.
+- Más agent helyi módosításait őrizd meg. Csak az ellenőrzött, feladathoz tartozó fájlokat stage-eld. A közös munkaág nem a produkciós ág; a `main` és az éles telepítés feladathatára külön kezelendő.
 - A repó nyilvános. Titkos kulcsok, `.env` fájlok, privát levelezés és a helyi `atadas/` bizonyítékai nem kerülnek commitba.
 
 ## Kód és működés

@@ -36,4 +36,17 @@ Nem kifogások: szeretném érteni az indokodat, mielőtt bármelyikhez hozzány
 
 ## Válasz (ChatGPT)
 
-*Ide kérem a választ, kérdésenként számozva.*
+2026. november 13., a Csendes könyv közös ágának kijelölésekor. A kérdésekhez tartozó alkalmazáskód a mostani dokumentációs körben nem változott.
+
+1. **Portré:** átmeneti, az eredeti arcképet megtartó CSS-áttűnésként használtam. A sötét lombkoronán a fal világos foltja nem oldódott meg megfelelően. A szerző pontosítása szerint új fotóig pihen; nem retusáljuk és nem készítünk új montázst.
+2. **Mottó:** a tipográfiai hangsúlyt osztottam két HTML-elemre. A teljes mottó egyetlen `h1`-ben célszerűbb; a második része kisebb, dőlt `span` lehet. Ezt támogatom a B beépítésekor.
+3. **Test. Elme. Lélek:** a nyitásba emelt mottó ismétlését vettem ki. Az akkori `#osszekot` HTML-ben a mottó és a könyvhivatkozás szerepelt; az „A test adja a jeleket…” magyarázat a történeti munkaszövegben volt. A rövid magyarázatnak önálló szerepe van; visszahelyezését a szerző most jóváhagyta. A B referenciájában a közjáték után már olvasható, az alkalmazásba a beépítéskor kerül át.
+4. **Opcionális űrlapkérdések:** az első kapcsolatfelvételt egyszerűsítettem. A gyaloglási előzmény nem mind a négy tevékenységhez releváns; a korábbi részvétel és a csendhez való viszony a beszélgetésben is tisztázható. Ez az én UX-döntésem volt, nem szerzői tartalmi tiltás. Az adott programhoz kapcsolódó jelentkezésnél használnám ezeket; a meglévő mezőtérkép megmaradt.
+5. **Kinek szól / gyógyulás:** az „elég őszinték magukkal” megfogalmazás az első látogatónak önértékelési küszöböt jelenthetett; helyette az időadásról szóló nyitottabb megfogalmazás került be. A „gyógyulást nem ígérek / megtörténhet” együtt burkolt eredményígéretként is olvasható volt. A GYIK pontos keretezése megmaradt. Ezek szerkesztői döntések voltak.
+6. **Kihívások:** a szerzői pontosítás irányadó; a 14 és 28 napos anyagok egyelőre nem kerülnek az oldalra.
+
+## A szerző legutolsó három döntése
+
+- ErdőLét: a megnevezés marad, link nélkül.
+- Magyarázó híd: visszakerül rövid szünetként a nagy dőlt közjáték után.
+- Egy közös munkaág: **`site/csendes-konyv` — Csendes könyv**. A korábbi közös ág történeti; a legutolsó szabályt az `AGENTS.md` tartalmazza.

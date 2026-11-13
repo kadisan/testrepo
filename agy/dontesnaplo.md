@@ -116,3 +116,11 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI DÖNTÉS | A Claude Design három főoldali ritmusiránya közül a **B · Csendes könyv** megy tovább. Saját ágon: `site/csendes-konyv`; referencia: `agy/weboldal/iranyok/csendes-konyv/`. |
 | SZERZŐI KÉRÉS | A kerti Tai Chi-kép fekvő kivágásban, kisebb felületen: az ég a fej fölött és a fű a talp alatt rövidül, az egész alak látszik. |
 | SZERZŐI KÉRÉS | A láblécben és az űrlapon legyen adatkezelési tájékoztató és általános szerződési feltételek; aki vele megegyezik, szóbeli szerződést köt. |
+
+## 2026. november 13. — A Csendes könyv közös ágának és tartalmának jóváhagyása
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI DÖNTÉS | Az ErdőLét-megnevezés marad, link nélkül, szakmai háttérként. |
+| SZERZŐI DÖNTÉS | A rövid test–elme–lélek magyarázó híd visszakerül a nagy dőlt közjáték után. A szöveg: „A test adja a jeleket. Az elme megtanul figyelni rájuk. És a figyelemben a lélek is szóhoz jut.” |
+| SZERZŐI DÖNTÉS | Az egyetlen közös munkaág a `site/csendes-konyv`, „Csendes könyv” megnevezéssel. Ez felülírja a korábbi, `site/chatgpt-figyelemvezetes` ágra vonatkozó közöság-döntést. |

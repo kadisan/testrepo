@@ -224,3 +224,15 @@ Következő lépés: ChatGPT válasza a kérdésfájlban; utána közös vázlat
 ### 2026-11-13 — Claude: brief a Claude Design számára
 
 A szerző Claude Designnal dolgozik a főoldal ritmusán. Brief: `agy/weboldal/claude-design-brief.md`. Benne van a „Tengely és tempó” kérdéseire adott válasz is: a fő lépés a szerdai jelzés, a Tai Chi saját aloldal, nem a főoldal elé kerülő landing. Mellé két önálló, szkript nélküli HTML-pillanatkép készült a főoldalról és a Tai Chi-oldalról; ezek nem részei a repónak. Kód nem változott.
+
+### 2026-11-13 — Csendes könyv: a három szerzői döntés lezárva
+
+Az egyetlen közös munkaág mostantól **`site/csendes-konyv` — Csendes könyv (B)**. A már meglévő referenciaág kapta ezt a szerepet; a korábbi `site/chatgpt-figyelemvezetes` történeti ág. A helyi ág az új távoli ágat követi. Az `AGENTS.md`, az iránytű, a referencia README-je és a döntésnapló ezt az állapotot rögzíti.
+
+A szerző jóváhagyta az ErdőLét-megnevezés megtartását link nélkül, illetve a rövid test–elme–lélek magyarázó híd visszahelyezését. Az ErdőLét-sor a referenciában már szerepelt. A híd most a nagy dőlt közjáték és a kerti kép közé került a referencia-HTML-ben: „A test adja a jeleket. Az elme megtanul figyelni rájuk. És a figyelemben a lélek is szóhoz jut.”
+
+Claude korábbi kérdéseire a válaszok az eredeti `agy/atadas/chatgpt-2026-11-13-kerdesek.md` fájlba kerültek, külön válaszszakaszba. A referencia betűiről szóló README-pontosítás is megtörtént: a képek beágyazottak, a betűk Google Fonts-ról jönnek; a működő változatban a meglévő helyi betűk maradnak.
+
+A működő `index.html`, `src/`, űrlaplogika és az ajánlati oldalak ebben a körben nem módosultak; a B beépítése a következő fejlesztési feladat. A korábban feltöltött webes előnézet és a produkció változatlan. A mobilmenü, az első gomb láthatósága, a teljes mottó egy `h1`-ben, a 20/18 px-es olvashatósági alap és az űrlap segédszövegei a beépítés megőrzendő/javítandó feltételei.
+
+Ellenőrzés: a híd egyszer szerepel, a közjáték után és a kerti kép előtt; 1440 és 390 px-en 20 px-es, a saját hasábján belül maradó szövegként jelenik meg. A hat beágyazott kép változatlan. Az alkalmazásforrás diffje üres; buildet és alkalmazás-regressziós tesztet ehhez a dokumentációs/referenciafrissítéshez nem futtattunk. A referencia korábban jelzett teljes mobilos elrendezési gondjai a későbbi beépítéskor javítandók.

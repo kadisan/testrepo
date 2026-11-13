@@ -1,10 +1,10 @@
 # Iránytű
 
-**2026. november 12-i aktuális munkairány:** a teljes főoldal prototípusa és az Életutak forrása közösen a `site/prototipus` ágon található. A közös indulási pont a döntésnapló, az állapotfájl és az `AGENTS.md`. A teljes főoldalból külön ajánlati landingekre vezetünk; a további magyar weboldalépítés a következő feladat. Az alábbi november 9-i megállapítások dátumozott előzmények.
+**2026. november 13-i aktuális munkairány: Csendes könyv (B).** Az egyetlen közös munkaág a `site/csendes-konyv`; ChatGPT és Claude is ezen dolgozik. A közös indulási pont a döntésnapló, az állapotfájl és az `AGENTS.md`. A B referencia: `agy/weboldal/iranyok/csendes-konyv/`. Az ErdőLét-megnevezés link nélkül megmarad; a rövid test–elme–lélek magyarázó híd visszakerül. A főoldal továbbra is önálló ajánlati landingekre vezet. Az alábbi november 9-i megállapítások dátumozott előzmények; a `site/prototipus` a november 12-i történeti kiindulópont.
 
 Állapot: aktuális munkairány a szerzői döntések és az elkészült megvalósítás alapján
 
-Utolsó frissítés: 2026-11-09
+Utolsó frissítés: 2026-11-13
 
 ## Szerzői döntések
 - A személyes főoldal és a konkrét ajánlatok landingoldalai külön feladatot kapnak.
