@@ -24,7 +24,7 @@ test('permission loads the provided pixel once and records only PageView without
  const events=await calls(page);
  expect(events).toContainEqual(['set','autoConfig',false,id]);expect(events).toContainEqual(['init',id]);
  expect(events.filter(e=>e[0]==='track')).toEqual([['track','PageView']]);expect(requests).toEqual([sdk]);
- await page.locator('[name=email]').fill('private@example.com');await page.locator('[name=what_brought_you]').fill('Private message that must not reach Meta');
+ await page.locator('[name=name]').fill('Private Name');await page.locator('[name=phone]').fill('+36 30 111 2222');await page.locator('[name=reason]').fill('Private message that must not reach Meta');
  await page.locator('.lp-marketing-settings').click();await page.getByRole('button',{name:'Engedélyezem',exact:true}).click();
  expect((await calls(page)).filter(e=>e[0]==='track')).toEqual([['track','PageView']]);
  expect(JSON.stringify(await calls(page))).not.toContain('private@example.com');expect(JSON.stringify(await calls(page))).not.toContain('Private message');
@@ -62,4 +62,29 @@ for(const [width,zoom] of [[320,false],[390,true]])test(`the choice remains read
  const bounds=await panel.boundingBox();expect(bounds.x).toBeGreaterThanOrEqual(0);expect(bounds.x+bounds.width).toBeLessThanOrEqual(width+1);
  expect(await panel.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
  await page.getByRole('button',{name:'Nem engedélyezem',exact:true}).click();await expect(panel).toBeHidden();
+});
+
+
+test('only a confirmed callback after consent records Lead, with deduplication and no form contents',async({page})=>{
+ const requests=await setup(page);await page.goto('/eletutak-talalkozasa/');
+ const requestId='62e56ed4-aeaa-4e0a-b999-e1d00a323a78';
+ const confirmed=async id=>page.evaluate(requestId=>window.dispatchEvent(new CustomEvent('sarkadi:callback-confirmed',{detail:{requestId}})),id);
+ await confirmed(requestId);expect(requests).toEqual([]);expect(await calls(page)).toEqual([]);
+ await page.getByRole('button',{name:'Engedélyezem',exact:true}).click();
+ await expect.poll(async()=>JSON.stringify(await calls(page))).toContain('PageView');
+ await page.locator('[name=name]').fill('Private Name');await page.locator('[name=phone]').fill('+36 30 111 2222');await page.locator('[name=reason]').fill('Private personal question');
+ await confirmed(requestId);await confirmed(requestId);await confirmed('invalid identifier');
+ const events=await calls(page);
+ expect(events.filter(event=>event[1]==='Lead')).toEqual([['track','Lead',{}, {eventID:requestId}]]);
+ expect(JSON.stringify(events)).not.toMatch(/Private Name|111 2222|Private personal question/);
+ await page.locator('.lp-marketing-settings').click();await page.getByRole('button',{name:'Nem engedélyezem',exact:true}).click();
+ await confirmed('233939d5-69a2-4cf0-8732-88a223eb5a60');
+ expect((await calls(page)).filter(event=>event[1]==='Lead')).toHaveLength(1);
+});
+
+test('a declined advertising choice never measures confirmed callbacks',async({page})=>{
+ const requests=await setup(page);await page.goto('/eletutak-talalkozasa/');
+ await page.getByRole('button',{name:'Nem engedélyezem',exact:true}).click();
+ await page.evaluate(()=>window.dispatchEvent(new CustomEvent('sarkadi:callback-confirmed',{detail:{requestId:'62e56ed4-aeaa-4e0a-b999-e1d00a323a78'}})));
+ expect(requests).toEqual([]);expect(await calls(page)).toEqual([]);
 });

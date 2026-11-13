@@ -4,33 +4,50 @@ import {copy,dates,packageIds,packagePrices,languagePath} from '../src/landing/c
 import {renderDocument} from '../src/landing/render.js';
 import {enquiryValues} from '../src/landing/form.js';
 import {payloadFor,fields} from '../src/form.js';
-test('all four pages have equivalent content, independent language URLs and correct static metadata',()=>{
+test('parked locales retain their content while every page has independent language URLs and static metadata',()=>{
  const keys=Object.keys(copy.hu).sort();
  for(const lang of ['hu','en','de','it']){
   assert.deepEqual(Object.keys(copy[lang]).sort(),keys);
   assert.equal(copy[lang].tripDates.length,3);assert.equal(copy[lang].priceNames.length,4);assert.equal(copy[lang].faq.length,6);
   const html=renderDocument(lang);
-  assert.match(html,new RegExp(`<html lang="${lang}">`));assert.ok(html.includes(copy[lang].hero[0]));
+  assert.match(html,new RegExp(`<html lang="${lang}">`));if(lang!=='hu')assert.ok(html.includes(copy[lang].hero[0]));
   assert.ok(html.includes(`https://sarkadisandor.hu${languagePath(lang)}`));
   for(const other of ['hu','en','de','it']) assert.ok(html.includes(`hreflang="${other}"`));
   assert.ok(html.includes('noindex,nofollow'));
  }
 });
-test('the approved weekends begin on Friday and use the agreed full participation prices',()=>{
+test('the approved weekends begin on Friday and parked locales retain their historical prices',()=>{
  assert.deepEqual(dates,['2027-01-08','2027-02-12','2027-03-05']);
  for(const date of dates) assert.equal(new Date(`${date}T12:00:00Z`).getUTCDay(),5);
  assert.deepEqual(packagePrices,[50000,95000,139000,180000]);
 });
-test('the chosen woodland layout brings weekends and the guide forward without losing sections',()=>{
- const html=renderDocument('hu');
- const sections=[...html.matchAll(/<section class="lp-section ([^" ]+)/g)].map(m=>m[1]);
- assert.deepEqual(sections,['lp-weekends','lp-about','lp-intro','lp-fit','lp-moments','lp-rhythm','lp-stay','lp-prices','lp-faq','lp-contact']);
+test('Hungarian landing presents the confirmed offer without stale prices or manufactured testimonials',()=>{
+ const html=renderDocument('hu').replace(/\u00a0|\u202f/g,' ');
+ assert.match(html,/Önismereti hétvége/);
+ assert.match(html,/Tai Chi/);assert.match(html,/erdei jelenlét/);
+ for(const amount of ['60 000','100 000','160 000','200 000'])assert.ok(html.includes(amount),`Missing price ${amount}`);
+ for(const stale of ['50 000','95 000','139 000','180 000','48 000'])assert.ok(!html.includes(stale),`Stale price ${stale}`);
+ assert.match(html,/legfeljebb 12|12 fő|12 fős/i);
+ assert.match(html,/Ősfenyves Vendégházak/);
+ assert.match(html,/2027-01-08/);assert.match(html,/2027-02-12/);assert.match(html,/2027-03-05/);
  assert.match(html,/napfenyes-erdei-hatter\.webp/);
- assert.doesNotMatch(html,/leveltextura-hero\.webp/);
  assert.match(html,/marciusi-to\.webp/);
  assert.match(html,/sarkadi-sandor-fatronk-portre\.webp/);
- const parked=renderDocument('en');
- assert.doesNotMatch(parked,/lp-hero-woodland/);
+ assert.doesNotMatch(html,/<blockquote|Ide kerül|Lorem ipsum|példa-visszajelzés/i);
+ assert.match(html,/egy órán belül/i);assert.match(html,/9[–—-]19/);
+});
+test('the Hungarian callback asks only for the agreed required data and offers direct contact without JavaScript',()=>{
+ const html=renderDocument('hu');
+ const form=html.match(/<form\b[^>]*>[\s\S]*?<\/form>/)?.[0];
+ assert.ok(form,'Callback form is rendered in static HTML');
+ const inputs=[...form.matchAll(/<(?:input|textarea|select)\b[^>]*>/g)].map(m=>m[0]);
+ const required=inputs.filter(tag=>/\brequired(?:\s|>|=)/.test(tag)).map(tag=>tag.match(/name="([^"]+)"/)?.[1]).sort();
+ assert.deepEqual(required,['consent','name','phone']);
+ assert.ok(inputs.some(tag=>/name="reason"/.test(tag)&&!tag.includes('required')));
+ assert.ok(inputs.every(tag=>!/(?:name="email"|name="call_window")/.test(tag)));
+ assert.match(html,/href="tel:\+36703161897"/);
+ assert.match(html,/href="mailto:kadisan@gmail\.com"/);
+ assert.match(html,/href="\/eletutak-talalkozasa\/adatkezeles\//);
 });
 test('an international enquiry preserves package, selected weekends, language and readable Hungarian callback window',()=>{
  const data=new FormData();Object.entries({name:'  Eva Muster  ',phone:'+49 151 12345678',email:'eva@example.com',package:'plus',call_window:'2',what_brought_you:'Ich möchte mehr erfahren.',consent:'on'}).forEach(([k,v])=>data.set(k,v));data.append('weekend','0');data.append('weekend','2');
