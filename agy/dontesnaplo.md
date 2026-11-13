@@ -138,3 +138,8 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 ## 2026. november 13. — Az Életutak előnézetének szerzői korrekciója
 
 A szerző az első új előnézetet gyengének és túl merevnek ítélte; a régi oldal erdei hangulata legyen a viszonyítási alap. Konkrét kérése: diszkrét, bal felül világosból jobb alul mélyülő zöld háttérátmenet; lágyabb, jobb minőségben látható képek; minden funkciót jelző gomb és ajánlati felület mélyzöldre váltó, világos szövegű állapota rámutatáskor. A funkció maradjon ténylegesen használható. A PSD-re utaló diktált rész nem járt mellékelt PSD-fájllal; PSD átvételét nem állítjuk.
+
+
+## 2026. november 13. — Kiválasztott személyes logó
+
+A szerző a négy zöld hátterű változat közül a 2., erdőzöld színátmenetes, világos feliratú S/út-jelet választotta. Finoman lekerekített sarkokat kért, majd kifejezetten kérte az oldalra helyezését. A magyar landing fejlécében és láblécében ez váltja fel a korábbi ágacskás névjegyet.

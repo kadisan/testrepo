@@ -12,12 +12,13 @@ const photo = (file, alt, width, height, extra = '') => {
   return !alt ? image : `<button class="et-photo-open" type="button" data-et-photo="/images/eletutak/${full}" data-et-caption="${escape(alt)}" aria-label="Kép megnyitása: ${escape(alt)}">${image}<span class="et-photo-zoom" aria-hidden="true">Nagyítás <span>↗</span></span></button>`;
 };
 const call = (label = 'Kérek egy visszahívást', cls = '') => `<a class="et-button ${cls}" href="#kapcsolat">${label}${arrow}</a>`;
+const brandLogo = (loading='eager') => `<a class="et-brand et-brand-logo" href="#lp-content" aria-label="Sarkadi Sándor — az oldal tetejére"><img src="/images/eletutak/sarkadi-sandor-logo.webp" width="2171" height="724" alt="Sarkadi Sándor · Utak · Csend · Jelenlét" loading="${loading}" decoding="async"></a>`;
 
 export function renderConversionLanding() {
   const first = offer.packages[0];
   const html = `<a class="et-skip" href="#lp-content">Ugrás a tartalomhoz</a>
 <header class="et-header">
-  <a class="et-brand" href="#lp-content" aria-label="Sarkadi Sándor — Életutak találkozása"><span class="et-brand-mark">${leaf}</span><span>SARKADI SÁNDOR<small>UTAK · CSEND · JELENLÉT</small></span></a>
+  ${brandLogo()}
   <button class="et-menu" type="button" aria-expanded="false" aria-controls="et-nav">Menü <span aria-hidden="true">☰</span></button>
   <nav id="et-nav" aria-label="Az oldal részei"><a href="#hetvegek">Időpontok</a><a href="#kiserod">A kísérőd</a><a href="#reszvetel">Részvétel</a>${call('Kérek egy hívást', 'et-button-small')}</nav>
 </header>
@@ -91,7 +92,7 @@ export function renderConversionLanding() {
     </form><div class="et-after-form"><span>01 <b>Megadod az elérhetőséged.</b></span><span>02 <b>Beszélgetünk.</b></span><span>03 <b>Utána döntesz.</b></span></div></div>
   </div></section>
 </main>
-<footer class="et-footer"><div class="et-shell"><div class="et-footer-top"><a class="et-brand" href="#lp-content"><span class="et-brand-mark">${leaf}</span><span>SARKADI SÁNDOR<small>UTAK · CSEND · JELENLÉT</small></span></a><p>Életutak találkozása<br> <span>Bakony · 2027. január–március</span></p><a class="et-text-link" href="#lp-content">Az oldal tetejére ↑</a></div><div class="et-footer-bottom lp-footer-bottom"><span>© ${new Date().getFullYear()} Sarkadi Sándor</span><div><a href="/eletutak-talalkozasa/adatkezeles/">Adatvédelem</a><a href="/eletutak-talalkozasa/impresszum/">Impresszum</a></div></div><p class="et-credits">Fotók: Sarkadi Sándor gyűjteménye · Portré: szerkesztett kép · Erdei nyitókép: illusztráció</p></div></footer>
+<footer class="et-footer"><div class="et-shell"><div class="et-footer-top">${brandLogo('lazy')}<p>Életutak találkozása<br> <span>Bakony · 2027. január–március</span></p><a class="et-text-link" href="#lp-content">Az oldal tetejére ↑</a></div><div class="et-footer-bottom lp-footer-bottom"><span>© ${new Date().getFullYear()} Sarkadi Sándor</span><div><a href="/eletutak-talalkozasa/adatkezeles/">Adatvédelem</a><a href="/eletutak-talalkozasa/impresszum/">Impresszum</a></div></div><p class="et-credits">Fotók: Sarkadi Sándor gyűjteménye · Portré: szerkesztett kép · Erdei nyitókép: illusztráció</p></div></footer>
 <div class="et-mobile-call" hidden><span>Életutak találkozása<small>Először beszélgetünk.</small></span>${call('Kérek egy hívást', 'et-button-small')}</div>
 <dialog class="et-photo-dialog" id="et-photo-dialog" aria-label="Képek nagy méretben"><div class="et-photo-dialog-bar"><span id="et-photo-counter"></span><button type="button" data-photo-close aria-label="Képnézegető bezárása">Bezárás <span aria-hidden="true">×</span></button></div><figure><img id="et-photo-full" alt=""><figcaption id="et-photo-caption"></figcaption></figure><div class="et-photo-dialog-controls"><button type="button" data-photo-prev>← Előző kép</button><a id="et-photo-original" target="_blank" rel="noopener noreferrer">Eredeti méret ↗</a><button type="button" data-photo-next>Következő kép →</button></div></dialog>`;
   // Restore the original page's early dates and personal introduction.

@@ -254,3 +254,8 @@ A `forest-refinement.css` a régi erdei változathoz közelíti a magyar landing
 A gyökér- és tófotóhoz az eredeti, saját forrásból 94-es minőségű, 1600 illetve 1531 px széles WebP készült; nincs felméretezés, új jelenet vagy retusált részlet. A kisebb képek megmaradtak reszponzív előnézetként. Az önálló csomagolás a nagyítóban használt képeket is követi.
 
 A privát, közvetlenül megnyitható előnézet külön Sites-projektben él: `appgprj_6af771d66e948191b426e860baf85dca`, https://eletutak-uj-oldal-elonezet.kadisan.chatgpt.site . Ez a saját eredeti domaint nem módosítja. A tulajdonosi fogadó továbbra sincs bekötve, az előnézeten nincs valódi beküldés.
+
+
+### 2026-11-13 — Erdőzöld személyes logó a fejlécben és láblécben
+
+A kiválasztott 2. logó finoman lekerekített, átlátszó sarkú változata `public/images/eletutak/sarkadi-sandor-logo.webp` alatt került be. A webes kódolás veszteségmentes; a teljes logó mobilon is arányosan skálázódik, és szöveges alternatívával rendelkezik. A logó az oldal tetejére navigál.
