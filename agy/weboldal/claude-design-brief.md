@@ -54,7 +54,7 @@ Az első látogató először rendszerint azt keresi, mit csinál ő, és melyik
 - A nyitásban a szerző mottója. A háttér **sötét, felülnézeti lombkorona** (a szerző „Lépj be a fák közé” borítójáról).
 - A **portré átmeneti**: új arcfotó készül, mert a mostani nem illik a sötét lombkoronához (a fej körül halvány folt látszik). Tervezz neki **cserélhető helyet**; a mostani képet ne retusáld és ne montírozd.
 - **Négy egyenrangú kapu**, középen halvány, vékony vonalas vízjel-jelképpel. Rámutatáskor négy különböző mélyzöld háttér, fehér szöveg és erősebb jelkép. A kapuk zöldjei: `#173e31`, `#3b4d29`, `#164c49`, `#285333`.
-- **Okker (`#d9a441`) csak a fő cselekvésé** (elsődleges gomb, kiemelő ecsetvonás).
+- **Okker (`#d8a342`) csak a fő cselekvésé** (elsődleges gomb, kiemelő ecsetvonás).
 - A könyvek a **borítóra kattintva** megvásárolhatók (Payhip); a további írások a Substackon vannak.
 - Záró sáv a kapcsolat előtt: tárcsás telefonból készült rézlámpa a teljes szélességben, rajta: „A változás a tiéd. Egy beszélgetéssel kezdődik.”
 - A kapcsolatfelvétel másodlagos, könnyen elérhető lépés („Kérek egy hívást”); a főoldal elsődleges feladata az út kiválasztása.
@@ -71,12 +71,12 @@ Az első látogató először rendszerint azt keresi, mit csinál ő, és melyik
 
 | Elem | Érték |
 | --- | --- |
-| Háttér / lágy háttér | `#eef5ef` / `#e3eee5` |
+| Háttér / lágy háttér | `#edf4ed` / `#e1eddf` |
 | Szöveg / tompa szöveg | `#203e32` / `#516c5c` |
 | Fő zöld | `#305b40` |
-| Kiemelő okker / rajta a szöveg | `#d9a441` / `#1d3426` |
+| Kiemelő okker / rajta a szöveg | `#d8a342` / `#193527` |
 | Címek | Lora 500 |
-| Kenyérszöveg | Source Sans 3 (200/400/600), alap 18 px |
+| Kenyérszöveg | Source Sans 3 (200/400/600), **alap 20 px**, segédszöveg legalább 18 px (a `site-refinement.css` szerint; a korábbi 18 px-es érték hibás volt) |
 | Idézetek, mottó | Cormorant Garamond 300, dőlt |
 | Ikonok | vékony vonalas: levél, ösvény, nap, fa |
 | Motívum | kézzel húzott ecsetvonás-aláhúzás |
