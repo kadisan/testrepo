@@ -17,3 +17,9 @@ A brief Lora és Source Sans 3 betűt kér; az első változat helyben tölti a 
 Saját fotó és arcokhoz engedély szükséges. A meglévő `public/forest-canopy.webp` programmal készített illusztráció, nem a feltöltött referenciafotó. A Tai Chi és a portré helyén grafikai helyfoglaló áll. Ezek végleges saját fotóra cserélendők.
 
 A főoldal és a landingek összetartozó arculatot kapjanak, elkülönített tartalmi feladattal.
+
+## 2026. november 13-i szerzői pontosítás
+
+A főoldali négy kapu meglévő vékony vonalrajza középre helyezett, halvány vízjel. Rámutatáskor négy különböző mélyzöldre váltanak, fehér szöveggel; a jelkép kontrasztja is erősödik. A szimbólum vezet, a teljes felület kattintható. A konkrét előnézeti színek és a viselkedés a `src/gates.css` fájlban található.
+
+A központi üzenet és metafora alapja a szerző mottója, a test–elme–lélek kapcsolata és a testesítés. Részletek: [központi üzenet és metafora](kozponti-uzenet-es-metafora.md). A főoldali nyitóportré átmeneti. A korábbi hiánylisták történetiek; az állapotfájl legutolsó bejegyzése az irányadó.

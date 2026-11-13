@@ -2,6 +2,8 @@
 
 Állapot: szakmai javaslat, még nem megvalósított áttervezés.
 
+Későbbi, november 13-i pontosítás: a szerző a négy kapun a meglévő jelképeket kérte, középre helyezett vízjelként, négy mélyzöld kiemeléssel. Ez a fotós kapukra tett alábbi ajánlást pontosítja. A központi gondolat a saját test–elme–lélek mottóra épül; az első nyitás- és kapufrissítés elkészült. Aktuális állapot és következő feladatok: `agy/atadas/claude-2026-11-13-kapuk.md`. Az alábbi felmérés a módosítások előtti változat dokumentuma.
+
 Vizsgált változat: a `161db64` forráscommitból közzétett, `75a5627b` azonosítójú Cloudflare-előnézet; a munkamenet dokumentációja a vizsgálatkor `9b46a09` commiton állt. A főoldalt és a Tai Chi-oldalt friss, valódi böngészős nézetben, 1440×1000 és 390×844 px-en ellenőriztük. A mostani munka nem módosította a felületet vagy a telepítést.
 
 ## A szerző új iránya

@@ -2,6 +2,8 @@
 
 Munkaág: `site/chatgpt-figyelemvezetes`. Ennek a körnek a kiinduló commitja: `c165df5`. A `main`, a `site/claude-fooldal` és az éles domain nem módosult.
 
+Elkészült alkalmazásforrás: `5fbb9b0`. Webes előnézet: https://site-chatgpt-figyelemvezetes.eletutak-talalkozasa.pages.dev/ ; a négy kapu közvetlenül `/#utak` alatt. Rögzített változat: https://bc2bd64b.eletutak-talalkozasa.pages.dev/ . A feltöltés utáni böngészős vizsgálatban is megjelent mind a négy szín és a mobilos elrendezés; az éles telepítés változatlan maradt.
+
 ## Olvasási sorrend
 
 1. `AGENTS.md`, `agy/dontesnaplo.md`, az állapotfájl legutolsó bejegyzése.
