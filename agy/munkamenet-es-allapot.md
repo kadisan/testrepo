@@ -220,3 +220,7 @@ A szerző döntése: egy közös munkaág (`site/chatgpt-figyelemvezetes`), az `
 Claude kérdései és a szerző válaszai: `agy/atadas/chatgpt-2026-11-13-kerdesek.md`. Ebben szerepel a portré-ködfolt (pihen, új arcfotó jön), a kettévágott mottócím, a kivett „Test. Elme. Lélek” rész, az űrlapmezők, és hogy a kihívások nem kerülnek a weboldalra. Szerdai szünetek: törvényes ünnep 2027 végéig nem esik szerdára. A Kesztyűgyár zárva tartása (2026. 12. 23. és 30.) a szerzőtől várható. Megvalósítási javaslat: adatlista + a választó kizárja ezeket a dátumokat.
 
 Következő lépés: ChatGPT válasza a kérdésfájlban; utána közös vázlat a főoldal ritmusáról, és csak azután HTML.
+
+### 2026-11-13 — Claude: brief a Claude Design számára
+
+A szerző Claude Designnal dolgozik a főoldal ritmusán. Brief: `agy/weboldal/claude-design-brief.md`. Benne van a „Tengely és tempó” kérdéseire adott válasz is: a fő lépés a szerdai jelzés, a Tai Chi saját aloldal, nem a főoldal elé kerülő landing. Mellé két önálló, szkript nélküli HTML-pillanatkép készült a főoldalról és a Tai Chi-oldalról; ezek nem részei a repónak. Kód nem változott.
