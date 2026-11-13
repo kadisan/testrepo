@@ -133,3 +133,8 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI MEGERŐSÍTÉS | Maradnak a 2027. január 8–10., február 12–14., március 5–7. időpontok, az Ősfenyves Vendégházak és a legfeljebb 12 fős csoport. |
 | SZERZŐI FORRÁS | Van engedéllyel közölhető korábbi zarándokúti résztvevői visszajelzés. A pontos idézet ebben a munkában nem érkezett meg; ezért nincs kitalált idézet az oldalon. |
 | TECHNIKAI MEGÁLLAPÍTÁS | A régi Google Űrlap e-mailt kér kötelezően. Az új minimális űrlaphoz külön, saját API → Google Apps Script → privát táblázat fogadás készült. A tulajdonosi bekötés és éles telepítés nem történt meg. |
+
+
+## 2026. november 13. — Az Életutak előnézetének szerzői korrekciója
+
+A szerző az első új előnézetet gyengének és túl merevnek ítélte; a régi oldal erdei hangulata legyen a viszonyítási alap. Konkrét kérése: diszkrét, bal felül világosból jobb alul mélyülő zöld háttérátmenet; lágyabb, jobb minőségben látható képek; minden funkciót jelző gomb és ajánlati felület mélyzöldre váltó, világos szövegű állapota rámutatáskor. A funkció maradjon ténylegesen használható. A PSD-re utaló diktált rész nem járt mellékelt PSD-fájllal; PSD átvételét nem állítjuk.

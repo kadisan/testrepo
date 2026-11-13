@@ -113,6 +113,28 @@ test('mobile menu, FAQ and privacy links remain accessible',async({page})=>{
  await expect(privacy).toHaveURL(/eletutak-talalkozasa\/adatkezeles\//);await expect(privacy.getByRole('heading',{level:1})).toContainText('Adatkezelési tájékoztató');await privacy.close();
 });
 
+test('photos open at full size and support next, previous, Escape and return focus',async({page})=>{
+ await callbackApi(page);await page.goto(path);
+ const opener=page.locator('.et-trip [data-et-photo]').first();await opener.click();
+ const viewer=page.locator('#et-photo-dialog');await expect(viewer).toBeVisible();
+ const original=await page.locator('#et-photo-full').getAttribute('src');
+ await expect(page.locator('#et-photo-counter')).toHaveText('1 / 6');
+ await page.locator('[data-photo-next]').click();
+ await expect(page.locator('#et-photo-full')).toHaveAttribute('src',/erdei-gyokerek-hq\.webp$/);
+ await page.keyboard.press('ArrowLeft');await expect(page.locator('#et-photo-full')).toHaveAttribute('src',original);
+ await page.keyboard.press('Escape');await expect(viewer).not.toBeVisible();await expect(opener).toBeFocused();
+});
+
+test('clicking an offer surface selects it while a photo click only opens its viewer',async({page})=>{
+ await callbackApi(page);await page.goto(path);
+ await page.locator('.et-package').filter({has:page.locator('[data-et-package=series]')}).locator('h3').click();
+ await expect(page.locator('#et-selection-text')).toContainText('Három hétvége');
+ await expect(page.locator('[data-et-package=series]')).toHaveAttribute('aria-pressed','true');
+ await page.locator('.et-trip').first().locator('[data-et-photo]').click();
+ await expect(page.locator('#et-photo-dialog')).toBeVisible();
+ await expect(page.locator('#et-selection-text')).toContainText('Három hétvége');
+});
+
 test('the complete offer and direct contact remain available without JavaScript',async({browser})=>{
  const context=await browser.newContext({javaScriptEnabled:false});const page=await context.newPage();await page.goto(path);
  await expect(page.getByRole('heading',{level:1})).toContainText('Önismereti hétvége');await expect(page.locator('.et-trip')).toHaveCount(3);

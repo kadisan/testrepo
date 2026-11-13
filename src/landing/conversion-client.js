@@ -7,6 +7,40 @@ const packageIds = offer.packages.map(pack => pack.id);
 export function initConversion(config = {}) {
   const form = document.querySelector('#callback-form');
   if (!form) return;
+  // Pictures are real controls; the larger source opens without changing the
+  // chosen offer or pretending that a callback has been submitted.
+  const photoDialog = document.querySelector('#et-photo-dialog');
+  const photoButtons = [...document.querySelectorAll('[data-et-photo]')];
+  let photoIndex = 0;
+  let photoReturnFocus = null;
+  function showPhoto(index) {
+    photoIndex = (index + photoButtons.length) % photoButtons.length;
+    const source = photoButtons[photoIndex];
+    const image = document.querySelector('#et-photo-full');
+    image.src = source.dataset.etPhoto;
+    image.alt = source.dataset.etCaption;
+    document.querySelector('#et-photo-caption').textContent = source.dataset.etCaption;
+    document.querySelector('#et-photo-counter').textContent = `${photoIndex+1} / ${photoButtons.length}`;
+    document.querySelector('#et-photo-original').href = source.dataset.etPhoto;
+  }
+  photoButtons.forEach((button,index)=>button.addEventListener('click',()=>{
+    photoReturnFocus = button;
+    showPhoto(index);
+    photoDialog.showModal();
+  }));
+  photoDialog.querySelector('[data-photo-close]').addEventListener('click',()=>photoDialog.close());
+  photoDialog.querySelector('[data-photo-prev]').addEventListener('click',()=>showPhoto(photoIndex-1));
+  photoDialog.querySelector('[data-photo-next]').addEventListener('click',()=>showPhoto(photoIndex+1));
+  photoDialog.addEventListener('keydown',event=>{
+    if(event.key==='ArrowLeft'){event.preventDefault();showPhoto(photoIndex-1)}
+    if(event.key==='ArrowRight'){event.preventDefault();showPhoto(photoIndex+1)}
+  });
+  photoDialog.addEventListener('click',event=>{
+    if(event.target!==photoDialog)return;
+    const bounds=photoDialog.getBoundingClientRect();
+    if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)photoDialog.close();
+  });
+  photoDialog.addEventListener('close',()=>photoReturnFocus?.focus({preventScroll:true}));
   const menu = document.querySelector('.et-menu');
   const nav = document.querySelector('#et-nav');
   const closeMenu = () => {menu.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open');};
@@ -42,8 +76,16 @@ export function initConversion(config = {}) {
     const weekends = selectedWeekends.map(index => offer.weekends[index].label);
     summary.hidden = !pack;
     summaryText.textContent = pack ? [pack.name, ...weekends].join(' · ') : '';
-    document.querySelectorAll('[data-et-package]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.etPackage === selectedPackage)));
-    document.querySelectorAll('[data-et-weekend]').forEach(button => button.setAttribute('aria-pressed', String(selectedWeekends.includes(Number(button.dataset.etWeekend)))));
+    document.querySelectorAll('[data-et-package]').forEach(button => {
+      const selected=button.dataset.etPackage===selectedPackage;
+      button.setAttribute('aria-pressed',String(selected));
+      button.closest('.et-package,.et-price-feature')?.classList.toggle('is-selected',selected);
+    });
+    document.querySelectorAll('[data-et-weekend]').forEach(button => {
+      const selected=selectedWeekends.includes(Number(button.dataset.etWeekend));
+      button.setAttribute('aria-pressed',String(selected));
+      button.closest('.et-trip')?.classList.toggle('is-selected',selected);
+    });
   }
   function select(pack, weekends = []) {
     selectedPackage = pack;
@@ -59,6 +101,10 @@ export function initConversion(config = {}) {
     select(id, ['series', 'plus'].includes(id) ? [0, 1, 2] : []);
   }));
   document.querySelectorAll('[data-et-weekend]').forEach(button => button.addEventListener('click', () => select('one', [Number(button.dataset.etWeekend)])));
+  document.querySelectorAll('.et-trip,.et-package,.et-price-feature').forEach(card=>card.addEventListener('click',event=>{
+    if(event.target.closest('button,a,input,textarea,select,label'))return;
+    card.querySelector('[data-et-package],[data-et-weekend]')?.click();
+  }));
   form.querySelector('#et-clear-selection').addEventListener('click', () => {selectedPackage = ''; selectedWeekends = []; renderSelection(); name.focus();});
   const initialPackage = new URL(location.href).searchParams.get('pack');
   if (packageIds.includes(initialPackage)) {selectedPackage = initialPackage; selectedWeekends = ['series', 'plus'].includes(initialPackage) ? [0, 1, 2] : []; renderSelection();}

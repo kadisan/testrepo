@@ -245,3 +245,12 @@ A régi Google Űrlap kötelező e-mailt kér; ezért az új magyar minimális �
 Ellenőrzés: `npm test` **37/37 sikeres**; Vite build sikeres; statikus landingcsomagolás és erőforrás-ellenőrzés sikeres. A Playwright-tesztek listázása/szintaktikai betöltése sikeres, 67 tesztet azonosít. Az új magyar megjelenési, visszahívási, hibakezelési, újrapróbálási és hozzájárulásos Lead-tesztek elkészültek. **Böngészős futtatás és vizuális képernyőképes ellenőrzés nem történt:** a kezelt környezetben nem áll rendelkezésre a Sites-útmutató által előírt `cua_repl` böngészőeszköz; az útmutató ilyen esetben nem enged előnézeti szervert vagy kerülő böngészővezérlést indítani.
 
 Következő lépés: böngészős ellenőrzés elérhető környezetben, a tulajdonosi fogadó bekötése, majd külön ellenőrzött élesítés. A külön ág feltöltése önmagában nem éles telepítés.
+
+
+### 2026-11-13 — Második Életutak-vizuál a szerző visszajelzése alapján
+
+A `forest-refinement.css` a régi erdei változathoz közelíti a magyar landinget: folyamatos, átlós zöld háttérátmenet, lágyabb kép- és kártyasarkok, mélyzöld/világos invertált interakciós és kiválasztott állapotok. Az időpontok és a kísérő bemutatkozása ismét az oldal elejére került. Az ajánlati kártyák üres felülete ugyanazt a választást aktiválja, mint a gombjuk; a képek külön, előző/következő/Escape vezérlésű nagyítóban nyílnak meg. A képmegnyitás nem választ ajánlatot.
+
+A gyökér- és tófotóhoz az eredeti, saját forrásból 94-es minőségű, 1600 illetve 1531 px széles WebP készült; nincs felméretezés, új jelenet vagy retusált részlet. A kisebb képek megmaradtak reszponzív előnézetként. Az önálló csomagolás a nagyítóban használt képeket is követi.
+
+A privát, közvetlenül megnyitható előnézet külön Sites-projektben él: `appgprj_6af771d66e948191b426e860baf85dca`, https://eletutak-uj-oldal-elonezet.kadisan.chatgpt.site . Ez a saját eredeti domaint nem módosítja. A tulajdonosi fogadó továbbra sincs bekötve, az előnézeten nincs valódi beküldés.
