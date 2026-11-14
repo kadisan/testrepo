@@ -260,3 +260,12 @@ A közös ág régi árait a szerző ebben a beszélgetésben korábban megadott
 A főoldalt és a Tai Chi-oldalt 320/390/768/1440 px-en, a build ellen ellenőriztem. Az aláírásos logó és a fa alatti portré már beépített elem. Nincs vízszintes túlcsordulás, hiányzó kép vagy JavaScript-hiba; az első fő gomb mind a nyolc nézetben látszik. A főoldali első áradat és a négy lépés mobilon ténylegesen mélyen van. A konkrét mérések, munkaszövegek, űrlap-észrevételek és a 768 px-es portrékivágás javaslata az eredeti brief **Válasz (ChatGPT)** részében: `agy/atadas/chatgpt-2026-11-14-logo-eletutak.md`.
 
 Ellenőrzés: végleges adatokkal `npm test` 20/20; build sikeres. Az átnevezés után teljes Playwright 60/60; a későbbi árfrissítés után az érintett landing-sor ismét 16/16. Az automatikus űrlappróbák tesztkéréseket fogtak el, valódi érdeklődői adatot nem küldtek. A főoldal és a Tai Chi-oldal alkalmazáskódja ebben a körben nem változott; az átnézés javaslatai még nem új szerzői döntések. Éles telepítés nem történt; a `main`, a Worker és az élő Életutak ága érintetlen.
+
+
+### 2026-11-14 — ChatGPT: főoldali tények és korábbi kapcsolatfelvétel
+
+A külsős főoldali átnézés javításai beépültek (`8b174e0`). A nyitásban szerep, Budapest/Bakony és megerősített díjak; a kapukon ténysorok; alattuk ingyenes 10–15 perces beszélgetésre hívás. A négy lépés közvetlenül a kapuk után került, a könyvek elé. A záró cím beszélgetésre hív. Mobilon a négy kapu egy hasábban olvasható. A teljes mottó, az aláírásos logó és az új portré megmaradt. Résztvevői idézet pontos, közölhető szöveg hiányában nem került ki.
+
+Ellenőrzés: `npm test` 20/20, build sikeres, teljes Playwright 60/60; az utolsó tipográfiai finomítás után az érintett sor 22/22. A tények és az első gomb 320/390/768/1440 px-en az első képernyőn maradnak. 390 px-en a négy lépés kezdete 7 627 px-ről 2 685 px-re került.
+
+Megnyitható privát főoldal: https://eletutak-uj-oldal-elonezet.kadisan.chatgpt.site/fooldal/ . A Sites-feltöltés sikeres; a Tai Chi-visszalinkek ide vezetnek. A korábban javított Életutak-előnézet és képei, valamint az inaktív konfiguráció megmaradtak. Az élő Életutak ága, a `main`, a domain és a Worker nem változott. Részletes átadás és útvonalterv: `agy/atadas/chatgpt-2026-11-14-fooldal-pontositas.md`.

@@ -75,3 +75,7 @@ Külön észrevétel a kapcsolatfelvételhez: a jelenlegi főoldali űrlap köte
 - Az űrlappróbák elfogott, helyi tesztcélra irányított kérésekkel futottak; valódi visszahíváskérés nem ment ki.
 
 Csak a `site/csendes-konyv` közös ág alternatív változata módosult. Éles telepítés nem történt; az élő Életutak ága, a `main` és a Worker nem változott.
+
+### Későbbi folytatás ugyanazon a napon
+
+Az újabb főoldali feladatban az átnézés gyakorlati javításai beépültek, és külön privát főoldali előnézet is készült. A fenti „ebben a körben nem módosítottam” mondat a korábbi ellenőrzési kör állapota. Az új megvalósítás és mérés: [Főoldali pontosítás](chatgpt-2026-11-14-fooldal-pontositas.md).
