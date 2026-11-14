@@ -124,3 +124,9 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | SZERZŐI DÖNTÉS | Az ErdőLét-megnevezés marad, link nélkül, szakmai háttérként. |
 | SZERZŐI DÖNTÉS | A rövid test–elme–lélek magyarázó híd visszakerül a nagy dőlt közjáték után. A szöveg: „A test adja a jeleket. Az elme megtanul figyelni rájuk. És a figyelemben a lélek is szóhoz jut.” |
 | SZERZŐI DÖNTÉS | Az egyetlen közös munkaág a `site/csendes-konyv`, „Csendes könyv” megnevezéssel. Ez felülírja a korábbi, `site/chatgpt-figyelemvezetes` ágra vonatkozó közöság-döntést. |
+
+## 2026. november 14. — Logó
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI DÖNTÉS | Új logó: a logócsalád S-jele vékony körívvel, a név helyén **a szerző saját, vektorizált aláírása** (a betűtípusos név helyett), alatta „UTAK · CSEND · JELENLÉT” (Barlow Semi Condensed Light, ritkítva). Böngészőikon: krémszínű S-jel sötétzöld lekerekített négyzeten (változatlanul a logócsaládból). |

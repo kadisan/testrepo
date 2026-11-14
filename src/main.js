@@ -14,6 +14,7 @@ import './style.css';
 import './site-refinement.css';
 import './gates.css';
 import './csendes-konyv.css';
+import './brand.css';
 import {isConfigured, validPhone, validEmail, prefilledFormUrl} from './form.js';
 import {initTaiChiForm} from './taichi-form.js';
 const icons = {
