@@ -1,0 +1,107 @@
+/* Practical facts alongside the Csendes könyv introduction. */
+.ck .ck-hero .hp-practices {
+  max-width: 36rem;
+  line-height: 1.55;
+  text-wrap: balance;
+}
+
+.ck .ck-date {
+  white-space: nowrap;
+}
+
+.ck .path-gates .door {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ck .path-gates .door p.door-facts {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  margin: 0 0 1.25rem;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.ck .path-gates .door-facts > * {
+  color: inherit;
+  overflow-wrap: break-word;
+}
+
+.ck .path-gates .door-facts strong {
+  font-weight: 600;
+}
+
+.ck .path-gates .door .door-link {
+  margin-top: auto;
+}
+
+.ck .ck-choice-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--ck-line);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eaf2e8, #dce9dc);
+}
+
+.ck .ck-choice-help > div {
+  min-width: 0;
+  max-width: 38rem;
+}
+
+.ck .ck-choice-help p {
+  margin: 0;
+  color: var(--ck-muted);
+}
+
+.ck .ck-choice-help .ck-choice-title {
+  margin-bottom: .35rem;
+  color: var(--ck-ink);
+  font-weight: 600;
+}
+
+.ck .ck-choice-help .button {
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .ck .ck-choice-help {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  .ck .ck-choice-help .button {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .ck .doors.path-gates {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ck .path-gates .door {
+    min-height: 0;
+    padding: 1.25rem;
+  }
+
+  .ck .path-gates .door h3 {
+    padding-right: 2rem;
+    margin-bottom: .65rem;
+  }
+
+  .ck .path-gates .door > p:not(.door-facts) {
+    margin-bottom: 1rem;
+  }
+
+  .ck .path-gates .door p.door-facts {
+    gap: .3rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -23,7 +23,7 @@ test('each gate highlights in its own green and stays readable over its centered
     const styles=await gate.evaluate(el=>({background:getComputedStyle(el).backgroundColor,opacity:Number(getComputedStyle(el.querySelector('.line-icon')).opacity)}));
     backgrounds.push(styles.background);
     expect(contrastOnWatermark(styles.background,styles.opacity)).toBeGreaterThanOrEqual(4.5);
-    for(const selector of ['h3','p','.door-link'])await expect(gate.locator(selector)).toHaveCSS('color','rgb(255, 255, 255)');
+    for(const element of await gate.locator('h3,p,p span,p strong,.door-link').all())await expect(element).toHaveCSS('color','rgb(255, 255, 255)');
     const card=await gate.boundingBox(),symbol=await mark.boundingBox();
     expect(Math.abs(card.x+card.width/2-symbol.x-symbol.width/2)).toBeLessThan(1);
     expect(Math.abs(card.y+card.height/2-symbol.y-symbol.height/2)).toBeLessThan(1);
