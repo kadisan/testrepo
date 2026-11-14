@@ -9,7 +9,7 @@
 .ck .ck-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,31,22,.35),rgba(8,31,22,.78) 48%,rgba(8,31,22,.92) 85%)}
 .ck .ck-hero-inner{max-width:1280px;margin:0 auto;padding:56px clamp(16px,4vw,48px) 64px;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(24px,4vw,64px);box-sizing:border-box}
 .ck .ck-portrait{margin:0;flex:1 1 300px;max-width:480px;height:clamp(380px,36vw,520px);border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35);outline:1px solid rgba(217,231,212,.35);outline-offset:6px}
-.ck .ck-portrait img{width:100%;height:100%;object-fit:cover;object-position:left 22%;display:block}
+.ck .ck-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;display:block}
 .ck .ck-hero-copy{flex:1 1 440px;min-width:0}
 .ck .ck-hero .eyebrow{color:#d2e4c8}
 .ck .ck-hero h1{margin:0 0 24px;font-family:Lora,serif;font-weight:500;color:#f0f6ea;letter-spacing:-.03em;white-space:normal}
@@ -91,7 +91,7 @@
 @media(max-width:900px){
   .ck .ck-hero-inner{padding:18px 16px 40px;gap:18px}
   .ck .ck-portrait{flex:0 0 auto;width:100%;max-width:none;height:clamp(150px,22svh,220px);outline-offset:4px}
-  .ck .ck-portrait img{object-position:left 30%}
+  .ck .ck-portrait img{object-position:50% 46%}
   .ck .ck-h1-main{font-size:1.65rem}
   .ck .ck-h1-sub{margin-top:.45em;font-size:1.2rem}
   .ck .ck-hero h1{margin-bottom:14px}

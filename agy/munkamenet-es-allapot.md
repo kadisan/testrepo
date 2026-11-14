@@ -246,3 +246,7 @@ A B ritmusa az `index.html`-ben és az új `src/csendes-konyv.css`-ben (`body.ck
 A szerző logócsaládja (S-jel + név + tagline) a név helyén a szerző kézzel írt, vektorizált aláírásával. Fájlok: `public/images/logo/fejlec-logo-sotetzold.webp` (fejléc/lábléc, világos háttér), `fejlec-logo-kremszin.webp` (sötét háttérre), `sarkadi-sandor-logo.png` (2000×667, zöld háttér, megosztási kép alapja). Böngészőikon: `public/favicon.ico`, `favicon-16/32.png`, `apple-touch-icon.png`, `icon-192/512.png`; a `<head>` hivatkozásai a főoldalon és a Tai Chi-oldalon. A szöveges márkajel (⌁) mindkét oldal fejlécében és láblécében lecserélve; méret: 64 / 58 / 50 px, láblécben 52 px. Ellenőrzés: `npm test` 20/20, Playwright a build ellen 60/60.
 
 Az élő Életutak-oldal külön ágon fut; a szerző kérésére ahhoz nem nyúlunk (a logó- és ikoncsere ott nem feladat).
+
+### 2026-11-14 — Claude: új nyitóportré a keretben
+
+A szerző által küldött, felülnézeti portré (fa alatt, fűben, felnéz; `public/images/sarkadi-sandor-fa-alatt.webp`) a nyitás keretében, asztalon `50% 38%`, mobilon `50% 46%` kivágással. A korábbi, krémszínű falas portré a repóban marad, de nem használjuk. Ellenőrzés: Playwright a build ellen.
