@@ -14,6 +14,7 @@ A későbbi egyértelmű szerzői pontosítás elsőbbséget élvez. A régi hi�
 
 - A teljes prototípus közös kiinduló ága: `site/prototipus`. A `main` és a `docs/agy-kontextus` meglévő ágak ettől külön maradnak.
 - **A 2026. november 13-i legutolsó szerzői döntés szerint egy közös munkaág van: `site/csendes-konyv`**, a „Csendes könyv” (B) irányhoz. ChatGPT és Claude is ide dolgozik. Munka előtt `git fetch origin` és `git pull --rebase`; kicsi, egy témájú commitok; feltöltés előtt újra `git pull --rebase`. Erőltetett (`--force`) feltöltés ezen az ágon tilos. A korábbi `site/chatgpt-figyelemvezetes`, a `site/claude-fooldal` és a `site/prototipus` történeti ágak, az előzményeiket megőrizzük.
+- **Az élő Életutak-oldal külön ágon fut. A szerző kérése (2026-11-14): ahhoz egyik agent se nyúljon.** Az alternatív változat a közös munkaágon készül.
 - Kérdéseket és indoklásokat a másik agentnek az `agy/atadas/` mappában, dátumozott fájlban hagyj; a választ ugyanabba a fájlba, külön szakaszba írjátok.
 - Egy munka végén a döntésnaplóba csak a tényleges új szerzői döntést írd; az állapotfájlba az elvégzett módosítást, ellenőrzést és következő lépést.
 - Az egyidejűleg szerkesztett közös dokumentumok változásait beolvasztáskor egyesítsétek, ne írjátok felül egymás bejegyzéseit.

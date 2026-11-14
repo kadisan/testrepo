@@ -130,3 +130,4 @@ A sorrend az ismert beszélgetési sorrendet követi. Új döntést új sorban r
 | Állapot | Döntés / megjegyzés |
 | --- | --- |
 | SZERZŐI DÖNTÉS | Új logó: a logócsalád S-jele vékony körívvel, a név helyén **a szerző saját, vektorizált aláírása** (a betűtípusos név helyett), alatta „UTAK · CSEND · JELENLÉT” (Barlow Semi Condensed Light, ritkítva). Böngészőikon: krémszínű S-jel sötétzöld lekerekített négyzeten (változatlanul a logócsaládból). |
+| SZERZŐI DÖNTÉS | Az élő Életutak-oldal külön ágon fut; ahhoz egyik agent se nyúljon (2026-11-14). A `site/csendes-konyv` ágon alternatív változat készül, ugyanazzal a közös munkafelülettel. |
