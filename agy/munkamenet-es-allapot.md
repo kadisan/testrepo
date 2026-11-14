@@ -250,3 +250,13 @@ Az élő Életutak-oldal külön ágon fut; a szerző kérésére ahhoz nem nyú
 ### 2026-11-14 — Claude: új nyitóportré a keretben
 
 A szerző által küldött, felülnézeti portré (fa alatt, fűben, felnéz; `public/images/sarkadi-sandor-fa-alatt.webp`) a nyitás keretében, asztalon `50% 38%`, mobilon `50% 46%` kivágással. A korábbi, krémszínű falas portré a repóban marad, de nem használjuk. Ellenőrzés: Playwright a build ellen.
+
+### 2026-11-14 — ChatGPT: Télből tavaszba és a két oldal ellenőrzése
+
+A `26070c4` közös állapotból indultam. Az alternatív Életutak negyedik csomagjának neve **Télből tavaszba**, alcíme **A teljes téli sorozat személyes folytatással.** Az elnevezés a kártyától az űrlapválasztón és a kiválasztás összegzésén át a Google-űrlapnak átadott magyar szövegig egységes. A tavaszi cím és a GYIK is ezt a nevet használja; a `plus` belső azonosító megmaradt.
+
+A közös ág régi árait a szerző ebben a beszélgetésben korábban megadott csomagáraira javítottam: egy hétvége 60 000, két hétvége 100 000, három hétvége 160 000, személyes folytatással 200 000 Ft/fő. A két- és háromhétvégés csomag egyaránt 20 000 Ft kedvezmény a külön alkalmakhoz képest. Az árak, nyitó áradatok és kedvezményszámítások a generált nyelvi oldalakon is egyeznek. A régi, külön 48 000 Ft-os visszatérői díj új árak melletti érvényessége még tisztázandó; ezt nem számoltam át önkényesen.
+
+A főoldalt és a Tai Chi-oldalt 320/390/768/1440 px-en, a build ellen ellenőriztem. Az aláírásos logó és a fa alatti portré már beépített elem. Nincs vízszintes túlcsordulás, hiányzó kép vagy JavaScript-hiba; az első fő gomb mind a nyolc nézetben látszik. A főoldali első áradat és a négy lépés mobilon ténylegesen mélyen van. A konkrét mérések, munkaszövegek, űrlap-észrevételek és a 768 px-es portrékivágás javaslata az eredeti brief **Válasz (ChatGPT)** részében: `agy/atadas/chatgpt-2026-11-14-logo-eletutak.md`.
+
+Ellenőrzés: végleges adatokkal `npm test` 20/20; build sikeres. Az átnevezés után teljes Playwright 60/60; a későbbi árfrissítés után az érintett landing-sor ismét 16/16. Az automatikus űrlappróbák tesztkéréseket fogtak el, valódi érdeklődői adatot nem küldtek. A főoldal és a Tai Chi-oldal alkalmazáskódja ebben a körben nem változott; az átnézés javaslatai még nem új szerzői döntések. Éles telepítés nem történt; a `main`, a Worker és az élő Életutak ága érintetlen.
