@@ -118,6 +118,8 @@ async function deliver(config, payload, fetcher, signal) {
     if (redirects >= 2) throw new Error('receiver');
     const next = trustedOutputRedirect(response.headers.get('Location'), currentUrl);
     if (!next) throw new Error('receiver');
+    // Release the discarded redirect body before opening Google's output URL.
+    await response.body?.cancel();
     // Apps Script's ContentService redirects to Google-hosted output. Never
     // resend the secret or lead body to a redirect target, even for 307/308.
     currentUrl = next;
@@ -133,7 +135,35 @@ async function deliver(config, payload, fetcher, signal) {
   return result;
 }
 
-export async function handleCallbackRequest(request, env = {}, { fetcher = fetch, timeoutMs = 45000 } = {}) {
+async function deliverWithRetry(config, payload, fetcher, signal, retryTimeoutsMs) {
+  // Every retry carries the same validated requestId and data. The receiver's
+  // durable deduplication and lock prevent another row or owner notification.
+  for (let attempt = 0; ; attempt++) {
+    if (signal.aborted) throw new Error('timeout');
+    const controller = new AbortController();
+    let rejectAbort;
+    const aborted = new Promise((_, reject) => {rejectAbort = reject;});
+    const abort = () => {controller.abort(); rejectAbort(new Error('timeout'));};
+    signal.addEventListener('abort', abort, {once:true});
+    let timer;
+    try {
+      const candidates = [deliver(config, payload, fetcher, controller.signal), aborted];
+      if (attempt < retryTimeoutsMs.length) {
+        candidates.push(new Promise((_, reject) => {
+          timer = setTimeout(() => {controller.abort(); reject(new Error('attempt_timeout'));}, retryTimeoutsMs[attempt]);
+        }));
+      }
+      return await Promise.race(candidates);
+    } catch (error) {
+      if (!controller.signal.aborted || signal.aborted || attempt >= retryTimeoutsMs.length) throw error;
+    } finally {
+      clearTimeout(timer);
+      signal.removeEventListener('abort', abort);
+    }
+  }
+}
+
+export async function handleCallbackRequest(request, env = {}, { fetcher = fetch, timeoutMs = 45000, retryTimeoutsMs = [8000, 16000] } = {}) {
   if (!sameOrigin(request)) return reply({ ok: false, error: 'A kérés erről az oldalról nem fogadható.' }, 403);
   const config = receiverConfiguration(env);
   if (request.method === 'GET') return reply({ enabled: Boolean(config) });
@@ -155,7 +185,7 @@ export async function handleCallbackRequest(request, env = {}, { fetcher = fetch
   try {
     // Promise.race also bounds custom fetch adapters that do not observe abort.
     await Promise.race([
-      deliver(config, payload, fetcher, controller.signal),
+      deliverWithRetry(config, payload, fetcher, controller.signal, retryTimeoutsMs),
       new Promise((_, reject) => {
         timeout = setTimeout(() => { controller.abort(); reject(new Error('timeout')); }, timeoutMs);
       }),

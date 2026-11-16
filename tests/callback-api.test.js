@@ -173,6 +173,23 @@ test('callback times out without reporting a lead as confirmed', async () => {
   assert.equal((await response.json()).retryable, true);
 });
 
+test('slow Google connections retry automatically with exactly the same validated request and bounded attempts', async () => {
+  const payloads=[], signals=[];
+  const response=await handleCallbackRequest(post(),env,{
+    timeoutMs:100,retryTimeoutsMs:[2,3],
+    fetcher:async(_url,options)=>{
+      payloads.push(JSON.parse(options.body));signals.push(options.signal);
+      return payloads.length<3?new Promise(()=>{}):receiver();
+    },
+  });
+  assert.equal(response.status,200);
+  assert.deepEqual(await response.json(),{ok:true,requestId});
+  assert.equal(payloads.length,3);
+  assert.deepEqual(payloads[0],payloads[1]);assert.deepEqual(payloads[1],payloads[2]);
+  assert.equal(payloads[0].requestId,requestId);
+  assert.equal(signals[0].aborted,true);assert.equal(signals[1].aborted,true);
+});
+
 test('callback Pages Function delegates to the same-origin handler', async () => {
   const response = await onRequest({ request: new Request(endpoint), env: {} });
   assert.deepEqual(await response.json(), { enabled: false });
