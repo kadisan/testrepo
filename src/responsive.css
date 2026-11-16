@@ -1,0 +1,204 @@
+/* Shared reflow rules. Text may grow and wrap; content is never hidden to fit. */
+.skip-link,
+.et-skip {
+  top: 8px;
+  left: 8px;
+  max-inline-size: calc(100% - 16px);
+  transform: translateY(calc(-100% - 16px));
+}
+
+.skip-link:focus,
+.et-skip:focus {
+  top: 8px;
+  transform: none;
+}
+
+:where(input, select, textarea) {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.header .brand,
+.footer .brand {
+  min-inline-size: 0;
+}
+
+.brand .brand-logo {
+  max-inline-size: 100%;
+  object-fit: contain;
+}
+
+/* Home: readable copy, shrinkable grid tracks and an uncropped reading column. */
+body.ck :is(.ck-read, .ck-interlude, .ck-band, .ck-haiku) {
+  overflow-wrap: anywhere;
+}
+
+body.ck .ck-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+body.ck :is(.ck-list li, .ck-books > *, .ck-facts dd) {
+  min-inline-size: 0;
+}
+
+body.ck .eyebrow,
+body.ck .ck-facts dt {
+  font-size: .9rem;
+}
+
+body.ck .ck-hero .hp-practices {
+  font-size: 1rem;
+}
+
+body.ck .ck-portrait img {
+  object-position: 50% 32%;
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  body.ck .ck-portrait {
+    flex: 0 1 30%;
+    width: 30%;
+    height: 360px;
+  }
+  body.ck .ck-hero-copy {
+    flex: 1 1 0;
+  }
+}
+
+@media (max-width: 700px) {
+  body.ck .ck-portrait img {
+    object-position: 50% 28%;
+  }
+}
+
+/* On short phones the text and action come first; the portrait follows intact.
+   At enlarged text sizes vertical scrolling remains available. */
+@media (max-width: 700px) and (max-height: 760px) {
+  body.ck .ck-hero-inner {
+    padding-top: 16px;
+    gap: 20px;
+  }
+  body.ck .ck-hero-copy {
+    order: 0;
+  }
+  body.ck .ck-portrait {
+    order: 1;
+    height: 200px;
+  }
+  body.ck .ck-hero .hp-actions {
+    gap: 8px;
+  }
+}
+
+/* Tai Chi: long dates, practical details and form fields reflow with the text. */
+.hero-taichi :is(h1, .hero-subtitle, .quick-facts dd),
+.class-contact {
+  overflow-wrap: anywhere;
+}
+
+.quick-facts > div,
+.class-contact > * {
+  min-inline-size: 0;
+}
+
+body:not(.et-page) .hero-taichi .eyebrow,
+body:not(.et-page) .quick-facts dt {
+  font-size: .9rem;
+}
+
+@media (max-width: 640px) and (max-height: 700px) {
+  body:not(.et-page) .hero.hero-taichi {
+    padding-block: 20px;
+  }
+  .hero.hero-taichi .hero-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero.hero-taichi .quick-facts {
+    margin-block: 16px;
+  }
+  .hero.hero-taichi .hero-content > .hero-note {
+    order: 1;
+  }
+  .hero.hero-taichi .hero-subtitle {
+    order: 2;
+    margin-bottom: 0;
+  }
+  .hero.hero-taichi .hero-content > br {
+    display: none;
+  }
+}
+
+/* Életutak: preserve the established 20/18 px reading sizes on phones too. */
+body.et-page {
+  font-size: 1.25rem;
+}
+
+body.et-page .et-trip time {
+  font-size: 1.25rem;
+}
+
+body.et-page :is(.et-price-feature, .et-price-fine, .et-form-row) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.et-page :is(.et-price-feature, .et-package, .et-form, .et-contact-grid,
+  .et-practice-grid, .et-practice-list article, .et-guide-grid, .et-stay-grid) > * {
+  min-inline-size: 0;
+}
+
+body.et-page :is(.et-main-price, .et-package-price, .et-inclusions span,
+  .et-form label, .et-button, .et-text-link) {
+  overflow-wrap: anywhere;
+}
+
+body.et-page .et-button,
+body.et-page .et-text-link {
+  max-inline-size: 100%;
+}
+
+body.et-page .et-header .et-brand-logo {
+  min-inline-size: 0;
+}
+
+body.et-page :is(.et-hero .et-kicker, .et-hero .et-kicker span,
+  .et-photo-zoom, .et-mobile-call > span) {
+  font-size: 1.125rem !important;
+}
+
+body.et-page .et-photo-dialog :is(button, a) {
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  body.et-page :is(.et-price-feature, .et-price-fine, .et-form-row) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) and (max-height: 700px) {
+  body.et-page .et-header {
+    min-height: 72px;
+    padding-block: 8px;
+  }
+  body.et-page .et-header .et-brand-logo {
+    max-width: 184px;
+  }
+  body.et-page .et-hero {
+    padding-top: 16px;
+  }
+  body.et-page .et-hero .et-kicker {
+    margin-bottom: .6rem !important;
+  }
+  body.et-page .et-hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.3rem);
+    margin-bottom: .75rem;
+  }
+  body.et-page .et-hero-lead {
+    margin-bottom: .65rem !important;
+  }
+  body.et-page .et-hero-actions {
+    margin-top: .8rem;
+  }
+}

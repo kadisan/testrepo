@@ -269,3 +269,46 @@ A külsős főoldali átnézés javításai beépültek (`8b174e0`). A nyitásba
 Ellenőrzés: `npm test` 20/20, build sikeres, teljes Playwright 60/60; az utolsó tipográfiai finomítás után az érintett sor 22/22. A tények és az első gomb 320/390/768/1440 px-en az első képernyőn maradnak. 390 px-en a négy lépés kezdete 7 627 px-ről 2 685 px-re került.
 
 Megnyitható privát főoldal: https://eletutak-uj-oldal-elonezet.kadisan.chatgpt.site/fooldal/ . A Sites-feltöltés sikeres; a Tai Chi-visszalinkek ide vezetnek. A korábban javított Életutak-előnézet és képei, valamint az inaktív konfiguráció megmaradtak. Az élő Életutak ága, a `main`, a domain és a Worker nem változott. Részletes átadás és útvonalterv: `agy/atadas/chatgpt-2026-11-14-fooldal-pontositas.md`.
+
+## 2026-11-13 — Életutak: új érdeklődők, külön landingág
+
+A szerző kifejezett kérésére külön ág: `codex/eletutak-landing-2026-11-13`, kiinduló commit `fcdc6c5` a `site/chatgpt-figyelemvezetes` ágról. A főoldali és Tai Chi-forrásokat nem szerkesztettük. A magyar landing új, elkülönített `conversion-*` modulokat kapott; a régi EN/DE/IT változatok megmaradtak. Az új magyar oldal nem kínál nyelvváltást az eltérő, történeti árú fordításokra.
+
+Elkészült: világos önismereti ajánlat új érdeklődőknek, napsütötte erdei kép és meglévő fotók, átrendezett döntési sorrend, kiemelt egyhétvégés ajánlat, új 60/100/160/200 ezer Ft-os árak, egyszerű visszahívó űrlap, dátum-/csomagválasztás megőrzése, telefonos és e-mailes kapcsolat, mobilos elérhető CTA, visszafogott animáció és csökkentett mozgás támogatása. A pontos résztvevői idézet hiányában nincs kitalált vélemény.
+
+A régi Google Űrlap kötelező e-mailt kér; ezért az új magyar minimális űrlaphoz saját API és Google Apps Script fogadó készült, elkülönített privát táblázattal és tulajdonosi e-mail-értesítéssel. Az API csak a tartós rögzítés igazolása után ad sikert, azonos kérés ismétlése nem hoz létre új sort. A saját domain Worker külön kezeli az API-útvonalat, a domain többi útvonala továbbra is az eredeti tárhelyre jut. Marketingengedéllyel igazolt beküldésből Lead esemény képezhető; személyes mezők nem kerülnek a Metához.
+
+**Még nincs élesítve:** a Google Apps Script tulajdonosi telepítése, a `CALLBACK_WEBHOOK_URL` és `CALLBACK_SECRET` Cloudflare-beállítása és az új oldal/API éles telepítése. A környezethez nem tartozik Apps Script-telepítési vagy Cloudflare-fiókhozzáférés. Fogadó nélkül a felület nem állít sikert; közvetlen telefon és e-mail áll rendelkezésre. A beállítás pontos lépései: `integrations/callback/README.md`. Valódi érdeklődőt vagy értesítő levelet a fejlesztés nem küldött.
+
+Ellenőrzés: `npm test` **37/37 sikeres**; Vite build sikeres; statikus landingcsomagolás és erőforrás-ellenőrzés sikeres. A Playwright-tesztek listázása/szintaktikai betöltése sikeres, 67 tesztet azonosít. Az új magyar megjelenési, visszahívási, hibakezelési, újrapróbálási és hozzájárulásos Lead-tesztek elkészültek. **Böngészős futtatás és vizuális képernyőképes ellenőrzés nem történt:** a kezelt környezetben nem áll rendelkezésre a Sites-útmutató által előírt `cua_repl` böngészőeszköz; az útmutató ilyen esetben nem enged előnézeti szervert vagy kerülő böngészővezérlést indítani.
+
+Következő lépés: böngészős ellenőrzés elérhető környezetben, a tulajdonosi fogadó bekötése, majd külön ellenőrzött élesítés. A külön ág feltöltése önmagában nem éles telepítés.
+
+
+### 2026-11-13 — Második Életutak-vizuál a szerző visszajelzése alapján
+
+A `forest-refinement.css` a régi erdei változathoz közelíti a magyar landinget: folyamatos, átlós zöld háttérátmenet, lágyabb kép- és kártyasarkok, mélyzöld/világos invertált interakciós és kiválasztott állapotok. Az időpontok és a kísérő bemutatkozása ismét az oldal elejére került. Az ajánlati kártyák üres felülete ugyanazt a választást aktiválja, mint a gombjuk; a képek külön, előző/következő/Escape vezérlésű nagyítóban nyílnak meg. A képmegnyitás nem választ ajánlatot.
+
+A gyökér- és tófotóhoz az eredeti, saját forrásból 94-es minőségű, 1600 illetve 1531 px széles WebP készült; nincs felméretezés, új jelenet vagy retusált részlet. A kisebb képek megmaradtak reszponzív előnézetként. Az önálló csomagolás a nagyítóban használt képeket is követi.
+
+A privát, közvetlenül megnyitható előnézet külön Sites-projektben él: `appgprj_6af771d66e948191b426e860baf85dca`, https://eletutak-uj-oldal-elonezet.kadisan.chatgpt.site . Ez a saját eredeti domaint nem módosítja. A tulajdonosi fogadó továbbra sincs bekötve, az előnézeten nincs valódi beküldés.
+
+
+### 2026-11-13 — Erdőzöld személyes logó a fejlécben és láblécben
+
+A kiválasztott 2. logó finoman lekerekített, átlátszó sarkú változata `public/images/eletutak/sarkadi-sandor-logo.webp` alatt került be. A webes kódolás veszteségmentes; a teljes logó mobilon is arányosan skálázódik, és szöveges alternatívával rendelkezik. A logó az oldal tetejére navigál.
+
+
+### 2026-11-13 — Csomagnév és alcím javítása
+
+A 200 000 Ft-os `plus` csomag megjelenő neve „Télből tavaszba”; alcíme „A teljes téli sorozat személyes folytatással.”. A kártya, a kiválasztási összefoglaló és a Google-fogadó értesítőjének megnevezése összhangban frissült. A kézírásos névhez a szerző saját mintája még szükséges; a logókép most nem változott.
+
+### 2026-11-16 — Mobilos javítás és közös, négykapus változat
+
+A `3f7382e` Csendes könyv főoldal és az Életutak PR #1 `b5c5053` forrása közös változatba került. A főoldali mottó, az új portré és aláírásos logó, a négy kapu színei és célcímei megmaradtak. Az új magyar Életutak saját API-s, három kötelező mezős űrlapját használja. A láblécből vissza lehet jutni a főoldal négy lehetőségéhez. A korábbi közös landing szállásleírásában bent maradt 50 000 Ft-os mondat az új magyar változatban már nem jelenik meg. Az ajánlat és az árak nem kaptak új szerkesztői módosítást.
+
+Az új `src/responsive.css` javítja a nagyított szöveg mellett szétnyíló felsorolást és árkártyát, a menüt eltakaró ugrólinket és a kis képernyőmagasságon lecsúszó főgombokat. Mindhárom oldalon megmarad a 20 px-es főszöveg és a 18 px-es űrlapmagyarázat. Rövid telefonon a főoldali portré a szöveg és a gomb után kerül; a Tai Chi bevezetője a gyakorlati adatok és a gomb után. Táblagépen a portré önálló, keskenyebb oszlopban látszik. Tartalom nincs levágva a nagyítás kedvéért.
+
+Ellenőrzés: `npm test` 37/37; build sikeres; a teljes Playwright-sor a build ellen **86/86**. Benne 13 új reflow-, kis telefonos és négykapus navigációs próba, a korábbi fogadó-, marketing-, galéria- és fordítási próbákkal együtt. A 320×568-as első gomb a főoldalon és az Életutakon 568 px fölött marad, a Tai Chi külön próbája is átment. Kétszeres alapszöveg 320 és 390 px-en mindhárom oldalon vízszintes kilógás nélkül, működő menüvel. A külső beküldéseket a tesztek helyettesítik; valódi érdeklődő és értesítő e-mail nem került a rendszerbe.
+
+A Cloudflare-projekt és a domain Worker olvasása sikeres; callback-környezeti változók még nincsenek. Google Drive/Sheets/Apps Script írási eszköz nem érhető el. A meglévő táblázat linkjét és az értesítési cím megerősítését a szerzőtől kértem. Az új rendszer a tulajdonosi Google-telepítés nélkül nem jelezhet sikeres beküldést. A munkakörnyezet GitHub-tokenje érvénytelen; újrahitelesítést kértem, titok bekérése nélkül. Részletes átadás: `agy/atadas/claude-2026-11-16-mobil-es-fogado.md`.

@@ -1,6 +1,6 @@
 # Sarkadi Sándor — közös weboldalprototípus
 
-Állapot: 2026. november 12. A `site/prototipus` ág együtt tartalmazza a futtatható főoldali prototípust, az Életutak landing forrását, a webes képeket és a közös indulási dokumentumokat.
+Állapot: 2026. november 16. A közös `site/csendes-konyv` ág együtt tartalmazza a Csendes könyv főoldalt, a Tai Chi-oldalt, az Életutak PR #1 új magyar landingjét és a visszahívási adaptert. A `site/prototipus` történeti kiindulópont. A fogadó aktiválása és az éles telepítés külön lépés.
 
 ## Hol kezdjünk?
 
@@ -11,14 +11,18 @@
 
 A főoldal a személyt, szemléletet és tevékenységeket mutatja be. A konkrét ajánlatok külön landingekre vezetnek. A főoldal fejlesztési alap; az Életutak külön aloldala már éles: https://sarkadisandor.hu/eletutak-talalkozasa/ .
 
+A négy kapu: [Tai Chi – Tengely és tempó](tai-chi/index.html), [Életutak találkozása](eletutak-talalkozasa/index.html), [zarándoklat.com](https://zarandoklat.com), [Fák Bölcsessége](https://fakbolcsessege.com). A közös ág új magyar Életutak-oldala 60/100/160/200 ezer Ft-os csomagokat és saját visszahívási fogadót használ. A bekötésig az online beküldés inaktív. A jelenlegi éles oldal korábbi árai és Google-űrlapos működése ettől külön állapot.
+
 ## Kódtérkép
 
 | Fájl vagy mappa | Feladat |
 | --- | --- |
 | `index.html` | A teljes weboldal meglévő magyar főoldali prototípusa |
 | `src/main.js`, `src/style.css` | Főoldali működés és megjelenítés |
+| `src/responsive.css` | Közös mobilos, rövidképernyős és nagyított szöveges megjelenítés |
 | `src/contact.js`, `src/form.js` | Kapcsolati adatok, közös űrlapellenőrzés és Google-átadás |
 | `src/landing/` | Életutak szöveg, felépítés, stílusok, képek, űrlap és marketing-hozzájárulás |
+| `src/callback-api.js`, `functions/`, `integrations/callback/` | Az új magyar Életutak saját fogadója, Google Apps Script és tulajdonosi bekötési útmutató |
 | `eletutak-talalkozasa/` | Generált nyelvi HTML-ek és a jogi oldalak HTML-forrásai |
 | `public/` | Webes képek, konfiguráció, betűlicencek és jogi stílus |
 | [Eredeti képek a főágon](https://github.com/kadisan/testrepo/tree/main/kepek) | Az eredeti fotógyűjtemény a meglévő főágon marad; itt a futáshoz szükséges webes képek vannak a `public/` alatt |
@@ -60,7 +64,7 @@ python3 scripts/package_landing.py --production
 
 A kimenet `deploy/eles-cloudflare/`. Ez a csomag csak az Életutak aloldalt tartalmazza; a teljes főoldal kiadására önmagában nem alkalmas. A buildelt `dist/` a főoldalt is tartalmazza, ezért annak későbbi élesítéséhez külön tárhely- és útvonalterv kell. Az ág feltöltése nem indít weboldaltelepítést.
 
-## Már működő elemek
+## Korábban igazolt éles működés
 
 - Életutak: 2027. január 8–10., február 12–14., március 5–7.; az alapár 50 000 Ft/fő/hétvége két éjszakával és három étkezéssel.
 - A látogató a saját űrlapról előre kitöltött Google Űrlapra jut, és ott véglegesít. A tényleges próba beérkezését a szerző megerősítette.
