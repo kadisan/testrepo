@@ -32,7 +32,7 @@ A szerző ebben a munkamenetben kifejezetten új ágat kért: `codex/eletutak-la
 
 - Egyszerű HTML/CSS/JavaScript és Vite, Node.js 24 ajánlott. Főoldal: `index.html`, `src/main.js`, `src/style.css`.
 - Landingforrás: `src/landing/`. A `scripts/render-landing.mjs` készíti a négy nyelvi HTML-t; a generált landing-HTML helyett a forrást szerkeszd.
-- A főoldal a személyt, szemléletet és tevékenységeket mutatja be; a konkrét ajánlatok külön landingekre vezetnek. A teljes főoldal fejlesztési prototípus, az Életutak külön alútvonala éles.
+- A főoldal a személyt, szemléletet és tevékenységeket mutatja be; a konkrét ajánlatok külön landingekre vezetnek. **2026-11-16 óta a főoldal, a Tai Chi és az új magyar Életutak is éles a saját domainen.** A közös ág további módosítása ettől nem válik automatikusan élessé. Kiadási átadás: `agy/atadas/claude-2026-11-16-elesites.md`.
 - Vizuális referencia az elfogadott első erdei változat: napsütötte erdő, finom zöld átmenetek, jól olvasható szöveg. Fontos a mobilos és nagyított szöveges nézet.
 - A magyar változat az aktív szerkesztési alap. Az EN/DE/IT technikai oldalak megmaradnak, további fordításuk parkoltatva van.
 - Ne találj ki véleményt, eredményt vagy programadatot. A főoldali korábbi tervezetek díjai és időpontjai nem lesznek automatikusan végleges ajánlatok.
@@ -42,6 +42,7 @@ A szerző ebben a munkamenetben kifejezetten új ágat kért: `codex/eletutak-la
 ## Ellenőrzés és telepítés
 
 - Alapellenőrzés: `npm test`, `npm run build`. Interakciós vagy megjelenítési változásnál a megfelelő Playwright-tesztek is szükségesek; a helyi konfiguráció `/usr/bin/chromium`-ot használ.
-- A fejlesztői `public/config.js` kapcsolói szándékosan kikapcsoltak. A `python3 scripts/package_landing.py --production` állítja elő az aktív, csak landingre szánt csomagot.
-- Az éles Worker jelenleg csak a `/eletutak-talalkozasa*` útvonalat kezeli. A teljes főoldal későbbi telepítésének külön útvonal- és buildterve legyen.
+- A fejlesztői `public/config.js` és az éles csomag kapcsolói különböznek. A teljes éles csomagot a `python3 scripts/package_site.py` készíti a buildből; a régi `package_landing.py` csak a történeti, külön landingcsomaghoz való. A teljes oldal kiszolgálója `sarkadi-site`, konfigurációja `wrangler.site.jsonc`.
+- Az új magyar visszahívás a saját domain Workerén át a külön **`sarkadi-kapcsolat` Pages-projekt Production** API-jára jut. Ott vannak a használt Google-titkok. A `python3 scripts/package_callback_api.py` készíti a minimális API-feltöltési mappát; a `functions/` kódot a Wrangler csomagolja. A szerver legfeljebb három kísérletet tesz ugyanazzal a kérésazonosítóval. A korábbi `eletutak-talalkozasa` Pages-projekt éles telepítését és az `eletutak-sarkadisandor` Worker kódját megőriztük; a DNS és a levelezés nem változott.
+- Az éles adatkezelési oldal a korábban jóváhagyott, közzétett alapból készül (`integrations/legal/adatkezeles-jovahagyott-alap.html`). A `package_site.py` csak a tényleges technikai mentési/mérési leírást pontosítja, a megőrzési időt és az érintetti jogokat megőrzi. A külön szerkesztési tervezet nem kerül automatikusan élesbe. Az impresszum és a parkoltatott fordítások az eredeti, rögzített Pages-telepítésről jönnek.
 - Egy Git-commit vagy ág feltöltése önmagában nem jelent éles telepítést. A régi fődomain működését ne írd felül egy landingcsomaggal.

@@ -1,14 +1,18 @@
 # Egyetlen beküldéssel működő visszahíváskérés
 
-**Az adapter elkészült, de a tulajdonosi Google-beállítás és a titkos környezeti változók nélkül nincs bekapcsolva.** Ez a dokumentum nem jelenti a fogadás élesítését. Az új oldal csak igazolt szerverválasz után mutathat sikeres beküldést; hiányzó beállításnál közvetlen telefonos kapcsolatot kínáljon.
+**2026. november 16.: az új magyar Életutak fogadása éles és ellenőrzött.** A tulajdonosi Google-beállítás, a titkos kötés, a tartós mentés, az ismétlés elleni védelem és a postaládába érkező értesítés igazolt. Az alábbiak újratelepítési és működési útmutatóként szolgálnak. Kiadási részletek: `agy/atadas/claude-2026-11-16-elesites.md`.
 
 A korábbi Google Űrlap kötelező e-mailt kér. Az új, jóváhagyott űrlap csak nevet, telefonszámot és hozzájárulást kér kötelezően. Ezért ez a megoldás a meglévő Google-fiókban **külön visszahívási munkalapot** használ. A régi Google Űrlap és válaszlap nem változik.
 
 ## Működés
 
-`Böngésző → saját domain /eletutak-talalkozasa/api/callback → Google Apps Script → privát Google Táblázat → e-mail-értesítés a tulajdonosnak`
+`Böngésző → saját domain /eletutak-talalkozasa/api/callback → sarkadi-site Worker → sarkadi-kapcsolat Pages Function → Google Apps Script → privát Google Táblázat → e-mail-értesítés a tulajdonosnak`
+
+Az éles Pages API címe: `https://sarkadi-kapcsolat.pages.dev/eletutak-talalkozasa/api/callback`. A két Google-titok ezen projekt **Production** környezetében szükséges. A Worker a saját eredetet ellenőrzi, a kérés törzsét csak erre a rögzített saját API-ra továbbítja, a sütiket és az Authorization fejlécet nem küldi tovább. A Google-titok nem jut a böngészőbe. A Workeren megmaradt, korábbi közvetlen kísérletből származó azonos nevű titkos kötéseket ez a gateway nem használja.
 
 A kérés azonosítója ismételt beküldésnél is ugyanaz. Az Apps Script zárolás mellett ellenőrzi, hogy elmentette-e már, így egy hálózati hiba utáni újrapróbálás nem hoz létre még egy sort. Azonos azonosítóval módosított adatok külön hibát kapnak.
+
+Lassú Google-kapcsolatnál az API automatikusan újrapróbál: az első két kísérlet határa 8 és 16 másodperc, az összes kísérlet közös felső határa 45 másodperc. A gateway 50, a böngésző 55 másodpercet enged. Minden próbálkozás azonos, ellenőrzött adattal és ugyanazzal a `requestId`-val fut. Egy gyors, egyértelmű hibát nem próbál újra automatikusan. Kimerült határidőnél nincs siker vagy Lead; az adatok és az azonosító megmaradnak a kézi újrapróbáláshoz.
 
 **A siker tartós táblázatmentést jelent.** Az e-mail csak értesítés: kvótahiba esetén a kérés megmarad, az „Értesítés állapota” oszlop jelzi a problémát. Sikeres e-mail-küldési hívás sem bizonyítja a beérkezést a postaládába. A tulajdonos a táblázatot is ellenőrizze, különösen az egyórás visszahívás vállalása mellett. Sikertelen értesítésnél azonos kérés újrapróbálása újra megkísérli az értesítést.
 
@@ -26,7 +30,7 @@ A kérés azonosítója ismételt beküldésnél is ugyanaz. Az Apps Script zár
 
 3. Futtasd egyszer a **`setupCallbackSheet`** függvényt. Add meg a saját táblázat és a saját értesítő levelek kezeléséhez kért Google-jogosultságot. Ez a lépés táblázatot és fejléceket készít; nem küld próbaérdeklődőt vagy próbaértesítést. A futtatási naplóban a táblázat linkje jelenik meg. A táblázat maradjon privát, kizárólag a szükséges szervezői hozzáféréssel.
 4. **Deploy → New deployment → Web app.** A futtató legyen a tulajdonos (**Execute as: Me**), a hozzáférés pedig a nyilvános fogadáshoz **Anyone**. A titkos kulcsot csak a saját szerver küldi, a böngésző nem ismeri. Másold ki a `https://script.google.com/macros/s/…/exec` végű telepítési címet.
-5. A Cloudflare Pages Functions éles környezetében add meg ezeket a titkos környezeti változókat:
+5. A `sarkadi-kapcsolat` Cloudflare Pages-projekt **Production** környezetében add meg ezeket a titkos környezeti változókat:
 
    | Név | Érték |
    | --- | --- |
@@ -42,7 +46,7 @@ Apps Script kódmódosításakor a webalkalmazás-telepítést új verzióra kel
 
 - A `GET /eletutak-talalkozasa/api/callback` csak `{ "enabled": true/false }` választ ad. Ez azt jelzi, hogy a szerveren szintaktikailag megfelelő a konfiguráció. **Nem bizonyítja**, hogy a Google-jogosultság, a titok vagy a táblázat-hozzáférés ténylegesen működik.
 - Az egységtesztek minden külső kérést helyben helyettesítenek. Nem küldenek be valódi érdeklődőt.
-- Teljes ellenőrzéshez egy egyértelműen megjelölt, a tulajdonossal egyeztetett próbakérés szükséges. Ezt csak a beállított tulajdonosi rendszerben, szándékosan küldjétek el. Ellenőrizzétek a táblázatot és az értesítést is, majd a próbabejegyzést töröljétek. Ilyen élő próbát a fejlesztés nem végzett.
+- Teljes ellenőrzéshez egy egyértelműen megjelölt, a tulajdonossal egyeztetett próbakérés szükséges. 2026. november 16-án ez megtörtént: egyetlen TECHNIKAI PRÓBA-bejegyzés, igazolt rögzítés, azonos azonosítóval ismételt szerver- és böngészős próbák, tulajdonos által visszaigazolt értesítés. A jól megjelölt technikai sort meghagytuk; a próbák nem hoztak létre új sorokat vagy további e-maileket. Új éles próbát egyeztessetek a tulajdonossal; az automatikus regressziók helyettesítsék a külső kéréseket.
 - Időtúllépésnél az adat már el lehet mentve. Az oldal ugyanazzal a `requestId`-val próbálja újra, és a látogató beírt adatai maradjanak meg. Amint a látogató megváltoztatja a beküldött adatokat, új azonosító kell.
 - Az API tartalom- és méretkorlátozást, eredetellenőrzést, csapdamezőt és szigorú továbbítási célkorlátozást használ. Ezek nem jelentenek teljes körű botvédelmet vagy valódi sebességkorlátozást. Nagyobb kéretlen forgalomnál Cloudflare-szabályt vagy ellenőrzött botvédelmet érdemes hozzáadni; szerverfolyamat memóriájára épülő látszatkorlátozás nincs benne.
 - A felület állítson le minden további elküldést siker után. Az API azonos tárolt kérésre is sikert ad; ezt ne számoljátok új érdeklődőnek.
