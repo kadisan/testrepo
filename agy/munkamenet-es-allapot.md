@@ -320,3 +320,9 @@ Megnyitható közös előnézet: https://site-csendes-konyv.eletutak-talalkozasa
 A szerző elküldte a táblázat linkjét. Ez a korábbi hiányzó célhivatkozást lezárja; a privát azonosító nem kerül a nyilvános repóba. A megadott táblázatra és a `kadisan@gmail.com` értesítési címre előkészített, privát telepítőcsomag elkészült, külön `Életutak-visszahívások` munkalappal. A Cloudflare előnézetben létrejött a `CALLBACK_SECRET` titkos beállítás. A produkciós beállítás és telepítés változatlan.
 
 A böngészős Google-ellenőrzés bejelentkezést kér; szerkesztői Sheets/Apps Script-hozzáférés nincs. A tulajdonosnak saját fiókjában kell a mellékelt kódot engedélyeznie és webalkalmazásként telepítenie. A kapott `/exec` cím után folytatható a Cloudflare webhook-beállítás és a tényleges mentési próba. Addig az online beküldés inaktív. A privát kód célbeállítását, védelmét, szintaxisát és pontos másolását helyben ellenőriztem; valódi adat vagy e-mail nem ment ki. Részletes átadás: `agy/atadas/claude-2026-11-16-google-fogado.md`.
+
+### 2026-11-16 — A Google-fogadó elérhető; az összekötő kulcs ellenőrzendő
+
+A tulajdonos elküldte a telepített internetes alkalmazás `/exec` címét. Az anonim elérési próba sikeres (`post_required` JSON), az előkészített privát kulccsal végzett, szándékosan érvénytelen POST viszont `unauthorized` választ ad. A Google-oldali `CALLBACK_SECRET` hiányzik vagy nem egyezik. A próba nem mentett adatot és nem küldött levelet; a táblázat és a beállító segédfüggvény sikeres futása még nincs igazolva.
+
+A következő lépés a Google projektbeállításában az összekötő kulcs beállítása a privát telepítőfájl alapján. A webhookot nem aktiváltam a Cloudflare előnézetben; az űrlap továbbra is inaktív. Az éles telepítés és produkciós beállítás változatlan, az alkalmazáskód nem módosult. Részletek a Google-fogadó átadófájljának folytatásában.

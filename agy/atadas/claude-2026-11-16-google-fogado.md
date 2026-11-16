@@ -22,3 +22,13 @@ Az `/exec` cím beérkezése után lehet a Cloudflare előnézet webhook-címét
 ## Ellenőrzés
 
 A személyre szabott kód JavaScriptként feldolgozható. Helyettesített tulajdonságtárral ellenőrizve: a megadott cél és az értesítés beállítható; eltérő korábbi célt nem ír felül; titok nélkül nem indul. A helyi útmutató másológombja pontosan az eredeti kódot másolja. A ZIP ép és csak a három szükséges telepítőfájlt tartalmazza. Valódi táblázatírás vagy értesítő levél nem történt. A honlap alkalmazáskódja ebben a körben nem változott.
+
+## Folytatás: az internetes alkalmazás címe megérkezett
+
+A tulajdonos engedélyezte és telepítette a Google-alkalmazást, majd elküldte az `/exec` végpontot. A cím a privát bekötési adatok része, nem kerül a nyilvános forrásba.
+
+Az anonim GET sikeres JSON-választ ad: `post_required`. A privát konfigurációban tárolt összekötő kulccsal, szándékosan érvénytelen kérésazonosítóval végzett POST viszont `unauthorized` választ ad. Ez a fogadó hitelesítési ágából jön: a Google-oldali `CALLBACK_SECRET` hiányzik vagy nem egyezik az előnézethez előkészített értékkel. A próba nem jutott a táblázatkezelésig, és nem küldött értesítést.
+
+Következő tulajdonosi lépés: a projektbeállításokban a `CALLBACK_SECRET` tulajdonság ellenőrzése/beállítása a privát `Titkos-beallitas.txt` alapján. A titkot nem kérjük a chatbe. A segédfüggvény sikeres futtatása és a cél munkalap létrejötte még nincs igazolva. Sikeres hitelesítés után jön a Cloudflare előnézeti webhook beállítása, új előnézet és egy megjelölt mentési próba.
+
+A Cloudflare előnézetben továbbra is csak a `CALLBACK_SECRET` van beállítva; a webhook nincs aktiválva, az űrlap `enabled:false`. A produkciós környezet beállításai üresek, az éles telepítés azonosítója változatlan. A főoldal, a landingek és a Worker alkalmazáskódja nem módosult.
