@@ -12,11 +12,18 @@ import './style.css';
 import './readability.css';
 import './woodland.css';
 import './marketing.css';
+import './conversion.css';
+import './forest-refinement.css';
+import {initConversion} from './conversion-client.js';
 import {initMarketing} from './marketing.js';
 import {copy,packageIds,packagePrices} from './content.js';
 import {money,arrow} from './render.js';
 import {enquiryValues} from './form.js';
 import {isConfigured,validPhone,validEmail,prefilledFormUrl} from '../form.js';
+if(document.documentElement.lang==='hu'){
+ initMarketing(window.SARKADI_CONFIG||{},'hu');
+ initConversion(window.SARKADI_CONFIG||{});
+}else{
 const lang=document.documentElement.lang;
 const t=copy[lang],f=t.form;
 const toggle=document.querySelector('.lp-menu'),nav=document.querySelector('#lp-nav');
@@ -56,3 +63,5 @@ form.addEventListener('submit',e=>{
  catch{status.textContent=f.failed;status.classList.add('is-error');status.focus()}
  finally{submit.disabled=false;submit.innerHTML=`${f.submit}${arrow}`}
 });
+
+}

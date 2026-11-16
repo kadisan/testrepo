@@ -33,6 +33,7 @@ export function initMarketing(config, lang = 'hu') {
   let storage;
   try { storage = window.localStorage; } catch { storage = null; }
   let choice = marketingChoice(storage), sdkState = 'idle', initialized = false, pageViewed = false, returnFocus = null;
+  const measuredCallbacks = new Set();
   const panel = document.createElement('aside');
   panel.id = 'lp-marketing-consent';
   panel.className = 'lp-marketing-consent';
@@ -104,7 +105,7 @@ export function initMarketing(config, lang = 'hu') {
     }
     const focused = panel.contains(document.activeElement);
     show(false);
-    if (focused) (returnFocus || document.querySelector('.lp-hero-actions a'))?.focus({preventScroll:true});
+    if (focused) (returnFocus || document.querySelector('.lp-hero-actions a, .et-hero a[href="#kapcsolat"]'))?.focus({preventScroll:true});
   }
   panel.querySelectorAll('[data-marketing-choice]').forEach(button => button.addEventListener('click', () => choose(button.dataset.marketingChoice)));
   settings.addEventListener('click', () => { returnFocus = settings; show(true); panel.querySelector('button').focus(); });
@@ -112,6 +113,16 @@ export function initMarketing(config, lang = 'hu') {
   show(!choice);
   if (choice === 'granted') allow();
   else forgetMetaCookies();
+  // Only the confirmed one-step callback emits this event. No form values are sent.
+  // A legacy Google-form handoff still cannot prove that a request was submitted.
+  window.addEventListener('sarkadi:callback-confirmed', event => {
+    const requestId = event.detail?.requestId;
+    if (choice !== 'granted' || sdkState !== 'loaded' || !initialized ||
+        !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId || '') ||
+        measuredCallbacks.has(requestId)) return;
+    measuredCallbacks.add(requestId);
+    window.fbq('track', 'Lead', {}, {eventID:requestId});
+  });
   window.addEventListener('storage', event => {
     if (event.key !== consentKey && event.key !== null) return;
     choice = marketingChoice(storage);

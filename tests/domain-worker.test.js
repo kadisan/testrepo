@@ -22,3 +22,13 @@ test('Pages redirects are rewritten and unexpected POST requests never reach the
  const redirected=await handleRequest(new Request('https://sarkadisandor.hu/eletutak-talalkozasa/adatkezeles'),async()=>Response.redirect('https://eletutak-talalkozasa.pages.dev/eletutak-talalkozasa/adatkezeles/',308));assert.equal(redirected.headers.get('location'),'https://sarkadisandor.hu/eletutak-talalkozasa/adatkezeles/');
  const rejected=await handleRequest(new Request('https://sarkadisandor.hu/eletutak-talalkozasa/',{method:'POST',body:'not-a-form'}),()=>{throw new Error('A callback is finalized on the Google form')});assert.equal(rejected.status,405);
 });
+test('the new callback API is handled on the own domain, without forwarding private form data to static Pages',async()=>{
+ const fetcher=()=>{throw new Error('An unconfigured API must not call the upstream')};
+ const ready=await handleRequest(new Request('https://sarkadisandor.hu/eletutak-talalkozasa/api/callback'),fetcher);
+ assert.deepEqual(await ready.json(),{enabled:false});
+ const unavailable=await handleRequest(new Request('https://sarkadisandor.hu/eletutak-talalkozasa/api/callback',{
+  method:'POST',headers:{'Content-Type':'application/json',Origin:'https://sarkadisandor.hu'},body:'{}',
+ }),fetcher);
+ assert.equal(unavailable.status,503);
+ assert.equal(unavailable.headers.get('cache-control'),'no-store, max-age=0');
+});

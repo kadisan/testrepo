@@ -92,7 +92,7 @@ if PRODUCTION:
     config_path.write_text(config_text)
 photo_refs=set()
 for p in PAGE_PATHS:
-    photo_refs.update(re.findall(r'src="/(images/eletutak/[^"?#]+\.webp)"',(DIST/p).read_text()))
+    photo_refs.update(re.findall(r'(?:src|data-et-photo)="/(images/eletutak/[^"?#]+\.webp)"',(DIST/p).read_text()))
 for name in sorted(photo_refs):
     source=DIST/name
     if not source.is_file():raise SystemExit(f'Hiányzó programkép: {name}')

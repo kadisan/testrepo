@@ -18,6 +18,10 @@ A későbbi egyértelmű szerzői pontosítás elsőbbséget élvez. A régi hi�
 - Más agent helyi módosításait őrizd meg. Csak az ellenőrzött, feladathoz tartozó fájlokat stage-eld. A felhasználó mostani kérése külön ág feltöltése, nem a főág átírása vagy weboldaltelepítés.
 - A repó nyilvános. Titkos kulcsok, `.env` fájlok, privát levelezés és a helyi `atadas/` bizonyítékai nem kerülnek commitba.
 
+### Külön Életutak-ág — 2026. november 13.
+
+A szerző ebben a munkamenetben kifejezetten új ágat kért: `codex/eletutak-landing-2026-11-13`, a `site/chatgpt-figyelemvezetes` `fcdc6c5` commitjából. Ez az Életutak-feladatra felülírja a közös ágra dolgozás korábbi szabályát. A főoldal és az éles telepítés változatlan marad. A magyar landing új forrásai a `src/landing/conversion-*` fájlok; az idegen nyelvi régi változatok megmaradnak.
+
 ## Kód és működés
 
 - Egyszerű HTML/CSS/JavaScript és Vite, Node.js 24 ajánlott. Főoldal: `index.html`, `src/main.js`, `src/style.css`.
@@ -26,7 +30,7 @@ A későbbi egyértelmű szerzői pontosítás elsőbbséget élvez. A régi hi�
 - Vizuális referencia az elfogadott első erdei változat: napsütötte erdő, finom zöld átmenetek, jól olvasható szöveg. Fontos a mobilos és nagyított szöveges nézet.
 - A magyar változat az aktív szerkesztési alap. Az EN/DE/IT technikai oldalak megmaradnak, további fordításuk parkoltatva van.
 - Ne találj ki véleményt, eredményt vagy programadatot. A főoldali korábbi tervezetek díjai és időpontjai nem lesznek automatikusan végleges ajánlatok.
-- A visszahíváskérés saját felület → előre kitöltött Google Űrlap → a látogató ott véglegesít. Az átadást ne jelöld igazolt beküldésként vagy Meta Leadként.
+- A régi nyelvi változatok saját felület → előre kitöltött Google Űrlap → a látogató ott véglegesít menetét ne jelöld igazolt beküldésként. Az új magyar változat saját API-n át, igazolt táblázatos rögzítést kér. Az új fogadás bekötéséig nem állíthat sikert. Meta Lead csak igazolt rögzítés és külön marketing-hozzájárulás után küldhető.
 - A Meta Pixel csak külön marketing-hozzájárulás után indul; a visszavonás és az elutasítás működését őrizd meg.
 
 ## Ellenőrzés és telepítés

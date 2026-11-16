@@ -3,10 +3,18 @@
 const canonicalHost='sarkadisandor.hu';
 const prefix='/eletutak-talalkozasa';
 const assetOrigin='https://eletutak-talalkozasa.pages.dev';
-export async function handleRequest(request,fetcher=fetch) {
+import {handleCallbackRequest} from '../src/callback-api.js';
+export async function handleRequest(request,fetcher=fetch,env={}) {
   const url=new URL(request.url);
   if(![canonicalHost,'www.'+canonicalHost].includes(url.hostname))return new Response('Not found',{status:404});
   if(url.pathname!==prefix&&!url.pathname.startsWith(prefix+'/'))return fetcher(request);
+  if(url.pathname===prefix+'/api/callback') {
+    if(url.hostname!==canonicalHost||url.protocol!=='https:') {
+      url.hostname=canonicalHost;url.protocol='https:';
+      return Response.redirect(url.href,308);
+    }
+    return handleCallbackRequest(request,env,{fetcher});
+  }
   if(request.method!=='GET'&&request.method!=='HEAD')return new Response('Method not allowed',{status:405,headers:{Allow:'GET, HEAD'}});
   if(url.hostname!==canonicalHost||url.protocol!=='https:'||url.pathname===prefix) {
     url.hostname=canonicalHost;url.protocol='https:';
@@ -29,4 +37,4 @@ export async function handleRequest(request,fetcher=fetch) {
   if(url.pathname===prefix+'/config.js')responseHeaders.set('Cache-Control','no-store, max-age=0');
   return new Response(response.body,{status:response.status,statusText:response.statusText,headers:responseHeaders});
 }
-export default {fetch:request=>handleRequest(request)};
+export default {fetch:(request,env)=>handleRequest(request,fetch,env)};
