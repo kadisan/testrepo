@@ -31,7 +31,7 @@ test('body text stays at 20 px and helper text at least 18 px', async ({page}) =
   await page.goto('/');
   const sizes = await page.evaluate(() => ({
     body: parseFloat(getComputedStyle(document.querySelector('#rolam .ck-muted')).fontSize),
-    help: Math.min(...[...document.querySelectorAll('.field-help, .ck-small, .ck-credentials')].map(el => parseFloat(getComputedStyle(el).fontSize))),
+    help: Math.min(...[...document.querySelectorAll('.field-help, .ck-small, .ck-credentials, .footer > p')].map(el => parseFloat(getComputedStyle(el).fontSize))),
   }));
   expect(sizes.body).toBeGreaterThanOrEqual(20);
   expect(sizes.help).toBeGreaterThanOrEqual(18);

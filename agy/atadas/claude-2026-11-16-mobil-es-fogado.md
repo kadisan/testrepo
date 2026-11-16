@@ -26,8 +26,22 @@ Az online beküldés csak a beállított, ténylegesen ellenőrzött fogadó ut�
 
 A munkakörnyezet GitHub-tokenje a vizsgálatkor érvénytelen volt; a nyilvános repó olvasása anonim HTTPS-en működött. A szerzőtől újrahitelesítést kértem, titkos kulcs bekérése nélkül. Feltöltés előtt a távoli közös ág friss állapotát újra ellenőrizni kell; nincs force push.
 
+Későbbi igazolás: a `9427fba` integrált commit feltöltése már sikerült a közös ágra, ezért a GitHub-hozzáférést nem tekintjük továbbra is blokkoltnak. A helyi integráció két szülője a `3f7382e` és a `b5c5053`; a közös ág újabb munkáját megőriztük. Az ilyen egyesítést feltöltés előtt `git fetch` és az upstream-ős ellenőrzésével kell frissíteni, vagy `--rebase=merges` használatával; a sima rebase a történeti PR-ág commitjait szükségtelenül újrajátszaná.
+
 A saját domain, az éles Életutak, a `main`, a DNS és az éles Worker ebben a javításban nem változik. A teljes főoldal saját domain alatti élesítéséhez a root, a Tai Chi és az erőforrások útvonalai külön kiadási feladatot alkotnak; a jelenlegi Worker csak az Életutak alútvonalat szolgálja ki.
 
 ## Ellenőrzés
 
 Az eredmények az állapotfájl azonos dátumú bejegyzésében szerepelnek. Új próba: `tests/browser/responsive.spec.js`; kis telefonok, valódi 200%-os alapszöveg, használható menü, négy kapu és Életutak-visszalink.
+
+A köztes 900 px-es és a 1280/1440 px-es, kétszeres szövegű főoldalon az eredeti negatív idézetmargó további túlfutást okozott. A margó most a tényleges olvasóhasáb és a rendelkezésre álló képernyőszélesség kisebbikéhez igazodik; a széles asztali idézet ott marad széles, ahol elfér. A lábléc és a képaláírások szövege is legalább 18 px, a landing menüje nem kap apróbb mobilos betűt.
+
+## Megnyitható közös előnézet
+
+- Főoldal: https://site-csendes-konyv.eletutak-talalkozasa.pages.dev/
+- Életutak: https://site-csendes-konyv.eletutak-talalkozasa.pages.dev/eletutak-talalkozasa/
+- Tai Chi: https://site-csendes-konyv.eletutak-talalkozasa.pages.dev/tai-chi/
+
+Ez teljes, közös előnézet, a Pages Function API-val. A `/preview-version.json` jelöli a feltöltött alkalmazás commitját. A `/eletutak-talalkozasa/api/callback` jelenleg `200 {"enabled":false}` választ ad, az új űrlap nem küld adatot bekötetlen fogadóhoz. A Meta Pixel itt kikapcsolt. A keresőknek noindex/nofollow/noarchive fejléc és tiltó robots.txt készül.
+
+Az első feltöltés után a Cloudflare API az éles `b5ead318-aa51-4cb9-a6ce-37cd8d598d27` telepítést változatlannak igazolta. Ez nem a saját domain főoldalának élesítése. A Google-táblázat linkje és a Google-oldali tulajdonosi telepítés marad a fogadó bekötésének következő lépése.

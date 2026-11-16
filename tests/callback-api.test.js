@@ -178,4 +178,3 @@ test('callback Pages Function delegates to the same-origin handler', async () =>
   assert.deepEqual(await response.json(), { enabled: false });
   assert.equal((await handleCallbackRequest(new Request(endpoint, { method: 'DELETE' }), env)).status, 405);
 });
-

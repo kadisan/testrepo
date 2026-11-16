@@ -28,6 +28,10 @@
   object-fit: contain;
 }
 
+body:not(.et-page) :is(.section .eyebrow, .badges > span, .footer > p, .footer .illustration-credit) {
+  font-size: .9rem;
+}
+
 /* Home: readable copy, shrinkable grid tracks and an uncropped reading column. */
 body.ck :is(.ck-read, .ck-interlude, .ck-band, .ck-haiku) {
   overflow-wrap: anywhere;
@@ -35,6 +39,10 @@ body.ck :is(.ck-read, .ck-interlude, .ck-band, .ck-haiku) {
 
 body.ck .ck-list {
   grid-template-columns: minmax(0, 1fr);
+}
+
+body.ck .ck-pull {
+  margin-inline: calc((min(var(--ck-read), calc(100vw - 32px)) - min(52rem, calc(100vw - 32px))) / 2);
 }
 
 body.ck :is(.ck-list li, .ck-books > *, .ck-facts dd) {
@@ -136,6 +144,11 @@ body.et-page {
 
 body.et-page .et-trip time {
   font-size: 1.25rem;
+}
+
+body.et-page .et-menu {
+  font-size: 1.125rem;
+  min-height: 48px;
 }
 
 body.et-page :is(.et-price-feature, .et-price-fine, .et-form-row) {

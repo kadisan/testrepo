@@ -61,3 +61,15 @@ test('the four home gates open the intended pages and Életutak returns to the c
   await expect(page).toHaveURL(/\/#utak$/);
   await expect(page.locator('.path-gates .door')).toHaveCount(4);
 });
+
+for (const [width, scale] of [[900, 1], [1280, 2], [1440, 2]]) {
+  test(`the wide quote stays inside the viewport at ${width}px and ${scale * 100}% text`, async ({page}) => {
+    await page.setViewportSize({width, height: 1000});
+    await openPage(page, '/');
+    if (scale === 2) await page.addStyleTag({content: 'html{font-size:40px!important}'});
+    const quote = await page.locator('.ck-pull').boundingBox();
+    expect(quote.x).toBeGreaterThanOrEqual(0);
+    expect(quote.x + quote.width).toBeLessThanOrEqual(width);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
+  });
+}
