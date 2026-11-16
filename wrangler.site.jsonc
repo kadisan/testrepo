@@ -1,0 +1,16 @@
+{
+  "name": "sarkadi-site",
+  "main": "scripts/site-domain-worker.mjs",
+  "compatibility_date": "2026-11-16",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./deploy/sarkadi-site",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "vars": {
+    "LANDING_ENABLED": "false"
+  }
+}

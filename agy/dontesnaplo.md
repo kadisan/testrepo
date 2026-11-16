@@ -178,3 +178,9 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | SZERZŐI KÉRÉS | A betűméretek, képek és elrendezések alkalmazkodjanak a mobilos és más képernyőméretekhez. Az Életutak találkozása külön is ellenőrizendő. |
 | SZERZŐI MEGERŐSÍTÉS | Egy általános Sarkadi Sándor-főoldal négy kapuval: Tai Chi – Tengely és tempó, Életutak találkozása, zarándoklat.com, Fák Bölcsessége. |
 | SZERZŐI KÉRÉS | A visszahívási fogadó táblázatos rögzítéssel és tulajdonosi e-mail-értesítéssel legyen bekötve. A szerző meglévő Drive-táblázatot említett; a pontos link még szükséges. |
+
+## 2026. november 16. — Élesítés: előbb főoldal, utána új Életutak
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | „a sarkadi sándor.hu kell előbb élesiteni”, majd „s aztanjon jön az új életutak”. A főoldal és annak Tai Chi-kapuja kerüljön előbb a saját domainre; az új magyar Életutak csak ezután. A kérés ebben a sorrendben feloldja a november 14-i élesítési tilalmat. |
