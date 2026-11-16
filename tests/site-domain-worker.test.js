@@ -68,12 +68,13 @@ test('static configuration is uncached, staging is not indexed, and unknown host
 test('the enabled same-origin API delegates only to the production backend, without browser credentials',async()=>{
  const id='d3210982-ca12-495b-a919-fe3d24334770';
  const env={LANDING_ENABLED:'true',CALLBACK_SECRET:'a'.repeat(64),CALLBACK_WEBHOOK_URL:'https://script.google.com/macros/s/example/exec'};
- const req=new Request(origin+'/eletutak-talalkozasa/api/callback',{method:'POST',headers:{'Content-Type':'application/json',Origin:origin},body:JSON.stringify({requestId:id,name:'Technical check',phone:'+36700000000',consent:true})});
- const res=await handleSiteRequest(req,env,{fetcher:async upstream=>{
-  assert.equal(upstream.url,'https://sarkadi-kapcsolat.pages.dev/eletutak-talalkozasa/api/callback');
-  assert.equal(upstream.headers.get('origin'),'https://sarkadi-kapcsolat.pages.dev');
-  assert.equal(upstream.headers.has('cookie'),false);assert.equal(upstream.headers.has('authorization'),false);
-  assert.equal((await upstream.json()).requestId,id);
+ const req=new Request(origin+'/eletutak-talalkozasa/api/callback',{method:'POST',headers:{'Content-Type':'application/json',Origin:origin,cookie:'private=1',authorization:'Bearer private'},body:JSON.stringify({requestId:id,name:'Technical check',phone:'+36700000000',consent:true})});
+ const res=await handleSiteRequest(req,env,{fetcher:async(url,options)=>{
+  assert.equal(url,'https://sarkadi-kapcsolat.pages.dev/eletutak-talalkozasa/api/callback');
+  assert.equal(options.redirect,'manual');
+  assert.equal(options.headers.get('origin'),'https://sarkadi-kapcsolat.pages.dev');
+  assert.equal(options.headers.has('cookie'),false);assert.equal(options.headers.has('authorization'),false);
+  assert.equal((await new Response(options.body).json()).requestId,id);
   return Response.json({ok:true,requestId:id});
  }});
  assert.deepEqual(await res.json(),{ok:true,requestId:id});

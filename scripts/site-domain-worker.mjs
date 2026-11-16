@@ -49,11 +49,12 @@ async function callback(request, fetcher) {
   const controller = new AbortController();
   const timeout = setTimeout(()=>controller.abort(),30000);
   try {
-    const upstream = new Request(callbackOrigin+prefix+'/api/callback', {
-      method:request.method,headers,body:request.method==='POST'?request.body:undefined,
-      redirect:'error',signal:controller.signal,duplex:'half',
+    // Cloudflare supports manual/follow redirects; "error" is not implemented.
+    // Keep the body on this exact backend URL and reject unexpected output.
+    const response = await fetcher(callbackOrigin+prefix+'/api/callback', {
+      method:request.method,headers,...(request.method==='POST'?{body:request.body}:{}),
+      redirect:'manual',signal:controller.signal,
     });
-    const response = await fetcher(upstream);
     if (!/^application\/json(?:;|$)/i.test(response.headers.get('Content-Type')||'')) throw new Error('Unconfirmed API response');
     return new Response(response.body,{status:response.status,headers:{
       'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store, max-age=0','X-Content-Type-Options':'nosniff',
