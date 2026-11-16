@@ -203,7 +203,9 @@ export function initConversion(config = {}) {
     controls.forEach(control => {control.disabled = true;});
     submit.textContent = 'Visszahíváskérés küldése…';
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 20000);
+    // Apps Script can start slowly. Keep a margin above the server's 25 s
+    // deadline, while preserving this requestId for a safe retry.
+    const timeout = setTimeout(() => controller.abort(), 35000);
     try {
       const response = await fetch(endpoint, {
         method: 'POST', credentials: 'same-origin', cache: 'no-store', signal: controller.signal,
