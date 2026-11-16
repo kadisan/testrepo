@@ -133,7 +133,7 @@ async function deliver(config, payload, fetcher, signal) {
   return result;
 }
 
-export async function handleCallbackRequest(request, env = {}, { fetcher = fetch, timeoutMs = 25000 } = {}) {
+export async function handleCallbackRequest(request, env = {}, { fetcher = fetch, timeoutMs = 45000 } = {}) {
   if (!sameOrigin(request)) return reply({ ok: false, error: 'A kérés erről az oldalról nem fogadható.' }, 403);
   const config = receiverConfiguration(env);
   if (request.method === 'GET') return reply({ enabled: Boolean(config) });

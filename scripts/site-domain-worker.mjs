@@ -47,7 +47,7 @@ async function callback(request, fetcher) {
   // Only the owner-controlled production API receives the form body. Cookies,
   // authorization and the original browser headers are never forwarded.
   const controller = new AbortController();
-  const timeout = setTimeout(()=>controller.abort(),30000);
+  const timeout = setTimeout(()=>controller.abort(),50000);
   try {
     // Cloudflare supports manual/follow redirects; "error" is not implemented.
     // Keep the body on this exact backend URL and reject unexpected output.
