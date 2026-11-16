@@ -13,7 +13,7 @@ const files = new Set([
 ]);
 
 function sitePath(path) {
-  return files.has(path) || ['/assets/', '/images/', '/letoltes/'].some(p => path.startsWith(p));
+  return files.has(path) || ['/assets/', '/images/', '/letoltes/', '/font-licenses/'].some(p => path.startsWith(p));
 }
 
 async function legacy(request, fetcher) {

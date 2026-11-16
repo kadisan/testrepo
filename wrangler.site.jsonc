@@ -11,6 +11,6 @@
     "not_found_handling": "none"
   },
   "vars": {
-    "LANDING_ENABLED": "false"
+    "LANDING_ENABLED": "true"
   }
 }

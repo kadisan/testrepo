@@ -29,6 +29,7 @@ config = re.sub(r'metaPixelEnabled:\s*false', 'metaPixelEnabled: true', config)
 (target / 'config.js').write_text(config)
 landing = target / 'eletutak-talalkozasa/index.html'
 html = landing.read_text().replace('<meta name="robots" content="noindex,nofollow">', '<meta name="robots" content="index,follow">')
+html = html.replace('https://sarkadisandor.hu/eletutak-talalkozasa/images/', 'https://sarkadisandor.hu/images/')
 landing.write_text(html)
 # No inherited preview-wide Disallow/noindex rule may enter the live build.
 (target / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://sarkadisandor.hu/sitemap.xml\n')
