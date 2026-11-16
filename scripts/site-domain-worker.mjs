@@ -90,7 +90,7 @@ export async function handleSiteRequest(request, env = {}, {fetcher = fetch} = {
   if (request.method !== 'GET' && request.method !== 'HEAD') {
     return new Response('Method not allowed', {status:405, headers:{Allow:'GET, HEAD'}});
   }
-  if (landing && (env.LANDING_ENABLED !== 'true' || url.pathname !== prefix+'/')) {
+  if (landing && (env.LANDING_ENABLED !== 'true' || ![prefix+'/',prefix+'/adatkezeles/'].includes(url.pathname))) {
     return legacy(request, fetcher);
   }
   if (!env.ASSETS?.fetch) return new Response('Temporarily unavailable', {status:503});

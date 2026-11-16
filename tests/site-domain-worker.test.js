@@ -29,10 +29,11 @@ test('the first phase preserves the old offer even though new assets already con
  assert.deepEqual(await readiness.json(),{enabled:false});
 });
 
-test('the second phase publishes the new Hungarian offer while keeping existing legal and translated pages',async()=>{
+test('the second phase publishes the offer and technically updated policy while keeping the imprint and translations',async()=>{
  const env={LANDING_ENABLED:'true',ASSETS:{fetch:async()=>new Response('new offer')}};
  assert.equal(await(await handleSiteRequest(request('/eletutak-talalkozasa/'),env,{fetcher:fail})).text(),'new offer');
- for(const path of ['/eletutak-talalkozasa/adatkezeles/','/eletutak-talalkozasa/impresszum/','/eletutak-talalkozasa/en/','/eletutak-talalkozasa/config.js']) {
+ assert.equal(await(await handleSiteRequest(request('/eletutak-talalkozasa/adatkezeles/'),env,{fetcher:fail})).text(),'new offer');
+ for(const path of ['/eletutak-talalkozasa/impresszum/','/eletutak-talalkozasa/en/','/eletutak-talalkozasa/config.js']) {
   let target;
   const response=await handleSiteRequest(request(path),env,{fetcher:async req=>{target=req.url;return new Response('preserved');}});
   assert.equal(await response.text(),'preserved');assert.ok(target.endsWith(path));

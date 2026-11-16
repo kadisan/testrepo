@@ -4,6 +4,7 @@ Never changes the existing landing-only Pages project. Legal and foreign pages
 stay on the previous published deployment through the domain router.
 """
 import json
+import html as html_module
 import re
 import shutil
 import subprocess
@@ -31,6 +32,27 @@ landing = target / 'eletutak-talalkozasa/index.html'
 html = landing.read_text().replace('<meta name="robots" content="noindex,nofollow">', '<meta name="robots" content="index,follow">')
 html = html.replace('https://sarkadisandor.hu/eletutak-talalkozasa/images/', 'https://sarkadisandor.hu/images/')
 landing.write_text(html)
+# Preserve the published, owner-approved policy and change only the technical
+# facts affected by this release. The separate editorial draft is not promoted.
+policy=(root/'integrations/legal/adatkezeles-jovahagyott-alap.html').read_text()
+updates={'flow':0,'measurement':0,'date':0}
+def update_policy_paragraph(match):
+    original=match.group(0)
+    text=html_module.unescape(re.sub('<[^>]+>','',original))
+    if text.startswith('A weboldali visszahíváskérő a Google Űrlapok'):
+        updates['flow']+=1
+        return '<p>A főoldali és a Tai Chi-űrlap a Google Űrlapok oldalán véglegesíthető. Az új Életutak-visszahíváskérő a honlap saját fogadó végpontján és a Google Apps Script szolgáltatáson keresztül egy elkülönített, nem nyilvános Google-táblázatba rögzíti a kérést. Az új Életutak-űrlapon a név, telefonszám és az adatkezelési hozzájárulás kötelező; a rövid üzenet és a programválasztás opcionális. A kéréshez technikai azonosító és beérkezési idő tartozik. A rögzítésről a saját e-mail-címemre értesítést kapok. Az adatokat Google Táblázatokban, a kapcsolódó Google Drive-tárhelyen és az értesítésekhez használt levelezésemben kezelem. A szervezői hozzáférést a feladathoz szükséges körre korlátozom.</p>'
+    if text.startswith('Engedélyezéskor a Meta a PageView'):
+        updates['measurement']+=1
+        return original[:-4]+' Az új Életutak-visszahíváskérés igazolt rögzítése után, kizárólag külön marketing-hozzájárulással, a Lead (érdeklődő) eseményt is küldöm. Ez az esemény nem tartalmazza a visszahíváskérő mezőinek tartalmát.</p>'
+    if text.startswith('Hatályos:'):
+        updates['date']+=1
+        return original+'\n<p>Technikai működés leírása frissítve: 2026. november 16.</p>'
+    return original
+policy=re.sub(r'<p\b[^>]*>.*?</p>',update_policy_paragraph,policy,flags=re.S)
+if updates!={'flow':1,'measurement':1,'date':1}:
+    raise SystemExit('Az adatkezelési alap megváltozott; a technikai pontosítást újra ellenőrizni kell.')
+(target/'eletutak-talalkozasa/adatkezeles/index.html').write_text(policy)
 # No inherited preview-wide Disallow/noindex rule may enter the live build.
 (target / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://sarkadisandor.hu/sitemap.xml\n')
 (target / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>https://sarkadisandor.hu'+p+'</loc></url>' for p in ['/', '/tai-chi/', '/eletutak-talalkozasa/'])+'</urlset>\n')
