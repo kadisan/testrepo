@@ -65,10 +65,24 @@ test('static configuration is uncached, staging is not indexed, and unknown host
  assert.equal((await handleSiteRequest(new Request('https://unrelated.example/'),env,{fetcher:fail})).status,404);
 });
 
-test('only the enabled own-domain API can deliver a confirmed callback',async()=>{
+test('the enabled same-origin API delegates only to the production backend, without browser credentials',async()=>{
  const id='d3210982-ca12-495b-a919-fe3d24334770';
  const env={LANDING_ENABLED:'true',CALLBACK_SECRET:'a'.repeat(64),CALLBACK_WEBHOOK_URL:'https://script.google.com/macros/s/example/exec'};
  const req=new Request(origin+'/eletutak-talalkozasa/api/callback',{method:'POST',headers:{'Content-Type':'application/json',Origin:origin},body:JSON.stringify({requestId:id,name:'Technical check',phone:'+36700000000',consent:true})});
- const res=await handleSiteRequest(req,env,{fetcher:async(url,options)=>{assert.equal(url,env.CALLBACK_WEBHOOK_URL);assert.equal(JSON.parse(options.body).secret,env.CALLBACK_SECRET);return Response.json({ok:true,requestId:id});}});
+ const res=await handleSiteRequest(req,env,{fetcher:async upstream=>{
+  assert.equal(upstream.url,'https://sarkadi-kapcsolat.pages.dev/eletutak-talalkozasa/api/callback');
+  assert.equal(upstream.headers.get('origin'),'https://sarkadi-kapcsolat.pages.dev');
+  assert.equal(upstream.headers.has('cookie'),false);assert.equal(upstream.headers.has('authorization'),false);
+  assert.equal((await upstream.json()).requestId,id);
+  return Response.json({ok:true,requestId:id});
+ }});
  assert.deepEqual(await res.json(),{ok:true,requestId:id});
+});
+
+test('the callback gateway rejects foreign origins and non-JSON upstream responses',async()=>{
+ const env={LANDING_ENABLED:'true'};
+ const rejected=await handleSiteRequest(new Request(origin+'/eletutak-talalkozasa/api/callback',{headers:{Origin:'https://foreign.example'}}),env,{fetcher:fail});
+ assert.equal(rejected.status,403);
+ const notApi=await handleSiteRequest(request('/eletutak-talalkozasa/api/callback'),env,{fetcher:async()=>new Response('<html>not API</html>',{headers:{'Content-Type':'text/html'}})});
+ assert.equal(notApi.status,502);assert.equal((await notApi.json()).ok,false);
 });

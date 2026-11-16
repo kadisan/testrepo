@@ -5,6 +5,7 @@ const prefix = '/eletutak-talalkozasa';
 // The previous published offer and its legal/translated pages remain available
 // independently of this release. Do not change the old Pages production build.
 const legacyOrigin = 'https://b5ead318.eletutak-talalkozasa.pages.dev';
+const callbackOrigin = 'https://sarkadi-kapcsolat.pages.dev';
 const files = new Set([
   '/', '/index.html', '/tai-chi', '/tai-chi/', '/tai-chi/index.html',
   '/config.js', '/robots.txt', '/sitemap.xml', '/release-version.json',
@@ -34,6 +35,36 @@ async function legacy(request, fetcher) {
   return new Response(response.body, {status:response.status, statusText:response.statusText, headers:output});
 }
 
+async function callback(request, fetcher) {
+  const url = new URL(request.url);
+  const origin = request.headers.get('Origin');
+  if (request.headers.get('Sec-Fetch-Site')?.toLowerCase() === 'cross-site' || (origin && origin !== url.origin)) {
+    return Response.json({ok:false,error:'A kérés erről az oldalról nem fogadható.'},{status:403});
+  }
+  if (!['GET','POST'].includes(request.method)) return new Response('Method not allowed',{status:405,headers:{Allow:'GET, POST'}});
+  const headers = new Headers({Accept:'application/json',Origin:callbackOrigin});
+  if (request.headers.has('Content-Type')) headers.set('Content-Type',request.headers.get('Content-Type'));
+  // Only the owner-controlled production API receives the form body. Cookies,
+  // authorization and the original browser headers are never forwarded.
+  const controller = new AbortController();
+  const timeout = setTimeout(()=>controller.abort(),30000);
+  try {
+    const upstream = new Request(callbackOrigin+prefix+'/api/callback', {
+      method:request.method,headers,body:request.method==='POST'?request.body:undefined,
+      redirect:'error',signal:controller.signal,duplex:'half',
+    });
+    const response = await fetcher(upstream);
+    if (!/^application\/json(?:;|$)/i.test(response.headers.get('Content-Type')||'')) throw new Error('Unconfirmed API response');
+    return new Response(response.body,{status:response.status,headers:{
+      'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store, max-age=0','X-Content-Type-Options':'nosniff',
+    }});
+  } catch {
+    return Response.json({ok:false,retryable:true,error:'A kérés rögzítését most nem tudtuk visszaigazolni.'}, {
+      status:controller.signal.aborted?504:502,headers:{'Cache-Control':'no-store, max-age=0'},
+    });
+  } finally {clearTimeout(timeout);}
+}
+
 export async function handleSiteRequest(request, env = {}, {fetcher = fetch} = {}) {
   const url = new URL(request.url);
   const preview = url.hostname.endsWith('.workers.dev');
@@ -53,7 +84,7 @@ export async function handleSiteRequest(request, env = {}, {fetcher = fetch} = {
   }
   if (url.pathname === prefix+'/api/callback') {
     // Opening the home page first must not accidentally activate the new offer.
-    return handleCallbackRequest(request, env.LANDING_ENABLED === 'true' ? env : {}, {fetcher});
+    return env.LANDING_ENABLED === 'true' ? callback(request,fetcher) : handleCallbackRequest(request, {}, {fetcher});
   }
   if (request.method !== 'GET' && request.method !== 'HEAD') {
     return new Response('Method not allowed', {status:405, headers:{Allow:'GET, HEAD'}});
