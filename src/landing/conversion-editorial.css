@@ -1,0 +1,82 @@
+/* Named, verbatim voices and the main site's four distinct forest greens. */
+.et-page {
+  --et-muted: #2a4732;
+  background: linear-gradient(180deg, #f1f6eb 0%, #e5edde 28%, #c7d9b8 50%, #9cb98a 70%, #547b50 85%, #173e31 100%);
+}
+.et-page main::before { opacity: .055; }
+.et-page [data-et-tone="one"] {
+  --et-card-green: rgb(23, 62, 49);
+  --et-card-surface: rgb(220, 234, 223);
+  --et-card-ink: #203e32;
+}
+.et-page [data-et-tone="two"] {
+  --et-card-green: rgb(59, 77, 41);
+  --et-card-surface: rgb(224, 231, 200);
+  --et-card-ink: #2d4028;
+}
+.et-page [data-et-tone="series"] {
+  --et-card-green: rgb(22, 76, 73);
+  --et-card-surface: rgb(205, 228, 221);
+  --et-card-ink: #173f3c;
+}
+.et-page [data-et-tone="plus"] {
+  --et-card-green: rgb(40, 83, 51);
+  --et-card-surface: rgb(40, 83, 51);
+  --et-card-ink: #f5f9ef;
+}
+.et-page :is(.et-overview-card, .et-trip, .et-price-feature, .et-package)[data-et-tone] {
+  background: var(--et-card-surface);
+  color: var(--et-card-ink);
+  border-color: var(--et-card-green);
+  border-top: 5px solid var(--et-card-green);
+}
+.et-page :is(.et-trip, .et-price-feature, .et-package)[data-et-tone]::before { background: var(--et-card-green); }
+.et-page :is(.et-overview-card, .et-trip, .et-price-feature, .et-package)[data-et-tone]:is(:hover, :focus-within, .is-selected) {
+  background: var(--et-card-green);
+  color: #f5f9ef;
+  --et-muted: #e0edd7;
+  --et-line: #e1ecd655;
+}
+.et-page .et-testimonials-heading {
+  display: grid; grid-template-columns: 1.5fr 1fr; align-items: end; gap: 3rem;
+  padding-bottom: 2rem; border-bottom: 2px solid #305b40;
+}
+.et-page .et-testimonials-context { font-size: 1.125rem; max-width: 24rem; color: var(--et-muted); }
+.et-page .et-testimonial-grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 0 3rem; }
+.et-page .et-testimonial-grid .et-quote {
+  min-width: 0; margin: 0; padding: 2rem 0; border: 0; border-bottom: 1px solid #305b4066;
+}
+.et-page .et-testimonial-grid .et-quote-lead { grid-row: span 2; padding-right: 1.5rem; }
+.et-page .et-quote blockquote { margin: 0; padding: 0 0 0 1.25rem; border: 0; border-left: 4px solid #305b40; color: #173e31; }
+.et-page .et-quote-lead blockquote { border-left-width: 8px; }
+.et-page .et-quote blockquote p {
+  font-family: 'Lora', Georgia, serif; font-weight: 500; font-size: clamp(1.65rem, 2.1vw, 2rem);
+  line-height: 1.5; letter-spacing: -.025em; text-wrap: pretty;
+}
+.et-page .et-quote-lead blockquote p { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.35; }
+.et-page .et-quote blockquote strong { font-weight: 700; }
+.et-page .et-quote-open { font-size: 1.3em; line-height: 0; }
+.et-page .et-quote-close { white-space: nowrap; }
+.et-page .et-quote figcaption {
+  display: flex; align-items: center; gap: .7rem; margin-top: 1.5rem;
+  font: 600 1.25rem/1.5 'Source Sans 3', sans-serif; letter-spacing: .035em; color: #173e31;
+}
+.et-page .et-quote figcaption::before { content: ''; width: 2rem; height: 1px; background: currentColor; flex: none; }
+/* Keep the lower reading columns on light surfaces as the forest deepens. */
+.et-page :is(.et-stay, .et-faq, .et-contact) > .et-shell {
+  padding: clamp(1.25rem, 3vw, 3rem); border: 1px solid #d7e5cf99;
+  border-radius: 1.2rem; background: #eff6e7f5;
+}
+.et-page .et-price-fine { padding: 1.5rem; border-radius: .8rem; background: #eff6e7ed; }
+.et-page .et-footer { background: linear-gradient(180deg, #173e31, #0b2e22); }
+@media (max-width: 900px) {
+  .et-page .et-testimonials-heading { grid-template-columns: 1fr; gap: 1rem; }
+  .et-page .et-testimonial-grid { grid-template-columns: 1fr; }
+  .et-page .et-testimonial-grid .et-quote-lead { grid-row: auto; padding-right: 0; border-right: 0; }
+  .et-page .et-quote-lead blockquote p { font-size: clamp(1.8rem, 4.5vw, 2.6rem); }
+}
+@media (max-width: 640px) {
+  .et-page .et-quote blockquote p { font-size: 1.65rem; }
+  .et-page .et-quote-lead blockquote p { font-size: 1.9rem; }
+  .et-page .et-testimonial-grid .et-quote { padding-block: 1.75rem; }
+}

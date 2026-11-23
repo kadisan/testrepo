@@ -37,7 +37,13 @@ test('Hungarian landing presents the confirmed offer without stale prices, with 
  assert.doesNotMatch(html,/Ide kerül|Lorem ipsum|példa-visszajelzés/i);
  assert.equal((html.match(/<blockquote>/g)||[]).length,3);
  assert.match(html,/Korábbi zarándokutak résztvevőinek/);
- for(const quote of conversionOffer.testimonials)assert.ok(html.includes(quote));
+ const voices=[...html.matchAll(/<figure class="et-quote[^\"]*">([\s\S]*?)<\/figure>/g)].map(match=>match[1]);
+ for(const quote of conversionOffer.testimonials){
+  const voice=voices.find(figure=>figure.includes(`<figcaption>${quote.name}</figcaption>`));
+  assert.ok(voice,`Missing attribution for ${quote.name}`);
+  const words=quote.text.replaceAll('„','»').replaceAll('”','«');
+  assert.ok(voice.replace(/<[^>]+>/g,'').includes(`„${words}”`),`Quote must stay paired with ${quote.name}`);
+ }
  assert.match(html,/egy órán belül/i);assert.match(html,/9[–—-]19/);
 });
 test('the November brief keeps comparison prices distinct from payable prices and recommends only the complete package',()=>{

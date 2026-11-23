@@ -206,3 +206,11 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | SZERZŐI KÉPKÉRÉS | A „Lépj be a fák közé” borító erdőképe alig látható háttérként jelenjen meg. A korábban is használt, felirat nélküli lombkoronaváltozatot használjuk: `public/images/lombkorona-hatter.webp`; a kép szövege nem kerül a landing szövegei mögé. |
 | PONTOSÍTOTT AJÁNLÁS | A Télből tavaszba ajánló címkéje: „Ha a hétvégék után is szeretnél kísérést.” A 160 000 Ft-os teljes sorozathoz képest 40 000 Ft a különbség; a meglévő egyéni nap, négy Tai Chi-alkalom és tavaszi kedvezmény tartalma megmarad. |
 | TOVÁBBRA IS NYITOTT | Az érkezés/hazautazás pontos ideje, a három étkezés megnevezése, az utalvány érvényessége/kiállítása/időpontválasztása. Ezekre a szerzőtől kérünk adatot; addig egyeztetést kínálunk, nem találunk ki feltételt. A saját domainre történő élesítés előzetes jóváhagyása továbbra is szükséges. |
+
+## 2026. november 23. — Névvel közölt, erősebb idézetek és következetes zöldek
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI PONTOSÍTÁS | A résztvevői idézetek saját mondatként, idézőjelben jelenjenek meg, közvetlenül alattuk az adott résztvevő keresztnevével. Ez felülírja a korábbi brief névtelen közlést kérő mondatát. A jelenlegi három kiemelt részlet szerzője: Ildikó, Éva és Eika; az utóbbi írásmódja a beküldött forrásé. |
+| SZERZŐI VIZUÁLIS KÉRÉS | Az idézetek legyenek markánsak, újságoldalra emlékeztető kiemeléssel. A később küldött konkrét referencia a https://magyarnemzet.hu/ — kizárólag az idézetekhez, nem az egész oldal megjelenéséhez. |
+| SZERZŐI KÉRÉS | A finoman látható erdei háttér lefelé sötétedjen; a különböző programcsomagok és kártyák a főoldal következetességéhez igazodva eltérő RGB-értékű zöldeket kapjanak. |
