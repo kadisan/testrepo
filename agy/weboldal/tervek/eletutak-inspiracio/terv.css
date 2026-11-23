@@ -1,0 +1,112 @@
+.concept-page { background: #edf3e8; color: #203e32; }
+.concept-page, .concept-page * { box-sizing: border-box; }
+.concept-page a { color: inherit; text-decoration: none; }
+.concept-page main { position: relative; isolation: isolate; }
+.plan-shell { width: min(1240px, calc(100% - 80px)); margin-inline: auto; }
+.plan-skip { position: fixed; top: -100px; left: 16px; z-index: 100; background: #fff; padding: 16px; }
+.plan-skip:focus { top: 12px; }
+.plan-notice { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px 24px; padding: 12px max(24px, calc((100% - 1240px) / 2)); background: #173e31; color: #f5f7e9; font-size: 18px; }
+.plan-notice > div { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 18px; }
+.plan-notice strong { letter-spacing: .08em; }
+.plan-notice a { text-decoration: underline; text-underline-offset: .2em; min-height: 44px; display: inline-flex; align-items: center; }
+.plan-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 32px; padding-block: 24px; }
+.plan-brand { width: 310px; max-width: 100%; }
+.plan-brand img { width: 100%; height: auto; }
+.plan-header nav { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.plan-header nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: 20px; text-decoration: underline; text-underline-offset: .25em; }
+.plan-intro { padding-block: 40px 64px; }
+.concept-page .plan-eyebrow { font-size: 18px; letter-spacing: .08em; font-weight: 600; margin-bottom: 20px; }
+.concept-page h1 { max-width: 1050px; font-size: clamp(36px, 4.6vw, 66px); line-height: 1.17; margin: 0 0 24px; text-wrap: pretty; }
+.plan-lead { font-size: 24px; max-width: 850px; }
+.concept-page .plan-context { max-width: 840px; font-size: 18px; margin-top: 20px; border-left: 2px solid #7d8e70; padding-left: 20px; }
+.plan-person, .plan-weekends, .plan-scenes { padding-block: 64px 80px; scroll-margin-top: 24px; }
+.plan-person { background: linear-gradient(115deg, #f1e2dc, #e6d7cd); }
+.plan-number { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; font-size: 18px; letter-spacing: .05em; margin-bottom: 40px; }
+.plan-number > span { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid currentColor; border-radius: 50%; flex: none; }
+.plan-person-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 70px; }
+.plan-collage { margin: 0; min-width: 0; }
+.plan-collage-art { position: relative; padding-right: 64px; padding-bottom: 70px; }
+.plan-portrait { width: 100%; height: 540px !important; object-fit: cover; object-position: center 38%; border: 10px solid #f6f5eb; border-radius: 12px; box-shadow: 0 12px 30px #3b4b341b; }
+.plan-walking-detail { position: absolute; right: 12px; bottom: 16px; width: 49%; height: 250px !important; object-fit: cover; object-position: center 48%; border: 8px solid #f6f5eb; border-radius: 7px; transform: rotate(-5deg); box-shadow: 0 10px 24px #273d3230; }
+.plan-collage figcaption { font-size: 18px; max-width: 100%; padding-top: 16px; }
+.concept-page .plan-person-copy h2 { font-size: clamp(32px, 3.5vw, 48px); margin: 0 0 24px; }
+.plan-person-opening { font-size: 24px; }
+.plan-person-copy > p + p { margin-top: 22px; }
+.plan-person-note { padding-left: 20px; border-left: 2px solid #967d67; }
+.plan-link { display: inline-flex; align-items: center; gap: 28px; padding: 12px 0; margin-top: 24px; border-bottom: 1px solid currentColor; font-size: 20px; }
+.plan-weekends { background: #e1ebdd; }
+.plan-section-heading { display: grid; grid-template-columns: 1.2fr 1fr; align-items: end; gap: 40px; margin-bottom: 36px; }
+.concept-page .plan-section-heading h2 { font-size: clamp(32px, 3.7vw, 50px); margin: 0; }
+.plan-section-heading p { margin: 0; font-size: 20px; }
+.plan-trip-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.plan-trip { overflow: hidden; border: 1px solid var(--trip-accent); border-top: 6px solid var(--trip-accent); border-radius: 16px; background: var(--trip-surface); }
+.plan-january { --trip-accent: #3b4d29; --trip-surface: #e4e9ce; }
+.plan-february { --trip-accent: #164c49; --trip-surface: #d2e6df; }
+.plan-march { --trip-accent: #285333; --trip-surface: #dcebd9; }
+.plan-trip > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; height: auto; }
+.plan-trip-copy { padding: 26px; }
+.plan-trip time { display: block; font-size: 20px; margin-bottom: 12px; }
+.concept-page .plan-trip h3 { font-size: 27px; margin-bottom: 28px; }
+.plan-copy-label { font-size: 18px; font-weight: 600; letter-spacing: .04em; }
+.concept-page .plan-fit { font-size: 24px; line-height: 1.5; margin-top: 12px; }
+.concept-page .plan-original { font-size: 18px; border-top: 1px solid #53694955; margin-top: 24px; padding-top: 18px; }
+.plan-scenes { background: linear-gradient(135deg, #ece4ec, #dedee9); }
+.plan-scene-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 44px; }
+.plan-scene-grid article { padding-top: 22px; border-top: 2px solid #8a748f; }
+.plan-scene-word { font-size: 18px; text-transform: uppercase; letter-spacing: .1em; }
+.concept-page .plan-scene-grid h3 { font-size: 27px; line-height: 1.4; margin: 20px 0; }
+.plan-scene-grid p { font-size: 20px; }
+.plan-pause { position: relative; isolation: isolate; padding-block: 50px 60px; background: #173e31; color: #f3f5e9; text-align: center; scroll-margin-top: 24px; }
+.plan-pause::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('/images/lombkorona-hatter.webp') center / cover; opacity: .14; pointer-events: none; }
+.plan-pause .plan-copy-label { font-size: 18px; color: #e1e9ce; }
+.concept-page .plan-pause h2 { font-size: clamp(38px, 4.7vw, 66px); line-height: 1.17; margin: 24px 0; }
+.plan-pause p:last-child { font-size: 18px; max-width: 650px; margin-inline: auto; }
+.concept-page .et-testimonials { padding-block: 60px; }
+.plan-review-end { padding-block: 64px; max-width: 980px; }
+.concept-page .plan-review-end h2 { font-size: 36px; margin-bottom: 20px; }
+.plan-review-end p:not(.plan-eyebrow) { font-size: 20px; }
+.plan-compare { display: inline-flex; align-items: center; gap: 24px; flex-wrap: wrap; padding: 16px 24px; margin-top: 24px; border: 1px solid #173e31; border-radius: 10px; background: #173e31; color: #fff; font-size: 20px; }
+.plan-footer { padding-block: 24px; background: #173e31; color: #eef4e7; font-size: 18px; }
+.plan-footer .plan-shell { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px 30px; }
+.plan-footer p { flex-basis: 100%; font-size: 18px; }
+.concept-page a:is(:hover, :focus-visible) { text-decoration: underline; text-underline-offset: .2em; }
+.plan-compare:is(:hover, :focus-visible) { background: #285333; }
+@media (max-width: 1000px) {
+  .plan-person-grid { gap: 40px; }
+  .plan-portrait { height: 430px !important; }
+  .plan-collage-art { padding-right: 30px; }
+  .plan-walking-detail { height: 210px !important; width: 58%; }
+  .plan-trip-grid { gap: 16px; }
+  .plan-trip-copy { padding: 20px; }
+}
+@media (max-width: 800px) {
+  .plan-shell { width: calc(100% - 40px); }
+  .plan-person-grid, .plan-section-heading { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .plan-collage { width: min(100%, 510px); justify-self: center; }
+  .plan-collage-art { padding-right: 60px; }
+  .plan-portrait { height: 490px !important; }
+  .plan-walking-detail { width: 49%; height: 230px !important; }
+  .plan-trip-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .plan-trip { display: grid; grid-template-columns: .85fr 1.15fr; align-items: start; }
+  .plan-trip > img { height: 100%; aspect-ratio: auto; object-fit: cover; }
+  .plan-scene-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}
+@media (max-width: 540px) {
+  .plan-notice { padding-inline: 20px; }
+  .plan-header { padding-block: 20px; }
+  .plan-header nav { gap: 4px 20px; }
+  .plan-brand { width: 265px; }
+  .plan-intro { padding-block: 24px 36px; }
+  .plan-lead { font-size: 20px; }
+  .plan-person, .plan-weekends, .plan-scenes { padding-block: 40px 48px; }
+  .plan-number { margin-bottom: 28px; }
+  .plan-collage-art { padding-right: 40px; padding-bottom: 56px; }
+  .plan-portrait { height: 390px !important; border-width: 7px; }
+  .plan-walking-detail { width: 54%; height: 170px !important; border-width: 6px; }
+  .plan-person-opening { font-size: 22px; }
+  .plan-trip { display: block; }
+  .plan-trip > img { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+  .concept-page .plan-fit { font-size: 22px; }
+  .plan-pause { padding-block: 36px 44px; }
+  .plan-review-end { padding-block: 44px; }
+}

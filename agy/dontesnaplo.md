@@ -223,3 +223,10 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | SZERZŐI JAVÍTÁSKÉRÉS | „A lépések között magadra is figyelhetsz” rész két fotója azonos magasságú legyen. |
 | SZERZŐI KÉRÉS | „A hétvége ritmusa” eltérő háttérrel emelkedjen ki, rámutatáskor képes háttérre váltson. |
 | SZERZŐI KÉPHASZNÁLATI KÉRÉS | Az Ősfenyves vendégház-bemutatóhoz az Ősfenyves saját weboldaláról letölthető fotó kerüljön be halvány háttérként. |
+
+## 2026. november 23. — Külön inspirációs látványterv
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI REFERENCIA | https://erdofurdozz.hu/ — inspiráció a személyesebb képelrendezéshez, a hétvégék „kinek szól” soraihoz és az elképzelhetőbb programbemutatóhoz. A referencia képei és nem egyeztetett programjai nem kerülnek át. |
+| SZERZŐI HATÁR | „mutasd meg tervként, de még ne legyen végleges”; majd „go ahead”. Ez külön látványterv elkészítésére szól, a korábbi előnézet vagy saját domain átírására nem. A meglévő repófotók elegendők az elrendezési próbához. |
