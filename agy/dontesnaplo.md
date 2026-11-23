@@ -214,3 +214,12 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | SZERZŐI PONTOSÍTÁS | A résztvevői idézetek saját mondatként, idézőjelben jelenjenek meg, közvetlenül alattuk az adott résztvevő keresztnevével. Ez felülírja a korábbi brief névtelen közlést kérő mondatát. A jelenlegi három kiemelt részlet szerzője: Ildikó, Éva és Eika; az utóbbi írásmódja a beküldött forrásé. |
 | SZERZŐI VIZUÁLIS KÉRÉS | Az idézetek legyenek markánsak, újságoldalra emlékeztető kiemeléssel. A később küldött konkrét referencia a https://magyarnemzet.hu/ — kizárólag az idézetekhez, nem az egész oldal megjelenéséhez. |
 | SZERZŐI KÉRÉS | A finoman látható erdei háttér lefelé sötétedjen; a különböző programcsomagok és kártyák a főoldal következetességéhez igazodva eltérő RGB-értékű zöldeket kapjanak. |
+
+## 2026. november 23. — Erősebb nyitókép, váltakozó szakaszok és vendégházfotó
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI PONTOSÍTÁS | A nyitó/head részben az erdei háttér legyen jobban látható. A szakaszok közötti ritmus túl homogén; a zöldet kiegészítő más színekkel is tagolni kell az oldalt. |
+| SZERZŐI JAVÍTÁSKÉRÉS | „A lépések között magadra is figyelhetsz” rész két fotója azonos magasságú legyen. |
+| SZERZŐI KÉRÉS | „A hétvége ritmusa” eltérő háttérrel emelkedjen ki, rámutatáskor képes háttérre váltson. |
+| SZERZŐI KÉPHASZNÁLATI KÉRÉS | Az Ősfenyves vendégház-bemutatóhoz az Ősfenyves saját weboldaláról letölthető fotó kerüljön be halvány háttérként. |

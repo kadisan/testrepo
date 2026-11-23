@@ -80,3 +80,77 @@
   .et-page .et-quote-lead blockquote p { font-size: 1.9rem; }
   .et-page .et-testimonial-grid .et-quote { padding-block: 1.75rem; }
 }
+
+/* Stronger opening, then warm clay / mauve / green pauses in the long page. */
+.et-page .et-hero-forest { opacity: .55; }
+.et-page .et-hero-wash {
+  background: linear-gradient(90deg, #f1f6ebeb 0%, #f1f6ebcc 45%, #f1f6eb77 85%, #f1f6eb55 100%);
+}
+.et-page .et-intro {
+  --et-section-accent: #795365;
+  background: linear-gradient(115deg, #f1e3dcf2, #e8d4ceeb);
+  border-block: 1px solid #9c7a7340;
+}
+.et-page .et-weekends { background: #e0eadbc7; }
+.et-page .et-practice {
+  --et-section-accent: #685772;
+  background: linear-gradient(135deg, #ece4edf5, #dbdce9eb);
+  border-block: 1px solid #7a68844d;
+}
+.et-page .et-testimonials {
+  --et-section-accent: #755c34;
+  background: linear-gradient(115deg, #f2e8d5f2, #e7e4d2ed);
+  border-bottom: 1px solid #927e5f55;
+}
+.et-page .et-prices { background: linear-gradient(180deg, #dce8dfe6, #b1cbbac9); }
+.et-page :is(.et-intro, .et-practice, .et-testimonials) .et-kicker { color: var(--et-section-accent, var(--et-muted)); }
+.et-page .et-faq > .et-shell { background: #eee7edf5; }
+.et-page .et-contact > .et-shell { background: #f0e9dcf5; }
+
+/* One shared portrait frame keeps both photos exactly the same height. */
+.et-page .et-practice-grid {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr) minmax(0, .8fr);
+  align-items: start;
+}
+.et-page :is(.et-walk-photo, .et-tai-photo) { align-self: start; }
+.et-page .et-practice :is(.et-walk-photo, .et-tai-photo) .et-photo-open { aspect-ratio: 9 / 16; }
+.et-page .et-practice :is(.et-walk-photo, .et-tai-photo) img {
+  height: 100% !important; aspect-ratio: auto; object-fit: cover;
+}
+.et-page .et-practice .et-walk-photo img { object-position: center 52%; }
+.et-page .et-practice .et-tai-photo img { object-position: center; }
+
+.et-page .et-weekend-rhythm {
+  position: relative; isolation: isolate; overflow: hidden; padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: #ebdac5; color: #303f31; border: 1px solid #9f815a88; border-left: 6px solid #96764b;
+  box-shadow: 0 .7rem 2rem #59442c0d; scroll-margin-top: 2rem;
+  transition: color .25s ease, border-color .25s ease;
+}
+.et-page .et-weekend-rhythm::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; pointer-events: none;
+  background: linear-gradient(100deg, #0d2e22e6, #163f2bb8), url('/images/eletutak/napfenyes-erdei-hatter.webp') center / cover;
+  transition: opacity .25s ease;
+}
+.et-page .et-weekend-rhythm:is(:hover, :focus-within) {
+  color: #f5f9ef; --et-line: #dce9d680; border-color: #305b40;
+}
+.et-page .et-weekend-rhythm:is(:hover, :focus-within)::before { opacity: 1; }
+.et-page .et-rhythm-link { margin-top: .5rem; text-decoration: underline; text-underline-offset: .2em; }
+
+.et-page .et-stay > .et-shell {
+  background: linear-gradient(90deg, #f3f0e5f2 0%, #f3f0e5df 48%, #f3f0e5c4 100%),
+    url('/images/eletutak/osfenyves-szikla-kulso.jpg') center 55% / cover;
+  border-color: #d7d4b9;
+}
+.et-page .et-stay-credit { grid-column: 1 / -1; font-size: 1.125rem; margin: 0; }
+.et-stay-credit a { text-decoration: underline; text-underline-offset: .2em; }
+@media (max-width: 900px) {
+  .et-page .et-practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .et-page .et-hero-wash { background: linear-gradient(90deg, #f1f6ebc9, #f1f6ebb3); }
+  .et-page .et-stay > .et-shell {
+    background: linear-gradient(180deg, #f3f0e5f0, #f3f0e5cf),
+      url('/images/eletutak/osfenyves-szikla-kulso.jpg') 58% center / cover;
+  }
+}
