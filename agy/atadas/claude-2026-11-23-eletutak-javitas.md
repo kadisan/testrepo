@@ -38,3 +38,16 @@ A helyi csomag és ellenőrzési bizonyítékok: `/workspace/artifacts/eletutak-
 - A januári jelentkezési határidő és a tényleges szabad helyek száma, ha megjelenítendő.
 - Az ajándékutalvány érvényessége és kiállításának módja. Addig kizárólag személyes egyeztetést kínál az oldal.
 - Az előnézet megjelenésének és az idézetválasztásnak az átnézése, majd az élő kiadás jóváhagyása. Az előnézeti feltöltés nem élesítette az új változatot a saját domainen.
+
+## Folytatás — a Zen–Hormozi javaslatok megvalósítása és ellenőrzése
+
+A szerző elfogadta a hat javaslat megvalósítását, és alig látható lombkoronahátteret kért a csatolt borító alapján. Alkalmazásforrás: `4cc0fcb`, közös ág változatlan. Friss előnézet: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261123-zen . Külön Worker-verzió: `302161e8-1ea3-48b4-bcc5-eb31d6369107`.
+
+- A borító meglévő, felirat nélküli lombkoronaképe nagyon halványan szerepel. Nem változott a főoldal vagy a Tai Chi.
+- A nyitás után négy rövid árkártya vezet a megfelelő részletes csomaghoz; a személyes helyzetet tisztázó blokk is korábbra került, a dátumképek rövidebbek. A teljes oldal a kiegészítésekkel hosszabb; az árak megtalálása lett közvetlenebb.
+- A 200 000 Ft-os ajánlás a személyes folytatást hangsúlyozza, a 160 000 Ft-hoz képest +40 000 Ft magyarázattal. A csomag tartalma és ára változatlan.
+- A nyitógomb alatt 10–15 perces beszélgetés és a foglalási/fizetési kötelezettség hiánya. A programvázlat csak a már ismert pénteki megérkezést és szombat–vasárnapi programot állítja. A konkrét órák és étkezések továbbra is szerzői adatra várnak.
+- Az idézetek között előre került a szkeptikus résztvevő tapasztalata, az általános hálamondatot a beküldött „Ez nyugtatta a lelkemet, tehermentesített.” részlet váltotta fel. Három névtelen, korábbi zarándokúti részlet marad.
+- Az ajándék főgomb az aktív űrlapra vezet; választható témamező jelöli a szándékot. A meglévő API-séma `reason` mezőjében marad a jelölés, 1000 karakteren belül. Hiba/újrapróbálás megőrzi a szándékot, a csomagot és azonos tartalomnál a kérésazonosítót. Inaktív fogadónál telefon, másodlagos lehetőségként e-mail. Nincs kitalált utalványfeltétel.
+
+Ellenőrzés: 47/47 alapteszt, sikeres build, 55/55 érintett böngészős próba, a feltöltött HTTPS-oldal négy méretben hibamentes. Ajándékfelületi próba megtörtént, valódi új beküldés nem. A korábban igazolt Google-fogadó sémája és értesítése nem változott. A kiadáslekérdezés szerint a saját domain éles verziója továbbra is a november 16-i `c80192c9-dd90-4ba0-a4da-ebb18f9e749c`. Az előnézeti jóváhagyás és a hiányzó program-/utalványadatok továbbra is nyitottak.
