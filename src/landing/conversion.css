@@ -101,8 +101,8 @@
 .et-trip time { display: block; font-size: 1.25rem; font-weight: 600; margin-bottom: .8rem; }
 .et-trip h3 { margin-bottom: .75rem; font-size: 1.5rem; }
 .et-trip p { color: var(--et-muted); font-size: 1.125rem; }
-.et-trip button { margin-top: 1rem; width: 100%; border-top: 1px solid var(--et-line); }
-.et-trip button[aria-pressed=true] { color: #1d4f2a; text-decoration: underline; text-underline-offset: .3em; }
+.et-trip [data-et-weekend] { margin-top: 1rem; width: 100%; border-top: 1px solid var(--et-line); }
+.et-trip [data-et-weekend][aria-current=true] { color: #1d4f2a; text-decoration: underline; text-underline-offset: .3em; }
 .et-walk-note { display: flex; align-items: flex-start; gap: .8rem; border-top: 1px solid var(--et-line); margin-top: 2.5rem; padding-top: 1.5rem; }
 .et-walk-note svg { width: 1.35rem; height: 1.35rem; margin-top: .2rem; }
 .et-walk-note p { max-width: 58rem; font-size: 1.0625rem; color: var(--et-muted); }
@@ -139,7 +139,7 @@
 .et-package ul { list-style: none; padding: 0; margin: 1.2rem 0 1.5rem; }
 .et-package li { display: flex; align-items: flex-start; gap: .6rem; font-size: 1.0625rem; padding-block: .4rem; line-height: 1.55; }
 .et-package li svg { width: 1.2rem; height: 1.2rem; margin-top: .15rem; }
-.et-package button { width: 100%; margin-top: auto; border-top: 1px solid var(--et-line); font-size: 1.0625rem; }
+.et-package [data-et-package] { width: 100%; margin-top: auto; border-top: 1px solid var(--et-line); font-size: 1.0625rem; }
 .et-price-fine { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; color: var(--et-muted); margin-top: 1.8rem; }
 .et-price-fine p { font-size: 1rem; }
 .et-stay { border-top: 1px solid var(--et-line); border-bottom: 1px solid var(--et-line); padding-block: 3rem; }
@@ -237,7 +237,7 @@
   .et-trip { display: grid; grid-template-columns: .9fr 1.1fr; gap: 1.75rem; align-items: start; }
   .et-trip-copy { padding-top: .1rem; }
   .et-trip-photo img { aspect-ratio: 1; }
-  .et-trip button { margin-top: .65rem; }
+  .et-trip [data-et-weekend] { margin-top: .65rem; }
   .et-guide-grid { grid-template-columns: .75fr 1fr; gap: 2rem; }
   .et-guide-copy h2 { font-size: 2.3rem; }
   .et-price-feature { padding: 2rem; gap: 2rem; }
@@ -248,7 +248,7 @@
   .et-package h3 { margin-bottom: .3rem; }
   .et-package-price { margin-top: .65rem !important; }
   .et-package ul { grid-column: 2; grid-row: 1/5; margin-top: 0; }
-  .et-package button { grid-column: 2; }
+  .et-package [data-et-package] { grid-column: 2; }
   .et-faq-grid, .et-contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .et-faq-grid > div:first-child > p:last-child { max-width: none; }
   .et-contact-copy { max-width: 40rem; }

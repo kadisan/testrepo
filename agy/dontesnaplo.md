@@ -184,3 +184,16 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | Állapot | Döntés / megjegyzés |
 | --- | --- |
 | SZERZŐI KÉRÉS | „a sarkadi sándor.hu kell előbb élesiteni”, majd „s aztanjon jön az új életutak”. A főoldal és annak Tai Chi-kapuja kerüljön előbb a saját domainre; az új magyar Életutak csak ezután. A kérés ebben a sorrendben feloldja a november 14-i élesítési tilalmat. |
+
+## 2026. november 23. — Életutak: kapcsolat, árak, ajándékozás és fejléc
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | Cím: „Változásban vagy, és még nem látod a következő lépést?” Az alcím változatlan: „Vezetett elcsendesedés gyaloglással, Tai Chival és erdei jelenléttel.” Az első bekezdés: „Hagyj időt arra, hogy ránézz, mi fontos most neked.” |
+| SZERZŐI KÉRÉS | Az Életutak fejlécében a csatolt mintának megfelelő sötétzöld, S-jeles, saját aláírásos logó legyen világos zöldes háttéren. A megfelelő meglévő eszköz: `public/images/logo/fejlec-logo-sotetzold.webp`. |
+| SZERZŐI KÉRÉS | A visszahívási gombok működő űrlaphoz vagy közvetlen telefonhíváshoz vezessenek. Telefon: +36 70 316 1897. A három hétvége választását is ellenőrizni kell. |
+| SZERZŐI KÉRÉS | Az ár-összehasonlítás külön választott hétvégékre vonatkozzon: kettő 120 000 Ft helyett 100 000 Ft, három 180 000 Ft helyett 160 000 Ft. Az egyalkalmas csomag ne kapjon kedvezményfeliratot. |
+| SZERZŐI KÉRÉS | Egyetlen ajánlott csomag: Télből tavaszba, 200 000 Ft. Címke: „Ezt ajánlom, ha végig szeretnéd járni.” |
+| SZERZŐI SZÖVEG | „Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.” A kiállítás és érvényesség feltételeit még a szerző adja meg. |
+| SZERZŐI FORRÁS ÉS KÉRÉS | A szerző korábbi zarándokutak résztvevői visszajelzéseit elküldte; a brief 2–3 rövid, név nélküli idézetet kér. Ezek nem a 2027-es téli hétvégék értékelései. Az előnézetben három részlet szerepel; a neveket nem tesszük közzé. |
+| SZERZŐI KORLÁT | Jelentkezési határidő és szabadhelyszám csak valós, szerzőtől kapott adatból kerülhet az oldalra; kitalált adat és visszaszámláló nem. A GYIK tartalma, a hétköznap 9–19 közötti egy órán belüli visszahívás, a bemutatkozás és a vendégház linkje megmarad. |

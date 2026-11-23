@@ -1,9 +1,17 @@
-// Hungarian offer agreed with the author on 13 November 2026.
+// Hungarian offer, updated from the author's brief on 23 November 2026.
 // The parked translations keep their earlier copy until a separate review.
 export const conversionOffer = {
   name: 'Életutak találkozása',
-  title: 'Önismereti hétvége a természetben',
+  title: 'Változásban vagy, és még nem látod a következő lépést?',
   subtitle: 'Vezetett elcsendesedés gyaloglással, Tai Chival és erdei jelenléttel.',
+  introduction: 'Hagyj időt arra, hogy ránézz, mi fontos most neked.',
+  gift: 'Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.',
+  // Publish only author-supplied, permission-cleared quotations.
+  testimonials: [
+    'A zarándoklat most is mint az eddigieknél is, átmosott, újraindította a „rendszert”.',
+    'Mélységeket és magasságokat tapasztaltam. Hálás vagyok mindenért és mindenkiért!',
+    'Úgy éreztem, nem várt felismerések birtokosa lettem, pedig bevallom őszintén, etekintetben kissé szkeptikusan indultam neki, inkább a csavargó lelkem vitt.',
+  ],
   phone: '+36703161897',
   phoneDisplay: '+36 70 316 1897',
   email: 'kadisan@gmail.com',
@@ -15,9 +23,9 @@ export const conversionOffer = {
   ],
   packages: [
     {id: 'one', name: 'Egy hétvége', price: 60000, label: 'Egy szabadon választott alkalom', note: 'Első találkozásnak is', features: ['Vezetett hétvégi program', 'Két éjszaka szállás', 'Három étkezés', 'Tai Chi és erdei jelenlét', 'Igény szerint négyszemközti beszélgetés']},
-    {id: 'two', name: 'Két hétvége', price: 100000, label: 'Két szabadon választott alkalom', note: '20 000 Ft kedvezmény', features: ['Két teljes hétvége', 'Összesen négy éjszaka és hat étkezés']},
-    {id: 'series', name: 'Három hétvége', price: 160000, label: 'A teljes téli sorozat', note: '20 000 Ft kedvezmény', features: ['Mindhárom teljes hétvége', 'Összesen hat éjszaka és kilenc étkezés']},
-    {id: 'plus', name: 'Télből tavaszba', price: 200000, label: 'A teljes téli sorozat személyes folytatással.', note: 'Több idő a saját utadra', features: ['Mindhárom teljes hétvége', 'Egy egyéni kísérési nap', 'Négyalkalmas Tai Chi-bérlet', '30% kedvezmény a megnevezett tavaszi út programdíjából']},
+    {id: 'two', name: 'Két hétvége', price: 100000, comparisonPrice: 120000, label: 'Két szabadon választott alkalom', note: 'Két külön hétvége árához képest', features: ['Két teljes hétvége', 'Összesen négy éjszaka és hat étkezés']},
+    {id: 'series', name: 'Három hétvége', price: 160000, comparisonPrice: 180000, label: 'A teljes téli sorozat', note: 'Három külön hétvége árához képest', features: ['Mindhárom teljes hétvége', 'Összesen hat éjszaka és kilenc étkezés']},
+    {id: 'plus', name: 'Télből tavaszba', price: 200000, label: 'A teljes téli sorozat személyes folytatással.', note: 'Ezt ajánlom, ha végig szeretnéd járni.', recommended: true, features: ['Mindhárom teljes hétvége', 'Egy egyéni kísérési nap', 'Négyalkalmas Tai Chi-bérlet', '30% kedvezmény a megnevezett tavaszi út programdíjából']},
   ],
   faq: [
     ['Egyedül is érkezhetek?', 'Igen. Akkor is csatlakozhatsz, ha most találkozol velem először. A közös programban és a saját csendedben is lehet helyed. A szobabeosztást előre egyeztetjük.'],

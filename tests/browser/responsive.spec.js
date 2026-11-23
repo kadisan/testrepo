@@ -41,8 +41,12 @@ for (const path of ['/', '/tai-chi/', '/eletutak-talalkozasa/']) {
       const box = await button.boundingBox();
       expect(box.y).toBeGreaterThanOrEqual(0);
       expect(box.y + box.height).toBeLessThanOrEqual(height);
-      await button.click();
-      await expect(page).toHaveURL(path === '/' ? /#utak$/ : /#kapcsolat$/);
+      if(path === '/eletutak-talalkozasa/') {
+        await expect(button).toHaveAttribute('href','tel:+36703161897');
+      } else {
+        await button.click();
+        await expect(page).toHaveURL(path === '/' ? /#utak$/ : /#kapcsolat$/);
+      }
     });
   }
 }
@@ -55,7 +59,7 @@ test('the four home gates open the intended pages and Életutak returns to the c
     await expect(page.locator(`[data-path=${key}]`)).toHaveAttribute('href', href);
   }
   await page.locator('[data-path=eletutak]').click();
-  await expect(page.locator('h1')).toContainText('Önismereti hétvége');
+  await expect(page.locator('h1')).toHaveText('Változásban vagy, és még nem látod a következő lépést?');
   await expect(page.locator('#callback-form [required]')).toHaveCount(3);
   await page.getByRole('link', {name: 'A négy lehetőség'}).click();
   await expect(page).toHaveURL(/\/#utak$/);

@@ -70,6 +70,14 @@ export function initConversion(config = {}) {
   const name = form.elements.namedItem('name');
   const phone = form.elements.namedItem('phone');
   const consent = form.elements.namedItem('consent');
+  const enquiryLinks = [...document.querySelectorAll('[data-et-enquiry]')];
+  function updateEnquiryLinks(available) {
+    enquiryLinks.forEach(link => {
+      link.href = available ? '#kapcsolat' : `tel:${offer.phone}`;
+      link.replaceChildren(document.createTextNode(available ? link.dataset.etReadyLabel : `Hívj fel: ${offer.phoneDisplay}`));
+      link.insertAdjacentHTML('beforeend', arrow);
+    });
+  }
 
   function renderSelection() {
     const pack = offer.packages.find(item => item.id === selectedPackage);
@@ -78,12 +86,12 @@ export function initConversion(config = {}) {
     summaryText.textContent = pack ? [pack.name, ...weekends].join(' · ') : '';
     document.querySelectorAll('[data-et-package]').forEach(button => {
       const selected=button.dataset.etPackage===selectedPackage;
-      button.setAttribute('aria-pressed',String(selected));
+      button.setAttribute('aria-current',String(selected));
       button.closest('.et-package,.et-price-feature')?.classList.toggle('is-selected',selected);
     });
     document.querySelectorAll('[data-et-weekend]').forEach(button => {
       const selected=selectedWeekends.includes(Number(button.dataset.etWeekend));
-      button.setAttribute('aria-pressed',String(selected));
+      button.setAttribute('aria-current',String(selected));
       button.closest('.et-trip')?.classList.toggle('is-selected',selected);
     });
   }
@@ -96,11 +104,17 @@ export function initConversion(config = {}) {
     // confirmed result into view; they do not silently create another lead.
     if (!completed) name.focus({preventScroll: true});
   }
-  document.querySelectorAll('[data-et-package]').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('[data-et-package]').forEach(button => button.addEventListener('click', event => {
+    if (!ready) return;
+    event.preventDefault();
     const id = button.dataset.etPackage;
     select(id, ['series', 'plus'].includes(id) ? [0, 1, 2] : []);
   }));
-  document.querySelectorAll('[data-et-weekend]').forEach(button => button.addEventListener('click', () => select('one', [Number(button.dataset.etWeekend)])));
+  document.querySelectorAll('[data-et-weekend]').forEach(button => button.addEventListener('click', event => {
+    if (!ready) return;
+    event.preventDefault();
+    select('one', [Number(button.dataset.etWeekend)]);
+  }));
   document.querySelectorAll('.et-trip,.et-package,.et-price-feature').forEach(card=>card.addEventListener('click',event=>{
     if(event.target.closest('button,a,input,textarea,select,label'))return;
     card.querySelector('[data-et-package],[data-et-weekend]')?.click();
@@ -125,16 +139,24 @@ export function initConversion(config = {}) {
     observer.observe(document.querySelector('#kapcsolat'));
   }
 
-  function showError(message) {
+  function showError(message, directContact = false) {
     status.textContent = message;
+    if (directContact) {
+      const link = document.createElement('a');
+      link.href = `tel:${offer.phone}`;
+      link.textContent = `Hívj fel: ${offer.phoneDisplay}`;
+      status.append(document.createTextNode(' '), link);
+    }
     status.classList.add('is-error');
     status.focus({preventScroll: true});
   }
   function inactive() {
     ready = false;
+    updateEnquiryLinks(false);
     submit.disabled = true;
     submit.innerHTML = `Kérem a visszahívást ${arrow}`;
     availability.hidden = false;
+    availability.querySelector('[data-et-availability-label]').textContent = 'Az online visszahíváskérés most nem érhető el. Közvetlenül is elérsz:';
     form.removeAttribute('aria-busy');
   }
 
@@ -156,6 +178,7 @@ export function initConversion(config = {}) {
       const result = response.ok ? await response.json() : null;
       ready = result?.enabled === true;
       if (!ready) {inactive(); return;}
+      updateEnquiryLinks(true);
       submit.disabled = false;
       submit.innerHTML = `Kérem a visszahívást ${arrow}`;
       availability.hidden = true;
@@ -186,7 +209,7 @@ export function initConversion(config = {}) {
       return;
     }
     if (!ready) {
-      showError('Az online visszahíváskérés még nem aktív. Kérlek, hívj telefonon vagy írj e-mailt a megadott elérhetőségen.');
+      showError('Az online visszahíváskérés most nem érhető el.', true);
       return;
     }
     const values = {
@@ -222,7 +245,7 @@ export function initConversion(config = {}) {
       status.scrollIntoView({block: 'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
       window.dispatchEvent(new CustomEvent('sarkadi:callback-confirmed', {detail: {requestId}}));
     } catch {
-      showError('A kérés rögzítését most nem tudtuk visszaigazolni. Az adataid itt maradtak: próbáld újra, vagy keress a +36 70 316 1897 számon.');
+      showError('A kérés rögzítését most nem tudtuk visszaigazolni. Az adataid itt maradtak: próbáld újra, vagy hívj fel.', true);
     } finally {
       clearTimeout(timeout);
       sending = false;

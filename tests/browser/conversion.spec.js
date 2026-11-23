@@ -26,7 +26,7 @@ async function fillCallback(page,{reason=''}={}){
 for(const width of [360,390,768,1440])test(`Hungarian conversion landing fits ${width}px with its complete offer`,async({page})=>{
  const errors=[];page.on('pageerror',error=>errors.push(error.message));
  await callbackApi(page);await page.setViewportSize({width,height:950});await page.goto(path);await page.evaluate(()=>document.fonts.ready);
- await expect(page.getByRole('heading',{level:1})).toContainText('Önismereti hétvége');
+ await expect(page.getByRole('heading',{level:1})).toHaveText('Változásban vagy, és még nem látod a következő lépést?');
  await expect(page.locator('.et-trip')).toHaveCount(3);
  await expect(page.locator('[data-et-package]')).toHaveCount(4);
  await expect(page.locator('.et-main-price')).toContainText(/60\s*000/);
@@ -39,6 +39,8 @@ test('the mobile hero offers a visible first step without scrolling',async({page
  await callbackApi(page);await page.setViewportSize({width:390,height:844});await page.goto(path);await page.evaluate(()=>document.fonts.ready);
  const button=page.locator('.et-hero .et-button');await expect(button).toBeVisible();
  const bounds=await button.boundingBox();expect(bounds.y).toBeGreaterThanOrEqual(0);expect(bounds.y+bounds.height).toBeLessThanOrEqual(844);
+ await expect(page.locator('.et-hero .et-direct-call')).toBeVisible();
+ await expect(page.locator('.et-hero .et-direct-call')).toHaveAttribute('href','tel:+36703161897');
 });
 
 test('only name, phone and consent are required; a reason and email are not needed',async({page})=>{
@@ -76,7 +78,38 @@ test('an unconfigured receiver keeps online submission disabled and shows direct
  await expect(page.locator('.et-submit')).toBeDisabled();await expect(page.locator('#et-form-availability')).toBeVisible();
  await expect(page.locator('#et-form-availability a[href="tel:+36703161897"]')).toBeVisible();
  await expect(page.locator('#et-form-availability a[href="mailto:kadisan@gmail.com"]')).toBeVisible();
+ for(const link of await page.locator('[data-et-enquiry]').all()){
+  await expect(link).toHaveAttribute('href','tel:+36703161897');
+  await expect(link).toContainText('Hívj fel: +36 70 316 1897');
+ }
  await fillCallback(page);expect(submissions).toEqual([]);
+});
+
+test('each weekend opens an active callback with the matching date, while packages keep their selection',async({page})=>{
+ const submissions=await callbackApi(page);await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();
+ for(const [index,label] of [[0,'január 8–10.'],[1,'február 12–14.'],[2,'március 5–7.']]){
+  const link=page.locator(`[data-et-weekend="${index}"]`);
+  await expect(link).toHaveAttribute('href','#kapcsolat');await link.click();
+  await expect(page.locator('#et-selection-text')).toContainText(label);
+  await expect(page.locator('[name=name]')).toBeFocused();
+ }
+ await fillCallback(page);await page.locator('.et-submit').click();
+ await expect.poll(()=>submissions.length).toBe(1);
+ expect(submissions[0]).toMatchObject({package:'one',weekends:[2]});
+});
+
+test('comparison prices, one recommendation and the gift request are clear and keyboard accessible',async({page})=>{
+ await callbackApi(page);await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();
+ await expect(page.locator('.et-price-feature del')).toHaveCount(0);
+ await expect(page.locator('.et-package').filter({has:page.locator('[data-et-package=two]')}).locator('del')).toHaveText(/120\s*000 Ft/);
+ await expect(page.locator('.et-package').filter({has:page.locator('[data-et-package=series]')}).locator('del')).toHaveText(/180\s*000 Ft/);
+ await expect(page.locator('.et-package-bonus')).toHaveCount(1);
+ await expect(page.locator('.et-package-bonus .et-package-note')).toHaveText('Ezt ajánlom, ha végig szeretnéd járni.');
+ const gift=page.locator('.et-package-bonus .et-gift-mark a');await gift.focus();await page.keyboard.press('Enter');
+ await expect(page).toHaveURL(/#ajandek$/);
+ await expect(page.locator('#ajandek')).toContainText('Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.');
+ await expect(page.locator('#ajandek a')).toHaveAttribute('href',/^mailto:kadisan@gmail\.com\?subject=/);
+ await expect(page.locator('.et-header img')).toHaveAttribute('src','/images/logo/fejlec-logo-sotetzold.webp');
 });
 
 test('static HTML returned in place of readiness never enables callback submission',async({page})=>{
@@ -129,7 +162,7 @@ test('clicking an offer surface selects it while a photo click only opens its vi
  await callbackApi(page);await page.goto(path);
  await page.locator('.et-package').filter({has:page.locator('[data-et-package=series]')}).locator('h3').click();
  await expect(page.locator('#et-selection-text')).toContainText('Három hétvége');
- await expect(page.locator('[data-et-package=series]')).toHaveAttribute('aria-pressed','true');
+ await expect(page.locator('[data-et-package=series]')).toHaveAttribute('aria-current','true');
  await page.locator('.et-trip').first().locator('[data-et-photo]').click();
  await expect(page.locator('#et-photo-dialog')).toBeVisible();
  await expect(page.locator('#et-selection-text')).toContainText('Három hétvége');
@@ -137,7 +170,8 @@ test('clicking an offer surface selects it while a photo click only opens its vi
 
 test('the complete offer and direct contact remain available without JavaScript',async({browser})=>{
  const context=await browser.newContext({javaScriptEnabled:false});const page=await context.newPage();await page.goto(path);
- await expect(page.getByRole('heading',{level:1})).toContainText('Önismereti hétvége');await expect(page.locator('.et-trip')).toHaveCount(3);
+ await expect(page.getByRole('heading',{level:1})).toHaveText('Változásban vagy, és még nem látod a következő lépést?');await expect(page.locator('.et-trip')).toHaveCount(3);
  await expect(page.locator('.et-main-price')).toContainText(/60\s*000/);await expect(page.locator('.et-submit')).toBeDisabled();
+ for(const link of await page.locator('[data-et-enquiry]').all())await expect(link).toHaveAttribute('href','tel:+36703161897');
  await expect(page.locator('.et-contact-copy a[href="tel:+36703161897"]')).toBeVisible();await context.close();
 });

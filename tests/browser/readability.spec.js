@@ -1,8 +1,8 @@
 import {test,expect} from '@playwright/test';
 
 const path='/eletutak-talalkozasa/';
-async function prepare(page){
- await page.route('**/eletutak-talalkozasa/api/callback',route=>route.fulfill({json:{enabled:false}}));
+async function prepare(page,enabled=false){
+ await page.route('**/eletutak-talalkozasa/api/callback',route=>route.fulfill({json:{enabled}}));
 }
 async function fits(page){
  const overflow=await page.evaluate(()=>({
@@ -21,7 +21,7 @@ for(const width of [320,390,768,1024,1440])test(`Hungarian conversion layout ref
 });
 
 for(const width of [390,1280])test(`Hungarian conversion text at 200% remains usable at ${width}px`,async({page})=>{
- await prepare(page);await page.setViewportSize({width,height:950});await page.goto(path);
+ await prepare(page,true);await page.setViewportSize({width,height:950});await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();
  await page.addStyleTag({content:'html { font-size: 200%; }'});await page.evaluate(()=>document.fonts.ready);await fits(page);
  const menu=page.getByRole('button',{name:/Menü/}),collapsed=await menu.isVisible();if(collapsed)await menu.click();
  await expect(page.locator('#et-nav')).toBeVisible();await page.locator('#et-nav a[href="#hetvegek"]').click();
@@ -33,7 +33,7 @@ for(const width of [390,1280])test(`Hungarian conversion text at 200% remains us
 test('Hungarian primary text, inputs and controls preserve the large-text baseline',async({page})=>{
  await prepare(page);await page.setViewportSize({width:390,height:950});await page.goto(path);
  const minimum=async selector=>page.locator(selector).evaluateAll(nodes=>Math.min(...nodes.map(n=>parseFloat(getComputedStyle(n).fontSize))));
- expect(await minimum('.et-trip time,.et-trip-copy>p,.et-package li,.et-form input:not([type=checkbox]),.et-form textarea,.et-hero .et-button,.et-guide .et-button,.et-price-feature .et-button,.et-submit')).toBeGreaterThanOrEqual(20);
+ expect(await minimum('.et-trip time,.et-trip-copy>p:not(.et-gift-mark),.et-package li,.et-form input:not([type=checkbox]),.et-form textarea,.et-hero .et-button,.et-guide .et-button,.et-price-feature .et-button,.et-submit')).toBeGreaterThanOrEqual(20);
  expect(await minimum('.et-form small,.et-consent,.et-form-availability')).toBeGreaterThanOrEqual(18);
  await page.locator('.et-hero .et-button').focus();await expect(page.locator('.et-hero .et-button')).toBeFocused();
 });

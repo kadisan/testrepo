@@ -4,6 +4,7 @@ import {copy,dates,packageIds,packagePrices,languagePath} from '../src/landing/c
 import {renderDocument} from '../src/landing/render.js';
 import {enquiryValues} from '../src/landing/form.js';
 import {payloadFor,fields} from '../src/form.js';
+import {conversionOffer} from '../src/landing/conversion-content.js';
 test('parked locales retain their content while every page has independent language URLs and static metadata',()=>{
  const keys=Object.keys(copy.hu).sort();
  for(const lang of ['hu','en','de','it']){
@@ -21,20 +22,39 @@ test('the approved weekends begin on Friday and parked locales retain their hist
  for(const date of dates) assert.equal(new Date(`${date}T12:00:00Z`).getUTCDay(),5);
  assert.deepEqual(packagePrices,[60000,100000,160000,200000]);
 });
-test('Hungarian landing presents the confirmed offer without stale prices or manufactured testimonials',()=>{
+test('Hungarian landing presents the confirmed offer without stale prices, with author-supplied pilgrimage testimonials',()=>{
  const html=renderDocument('hu').replace(/\u00a0|\u202f/g,' ');
- assert.match(html,/Önismereti hétvége/);
+ assert.match(html,/Önismereti hétvégék/);
  assert.match(html,/Tai Chi/);assert.match(html,/erdei jelenlét/);
  for(const amount of ['60 000','100 000','160 000','200 000'])assert.ok(html.includes(amount),`Missing price ${amount}`);
- for(const stale of ['50 000','95 000','139 000','180 000','48 000'])assert.ok(!html.includes(stale),`Stale price ${stale}`);
+ for(const stale of ['50 000','95 000','139 000','48 000'])assert.ok(!html.includes(stale),`Stale price ${stale}`);
  assert.match(html,/legfeljebb 12|12 fő|12 fős/i);
  assert.match(html,/Ősfenyves Vendégházak/);
  assert.match(html,/2027-01-08/);assert.match(html,/2027-02-12/);assert.match(html,/2027-03-05/);
  assert.match(html,/napfenyes-erdei-hatter\.webp/);
  assert.match(html,/marciusi-to\.webp/);
  assert.match(html,/sarkadi-sandor-fatronk-portre\.webp/);
- assert.doesNotMatch(html,/<blockquote|Ide kerül|Lorem ipsum|példa-visszajelzés/i);
+ assert.doesNotMatch(html,/Ide kerül|Lorem ipsum|példa-visszajelzés/i);
+ assert.equal((html.match(/<blockquote>/g)||[]).length,3);
+ assert.match(html,/Korábbi zarándokutak résztvevőinek/);
+ for(const quote of conversionOffer.testimonials)assert.ok(html.includes(quote));
  assert.match(html,/egy órán belül/i);assert.match(html,/9[–—-]19/);
+});
+test('the November brief keeps comparison prices distinct from payable prices and recommends only the complete package',()=>{
+ const html=renderDocument('hu').replace(/\u00a0|\u202f/g,' ');
+ assert.ok(html.includes(`<h1 id="et-title">${conversionOffer.title}</h1>`));
+ assert.ok(html.includes(conversionOffer.introduction));
+ assert.match(html,/<del>120 000 Ft<\/del>/);
+ assert.match(html,/<del>180 000 Ft<\/del>/);
+ assert.doesNotMatch(html,/20 000 Ft kedvezmény/);
+ assert.equal((html.match(/Ezt ajánlom, ha végig szeretnéd járni\./g)||[]).length,1);
+ assert.ok(html.includes(conversionOffer.gift));
+ assert.match(html,/images\/logo\/fejlec-logo-sotetzold\.webp/);
+ assert.equal((html.match(/<details>/g)||[]).length,conversionOffer.faq.length);
+ const staticEnquiries=[...html.matchAll(/<a\b[^>]*\bdata-et-enquiry\b[^>]*>/g)];
+ assert.ok(staticEnquiries.length>=10);
+ assert.ok(staticEnquiries.every(([tag])=>tag.includes('href="tel:+36703161897"')));
+ assert.doesNotMatch(html,/visszaszámláló|szabad helyek:|jelentkezési határidő:/i);
 });
 test('the Hungarian callback asks only for the agreed required data and offers direct contact without JavaScript',()=>{
  const html=renderDocument('hu');
