@@ -37,16 +37,68 @@
 .et-testimonial-grid figure { margin: 0; padding: 1.5rem; border-left: 2px solid var(--et-deep); }
 .et-testimonial-grid blockquote { margin: 0; }
 .et-testimonial-grid figcaption { font-size: 1.125rem; margin-top: 1rem; }
+
+/* The supplied cover's existing, lettering-free canopy is a quiet texture. */
+.et-page main { position: relative; isolation: isolate; }
+.et-page main::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: url('/images/lombkorona-hatter.webp') center top / 1670px auto repeat-y;
+  opacity: .045;
+}
+.et-page .et-hero-forest { opacity: .075; object-position: center; }
+.et-page .et-hero-wash { background: linear-gradient(90deg, #eef4e580, #eef4e530 65%, transparent); }
+.et-hero-assurance > span { display: block; margin-top: .25rem; }
+.et-page .et-overview { padding-block: 2.5rem; border-block: 1px solid var(--et-line); }
+.et-overview-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; margin-bottom: 1.5rem; }
+.et-page .et-overview-heading h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+.et-overview-heading > p { font-size: 1.25rem; }
+.et-overview-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.et-overview-card {
+  min-width: 0; display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem;
+  border: 1px solid var(--et-line); border-radius: .8rem; background: #f4f8edb8;
+  transition: background-color .2s ease, color .2s ease;
+}
+.et-overview-card > span:first-child { font-size: 1.25rem; font-weight: 600; }
+.et-overview-card > strong { font-size: 1.6rem; line-height: 1.35; font-weight: 600; }
+.et-overview-card small, .et-overview-description, .et-overview-link { font-size: 1.125rem; font-weight: 400; }
+.et-overview-link { display: flex; justify-content: space-between; align-items: center; gap: .5rem; margin-top: auto; padding-top: .5rem; text-decoration: underline; text-underline-offset: .2em; }
+.et-overview-link svg { width: 1.2rem; height: 1.2rem; }
+.et-overview-card:is(:hover, :focus-visible) { background: var(--et-deep); color: #f5f9ef; }
+.et-overview-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: 1rem !important; }
+.et-overview-links a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 1.125rem; text-decoration: underline; text-underline-offset: .2em; }
+.et-page .et-trip-photo img { aspect-ratio: 3 / 2; }
+.et-page :is(.et-price-feature, .et-package) { scroll-margin-top: 2rem; }
+.et-page .et-package-uplift { font-size: 1.125rem; padding-block: 1rem; margin-top: 1rem; border-block: 1px solid #a3c2a680; }
+.et-weekend-rhythm { margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--et-line); border-radius: 1rem; background: #f3f8e9a6; }
+.et-rhythm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.25rem; }
+.et-rhythm-grid h4 { font: 600 1.25rem/1.5 'Source Sans 3', sans-serif; margin-bottom: .5rem; }
+.et-rhythm-grid p { font-size: 1.25rem; }
+.et-page .et-rhythm-note { font-size: 1.125rem; border-top: 1px solid var(--et-line); padding-top: 1rem; margin-top: 1rem; }
+.et-page .et-gift-details { font-size: 1.125rem; }
+.et-page .et-form select {
+  display: block; width: 100%; min-width: 0; min-height: 3.5rem; margin-top: .5rem;
+  padding: .8rem .9rem; border: 1px solid #879e76; border-radius: .7rem;
+  color: var(--et-ink); background: #fafcf6; font: inherit; font-size: 1.25rem;
+}
 @media (max-width: 900px) {
   .et-page .et-header { grid-template-columns: minmax(0, 1fr) auto; }
   .et-page .et-header .et-brand-logo { width: 100%; max-width: 23rem; }
   .et-page .et-header nav { inset-inline: 0; background: #edf6ee; }
   .et-page .et-package > :is(.et-comparison-price, .et-gift-mark) { grid-column: 1; }
   .et-page .et-package ul { grid-row: auto; }
+  .et-overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .et-page .et-package-uplift { grid-column: 1 / -1; }
 }
 @media (max-width: 640px) {
   .et-page .et-gift { padding: 1.5rem; }
   .et-page .et-gift .et-button { width: 100%; }
+  .et-overview-heading, .et-rhythm-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .et-overview-card { padding: 1rem .75rem; }
+  .et-overview-card > strong { font-size: 1.4rem; }
+  .et-overview-description { display: none; }
+  .et-page .et-trip-photo img { aspect-ratio: 16 / 9; }
+  .et-page .et-intro { padding-block: 2.5rem; }
+  .et-weekend-rhythm { padding: 1.25rem; }
 }
 @media (max-width: 640px) and (max-height: 700px) {
   .et-page .et-header .et-brand-logo { max-width: 184px; }

@@ -70,6 +70,7 @@ export function initConversion(config = {}) {
   const name = form.elements.namedItem('name');
   const phone = form.elements.namedItem('phone');
   const consent = form.elements.namedItem('consent');
+  const enquiryType = form.elements.namedItem('enquiry');
   const enquiryLinks = [...document.querySelectorAll('[data-et-enquiry]')];
   function updateEnquiryLinks(available) {
     enquiryLinks.forEach(link => {
@@ -82,8 +83,9 @@ export function initConversion(config = {}) {
   function renderSelection() {
     const pack = offer.packages.find(item => item.id === selectedPackage);
     const weekends = selectedWeekends.map(index => offer.weekends[index].label);
-    summary.hidden = !pack;
-    summaryText.textContent = pack ? [pack.name, ...weekends].join(' · ') : '';
+    const gift = enquiryType.value === 'gift';
+    summary.hidden = !pack && !gift;
+    summaryText.textContent = [gift ? 'Ajándékutalvány' : '', pack?.name, ...weekends].filter(Boolean).join(' · ');
     document.querySelectorAll('[data-et-package]').forEach(button => {
       const selected=button.dataset.etPackage===selectedPackage;
       button.setAttribute('aria-current',String(selected));
@@ -95,9 +97,10 @@ export function initConversion(config = {}) {
       button.closest('.et-trip')?.classList.toggle('is-selected',selected);
     });
   }
-  function select(pack, weekends = []) {
+  function select(pack, weekends = [], intent = 'participation') {
     selectedPackage = pack;
     selectedWeekends = weekends;
+    enquiryType.value = intent;
     renderSelection();
     document.querySelector('#kapcsolat').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start'});
     // After an already completed request, selection controls still bring the
@@ -115,11 +118,17 @@ export function initConversion(config = {}) {
     event.preventDefault();
     select('one', [Number(button.dataset.etWeekend)]);
   }));
+  document.querySelectorAll('[data-et-gift]').forEach(link => link.addEventListener('click', event => {
+    if (!ready) return;
+    event.preventDefault();
+    select(selectedPackage, selectedWeekends, 'gift');
+  }));
+  enquiryType.addEventListener('change', renderSelection);
   document.querySelectorAll('.et-trip,.et-package,.et-price-feature').forEach(card=>card.addEventListener('click',event=>{
     if(event.target.closest('button,a,input,textarea,select,label'))return;
     card.querySelector('[data-et-package],[data-et-weekend]')?.click();
   }));
-  form.querySelector('#et-clear-selection').addEventListener('click', () => {selectedPackage = ''; selectedWeekends = []; renderSelection(); name.focus();});
+  form.querySelector('#et-clear-selection').addEventListener('click', () => {selectedPackage = ''; selectedWeekends = []; enquiryType.value = 'participation'; renderSelection(); name.focus();});
   const initialPackage = new URL(location.href).searchParams.get('pack');
   if (packageIds.includes(initialPackage)) {selectedPackage = initialPackage; selectedWeekends = ['series', 'plus'].includes(initialPackage) ? [0, 1, 2] : []; renderSelection();}
 
@@ -213,7 +222,10 @@ export function initConversion(config = {}) {
       return;
     }
     const values = {
-      name: name.value.trim(), phone: phone.value.trim(), reason: form.elements.namedItem('reason').value.trim(),
+      name: name.value.trim(), phone: phone.value.trim(),
+      // Keep the existing receiver schema. The optional gift intent is stored
+      // in its reason field, with room reserved in the textarea's maxlength.
+      reason: [enquiryType.value === 'gift' ? 'Ajándékutalványt szeretnék.' : '', form.elements.namedItem('reason').value.trim()].filter(Boolean).join('\n'),
       consent: true, package: selectedPackage, weekends: selectedWeekends,
       website: form.elements.namedItem('website').value.trim(),
     };
@@ -222,7 +234,7 @@ export function initConversion(config = {}) {
     const payload = {...values, requestId};
     sending = true;
     form.setAttribute('aria-busy', 'true');
-    const controls = [...form.querySelectorAll('input, textarea, button')];
+    const controls = [...form.querySelectorAll('input, textarea, select, button')];
     controls.forEach(control => {control.disabled = true;});
     submit.textContent = 'Visszahíváskérés küldése…';
     const controller = new AbortController();

@@ -18,6 +18,7 @@ const call = (label = 'Kérek egy visszahívást', cls = '') => enquiry(label, `
 const brandLogo = (loading='eager', header=false) => `<a class="et-brand et-brand-logo" href="#lp-content" aria-label="Sarkadi Sándor — az oldal tetejére"><img src="${header?'/images/logo/fejlec-logo-sotetzold.webp':'/images/eletutak/sarkadi-sandor-logo.webp'}" width="${header?1128:2171}" height="${header?350:724}" alt="Sarkadi Sándor · Utak · Csend · Jelenlét" loading="${loading}" decoding="async"></a>`;
 const giftMark = () => '<p class="et-gift-mark"><a href="#ajandek">Ajándékba is adható</a></p>';
 const testimonials = () => offer.testimonials.length ? `<section class="et-section et-testimonials" aria-labelledby="et-testimonials-title"><div class="et-shell"><p class="et-kicker">RÉSZTVEVŐI HANGOK</p><h2 id="et-testimonials-title">Akikkel már találkoztunk az úton.</h2><p class="et-testimonials-context">Korábbi zarándokutak résztvevőinek visszajelzéseiből.</p><div class="et-testimonial-grid">${offer.testimonials.map(text=>`<figure><blockquote><p>${escape(text)}</p></blockquote><figcaption>Korábbi résztvevő</figcaption></figure>`).join('')}</div></div></section>` : '';
+const overview = () => `<section class="et-section et-overview" aria-labelledby="et-overview-title"><div class="et-shell"><div class="et-overview-heading"><div><p class="et-kicker">ÖNISMERETI HÉTVÉGÉK A TERMÉSZETBEN</p><h2 id="et-overview-title">A saját ritmusodban.</h2></div><p>Már egy hétvégére is csatlakozhatsz. Minden választott hétvégén vezetett program, két éjszaka szállás és három étkezés vár.</p></div><div class="et-overview-grid">${offer.packages.map(pack=>`<a href="#et-csomag-${pack.id}" class="et-overview-card"><span>${pack.name}</span><strong>${money(pack.price)} <small>/ fő</small></strong><span class="et-overview-description">${pack.id==='plus'?'Mindhárom hétvége és személyes folytatás':pack.label}</span><span class="et-overview-link">Mit tartalmaz? ${arrow}</span></a>`).join('')}</div><p class="et-overview-links"><a href="#hetvegek">Időpontok</a><a href="#program">Hogyan telik a hétvége?</a><a href="#ajandek">Ajándékba adnám</a></p></div></section>`;
 
 export function renderConversionLanding() {
   const first = offer.packages[0];
@@ -29,7 +30,7 @@ export function renderConversionLanding() {
 </header>
 <main id="lp-content">
   <section class="et-hero" aria-labelledby="et-title">
-    ${photo('napfenyes-erdei-hatter.webp', '', 1536, 1024, 'class="et-hero-forest" fetchpriority="high"')}
+    <img src="/images/lombkorona-hatter.webp" alt="" width="1670" height="941" class="et-hero-forest" fetchpriority="high" decoding="async">
     <div class="et-hero-wash"></div>
     <div class="et-shell et-hero-inner">
       <p class="et-kicker">ÉLETUTAK TALÁLKOZÁSA <span>BAKONY · 2027. JANUÁR–MÁRCIUS</span></p>
@@ -37,11 +38,13 @@ export function renderConversionLanding() {
       <p class="et-hero-lead">${offer.subtitle}</p>
       <p class="et-hero-text">${escape(offer.introduction)}</p>
       <div class="et-hero-actions">${call()}<a class="et-text-link et-direct-call" href="tel:${offer.phone}">Hívj fel: ${offer.phoneDisplay}</a><a class="et-text-link" href="#hetvegek">Megnézem az időpontokat <span aria-hidden="true">↓</span></a></div>
-      <p class="et-hero-assurance">Először beszélgetünk. A döntés utána a tiéd.</p>
+      <p class="et-hero-assurance">10–15 perces beszélgetés. Nem foglalás, nincs fizetési kötelezettség.<span>Először beszélgetünk. A döntés utána a tiéd.</span></p>
       <ul class="et-hero-facts"><li><strong>3</strong> külön is választható hétvége</li><li><strong>12</strong> fő legfeljebb</li><li><strong>60 000 Ft</strong> / fő / hétvége</li></ul>
     </div>
     <div class="et-hero-caption"><span>Ősfenyves Vendégházak</span><span>2 éjszaka · 3 étkezés · vezetett program</span></div>
   </section>
+
+  ${overview()}
 
   <section class="et-section et-intro" id="neked" aria-labelledby="et-intro-title"><div class="et-shell et-intro-grid">
     <div><p class="et-kicker">AMIKOR VÁLTOZÁSBAN VAGY</p><h2 id="et-intro-title">Nem kell tudnod előre a választ.</h2><span class="et-quiet-branch" aria-hidden="true">${leaf}</span></div>
@@ -56,6 +59,7 @@ export function renderConversionLanding() {
       <figure class="et-tai-photo">${photo('tai-chi-telen.webp', 'Tai Chi-gyakorlás egy havas kertben', 1080, 1920, 'loading="lazy"')}<figcaption>A mozdulatnak is van helye.</figcaption></figure>
     </div>
     <p class="et-practice-outcome">Időt kaphatsz magadra. Ránézhetsz arra, ami fontos. Megfogalmazhatsz egy lehetséges következő lépést. <strong>Kész válasszal hazamenned nem kell.</strong></p>
+    <div class="et-weekend-rhythm" aria-labelledby="et-rhythm-title"><h3 id="et-rhythm-title">A hétvége ritmusa</h3><div class="et-rhythm-grid"><div><h4>Péntek · Megérkezés</h4><p>Két éjszakára az Ősfenyves Vendégházakban lesz a közös bázisunk.</p></div><div><h4>Szombat és vasárnap · Vezetett program</h4><p>Gyaloglás, erdei jelenlét, egyszerű Tai Chi-mozdulatok és beszélgetések. Csendes szakaszokkal, és igény szerint négyszemközti figyelemmel.</p></div></div><p class="et-rhythm-note">A hívásban átbeszéljük az érkezést és a hazautazást, a gyalogtávot és a terepet, valamint a három étkezés részleteit. A programot a téli körülményekhez igazítjuk.</p></div>
   </div></section>
 
   ${testimonials()}
@@ -72,10 +76,10 @@ export function renderConversionLanding() {
 
   <section class="et-section et-prices" id="reszvetel" aria-labelledby="et-prices-title"><div class="et-shell">
     <div class="et-section-heading"><div><p class="et-kicker">RÉSZVÉTEL</p><h2 id="et-prices-title">Egy hétvége.<br> Vagy egy teljes téli ív.</h2></div><p>Minden választott hétvége ára tartalmazza a vezetett programot, két éjszaka szállást és három étkezést.</p></div>
-    <div class="et-price-feature"><div><p class="et-kicker">${first.note}</p><h3>${first.name}</h3><p>${first.label}</p><p class="et-main-price">${money(first.price)}<span>/ fő / hétvége</span></p>${giftMark()}${enquiry('Egy hétvége érdekel', 'et-button', 'data-et-package="one"')}</div><div><ul class="et-inclusions">${first.features.map(feature => `<li>${check}<span>${feature}</span></li>`).join('')}</ul><p class="et-price-hint">Még nem kell időpontot választanod. A hívásban ezt is megbeszélhetjük.</p></div></div>
+    <div class="et-price-feature" id="et-csomag-one"><div><p class="et-kicker">${first.note}</p><h3>${first.name}</h3><p>${first.label}</p><p class="et-main-price">${money(first.price)}<span>/ fő / hétvége</span></p>${giftMark()}${enquiry('Egy hétvége érdekel', 'et-button', 'data-et-package="one"')}</div><div><ul class="et-inclusions">${first.features.map(feature => `<li>${check}<span>${feature}</span></li>`).join('')}</ul><p class="et-price-hint">Még nem kell időpontot választanod. A hívásban ezt is megbeszélhetjük.</p></div></div>
     <p class="et-more-heading">Ha több időt adnál ennek a folyamatnak</p>
-    <div class="et-package-grid">${offer.packages.slice(1).map(pack => `<article class="et-package ${pack.recommended ? 'et-package-bonus' : ''}"${pack.recommended?' aria-label="Télből tavaszba — Sándor ajánlása"':''}><p class="et-package-note">${pack.note}</p><h3>${pack.name}</h3><p class="et-package-description">${pack.label}</p>${pack.comparisonPrice?`<p class="et-comparison-price"><span>Külön-külön:</span> <del>${money(pack.comparisonPrice)}</del></p>`:''}<p class="et-package-price">${money(pack.price)}<span>/ fő</span></p>${giftMark()}<ul>${pack.features.map(feature => `<li>${check}<span>${feature}</span></li>`).join('')}</ul>${enquiry('Erről beszélgetnék', 'et-text-link', `data-et-package="${pack.id}"`)}</article>`).join('')}</div>
-    <aside class="et-gift" id="ajandek" aria-labelledby="et-gift-title"><div><h3 id="et-gift-title">Ajándékba is adhatod</h3><p>${escape(offer.gift)}</p></div><a class="et-button et-button-outline" href="mailto:${offer.email}?subject=${encodeURIComponent('Életutak találkozása – ajándékutalvány')}">Ajándékutalványt kérek ${arrow}</a></aside>
+    <div class="et-package-grid">${offer.packages.slice(1).map(pack => `<article class="et-package ${pack.recommended ? 'et-package-bonus' : ''}" id="et-csomag-${pack.id}"${pack.recommended?' aria-label="Télből tavaszba — Sándor ajánlása"':''}><p class="et-package-note">${pack.note}</p><h3>${pack.name}</h3><p class="et-package-description">${pack.label}</p>${pack.comparisonPrice?`<p class="et-comparison-price"><span>Külön-külön:</span> <del>${money(pack.comparisonPrice)}</del></p>`:''}<p class="et-package-price">${money(pack.price)}<span>/ fő</span></p>${pack.recommended?`<p class="et-package-uplift">A három hétvégéhez képest <strong>+${money(pack.price-offer.packages.find(item=>item.id==='series').price)}</strong>: egyéni kísérési nappal és négy Tai Chi-alkalommal folytathatod.</p>`:''}${giftMark()}<ul>${pack.features.map(feature => `<li>${check}<span>${feature}</span></li>`).join('')}</ul>${enquiry('Erről beszélgetnék', 'et-text-link', `data-et-package="${pack.id}"`)}</article>`).join('')}</div>
+    <aside class="et-gift" id="ajandek" aria-labelledby="et-gift-title"><div><h3 id="et-gift-title">Ajándékba is adhatod</h3><p>${escape(offer.gift)}</p><p class="et-gift-details">Az érvényességet, az átadás módját és az időpontválasztást személyesen egyeztetjük.</p><a class="et-text-link" href="mailto:${offer.email}?subject=${encodeURIComponent('Életutak találkozása – ajándékutalvány')}">Inkább e-mailt írok ${arrow}</a></div>${enquiry('Ajándékutalványról beszélgetnék', 'et-button et-button-outline', 'data-et-gift')}</aside>
     <div class="et-price-fine"><p>Az árak fejenként értendők. Az utazás és a felsorolt három étkezésen felüli étkezések külön fizetendők. A díjak bontását, a fizetés módját és a lemondási feltételeket foglalás előtt írásban megkapod.</p><p>A Télből tavaszba csomag tavaszi kedvezménye a 2027. április 29-én induló négynapos út programdíjára vonatkozik. A tavaszi szállás és étkezés feltételeit, a Tai Chi-alkalmakat és az egyéni napot előre egyeztetjük.</p></div>
   </div></section>
 
@@ -89,7 +93,8 @@ export function renderConversionLanding() {
       <div class="et-form-heading"><span aria-hidden="true">${leaf}</span><div><h3>Kérek egy visszahívást</h3><p>Nem foglalás. Nincs fizetési kötelezettség.</p></div></div>
       <div class="et-selection" hidden><p><span>Erről beszélgetnénk:</span> <strong id="et-selection-text"></strong></p><button type="button" id="et-clear-selection">Még átgondolom</button></div>
       <div class="et-form-row"><label for="et-name">Neved <span aria-hidden="true">*</span><input id="et-name" name="name" autocomplete="name" maxlength="120" required placeholder="Ahogy szólíthatlak" aria-describedby="et-name-help"><small id="et-name-help">A keresztneved is elég.</small></label><label for="et-phone">Telefonszámod <span aria-hidden="true">*</span><input id="et-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" required placeholder="+36 …" aria-describedby="et-phone-help"><small id="et-phone-help">Amelyen visszahívhatlak.</small></label></div>
-      <label for="et-reason">Mi hozott most ide? <span class="et-optional">Nem kötelező</span><textarea id="et-reason" name="reason" rows="3" maxlength="1000" placeholder="Egy mondat is elég. Telefonon is elmondhatod."></textarea></label>
+      <label for="et-enquiry">Miről beszélgessünk? <span class="et-optional">Választható</span><select id="et-enquiry" name="enquiry"><option value="participation">Részvételről érdeklődöm</option><option value="gift">Ajándékot szeretnék</option></select></label>
+      <label for="et-reason">Mi hozott most ide? <span class="et-optional">Nem kötelező</span><textarea id="et-reason" name="reason" rows="3" maxlength="970" placeholder="Egy mondat is elég. Telefonon is elmondhatod."></textarea></label>
       <div class="et-honey" aria-hidden="true"><label for="et-website">Weboldal<input id="et-website" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
       <label class="et-consent" for="et-consent"><input id="et-consent" name="consent" type="checkbox" required><span>Elolvastam az <a href="/eletutak-talalkozasa/adatkezeles/" target="_blank" rel="noopener noreferrer">adatkezelési tájékoztatót</a>, és hozzájárulok, hogy visszahívj. <span aria-hidden="true">*</span></span></label>
       <button class="et-button et-submit" type="submit" disabled>Kérem a visszahívást ${arrow}</button>
@@ -102,8 +107,9 @@ export function renderConversionLanding() {
 <footer class="et-footer"><div class="et-shell"><div class="et-footer-top">${brandLogo('lazy')}<p>Életutak találkozása<br> <span>Bakony · 2027. január–március</span></p><a class="et-text-link" href="/#utak">A négy lehetőség ${arrow}</a><a class="et-text-link" href="#lp-content">Az oldal tetejére ↑</a></div><div class="et-footer-bottom lp-footer-bottom"><span>© ${new Date().getFullYear()} Sarkadi Sándor</span><div><a href="/eletutak-talalkozasa/adatkezeles/">Adatvédelem</a><a href="/eletutak-talalkozasa/impresszum/">Impresszum</a></div></div><p class="et-credits">Fotók: Sarkadi Sándor gyűjteménye · Portré: szerkesztett kép · Erdei nyitókép: illusztráció</p></div></footer>
 <div class="et-mobile-call" hidden><span>Életutak találkozása<small>Először beszélgetünk.</small></span>${call('Kérek egy hívást', 'et-button-small')}</div>
 <dialog class="et-photo-dialog" id="et-photo-dialog" aria-label="Képek nagy méretben"><div class="et-photo-dialog-bar"><span id="et-photo-counter"></span><button type="button" data-photo-close aria-label="Képnézegető bezárása">Bezárás <span aria-hidden="true">×</span></button></div><figure><img id="et-photo-full" alt=""><figcaption id="et-photo-caption"></figcaption></figure><div class="et-photo-dialog-controls"><button type="button" data-photo-prev>← Előző kép</button><a id="et-photo-original" target="_blank" rel="noopener noreferrer">Eredeti méret ↗</a><button type="button" data-photo-next>Következő kép →</button></div></dialog>`;
-  // Restore the original page's early dates and personal introduction.
-  const order=['et-weekends','et-guide','et-intro','et-practice',...(offer.testimonials.length?['et-testimonials']:[]),'et-prices','et-stay','et-faq','et-contact'];
+  // Show a compact offer before long cards; help newcomers picture the weekend
+  // before the full biography and detailed package comparison.
+  const order=['et-overview','et-intro','et-weekends','et-practice',...(offer.testimonials.length?['et-testimonials']:[]),'et-guide','et-prices','et-stay','et-faq','et-contact'];
   const sections=[...html.matchAll(/<section class="et-section (et-[^" ]+)[^"]*"[^>]*>/g)];
   const end=html.indexOf('</main>');
   const byName=new Map(sections.map((match,index)=>[match[1],html.slice(match.index,sections[index+1]?.index??end)]));

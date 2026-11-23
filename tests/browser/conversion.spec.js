@@ -104,12 +104,50 @@ test('comparison prices, one recommendation and the gift request are clear and k
  await expect(page.locator('.et-package').filter({has:page.locator('[data-et-package=two]')}).locator('del')).toHaveText(/120\s*000 Ft/);
  await expect(page.locator('.et-package').filter({has:page.locator('[data-et-package=series]')}).locator('del')).toHaveText(/180\s*000 Ft/);
  await expect(page.locator('.et-package-bonus')).toHaveCount(1);
- await expect(page.locator('.et-package-bonus .et-package-note')).toHaveText('Ezt ajánlom, ha végig szeretnéd járni.');
+ await expect(page.locator('.et-package-bonus .et-package-note')).toHaveText('Ha a hétvégék után is szeretnél kísérést.');
+ await expect(page.locator('.et-package-uplift')).toContainText(/\+40\s*000 Ft/);
  const gift=page.locator('.et-package-bonus .et-gift-mark a');await gift.focus();await page.keyboard.press('Enter');
  await expect(page).toHaveURL(/#ajandek$/);
  await expect(page.locator('#ajandek')).toContainText('Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.');
- await expect(page.locator('#ajandek a')).toHaveAttribute('href',/^mailto:kadisan@gmail\.com\?subject=/);
+ await expect(page.locator('#ajandek [data-et-gift]')).toHaveAttribute('href','#kapcsolat');
+ await expect(page.locator('#ajandek a[href^="mailto:"]')).toHaveAttribute('href',/^mailto:kadisan@gmail\.com\?subject=/);
  await expect(page.locator('.et-header img')).toHaveAttribute('src','/images/logo/fejlec-logo-sotetzold.webp');
+});
+
+test('a gift enquiry uses the existing callback and retains its intent and chosen package on retry',async({page})=>{
+ const submissions=await callbackApi(page,{post:(route,payload,attempt)=>route.fulfill({status:attempt===1?503:200,json:attempt===1?{ok:false}:{ok:true,requestId:payload.requestId}})});
+ await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();
+ await page.locator('[data-et-package=plus]').click();
+ const gift=page.locator('[data-et-gift]');await gift.focus();await page.keyboard.press('Enter');
+ await expect(page.locator('[name=enquiry]')).toHaveValue('gift');
+ await expect(page.locator('#et-selection-text')).toContainText('Ajándékutalvány · Télből tavaszba');
+ await fillCallback(page,{reason:'A testvéremnek adnám.'});await page.locator('.et-submit').click();
+ await expect(page.locator('#et-form-status')).toHaveClass(/is-error/);
+ await expect(page.locator('[name=enquiry]')).toHaveValue('gift');
+ await page.locator('.et-submit').click();await expect.poll(()=>submissions.length).toBe(2);
+ expect(submissions[0]).toMatchObject({package:'plus',weekends:[0,1,2],reason:'Ajándékutalványt szeretnék.\nA testvéremnek adnám.'});
+ expect(submissions[0].requestId).toBe(submissions[1].requestId);
+ await expect(page.locator('#et-form-status')).toContainText('Megérkezett a visszahíváskérésed.');
+});
+
+test('gift intent is optional and can be selected or cleared without writing a message',async({page})=>{
+ const submissions=await callbackApi(page);await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();
+ await page.locator('[data-et-gift]').click();await page.locator('#et-clear-selection').click();
+ await expect(page.locator('[name=enquiry]')).toHaveValue('participation');await expect(page.locator('.et-selection')).toBeHidden();
+ await page.locator('[name=enquiry]').selectOption('gift');await expect(page.locator('#et-selection-text')).toHaveText('Ajándékutalvány');
+ await fillCallback(page);await page.locator('.et-submit').click();await expect.poll(()=>submissions.length).toBe(1);
+ expect(submissions[0]).toMatchObject({package:'',weekends:[],reason:'Ajándékutalványt szeretnék.'});
+});
+
+test('the early price overview reaches full package details and precedes long date cards on mobile',async({page})=>{
+ await callbackApi(page);await page.setViewportSize({width:390,height:844});await page.goto(path);await page.evaluate(()=>document.fonts.ready);
+ const first=page.locator('.et-overview-card').first();
+ expect((await first.boundingBox()).y).toBeLessThan(844*2);
+ await expect(page.locator('.et-overview-card')).toHaveCount(4);
+ await page.locator('.et-overview-card').last().click();await expect(page).toHaveURL(/#et-csomag-plus$/);
+ await expect(page.locator('#et-csomag-plus')).toBeInViewport();
+ // Reading package details does not itself request or select a callback.
+ await expect(page.locator('.et-selection')).toBeHidden();
 });
 
 test('static HTML returned in place of readiness never enables callback submission',async({page})=>{

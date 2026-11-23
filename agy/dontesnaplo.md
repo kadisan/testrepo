@@ -197,3 +197,12 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | SZERZŐI SZÖVEG | „Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.” A kiállítás és érvényesség feltételeit még a szerző adja meg. |
 | SZERZŐI FORRÁS ÉS KÉRÉS | A szerző korábbi zarándokutak résztvevői visszajelzéseit elküldte; a brief 2–3 rövid, név nélküli idézetet kér. Ezek nem a 2027-es téli hétvégék értékelései. Az előnézetben három részlet szerepel; a neveket nem tesszük közzé. |
 | SZERZŐI KORLÁT | Jelentkezési határidő és szabadhelyszám csak valós, szerzőtől kapott adatból kerülhet az oldalra; kitalált adat és visszaszámláló nem. A GYIK tartalma, a hétköznap 9–19 közötti egy órán belüli visszahívás, a bemutatkozás és a vendégház linkje megmarad. |
+
+## 2026. november 23. — Zen–Hormozi áttekintés utáni előnézeti javítások
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | A hatpontos áttekintésben javasolt javítások megvalósítása: világosabb csomagkülönbség, korai ár-áttekintés és közönségmagyarázat, konkrétabb hétvégevázlat, rövid első beszélgetés tisztázása, a kételyt feloldó idézet előrehelyezése és ajándékkérés az űrlapon. |
+| SZERZŐI KÉPKÉRÉS | A „Lépj be a fák közé” borító erdőképe alig látható háttérként jelenjen meg. A korábban is használt, felirat nélküli lombkoronaváltozatot használjuk: `public/images/lombkorona-hatter.webp`; a kép szövege nem kerül a landing szövegei mögé. |
+| PONTOSÍTOTT AJÁNLÁS | A Télből tavaszba ajánló címkéje: „Ha a hétvégék után is szeretnél kísérést.” A 160 000 Ft-os teljes sorozathoz képest 40 000 Ft a különbség; a meglévő egyéni nap, négy Tai Chi-alkalom és tavaszi kedvezmény tartalma megmarad. |
+| TOVÁBBRA IS NYITOTT | Az érkezés/hazautazás pontos ideje, a három étkezés megnevezése, az utalvány érvényessége/kiállítása/időpontválasztása. Ezekre a szerzőtől kérünk adatot; addig egyeztetést kínálunk, nem találunk ki feltételt. A saját domainre történő élesítés előzetes jóváhagyása továbbra is szükséges. |

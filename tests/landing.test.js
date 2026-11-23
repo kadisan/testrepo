@@ -31,7 +31,7 @@ test('Hungarian landing presents the confirmed offer without stale prices, with 
  assert.match(html,/legfeljebb 12|12 fő|12 fős/i);
  assert.match(html,/Ősfenyves Vendégházak/);
  assert.match(html,/2027-01-08/);assert.match(html,/2027-02-12/);assert.match(html,/2027-03-05/);
- assert.match(html,/napfenyes-erdei-hatter\.webp/);
+ assert.match(html,/lombkorona-hatter\.webp/);
  assert.match(html,/marciusi-to\.webp/);
  assert.match(html,/sarkadi-sandor-fatronk-portre\.webp/);
  assert.doesNotMatch(html,/Ide kerül|Lorem ipsum|példa-visszajelzés/i);
@@ -47,7 +47,7 @@ test('the November brief keeps comparison prices distinct from payable prices an
  assert.match(html,/<del>120 000 Ft<\/del>/);
  assert.match(html,/<del>180 000 Ft<\/del>/);
  assert.doesNotMatch(html,/20 000 Ft kedvezmény/);
- assert.equal((html.match(/Ezt ajánlom, ha végig szeretnéd járni\./g)||[]).length,1);
+ assert.equal((html.match(/Ha a hétvégék után is szeretnél kísérést\./g)||[]).length,1);
  assert.ok(html.includes(conversionOffer.gift));
  assert.match(html,/images\/logo\/fejlec-logo-sotetzold\.webp/);
  assert.equal((html.match(/<details>/g)||[]).length,conversionOffer.faq.length);

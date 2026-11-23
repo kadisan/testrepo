@@ -8,9 +8,9 @@ export const conversionOffer = {
   gift: 'Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.',
   // Publish only author-supplied, permission-cleared quotations.
   testimonials: [
-    'A zarándoklat most is mint az eddigieknél is, átmosott, újraindította a „rendszert”.',
-    'Mélységeket és magasságokat tapasztaltam. Hálás vagyok mindenért és mindenkiért!',
     'Úgy éreztem, nem várt felismerések birtokosa lettem, pedig bevallom őszintén, etekintetben kissé szkeptikusan indultam neki, inkább a csavargó lelkem vitt.',
+    'A zarándoklat most is mint az eddigieknél is, átmosott, újraindította a „rendszert”.',
+    'Ez nyugtatta a lelkemet, tehermentesített.',
   ],
   phone: '+36703161897',
   phoneDisplay: '+36 70 316 1897',
@@ -25,7 +25,7 @@ export const conversionOffer = {
     {id: 'one', name: 'Egy hétvége', price: 60000, label: 'Egy szabadon választott alkalom', note: 'Első találkozásnak is', features: ['Vezetett hétvégi program', 'Két éjszaka szállás', 'Három étkezés', 'Tai Chi és erdei jelenlét', 'Igény szerint négyszemközti beszélgetés']},
     {id: 'two', name: 'Két hétvége', price: 100000, comparisonPrice: 120000, label: 'Két szabadon választott alkalom', note: 'Két külön hétvége árához képest', features: ['Két teljes hétvége', 'Összesen négy éjszaka és hat étkezés']},
     {id: 'series', name: 'Három hétvége', price: 160000, comparisonPrice: 180000, label: 'A teljes téli sorozat', note: 'Három külön hétvége árához képest', features: ['Mindhárom teljes hétvége', 'Összesen hat éjszaka és kilenc étkezés']},
-    {id: 'plus', name: 'Télből tavaszba', price: 200000, label: 'A teljes téli sorozat személyes folytatással.', note: 'Ezt ajánlom, ha végig szeretnéd járni.', recommended: true, features: ['Mindhárom teljes hétvége', 'Egy egyéni kísérési nap', 'Négyalkalmas Tai Chi-bérlet', '30% kedvezmény a megnevezett tavaszi út programdíjából']},
+    {id: 'plus', name: 'Télből tavaszba', price: 200000, label: 'A teljes téli sorozat személyes folytatással.', note: 'Ha a hétvégék után is szeretnél kísérést.', recommended: true, features: ['Mindhárom teljes hétvége', 'Egy egyéni kísérési nap', 'Négyalkalmas Tai Chi-bérlet', '30% kedvezmény a megnevezett tavaszi út programdíjából']},
   ],
   faq: [
     ['Egyedül is érkezhetek?', 'Igen. Akkor is csatlakozhatsz, ha most találkozol velem először. A közös programban és a saját csendedben is lehet helyed. A szobabeosztást előre egyeztetjük.'],
