@@ -18,7 +18,8 @@
 /* A title reveals a quiet photographic layer without moving its text. */
 .et-page .et-section { --et-heading-image: url('/images/eletutak/napfenyes-erdei-hatter.webp'); }
 .et-page :is(.et-overview, .et-testimonials, .et-contact) { --et-heading-image: url('/images/lombkorona-hatter.webp'); }
-.et-page :is(.et-intro, .et-practice, .et-faq) { --et-heading-image: url('/images/eletutak/erdei-ut.webp'); }
+.et-page :is(.et-intro, .et-faq) { --et-heading-image: url('/images/eletutak/erdei-ut.webp'); }
+.et-page .et-practice { --et-heading-image: url('/images/eletutak/kozos-gyaloglas-illusztracio.webp'); }
 .et-page .et-weekends { --et-heading-image: url('/images/eletutak/kodos-erdei-fa.webp'); }
 .et-page .et-guide { --et-heading-image: url('/images/eletutak/kodos-erdei-fa.webp'); }
 .et-page .et-prices { --et-heading-image: url('/images/eletutak/marciusi-to.webp'); }
@@ -51,6 +52,18 @@
   .et-page .et-intro:has(h2:hover)::before { opacity: .30; }
 }
 
+/* The supplied walking scene accompanies the weekend's existing rhythm. */
+.et-page .et-weekend-rhythm::before {
+  background: linear-gradient(100deg, #0d2e22e6, #163f2bd9),
+    url('/images/eletutak/kozos-gyaloglas-illusztracio.webp') center 55% / cover;
+}
+.et-page .et-weekend-rhythm::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: url('/images/eletutak/kozos-gyaloglas-illusztracio.webp') center 55% / cover;
+  opacity: .16; transition: opacity .25s ease;
+}
+.et-page .et-weekend-rhythm:is(:hover, :focus-within)::after { opacity: 0; }
+
 /* The signature and original opening keep their layout and content. */
 .et-page .et-header { isolation: isolate; }
 .et-page .et-header::before {
@@ -82,7 +95,8 @@
 @media (prefers-reduced-motion: reduce) {
   .et-page .et-hero-forest, .et-page .et-season-images,
   .et-page .et-scene-heading::after, .et-page .et-header::before,
-  .et-page .et-stay > .et-shell::before, .et-page .et-intro::before { transition: none; }
+  .et-page .et-stay > .et-shell::before, .et-page .et-intro::before,
+  .et-page .et-weekend-rhythm::after { transition: none; }
   .et-page .et-hero:has(h1:hover) .et-hero-forest,
   .et-page .et-hero:focus-within .et-hero-forest,
   .et-page .et-trip:has(h3:hover) .et-trip-photo img { transform: none; }

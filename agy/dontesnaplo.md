@@ -253,3 +253,7 @@ A szerző a három képet egyszerre megjelenítő montázst elutasította. Egy k
 ### Következő vizuális pontosítás — teljes szakaszos kép, mályva nélkül
 
 A szerző a „Nem kell tudnod előre a választ” bevezető képernyőképén a színt és a képi megoldást elutasította: „más kép teljes mögé és a mályva szín sem ok”. Másik kép kerüljön a teljes bevezető mögé; a mályvás/rózsás árnyalatok helyett természetes zöldek folytatják az oldal színvilágát.
+
+### További képek — kapus erdő és közös gyaloglás
+
+A szerző három kapus, erdei lépcsős változatot adott kísérletezésre, majd a napfényes úton gyaloglókat mutató képet kifejezetten kérte felhasználni. A képek előnézeti próbája engedett; az éles oldalra történő kiadást a kérés nem tartalmazza.

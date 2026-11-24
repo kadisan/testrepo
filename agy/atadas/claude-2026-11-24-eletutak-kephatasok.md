@@ -23,3 +23,9 @@ A szerző a bevezető („Nem kell tudnod előre a választ”) képernyőképé
 47/47 alapteszt, build, 12/12 érintett böngészős próba rendben. A meglévő címsoros teszt a bevezetőn már az egész szakasz hátterének erősödését ellenőrzi, nem a megszüntetett címcsíkot. Új fotó, szöveg, ár vagy űrlapváltozás nincs. Csak a külön előnézet frissítendő, az éles domain nem.
 
 Feltöltött javítás `0db5fe9`: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261124-zold-bevezeto#neked ; Worker-verzió `065d3a3c-f38f-40ca-a855-c92db5c85a8c`. Négy helyi és HTTPS-méretben igazolt a teljes szakaszt fedő új kép, a két hasáb alatti folyamatos háttér, a zöld színvilág, a kikapcsolt címcsík és a kilógásmentes megjelenés. A konzervatív szövegkontraszt legalább 4,78:1. Nincs betöltési hiba vagy valódi beküldés; az éles domain változatlan.
+
+## Új képanyag: gyaloglás és kapus változatok
+
+A szerző a gyaloglós kép felhasználását kifejezetten kérte. A pontos eredeti az `origin/main:kepek/Springtime hike along countryside trail.png`, 1672×941 px; webes változata `public/images/eletutak/kozos-gyaloglas-illusztracio.webp`, 1440×810 px, 292 652 bájt. A kompozíció megmaradt, újragenerálás nincs. A kép a program címhátterében és „A hétvége ritmusa” teljes paneljén szerepel, alapból halványan, rámutatáskor/fókuszban sötétített képként. A lábléc illusztrációként jelöli a programhátteret. A hétvégék fotói, képaláírásai, az egyetlen képes csomagkártyák és az egyforma magas két programfotó megmaradtak.
+
+A kapus képeket a szerző csak beágyazott chatképként adta át; megfelelő forrásfájlt a munkaállomáson és az elérhető Git-képanyagokban nem találtunk. Közvetlen fájllinket vagy repóbeli elérési utat kérdeztünk, válasz még szükséges a beépítéshez. Az ígért kapus próba ezért nyitott, nem állítható késznek. Az új gyaloglós WebP-t a külön előnézeti csomagba be kell ágyazni; az éles domainen még nem létezik.
