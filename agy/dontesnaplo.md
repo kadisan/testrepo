@@ -249,3 +249,7 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 ### Későbbi pontosítás — egyszerre egyetlen hétvégefotó
 
 A szerző a három képet egyszerre megjelenítő montázst elutasította. Egy kártyán mindig csak egy fotó jelenhet meg: az első hétvége a ráktanyai bükkfát, a második a Tündérkutat, a harmadik a téli Borostyánkutat mutatja. Ez felülírja a három fotót közös háttérként használó előző megvalósítást.
+
+### Következő vizuális pontosítás — teljes szakaszos kép, mályva nélkül
+
+A szerző a „Nem kell tudnod előre a választ” bevezető képernyőképén a színt és a képi megoldást elutasította: „más kép teljes mögé és a mályva szín sem ok”. Másik kép kerüljön a teljes bevezető mögé; a mályvás/rózsás árnyalatok helyett természetes zöldek folytatják az oldal színvilágát.

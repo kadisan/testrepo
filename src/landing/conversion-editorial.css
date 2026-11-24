@@ -84,21 +84,22 @@
   .et-page .et-testimonial-grid .et-quote { padding-block: 1.75rem; }
 }
 
-/* Stronger opening, then warm clay / mauve / green pauses in the long page. */
+/* Forest greens with a warm sand pause for the participant voices. */
 .et-page .et-hero-forest { opacity: .55; }
 .et-page .et-hero-wash {
   background: linear-gradient(90deg, #f1f6ebeb 0%, #f1f6ebcc 45%, #f1f6eb77 85%, #f1f6eb55 100%);
 }
 .et-page .et-intro {
-  --et-section-accent: #795365;
-  background: linear-gradient(115deg, #f1e3dcf2, #e8d4ceeb);
-  border-block: 1px solid #9c7a7340;
+  --et-section-accent: #24412e;
+  --et-muted: #24412e;
+  background: #edf4e7;
+  border-block: 1px solid #78916955;
 }
 .et-page .et-weekends { background: #e0eadbc7; }
 .et-page .et-practice {
-  --et-section-accent: #685772;
-  background: linear-gradient(135deg, #ece4edf5, #dbdce9eb);
-  border-block: 1px solid #7a68844d;
+  --et-section-accent: #395133;
+  background: linear-gradient(135deg, #e9efdcf5, #dce8d2eb);
+  border-block: 1px solid #7184614d;
 }
 .et-page .et-testimonials {
   --et-section-accent: #755c34;
@@ -107,7 +108,7 @@
 }
 .et-page .et-prices { background: linear-gradient(180deg, #dce8dfe6, #b1cbbac9); }
 .et-page :is(.et-intro, .et-practice, .et-testimonials) .et-kicker { color: var(--et-section-accent, var(--et-muted)); }
-.et-page .et-faq > .et-shell { background: #eee7edf5; }
+.et-page .et-faq > .et-shell { background: #e6eedff5; }
 .et-page .et-contact > .et-shell { background: #f0e9dcf5; }
 
 /* One shared portrait frame keeps both photos exactly the same height. */

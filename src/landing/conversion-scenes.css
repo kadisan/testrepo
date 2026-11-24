@@ -36,6 +36,21 @@
   .et-page .et-scene-heading:has(:is(h2, h3):hover)::after { opacity: .16; }
 }
 
+/* This photograph belongs to the whole introduction, behind both columns. */
+.et-page .et-intro {
+  position: relative; isolation: isolate;
+  --et-heading-image: url('/images/eletutak/napfenyes-erdei-hatter.webp');
+}
+.et-page .et-intro::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--et-heading-image) center 52% / cover no-repeat;
+  opacity: .25; transition: opacity .4s ease;
+}
+.et-page .et-intro .et-scene-heading::after { display: none; }
+@media (hover: hover) {
+  .et-page .et-intro:has(h2:hover)::before { opacity: .30; }
+}
+
 /* The signature and original opening keep their layout and content. */
 .et-page .et-header { isolation: isolate; }
 .et-page .et-header::before {
@@ -67,7 +82,7 @@
 @media (prefers-reduced-motion: reduce) {
   .et-page .et-hero-forest, .et-page .et-season-images,
   .et-page .et-scene-heading::after, .et-page .et-header::before,
-  .et-page .et-stay > .et-shell::before { transition: none; }
+  .et-page .et-stay > .et-shell::before, .et-page .et-intro::before { transition: none; }
   .et-page .et-hero:has(h1:hover) .et-hero-forest,
   .et-page .et-hero:focus-within .et-hero-forest,
   .et-page .et-trip:has(h3:hover) .et-trip-photo img { transform: none; }

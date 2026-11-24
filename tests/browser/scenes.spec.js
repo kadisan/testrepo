@@ -53,7 +53,13 @@ test('each dated enquiry uses only its own photograph on every package, includin
 
 test('section titles reveal imagery without moving and reduced motion stays still',async({page})=>{
  await open(page);
- for(const id of ['et-intro-title','et-weekends-title','et-practice-title','et-testimonials-title','et-guide-title','et-prices-title','et-stay-title','et-faq-title','et-contact-title']){
+ const intro=page.locator('.et-intro'),introTitle=page.locator('#et-intro-title');
+ await introTitle.scrollIntoViewIfNeeded();await page.mouse.move(1,1);
+ await expect.poll(()=>intro.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0.25');
+ const introBox=await introTitle.boundingBox();await introTitle.hover();
+ await expect.poll(()=>intro.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0.3');
+ expect(await introTitle.boundingBox()).toEqual(introBox);
+ for(const id of ['et-weekends-title','et-practice-title','et-testimonials-title','et-guide-title','et-prices-title','et-stay-title','et-faq-title','et-contact-title']){
   const title=page.locator(`#${id}`),panel=title.locator('xpath=ancestor::*[contains(concat(" ",normalize-space(@class)," ")," et-scene-heading ")][1]');
   await title.scrollIntoViewIfNeeded();await page.mouse.move(1,1);
   const before=await title.boundingBox();await title.hover();
