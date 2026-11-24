@@ -97,10 +97,10 @@ export function initConversion(config = {}) {
       button.closest('.et-trip')?.classList.toggle('is-selected',selected);
     });
     document.querySelectorAll('[data-et-season-package]').forEach(layer => {
-      const specific = layer.dataset.etSeasonPackage === selectedPackage && selectedWeekends.length > 0;
-      layer.querySelectorAll('[data-et-season]').forEach(image => {
-        image.hidden = specific && !selectedWeekends.includes(Number(image.dataset.etSeason));
-      });
+      const index = selectedWeekends.length === 1 ? selectedWeekends[0] : Number(layer.dataset.etSeasonDefault);
+      const image = layer.querySelector('[data-et-season]');
+      image.dataset.etSeason = String(index);
+      image.style.setProperty('--et-season-image', `url('/images/eletutak/${offer.weekends[index].image}')`);
     });
   }
   function select(pack, weekends = [], intent = 'participation') {

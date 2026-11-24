@@ -1,15 +1,15 @@
 /* Reuse the exact weekend photographs behind their package choices. */
 .et-page .et-season-images {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr);
+  display: block;
   overflow: hidden; border-radius: inherit; opacity: 0;
   filter: brightness(.55) saturate(.8);
   transition: opacity .35s ease;
 }
 .et-page .et-season-images > span {
-  min-width: 0; background: var(--et-season-image) center 52% / cover no-repeat;
+  display: block; width: 100%; height: 100%;
+  background: var(--et-season-image) center 52% / cover no-repeat;
 }
-.et-page .et-season-images > [hidden] { display: none; }
 .et-page :is(.et-price-feature, .et-package):focus-within > .et-season-images { opacity: .42; }
 @media (hover: hover) {
   .et-page :is(.et-price-feature, .et-package):hover > .et-season-images { opacity: .42; }

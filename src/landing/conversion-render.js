@@ -17,9 +17,12 @@ const enquiry = (label, cls = '', attributes = '') => `<a class="${cls}" href="t
 const call = (label = 'Kérek egy visszahívást', cls = '') => enquiry(label, `et-button ${cls}`);
 const brandLogo = (loading='eager', header=false) => `<a class="et-brand et-brand-logo" href="#lp-content" aria-label="Sarkadi Sándor — az oldal tetejére"><img src="${header?'/images/logo/fejlec-logo-sotetzold.webp':'/images/eletutak/sarkadi-sandor-logo.webp'}" width="${header?1128:2171}" height="${header?350:724}" alt="Sarkadi Sándor · Utak · Csend · Jelenlét" loading="${loading}" decoding="async"></a>`;
 const giftMark = () => '<p class="et-gift-mark"><a href="#ajandek">Ajándékba is adható</a></p>';
-// Package dates are freely chosen: show all three photographs until a real
-// weekend selection narrows the image. Decoration adds no photo controls.
-const seasonImages = packageId => `<span class="et-season-images" data-et-season-package="${packageId}" aria-hidden="true">${offer.weekends.map((trip,index)=>`<span data-et-season="${index}" style="--et-season-image:url('/images/eletutak/${trip.image}')"></span>`).join('')}</span>`;
+// Exactly one photograph per card. The three lower cards follow the original
+// weekend tiles from left to right; a dated choice replaces it with that photo.
+const seasonImages = packageId => {
+  const index = {one: 0, two: 0, series: 1, plus: 2}[packageId];
+  return `<span class="et-season-images" data-et-season-package="${packageId}" data-et-season-default="${index}" aria-hidden="true"><span data-et-season="${index}" style="--et-season-image:url('/images/eletutak/${offer.weekends[index].image}')"></span></span>`;
+};
 const quoteText = ({text, emphasis}) => {
   const at = emphasis ? text.indexOf(emphasis) : -1;
   const quoted = value => escape(value).replaceAll('„', '»').replaceAll('”', '«');

@@ -245,3 +245,7 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | --- | --- |
 | SZERZŐI KÉRÉS | Először az alsó, részvételi árat mutató kártyákon jelenjen meg rámutatáskor annak a hétvégének a fotója, amely korábban a dátumcsempén szerepelt. A fotó optimalizáltan áttetsző legyen. |
 | SZERZŐI FOLYTATÁS | Ezután a fejlécekhez/szakaszcímekhez érő kurzor is alakítsa a kapcsolódó képi világot, a nyitó erdőkép és a vendégház háttérfotójának irányában. A kérés feloldja a korábbi gondolkodási szünetet ezekre a konkrét képhatásokra; nem általános újratervezés. |
+
+### Későbbi pontosítás — egyszerre egyetlen hétvégefotó
+
+A szerző a három képet egyszerre megjelenítő montázst elutasította. Egy kártyán mindig csak egy fotó jelenhet meg: az első hétvége a ráktanyai bükkfát, a második a Tündérkutat, a harmadik a téli Borostyánkutat mutatja. Ez felülírja a három fotót közös háttérként használó előző megvalósítást.

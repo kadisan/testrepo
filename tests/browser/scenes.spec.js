@@ -8,12 +8,12 @@ async function open(page){
 test('package photographs appear on hover and keyboard focus without selecting an offer',async({page})=>{
  await open(page);
  const sources=await page.locator('.et-trip img').evaluateAll(images=>images.map(i=>new URL(i.src).pathname));
- for(const id of ['one','two','series','plus']){
+ for(const [id,index] of [['one',0],['two',0],['series',1],['plus',2]]){
   const card=page.locator(`#et-csomag-${id}`),layer=card.locator('.et-season-images');
   await page.mouse.move(1,1);await page.locator('.et-hero h1').focus();
   await expect(layer).toHaveCSS('opacity','0');await card.hover();await expect(layer).toHaveCSS('opacity','0.42');
   const images=await layer.locator('[data-et-season]').evaluateAll(parts=>parts.map(e=>getComputedStyle(e).backgroundImage));
-  for(let i=0;i<3;i++)expect(images[i]).toContain(sources[i]);
+  expect(images).toHaveLength(1);expect(images[0]).toContain(sources[index]);
   await expect(card).not.toHaveClass(/is-selected/);await expect(page.locator('.et-selection')).toBeHidden();
   // A bound using a completely white photograph covers every real photo pixel.
   const contrast=await card.evaluate(e=>{
@@ -30,18 +30,24 @@ test('package photographs appear on hover and keyboard focus without selecting a
  }
 });
 
-test('a dated enquiry shows that exact photograph and clearing restores the free choice',async({page})=>{
- await open(page);const one=page.locator('[data-et-season-package=one]');
+test('each dated enquiry uses only its own photograph on every package, including after clearing',async({page})=>{
+ await open(page);
+ const sources=await page.locator('.et-trip img').evaluateAll(images=>images.map(i=>new URL(i.src).pathname));
  for(const index of [0,1,2]){
   await page.locator(`[data-et-weekend="${index}"]`).click();
-  await expect(one.locator('[data-et-season]:not([hidden])')).toHaveCount(1);
-  await expect(one.locator(`[data-et-season="${index}"]`)).not.toHaveAttribute('hidden','');
-  for(const id of ['two','series','plus'])await expect(page.locator(`[data-et-season-package="${id}"] [data-et-season]:not([hidden])`)).toHaveCount(3);
+  for(const id of ['one','two','series','plus']){
+   const image=page.locator(`[data-et-season-package="${id}"] [data-et-season]`);
+   await expect(image).toHaveCount(1);await expect(image).toHaveAttribute('data-et-season',String(index));
+   expect(await image.evaluate(e=>getComputedStyle(e).backgroundImage)).toContain(sources[index]);
+  }
   await page.locator('#et-clear-selection').click();
-  await expect(one.locator('[data-et-season]:not([hidden])')).toHaveCount(3);
+  for(const [id,initial] of [['one',0],['two',0],['series',1],['plus',2]]){
+   const image=page.locator(`[data-et-season-package="${id}"] [data-et-season]`);
+   await expect(image).toHaveCount(1);await expect(image).toHaveAttribute('data-et-season',String(initial));
+  }
  }
  await page.locator('[data-et-package=series]').click();
- await expect(page.locator('[data-et-season-package=series] [data-et-season]:not([hidden])')).toHaveCount(3);
+ await expect(page.locator('[data-et-season-package=series] [data-et-season]')).toHaveCount(1);
  await expect(page.locator('#et-selection-text')).toContainText('Három hétvége');
 });
 
