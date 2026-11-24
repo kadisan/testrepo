@@ -31,6 +31,9 @@
   border-top: 5px solid var(--et-card-green);
 }
 .et-page :is(.et-trip, .et-price-feature, .et-package)[data-et-tone]::before { background: var(--et-card-green); }
+.et-page .et-trip-figure { min-width: 0; margin: 0; }
+.et-page .et-trip-caption { padding: .7rem .75rem 0; color: inherit; font-size: 1.125rem; line-height: 1.5; }
+.et-page .et-trip-caption > span { display: block; margin-top: .35rem; }
 .et-page :is(.et-overview-card, .et-trip, .et-price-feature, .et-package)[data-et-tone]:is(:hover, :focus-within, .is-selected) {
   background: var(--et-card-green);
   color: #f5f9ef;

@@ -230,3 +230,11 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | --- | --- |
 | SZERZŐI REFERENCIA | https://erdofurdozz.hu/ — inspiráció a személyesebb képelrendezéshez, a hétvégék „kinek szól” soraihoz és az elképzelhetőbb programbemutatóhoz. A referencia képei és nem egyeztetett programjai nem kerülnek át. |
 | SZERZŐI HATÁR | „mutasd meg tervként, de még ne legyen végleges”; majd „go ahead”. Ez külön látványterv elkészítésére szól, a korábbi előnézet vagy saját domain átírására nem. A meglévő repófotók elegendők az elrendezési próbához. |
+
+## 2026. november 24. — Fotóhelyszínek és visszatérés a kísérlet előtti változathoz
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI FOTÓAZONOSÍTÁS | A januári kártya képe Ráktanyán készült, a ködben egy ősöreg bükkfa látszik; nem platán. A februári kép a Bakonybél fölötti erdei ösvény „Tündérkútja”. A márciusi kártya képe a bakonybéli Borostyánkút kevésbé fotózott oldalát mutatja télen; nem márciusi felvételként jelöljük. A helyszínek látható képaláírásba kerüljenek. |
+| SZERZŐI VISSZAJELZÉS | Az erdofurdozz.hu alapján készített külön gondolatkísérletet a szerző félreteszi, az új bevezetőt/fejlécet elutasítja. A kísérlet előtti eredeti változathoz térünk vissza. |
+| SZERZŐI MUNKAHATÁR | A további vizuális irány a háttérszínek átgondolása. „Álljunk meg egy szóra és gondoljuk végig”: előbb összegyűjtjük a megtartandó és elengedendő ötleteket; újabb dizájn nem készül automatikusan. A korábbi ötletek melletti szakmai érvek bemutathatók. |

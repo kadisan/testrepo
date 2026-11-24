@@ -1,4 +1,4 @@
-// Hungarian offer, updated from the author's brief on 23 November 2026.
+// Hungarian offer; photo locations clarified by the author on 24 November 2026.
 // The parked translations keep their earlier copy until a separate review.
 export const conversionOffer = {
   name: 'Életutak találkozása',
@@ -17,9 +17,9 @@ export const conversionOffer = {
   email: 'kadisan@gmail.com',
   callback: 'Hétköznap 9–19 között érkező kérésedre egy órán belül visszahívlak.',
   weekends: [
-    {date: '2027-01-08', label: '2027. január 8–10.', month: 'Január', title: 'A szelíd erő útjai', text: 'Megérkezni az év elejére. Figyelmet adni annak, amiből most elindulnál.', image: 'kodos-erdei-fa.webp', alt: 'Elágazó fa egy csendes, ködös erdőben', width: 497, height: 882},
-    {date: '2027-02-12', label: '2027. február 12–14.', month: 'Február', title: 'Összeérő utak', text: 'Teret hagyni a saját kérdéseidnek, a közös beszélgetésnek és a csendnek.', image: 'erdei-gyokerek.webp', alt: 'Összefonódó fagyökerek az erdőben', width: 1200, height: 1604},
-    {date: '2027-03-05', label: '2027. március 5–7.', month: 'Március', title: 'Csendes derű útja', text: 'Visszatekinteni a télre, és megfogalmazni, mit szeretnél továbbvinni.', image: 'marciusi-to.webp', alt: 'Fák tükröződése egy csendes tó vizében', width: 1200, height: 1605},
+    {date: '2027-01-08', label: '2027. január 8–10.', month: 'Január', title: 'A szelíd erő útjai', text: 'Megérkezni az év elejére. Figyelmet adni annak, amiből most elindulnál.', image: 'kodos-erdei-fa.webp', alt: 'Ősöreg bükkfa a ködben, Ráktanyán', caption: 'Ráktanya · Ősöreg bükkfa a ködben.', width: 497, height: 882},
+    {date: '2027-02-12', label: '2027. február 12–14.', month: 'Február', title: 'Összeérő utak', text: 'Teret hagyni a saját kérdéseidnek, a közös beszélgetésnek és a csendnek.', image: 'erdei-gyokerek.webp', alt: 'Tündérkút egy fa tövénél, a Bakonybél fölötti erdei ösvényen', caption: 'Tündérkút · A Bakonybél fölötti erdei ösvényen.', captionNote: 'Vízzel telt faüreg: dendrotelma.', width: 1200, height: 1604},
+    {date: '2027-03-05', label: '2027. március 5–7.', month: 'Március', title: 'Csendes derű útja', text: 'Visszatekinteni a télre, és megfogalmazni, mit szeretnél továbbvinni.', image: 'marciusi-to.webp', alt: 'A bakonybéli Borostyánkút kevésbé fotózott oldala télen', caption: 'Bakonybél · A Borostyánkút kevésbé fotózott oldala, télen.', width: 1200, height: 1605},
   ],
   packages: [
     {id: 'one', name: 'Egy hétvége', price: 60000, label: 'Egy szabadon választott alkalom', note: 'Első találkozásnak is', features: ['Vezetett hétvégi program', 'Két éjszaka szállás', 'Három étkezés', 'Tai Chi és erdei jelenlét', 'Igény szerint négyszemközti beszélgetés']},
