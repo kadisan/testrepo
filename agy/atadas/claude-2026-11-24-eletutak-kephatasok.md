@@ -41,3 +41,5 @@ Feltöltve `98239c8`: https://eletutak-atnezes.kadisan.workers.dev/eletutak-tala
 ## Dőlt betűk és erdőkép a résztvevői blokk mögött
 
 A szerző dőlt idézeteket és képhátteret kért. A valódi Lora 500/700 Italic latin és latin-ext készlet bekerült a `main.js` importjai közé. A nevek és a cím álló betűsek, a kisebb betűméretek és a szövegek megmaradtak. A meglévő lombkoronakép a teljes szakasz háttere (18%, a címre mutatva 22%), az ottani kis címcsík kikapcsolt. A világos homokszín és a sötét szöveg olvasható marad. 47/47 alapteszt, build és 12/12 érintett böngészős próba rendben, öt méretben a valódi dőlt fontok betöltése is igazolt. Az előnézeti csomagolás az új nyolc `lora-*-italic-*` WOFF/WOFF2 fájlt is ágyazza be a meglévő 700-normal fontok és a gyaloglós WebP mellé; ezek az éles domainen még nincsenek. Éles kiadás nincs.
+
+Közben a szerző elutasította a lombkoronás hátteret, másik korábbi képet kért. A végső választás a meglévő `labirintus.webp`, az erdei labirintusban sétáló emberekkel. Ez felülírja az előző bekezdés képválasztását, a dőlt betűs és visszafogott méretű szöveg megmarad. A folytatás ezt a képet ellenőrzi és tölti fel.

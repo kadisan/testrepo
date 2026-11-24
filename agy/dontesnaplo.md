@@ -265,3 +265,5 @@ A szerző a résztvevői hangok képernyőképén túl nagynak ítélte a betűm
 ### Dőlt idézetek és kép a teljes blokk mögött
 
 A szerző a kisebbre vett résztvevői idézeteket dőlt betűvel és képháttérrel kéri. Az előző méretezési pontosítás továbbra is érvényes; az idézetek nem nőnek vissza.
+
+A munka közben a szerző a lombkoronás kép helyett másik, korábban adott képet kért. A folytatásban a meglévő, labirintusban sétáló embereket mutató fotó kerül a blokk mögé (`labirintus.webp`).
