@@ -31,3 +31,7 @@ A szerző a gyaloglós kép felhasználását kifejezetten kérte. A pontos ered
 A kapus képeket a szerző csak beágyazott chatképként adta át; megfelelő forrásfájlt a munkaállomáson és az elérhető Git-képanyagokban nem találtunk. Közvetlen fájllinket vagy repóbeli elérési utat kérdeztünk, válasz még szükséges a beépítéshez. Az ígért kapus próba ezért nyitott, nem állítható késznek. Az új gyaloglós WebP-t a külön előnézeti csomagba be kell ágyazni; az éles domainen még nem létezik.
 
 A gyaloglós kép feltöltve `795a5f1`: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261124-gyaloglas#hetvege-ritmusa ; verzió: `952c83bd-98b8-46df-8d67-3544acb83fd9`. 47/47 alapteszt, build és négy helyi/HTTPS képernyőméret rendben, a halvány/hover/fókusz állapot működik, az eredeti hétvégefotók megmaradtak, nincs kilógás, hibás képkérés vagy valódi beküldés. A `/tmp/package_eletutak_walking_preview.py` az új WebP-t is beágyazza a külön csomagba. A saját domain változatlan, a kapus képhez a forrás továbbra is hiányzik.
+
+## Következő kérés: kisebb, egységes idézetméret
+
+A szerző a résztvevői idézetek méretét túl nagynak tartotta. Csak a `conversion-editorial.css` változott: mindhárom idézet 20–24 px-es közös skálát használ, mobilon 20 px; a vezető idézet külön nagy mérete kikerült. A Lora, a félkövér hangsúlyok, a keresztnevek és a forrásszövegek megmaradnak. Nincs új szöveg, kép vagy működésváltozás. Előnézeti csomagoláskor az új gyaloglós WebP beágyazását továbbra is meg kell tartani.

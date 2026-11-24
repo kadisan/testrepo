@@ -257,3 +257,7 @@ A szerző a „Nem kell tudnod előre a választ” bevezető képernyőképén 
 ### További képek — kapus erdő és közös gyaloglás
 
 A szerző három kapus, erdei lépcsős változatot adott kísérletezésre, majd a napfényes úton gyaloglókat mutató képet kifejezetten kérte felhasználni. A képek előnézeti próbája engedett; az éles oldalra történő kiadást a kérés nem tartalmazza.
+
+### Résztvevői idézetek — kisebb és egységes betűméret
+
+A szerző a résztvevői hangok képernyőképén túl nagynak ítélte a betűméretet és az oldal többi részével összhangot kért. Ez pontosítja a korábbi, markáns újságos kiemelés irányát: a hangsúly megmarad, a túlméretezett első idézet megszűnik.

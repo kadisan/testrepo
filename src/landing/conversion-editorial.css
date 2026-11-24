@@ -44,6 +44,7 @@
   display: grid; grid-template-columns: 1.5fr 1fr; align-items: end; gap: 3rem;
   padding-bottom: 2rem; border-bottom: 2px solid #305b40;
 }
+.et-page .et-testimonials-heading h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
 .et-page .et-testimonials-context { font-size: 1.125rem; max-width: 24rem; color: var(--et-muted); }
 .et-page .et-testimonial-grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 0 3rem; }
 .et-page .et-testimonial-grid .et-quote {
@@ -53,12 +54,11 @@
 .et-page .et-quote blockquote { margin: 0; padding: 0 0 0 1.25rem; border: 0; border-left: 4px solid #305b40; color: #173e31; }
 .et-page .et-quote-lead blockquote { border-left-width: 8px; }
 .et-page .et-quote blockquote p {
-  font-family: 'Lora', Georgia, serif; font-weight: 500; font-size: clamp(1.65rem, 2.1vw, 2rem);
-  line-height: 1.5; letter-spacing: -.025em; text-wrap: pretty;
+  font-family: 'Lora', Georgia, serif; font-weight: 500; font-size: clamp(1.25rem, 1.65vw, 1.5rem);
+  line-height: 1.55; letter-spacing: -.015em; text-wrap: pretty;
 }
-.et-page .et-quote-lead blockquote p { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.35; }
 .et-page .et-quote blockquote strong { font-weight: 700; }
-.et-page .et-quote-open { font-size: 1.3em; line-height: 0; }
+.et-page .et-quote-open { font-size: 1.15em; line-height: 0; }
 .et-page .et-quote-close { white-space: nowrap; }
 .et-page .et-quote figcaption {
   display: flex; align-items: center; gap: .7rem; margin-top: 1.5rem;
@@ -76,11 +76,9 @@
   .et-page .et-testimonials-heading { grid-template-columns: 1fr; gap: 1rem; }
   .et-page .et-testimonial-grid { grid-template-columns: 1fr; }
   .et-page .et-testimonial-grid .et-quote-lead { grid-row: auto; padding-right: 0; border-right: 0; }
-  .et-page .et-quote-lead blockquote p { font-size: clamp(1.8rem, 4.5vw, 2.6rem); }
 }
 @media (max-width: 640px) {
-  .et-page .et-quote blockquote p { font-size: 1.65rem; }
-  .et-page .et-quote-lead blockquote p { font-size: 1.9rem; }
+  .et-page .et-quote blockquote p { font-size: 1.25rem; }
   .et-page .et-testimonial-grid .et-quote { padding-block: 1.75rem; }
 }
 

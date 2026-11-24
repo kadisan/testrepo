@@ -453,3 +453,11 @@ Az új kép „A hétvége ritmusa” meglévő panel teljes háttere: alapból 
 A három kapus változat jelenleg csak a chatben látható; az elérhető fájlokban és a Git-történet képanyagaiban nem találtuk a megfelelő eredetiket. Ehhez közvetlen fájllinket vagy repóbeli elérési utat kérdeztünk aszinkron. A kapus kép még nincs beépítve. Bizonyítékok: `/workspace/artifacts/eletutak-2026-11-24-uj-kepek/`, a repón kívül.
 
 Feltöltött gyaloglós forrás: `795a5f1`; előnézet: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261124-gyaloglas#hetvege-ritmusa . Worker-verzió: `952c83bd-98b8-46df-8d67-3544acb83fd9`. 47/47 alapteszt, sikeres build; 320/390/768/1440 px-es helyi és HTTPS-próbákban betölt a kép, működik a halvány, a rámutatási és a billentyűzetes fókuszállapot, a három eredeti hétvégefotó és hat képnagyító megmaradt. 390 px-en kétszeres szöveggel sincs kilógás; nincs betöltési hiba vagy adatbeküldés. A csomag a 292 652 bájtos új WebP-t külön beágyazza, ezért nem az éles domainen még hiányzó fájlt kéri. Az éles `sarkadi-site` továbbra is `c80192c9-dd90-4ba0-a4da-ebb18f9e749c`. Nyitott marad a kapus változat eredeti fájljának átvétele.
+
+### 2026-11-24 — Az idézetek betűméretének összehangolása
+
+A három idézet közös, 20–24 px közötti, képernyőhöz alkalmazkodó betűméretet kapott. A bal oldali vezető idézet korábbi 32–44,8 px-es külön mérete és a mobilos/tabletes nagyítása megszűnt; 640 px alatt mindhárom 20 px. Az egységes sorköz 1,55, a nyitó idézőjel is visszafogottabb. A Lora betűcsalád, a félkövér szavak, az eredeti mondatok, az idézőjelek, a keresztnevek, a zöld vonalak és a két hasáb megmaradtak. A többi oldalszakasz nem változott.
+
+A szakaszcím a korai áráttekintő címével azonos méretezést használ (`clamp(1.8rem, 3vw, 2.5rem)`, legfeljebb 40 px), így a címsor és a csökkentett idézetszöveg aránya is az oldal már meglévő tipográfiájához igazodik.
+
+Forrás: kizárólag `src/landing/conversion-editorial.css`. Ellenőrzési bizonyítékok a repón kívül: `/workspace/artifacts/eletutak-2026-11-24-idezetmeret/`. A korábbi, még hiányzó kapus képforrás továbbra is nyitott; ezt a betűméret-javítás nem érinti.
