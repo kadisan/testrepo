@@ -1,0 +1,61 @@
+import {test,expect} from '@playwright/test';
+const path='/eletutak-talalkozasa/';
+async function open(page){
+ await page.route('**/eletutak-talalkozasa/api/callback',route=>route.fulfill({json:{enabled:true}}));
+ await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();
+}
+
+test('package photographs appear on hover and keyboard focus without selecting an offer',async({page})=>{
+ await open(page);
+ const sources=await page.locator('.et-trip img').evaluateAll(images=>images.map(i=>new URL(i.src).pathname));
+ for(const id of ['one','two','series','plus']){
+  const card=page.locator(`#et-csomag-${id}`),layer=card.locator('.et-season-images');
+  await page.mouse.move(1,1);await page.locator('.et-hero h1').focus();
+  await expect(layer).toHaveCSS('opacity','0');await card.hover();await expect(layer).toHaveCSS('opacity','0.42');
+  const images=await layer.locator('[data-et-season]').evaluateAll(parts=>parts.map(e=>getComputedStyle(e).backgroundImage));
+  for(let i=0;i<3;i++)expect(images[i]).toContain(sources[i]);
+  await expect(card).not.toHaveClass(/is-selected/);await expect(page.locator('.et-selection')).toBeHidden();
+  // A bound using a completely white photograph covers every real photo pixel.
+  const contrast=await card.evaluate(e=>{
+   const color=s=>s.match(/[\d.]+/g).slice(0,3).map(Number),layer=e.querySelector('.et-season-images');
+   const alpha=Number(getComputedStyle(layer).opacity),brightness=Number(getComputedStyle(layer).filter.match(/brightness\(([\d.]+)\)/)[1]);
+   const background=color(getComputedStyle(e).backgroundColor).map(x=>x*(1-alpha)+255*brightness*alpha);
+   const foreground=color(getComputedStyle(e.querySelector('h3')).color);
+   const l=c=>c.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4}).reduce((n,x,i)=>n+x*[.2126,.7152,.0722][i],0);
+   return (Math.max(l(background),l(foreground))+.05)/(Math.min(l(background),l(foreground))+.05);
+  });
+  expect(contrast).toBeGreaterThanOrEqual(4.5);
+  await page.mouse.move(1,1);await card.locator('[data-et-package]').focus();await expect(layer).toHaveCSS('opacity','0.42');
+  await expect(card).not.toHaveClass(/is-selected/);
+ }
+});
+
+test('a dated enquiry shows that exact photograph and clearing restores the free choice',async({page})=>{
+ await open(page);const one=page.locator('[data-et-season-package=one]');
+ for(const index of [0,1,2]){
+  await page.locator(`[data-et-weekend="${index}"]`).click();
+  await expect(one.locator('[data-et-season]:not([hidden])')).toHaveCount(1);
+  await expect(one.locator(`[data-et-season="${index}"]`)).not.toHaveAttribute('hidden','');
+  for(const id of ['two','series','plus'])await expect(page.locator(`[data-et-season-package="${id}"] [data-et-season]:not([hidden])`)).toHaveCount(3);
+  await page.locator('#et-clear-selection').click();
+  await expect(one.locator('[data-et-season]:not([hidden])')).toHaveCount(3);
+ }
+ await page.locator('[data-et-package=series]').click();
+ await expect(page.locator('[data-et-season-package=series] [data-et-season]:not([hidden])')).toHaveCount(3);
+ await expect(page.locator('#et-selection-text')).toContainText('Három hétvége');
+});
+
+test('section titles reveal imagery without moving and reduced motion stays still',async({page})=>{
+ await open(page);
+ for(const id of ['et-intro-title','et-weekends-title','et-practice-title','et-testimonials-title','et-guide-title','et-prices-title','et-stay-title','et-faq-title','et-contact-title']){
+  const title=page.locator(`#${id}`),panel=title.locator('xpath=ancestor::*[contains(concat(" ",normalize-space(@class)," ")," et-scene-heading ")][1]');
+  await title.scrollIntoViewIfNeeded();await page.mouse.move(1,1);
+  const before=await title.boundingBox();await title.hover();
+  await expect.poll(()=>panel.evaluate(e=>getComputedStyle(e,'::after').opacity)).toBe('0.16');
+  expect(await title.boundingBox()).toEqual(before);
+ }
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.locator('.et-hero h1').hover();
+ await expect(page.locator('.et-hero-forest')).toHaveCSS('transform','none');
+ await expect(page.locator('.et-hero-forest')).toHaveCSS('transition-duration','0s');
+});

@@ -238,3 +238,10 @@ A szerző a „Bónusz” csomag új megnevezéseként a „Télből tavaszba”
 | SZERZŐI FOTÓAZONOSÍTÁS | A januári kártya képe Ráktanyán készült, a ködben egy ősöreg bükkfa látszik; nem platán. A februári kép a Bakonybél fölötti erdei ösvény „Tündérkútja”. A márciusi kártya képe a bakonybéli Borostyánkút kevésbé fotózott oldalát mutatja télen; nem márciusi felvételként jelöljük. A helyszínek látható képaláírásba kerüljenek. |
 | SZERZŐI VISSZAJELZÉS | Az erdofurdozz.hu alapján készített külön gondolatkísérletet a szerző félreteszi, az új bevezetőt/fejlécet elutasítja. A kísérlet előtti eredeti változathoz térünk vissza. |
 | SZERZŐI MUNKAHATÁR | A további vizuális irány a háttérszínek átgondolása. „Álljunk meg egy szóra és gondoljuk végig”: előbb összegyűjtjük a megtartandó és elengedendő ötleteket; újabb dizájn nem készül automatikusan. A korábbi ötletek melletti szakmai érvek bemutathatók. |
+
+## 2026. november 24. — Fotók az árkártyák és a szakaszcímek mögött
+
+| Állapot | Döntés / megjegyzés |
+| --- | --- |
+| SZERZŐI KÉRÉS | Először az alsó, részvételi árat mutató kártyákon jelenjen meg rámutatáskor annak a hétvégének a fotója, amely korábban a dátumcsempén szerepelt. A fotó optimalizáltan áttetsző legyen. |
+| SZERZŐI FOLYTATÁS | Ezután a fejlécekhez/szakaszcímekhez érő kurzor is alakítsa a kapcsolódó képi világot, a nyitó erdőkép és a vendégház háttérfotójának irányában. A kérés feloldja a korábbi gondolkodási szünetet ezekre a konkrét képhatásokra; nem általános újratervezés. |

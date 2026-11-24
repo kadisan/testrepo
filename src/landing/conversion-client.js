@@ -96,6 +96,12 @@ export function initConversion(config = {}) {
       button.setAttribute('aria-current',String(selected));
       button.closest('.et-trip')?.classList.toggle('is-selected',selected);
     });
+    document.querySelectorAll('[data-et-season-package]').forEach(layer => {
+      const specific = layer.dataset.etSeasonPackage === selectedPackage && selectedWeekends.length > 0;
+      layer.querySelectorAll('[data-et-season]').forEach(image => {
+        image.hidden = specific && !selectedWeekends.includes(Number(image.dataset.etSeason));
+      });
+    });
   }
   function select(pack, weekends = [], intent = 'participation') {
     selectedPackage = pack;

@@ -1,0 +1,9 @@
+# Életutak — fotóval változó árkártyák és címek
+
+A szerző először az alsó részvételi kártyákra kért áttetsző fotót rámutatáskor, a fenti dátumcsempékkel összetartozó képekből; utána a fejlécek/címek képi változását kérte. Ez konkrét folytatási kérés a korábban megállított dizájnmunkában. Az eredeti elrendezés, a képaláírások, a szöveg, az ajánlatok és a névvel közölt idézetek megmaradnak.
+
+Az alsó csomagok nem egy-egy rögzített dátum árai. Ezért alapból a három eredeti fotó közös képháttere jelenik meg, amelyet konkrét dátum kiválasztásakor az egyalkalmas kártyán annak fotója vált fel. Törléskor mindhárom visszatér. A két/három hétvégés és a Télből tavaszba csomag nem kap hamis egyetlen dátumhoz rendelést. A díszítő képréteg `aria-hidden`, nem vezérlő. Hover/fókusz hatására 42%-os, 55%-ra sötétített fotó jelenik meg; a legvilágosabb lehetséges képpontra számított főszöveg-kontraszt legalább 5,46:1. Az egér mozgatása nem módosít választást.
+
+A szakaszcímek témához illő 16%-os hátteret kapnak. A felső aláírásos fejléc, a nyitó erdőkép és a meglévő szállásfotó is finoman képes állapotba vált. Nincs új szöveg, űrlapmező, új fotó, ár vagy programígéret. Nincs új dekoratív tabulátorállomás. A meglévő vezérlők fókusza is megmutatja a képeket. Érintőképernyőn minden tartalom alapból megmarad. Csökkentett mozgásnál az átmenet és a nagyítás kikapcsolt.
+
+Forrás: `conversion-render.js`, `conversion-client.js`, új `conversion-scenes.css` és importja a `main.js`-ben; a magyar HTML a renderelőből frissült. A három új böngészős próba a passzív rámutatást/fókuszt, a dátumhoz tartozó fotót/törlést, a kontrasztkorlátot, a szövegek helyben maradását és a mozgáscsökkentést ellenőrzi. 47/47 alapteszt, build, 11/11 korábbi releváns és 3/3 végső új böngészős próba rendben. Éles saját domain helyett a külön `eletutak-atnezes` frissítendő. A korábbi próba átirányítása megmarad.
