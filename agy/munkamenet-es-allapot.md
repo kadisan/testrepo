@@ -473,3 +473,14 @@ A három idézet valódi Lora Italic 500 és 700 készlettel jelenik meg, latin 
 A szerző munka közbeni korrekciója felülírja a fenti lombkoronás képválasztást: másik, korábban adott képet kér. A végső háttér a meglévő `public/images/eletutak/labirintus.webp`, amely embereket mutat egy erdei labirintusban. A teljes szakaszos elhelyezés, a halvány réteg és a dőlt, kisebb idézetek megmaradnak. A helyi öt képernyőméretű ellenőrzés már ezt a képet kéri számon.
 
 Végső feltöltött forrás: `6307e7b` (a dőlt betűk alapja `571be4e`); előnézet: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261124-labirintus-idezet#resztvevoi-hangok . Worker-verzió: `40c461f0-b201-4258-b352-b8b5eb91a2e8`. Öt helyi és HTTPS-méretben betölt a labirintusfotó és a valódi 500/700 Italic, megmarad a 20–24 px-es egységes méret, a keresztnevek álló betűsek. Nincs kilógás, hibás font-/képkérés vagy adatbeküldés; kétszeres mobilos szöveggel is rendben. Az előnézeti csomag mind a nyolc új dőlt fontfájlt tartalmazza. A saját domain változatlanul `c80192c9-dd90-4ba0-a4da-ebb18f9e749c` verzión fut.
+
+
+### 2026-11-24 — Idézetháttér csak rámutatásra; Erika és szöveggondozás
+
+A résztvevői blokk alapja most 115 fokos, teljesen fedő zöldes-bézses átmenet: `#e5eddf` → `#e9ead8` → `#efe8d6`. A labirintusfotó alapból 0%, a teljes szakaszra mutatva 18%, elhagyáskor ismét 0%; érintőképernyőn a színátmenet marad. A dőlt Lora, a 20–24 px-es idézetméret és a nevek álló betűi megmaradtak.
+
+A szerző pontosítása szerint Erika neve javítva. A teljes magyar felület és a visszahívási állapotszövegek átolvasva; az „etekintetben” helyett „e tekintetben”, Éva idézetének közbevetésében hiányzó vessző pótolva. Az idézetek szavait és a jóváhagyott ajánlati adatokat másként nem írtuk át. A névsor külön regressziós elvárás lett.
+
+47/47 alapteszt és build sikeres. Öt helyi szélességben (320/390/768/1440/1920 px) igazolt a nulla alapátlátszóság, a szakaszra mutatva 18%, elhagyás után ismét nulla; a helyes nevek, valódi dőlt fontok és mobilos kétszeres szöveg rendben. Külön érintéses próba: nincs beragadó fotó. Képernyőképek és mérési eredmények: `/workspace/artifacts/eletutak-2026-11-24-erika-hover/`. Az előnézet feltöltése és HTTPS-ellenőrzése következik; éles saját domaines kiadás nincs.
+
+A 9 olvashatósági és a végső 3 képhatás-próba sikeres (12 érintett eset). A rámutatási mérés a kurzort közvetlenül mozgatja, így az automatikus böngészőgörgetés nem torzítja a helyben maradás ellenőrzését.

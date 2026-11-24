@@ -37,6 +37,8 @@ test('Hungarian landing presents the confirmed offer without stale prices, with 
  assert.doesNotMatch(html,/Ide kerül|Lorem ipsum|példa-visszajelzés/i);
  assert.equal((html.match(/<blockquote>/g)||[]).length,3);
  assert.match(html,/Korábbi zarándokutak résztvevőinek/);
+ assert.deepEqual(conversionOffer.testimonials.map(quote=>quote.name),['Ildikó','Éva','Erika']);
+ assert.doesNotMatch(html,/\bEika\b|\betekintetben\b/);
  const voices=[...html.matchAll(/<figure class="et-quote[^\"]*">([\s\S]*?)<\/figure>/g)].map(match=>match[1]);
  for(const quote of conversionOffer.testimonials){
   const voice=voices.find(figure=>figure.includes(`<figcaption>${quote.name}</figcaption>`));

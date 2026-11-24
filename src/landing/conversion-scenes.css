@@ -52,16 +52,16 @@
   .et-page .et-intro:has(h2:hover)::before { opacity: .30; }
 }
 
-/* A continuous forest layer supports all three participant voices. */
+/* The photo appears only while the participant section is hovered. */
 .et-page .et-testimonials { position: relative; isolation: isolate; }
 .et-page .et-testimonials::before {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: url('/images/eletutak/labirintus.webp') center 45% / cover no-repeat;
-  opacity: .18; transition: opacity .4s ease;
+  opacity: 0; transition: opacity .4s ease;
 }
 .et-page .et-testimonials .et-scene-heading::after { display: none; }
 @media (hover: hover) {
-  .et-page .et-testimonials:has(h2:hover)::before { opacity: .22; }
+  .et-page .et-testimonials:hover::before { opacity: .18; }
 }
 
 /* The supplied walking scene accompanies the weekend's existing rhythm. */

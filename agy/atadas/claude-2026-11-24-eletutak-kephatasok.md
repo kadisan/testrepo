@@ -45,3 +45,10 @@ A szerző dőlt idézeteket és képhátteret kért. A valódi Lora 500/700 Ital
 Közben a szerző elutasította a lombkoronás hátteret, másik korábbi képet kért. A végső választás a meglévő `labirintus.webp`, az erdei labirintusban sétáló emberekkel. Ez felülírja az előző bekezdés képválasztását, a dőlt betűs és visszafogott méretű szöveg megmarad. A folytatás ezt a képet ellenőrzi és tölti fel.
 
 Végső forrás `6307e7b` (dőlt fontok `571be4e`): https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261124-labirintus-idezet#resztvevoi-hangok ; verzió `40c461f0-b201-4258-b352-b8b5eb91a2e8`. Öt helyi és HTTPS-szélességben a labirintusfotó és az új dőlt fontok hibátlanul betöltenek, az idézetméret 20–24 px marad, a nevek álló betűsek. Nincs kilógás, font-/képhiba vagy valódi beküldés. A `/tmp/package_eletutak_italic_labyrinth_preview.py` a nyolc új dőlt WOFF/WOFF2-t is beágyazza a korábbi fontok és képek mellé. Az éles saját domain továbbra sem változott.
+
+
+## Legutóbbi pontosítás — hover előtti színátmenet és Erika
+
+A résztvevői blokk alapból fotó nélküli, zöldes-bézses átmenet (`#e5eddf` / `#e9ead8` / `#efe8d6`). A teljes blokkra rámutatva a labirintusfotó halványan, 18%-on előtűnik, elhagyva eltűnik. Érintéses eszközön marad a színátmenet; mozgáscsökkentésnél nincs animáció. A kisebb dőlt idézetek megmaradtak. A szerző nevét illető pontosítása szerint **Erika** szerepel; a korábbi Eika alak nem érvényes. A teljes felület átolvasásakor az „e tekintetben” írásmód és Éva idézetének közbevetési vesszője is javítva.
+
+47/47 alapteszt, build, öt helyi szélességben a fotó 0 → 18 → 0%-os működése, a helyes nevek és valódi dőlt fontok, valamint kétszeres mobilos szöveg és külön érintéses mód ellenőrizve. A névsor regressziós elvárásként is rögzített. Csak a külön előnézet kiadása következik. A dőlt fontokat és a gyaloglós/vendégház-képeket továbbra is be kell ágyazni a csomagba.

@@ -60,11 +60,14 @@ test('section titles reveal imagery without moving and reduced motion stays stil
  await expect.poll(()=>intro.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0.3');
  expect(await introTitle.boundingBox()).toEqual(introBox);
  const voices=page.locator('.et-testimonials'),voicesTitle=page.locator('#et-testimonials-title');
- await voicesTitle.scrollIntoViewIfNeeded();await page.mouse.move(1,1);
+ await voices.evaluate(e=>e.scrollIntoView({block:'start',behavior:'instant'}));await page.mouse.move(-10,-10);
+ await expect.poll(()=>voices.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0');
+ const voicesBox=await voicesTitle.boundingBox(),quoteBox=await voices.locator('.et-quote').first().boundingBox();
+ await page.mouse.move(quoteBox.x+20,quoteBox.y+20);
  await expect.poll(()=>voices.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0.18');
- const voicesBox=await voicesTitle.boundingBox();await voicesTitle.hover();
- await expect.poll(()=>voices.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0.22');
  expect(await voicesTitle.boundingBox()).toEqual(voicesBox);
+ await page.mouse.move(-10,-10);
+ await expect.poll(()=>voices.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0');
  for(const id of ['et-weekends-title','et-practice-title','et-guide-title','et-prices-title','et-stay-title','et-faq-title','et-contact-title']){
   const title=page.locator(`#${id}`),panel=title.locator('xpath=ancestor::*[contains(concat(" ",normalize-space(@class)," ")," et-scene-heading ")][1]');
   await title.scrollIntoViewIfNeeded();await page.mouse.move(1,1);

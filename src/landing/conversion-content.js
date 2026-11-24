@@ -8,9 +8,9 @@ export const conversionOffer = {
   gift: 'Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.',
   // Publish only author-supplied, permission-cleared quotations.
   testimonials: [
-    {name: 'Ildikó', text: 'Úgy éreztem, nem várt felismerések birtokosa lettem, pedig bevallom őszintén, etekintetben kissé szkeptikusan indultam neki, inkább a csavargó lelkem vitt.', emphasis: 'nem várt felismerések birtokosa lettem'},
-    {name: 'Éva', text: 'A zarándoklat most is mint az eddigieknél is, átmosott, újraindította a „rendszert”.', emphasis: 'átmosott, újraindította a „rendszert”'},
-    {name: 'Eika', text: 'No Para érzésekkel jöttem hazafelé. Ez nyugtatta a lelkemet, tehermentesített.', emphasis: 'Ez nyugtatta a lelkemet, tehermentesített.'},
+    {name: 'Ildikó', text: 'Úgy éreztem, nem várt felismerések birtokosa lettem, pedig bevallom őszintén, e tekintetben kissé szkeptikusan indultam neki, inkább a csavargó lelkem vitt.', emphasis: 'nem várt felismerések birtokosa lettem'},
+    {name: 'Éva', text: 'A zarándoklat most is, mint az eddigieknél is, átmosott, újraindította a „rendszert”.', emphasis: 'átmosott, újraindította a „rendszert”'},
+    {name: 'Erika', text: 'No Para érzésekkel jöttem hazafelé. Ez nyugtatta a lelkemet, tehermentesített.', emphasis: 'Ez nyugtatta a lelkemet, tehermentesített.'},
   ],
   phone: '+36703161897',
   phoneDisplay: '+36 70 316 1897',

@@ -102,7 +102,7 @@
 }
 .et-page .et-testimonials {
   --et-section-accent: #514126;
-  background: #efe8d6;
+  background: linear-gradient(115deg, #e5eddf 0%, #e9ead8 48%, #efe8d6 100%);
   border-bottom: 1px solid #927e5f55;
 }
 .et-page .et-prices { background: linear-gradient(180deg, #dce8dfe6, #b1cbbac9); }
