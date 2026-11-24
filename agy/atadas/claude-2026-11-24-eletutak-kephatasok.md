@@ -35,3 +35,5 @@ A gyaloglós kép feltöltve `795a5f1`: https://eletutak-atnezes.kadisan.workers
 ## Következő kérés: kisebb, egységes idézetméret
 
 A szerző a résztvevői idézetek méretét túl nagynak tartotta. Csak a `conversion-editorial.css` változott: mindhárom idézet 20–24 px-es közös skálát használ, mobilon 20 px; a vezető idézet külön nagy mérete kikerült. A Lora, a félkövér hangsúlyok, a keresztnevek és a forrásszövegek megmaradnak. Nincs új szöveg, kép vagy működésváltozás. Előnézeti csomagoláskor az új gyaloglós WebP beágyazását továbbra is meg kell tartani.
+
+Feltöltve `98239c8`: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261124-idezetmeret#resztvevoi-hangok ; verzió `8c64fe53-34a0-4dcf-bd57-ef102457cd68`. A szakaszcím az áráttekintőével azonos, legfeljebb 40 px-es skálát kapott. 47/47 alapteszt, build és 9/9 olvashatósági próba sikeres; öt helyi/HTTPS szélességben egyforma idézetméret, megőrzött betűcsalád/kiemelések/nevek és hibamentes megjelenés, nagyított mobilos szövegnél is. Az éles saját domain nem változott.
