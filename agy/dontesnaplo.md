@@ -261,3 +261,7 @@ A szerző három kapus, erdei lépcsős változatot adott kísérletezésre, maj
 ### Résztvevői idézetek — kisebb és egységes betűméret
 
 A szerző a résztvevői hangok képernyőképén túl nagynak ítélte a betűméretet és az oldal többi részével összhangot kért. Ez pontosítja a korábbi, markáns újságos kiemelés irányát: a hangsúly megmarad, a túlméretezett első idézet megszűnik.
+
+### Dőlt idézetek és kép a teljes blokk mögött
+
+A szerző a kisebbre vett résztvevői idézeteket dőlt betűvel és képháttérrel kéri. Az előző méretezési pontosítás továbbra is érvényes; az idézetek nem nőnek vissza.

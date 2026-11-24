@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 const path='/eletutak-talalkozasa/';
 async function open(page){
  await page.route('**/eletutak-talalkozasa/api/callback',route=>route.fulfill({json:{enabled:true}}));
- await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();
+ await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();await page.evaluate(()=>document.fonts.ready);
 }
 
 test('package photographs appear on hover and keyboard focus without selecting an offer',async({page})=>{
@@ -59,7 +59,13 @@ test('section titles reveal imagery without moving and reduced motion stays stil
  const introBox=await introTitle.boundingBox();await introTitle.hover();
  await expect.poll(()=>intro.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0.3');
  expect(await introTitle.boundingBox()).toEqual(introBox);
- for(const id of ['et-weekends-title','et-practice-title','et-testimonials-title','et-guide-title','et-prices-title','et-stay-title','et-faq-title','et-contact-title']){
+ const voices=page.locator('.et-testimonials'),voicesTitle=page.locator('#et-testimonials-title');
+ await voicesTitle.scrollIntoViewIfNeeded();await page.mouse.move(1,1);
+ await expect.poll(()=>voices.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0.18');
+ const voicesBox=await voicesTitle.boundingBox();await voicesTitle.hover();
+ await expect.poll(()=>voices.evaluate(e=>getComputedStyle(e,'::before').opacity)).toBe('0.22');
+ expect(await voicesTitle.boundingBox()).toEqual(voicesBox);
+ for(const id of ['et-weekends-title','et-practice-title','et-guide-title','et-prices-title','et-stay-title','et-faq-title','et-contact-title']){
   const title=page.locator(`#${id}`),panel=title.locator('xpath=ancestor::*[contains(concat(" ",normalize-space(@class)," ")," et-scene-heading ")][1]');
   await title.scrollIntoViewIfNeeded();await page.mouse.move(1,1);
   const before=await title.boundingBox();await title.hover();

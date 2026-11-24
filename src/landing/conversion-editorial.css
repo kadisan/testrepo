@@ -55,6 +55,7 @@
 .et-page .et-quote-lead blockquote { border-left-width: 8px; }
 .et-page .et-quote blockquote p {
   font-family: 'Lora', Georgia, serif; font-weight: 500; font-size: clamp(1.25rem, 1.65vw, 1.5rem);
+  font-style: italic;
   line-height: 1.55; letter-spacing: -.015em; text-wrap: pretty;
 }
 .et-page .et-quote blockquote strong { font-weight: 700; }
@@ -100,8 +101,8 @@
   border-block: 1px solid #7184614d;
 }
 .et-page .et-testimonials {
-  --et-section-accent: #755c34;
-  background: linear-gradient(115deg, #f2e8d5f2, #e7e4d2ed);
+  --et-section-accent: #514126;
+  background: #efe8d6;
   border-bottom: 1px solid #927e5f55;
 }
 .et-page .et-prices { background: linear-gradient(180deg, #dce8dfe6, #b1cbbac9); }
