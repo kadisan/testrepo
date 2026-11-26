@@ -62,11 +62,11 @@ export function initConversion(config = {}) {
   document.querySelectorAll('a[href="#et-faq-walking"]').forEach(link => link.addEventListener('click', openWalkingAnswer));
   if (location.hash === '#et-faq-walking') openWalkingAnswer();
   window.addEventListener('hashchange', () => { if (location.hash === '#et-faq-walking') openWalkingAnswer(); });
-  window.addEventListener('load', () => document.fonts.ready.then(() => {
+  window.addEventListener('load', () => document.fonts.ready.then(() => requestAnimationFrame(() => {
     if (location.hash === '#et-faq-walking' && walkingQuestion) {
       walkingQuestion.scrollIntoView({block: 'start', behavior: 'instant'});
     }
-  }), {once: true});
+  })), {once: true});
 
   let selectedPackage = '';
   let selectedWeekends = [];
