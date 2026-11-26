@@ -533,3 +533,11 @@ Az éles `sarkadi-site` a külön előnézet feltöltése után is a korábbi `3
 ### 2026-11-26 — A tömörítés és díjbontás élesítése jóváhagyva
 
 A szerző a konkrét előnézet után „Igen” választ adott az élesítésre. Az alkalmazáskód a jóváhagyott `1a622d2` forráshoz képest változatlan. A teljes webes kiadás új jelölése: `2026-11-26-tomorites-es-dijbontas`. A korábbi éles Worker, telepítési adatok és kötések mentve a privát `/workspace/artifacts/sarkadi-2026-11-26-tomorites-elesites/production-before/` mappába. A teljes site csomagolása és az éles HTTPS-ellenőrzés következik; a fogadói API, DNS és levelezési konfiguráció nem e kiadás része.
+
+### Igazolt éles tömörítés és díjbontás
+
+A `b731c5606e9df4bdca67dc8ba8e1ceb5f4324fdf` forrásból készült teljes webes csomag éles. Worker: `sarkadi-site`, új verzió: `a7818d42-f800-4258-b257-a79c8759d85c`, 100%. A saját domain kiadási jelölése `2026-11-26-tomorites-es-dijbontas`, a commitazonosító egyezik. Oldal: https://sarkadisandor.hu/eletutak-talalkozasa/ ; díjbontás: https://sarkadisandor.hu/eletutak-talalkozasa/#reszvetel . Az alkalmazásforrás a jóváhagyott `1a622d2` változattal továbbra is azonos.
+
+Élesítés előtt ismét 48/48 alapteszt és sikeres build. Az éles Életutak öt szélességben (320/390/768/1440/1920 px) ellenőrizve: mind a négy csomag díjtétele és összege helyes, az összköltség 60/100/160/200 ezer Ft; a rövidített tartalom, a keresztnevek és képek rendben. Nincs vízszintes kilógás, hibás erőforrás, böngészőhiba vagy valódi beküldés; 390 px-en kétszeres szöveggel is megfelelő. A főoldal és a Tai Chi külön 390/1440 px-es próbája is sikeres, a kapcsolati és közösségi linkek megmaradtak. A díjkártya asztali és mobilos képét vizuálisan is ellenőriztük.
+
+A Cloudflare API szerint a korábbi nem eszközjellegű kötések és mind a négy domainútvonal megmaradt. A readiness GET 200 és enabled=true; az adatkezelési, impresszum- és megőrzött angol oldal, a robots, sitemap és kiadási metaadat is 200 böngészőből. Új űrlapos adat nem lett beküldve. DNS, levelezés és a külön fogadói API nem módosult. Bizonyítékok: `/workspace/artifacts/sarkadi-2026-11-26-tomorites-elesites/`. Következő tartalmi kör: a szerzővel külön egyeztetett gyakorlati kapaszkodók, most még bővítés nélkül.

@@ -37,3 +37,11 @@ Az éles `sarkadi-site` a külön előnézet feltöltése után is a korábbi `3
 A konkrét előnézetet követő élesítési kérdésre a szerző **„Igen”** választ adott. Ez feloldja a fenti, időben korábbi előnézeti korlátot a `1a622d2` forrás szerinti tömörítésre és mind a négy csomag díjbontására. Az alkalmazáskód azóta változatlan. A gyakorlati kapaszkodókkal továbbra is várunk.
 
 A teljes site kiadása `scripts/package_site.py` és `wrangler.site.jsonc` használatával készül a meglévő `sarkadi-site` Workerre; kiadási jelölés: `2026-11-26-tomorites-es-dijbontas`. A korábbi éles kiadás és kötések privát mentése elkészült. Az élesítés tényleges eredményét és a saját domain ellenőrzését a következő bejegyzés rögzíti.
+
+## Igazolt éles kiadás
+
+Forrás: `b731c5606e9df4bdca67dc8ba8e1ceb5f4324fdf`; teljes site-csomag, új `sarkadi-site` verzió: `a7818d42-f800-4258-b257-a79c8759d85c` (100%). A saját domain `/release-version.json` fájlja a helyes forrást és a `2026-11-26-tomorites-es-dijbontas` jelölést adja. Link: https://sarkadisandor.hu/eletutak-talalkozasa/#reszvetel . Az alkalmazás változatlan a jóváhagyott `1a622d2` előnézethez képest.
+
+48/48 alapteszt és build ismét sikeres. Éles HTTPS: öt Életutak-szélesség, mind a négy díjbontás számtana és változatlan összköltsége, rövidített szöveg, képek, nevek és kétszeres mobilos szöveg rendben. A főoldal/Tai Chi további négy nézete is rendben, a linkek működnek. Nincs kilógás, böngészőhiba, hibás erőforrás vagy tényleges adatbeküldés. Asztali és mobilos díjkártya vizuálisan ellenőrizve.
+
+A kötések és a négy Worker-útvonal változatlan. Valódi readiness GET 200/enabled=true; a tájékoztató oldalak, a megőrzött angol útvonal, robots és sitemap 200. DNS, SMTP, számlázás és külön callback-API nem változott. Az előző verzió `3bfa09cf-d7fc-4be6-b957-b762c8c3b184` és a privát mentés visszaállításhoz megmaradt. Bizonyítékok: `/workspace/artifacts/sarkadi-2026-11-26-tomorites-elesites/`. A gyakorlati kapaszkodók továbbra is későbbi, külön egyeztetett feladat.
