@@ -520,3 +520,12 @@ A szállás és étkezés hétvégénként 30 000 Ft; az egyalkalmas összkölts
 Ellenőrzés: 48/48 alapteszt, sikeres build, 32/32 érintett böngészős eset. Öt helyi szélességben (320/390/768/1440/1920 px) az összegek és a csomagösszegek egyeznek, nincs kilógás vagy betöltési hiba; 390 px-en kétszeres szöveggel is rendben. Nincs valódi beküldés. Bizonyítékok, előtte/utána összehasonlítás és kizárólag privát négynapos háttéradat: `/workspace/artifacts/eletutak-2026-11-26-tomorites-dijbontas/`.
 
 Most csak az `eletutak-atnezes` külön előnézet frissíthető. Az éles `sarkadi-site` kiadási azonosítója a munka kezdetén `3bfa09cf-d7fc-4be6-b957-b762c8c3b184`; a feltöltés után ennek változatlanságát is ellenőrizni kell.
+
+
+## Ellenőrzött jóváhagyási előnézet
+
+Forrás: `1a622d2`, közös ágra feltöltve. Előnézet: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261126-tomorites-dijbontas#neked ; közvetlen díjbontás: ugyanez `#reszvetel` horgonnyal. Előnézeti Worker-verzió: `61702fe9-7fa2-45b6-8d1c-5dd5c83296dd`.
+
+A tényleges HTTPS-előnézet öt szélességben (320/390/768/1440/1920 px) átment az ellenőrzésen. A négy csomag díjtételeinek összege mindenütt helyes; a kiemelt teljes költségek 60/100/160/200 ezer Ft. Az összes kép betölt, a keresztnevek megmaradtak, nincs kilógás vagy betöltési hiba. A 390 px-es kétszeres szöveg is rendben. Nem történt valódi beküldés.
+
+Az éles `sarkadi-site` a külön előnézet feltöltése után is a korábbi `3bfa09cf-d7fc-4be6-b957-b762c8c3b184` verzión fut, a két kiadás API-azonosítója összevetve. **Élesítés nem történt; a következő lépés a szerző jóváhagyása.** A jóváhagyott változat jövőbeli élesítéséhez a teljes site-csomagolást kell használni; a mostani előnézeti feltöltőt nem szabad éles Workerre átirányítani.

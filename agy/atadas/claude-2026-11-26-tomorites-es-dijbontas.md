@@ -22,3 +22,12 @@ Az egyhétvégés 30 000 + 30 000 Ft szerzői adat. A további bontás ennek kö
 A későbbi négynapos díjak csak privát háttéradatként szerepelnek a munkamappában; a nyilvános repóba és landingbe nem másolhatók. Új programnál vagy későbbi díjazási körnél vissza kell kérdezni az aktuális tételekre és a bontási logikára.
 
 48/48 alapteszt, build, 32/32 érintett böngészős eset, öt helyi szélesség és kétszeres mobilos szöveg rendben. A díjbontás számtani összegeit külön üzleti szabály- és felületi elvárások is ellenőrzik. Előnézeti csomagoló: `/tmp/package_eletutak_concise_costs_preview.py`; feltöltő: `/tmp/deploy_eletutak_concise_costs_preview.py`. Csak az `eletutak-atnezes` célozható velük, `sarkadi-site` nem.
+
+
+## Ellenőrzött jóváhagyási előnézet
+
+Forrás: `1a622d2`, közös ágra feltöltve. Előnézet: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261126-tomorites-dijbontas#neked ; közvetlen díjbontás: ugyanez `#reszvetel` horgonnyal. Előnézeti Worker-verzió: `61702fe9-7fa2-45b6-8d1c-5dd5c83296dd`.
+
+A tényleges HTTPS-előnézet öt szélességben (320/390/768/1440/1920 px) átment az ellenőrzésen. A négy csomag díjtételeinek összege mindenütt helyes; a kiemelt teljes költségek 60/100/160/200 ezer Ft. Az összes kép betölt, a keresztnevek megmaradtak, nincs kilógás vagy betöltési hiba. A 390 px-es kétszeres szöveg is rendben. Nem történt valódi beküldés.
+
+Az éles `sarkadi-site` a külön előnézet feltöltése után is a korábbi `3bfa09cf-d7fc-4be6-b957-b762c8c3b184` verzión fut, a két kiadás API-azonosítója összevetve. **Élesítés nem történt; a következő lépés a szerző jóváhagyása.** A jóváhagyott változat jövőbeli élesítéséhez a teljes site-csomagolást kell használni; a mostani előnézeti feltöltőt nem szabad éles Workerre átirányítani.
