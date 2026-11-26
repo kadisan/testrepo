@@ -31,7 +31,7 @@ export const conversionOffer = {
   ],
   faq: [
     ['Egyedül is érkezhetek?', 'Igen. Akkor is csatlakozhatsz, ha most találkozol velem először. A közös programban és a saját csendedben is lehet helyed. A szobabeosztást előre egyeztetjük.'],
-    ['Mennyit gyaloglunk? Bírni fogom?', 'A hétvégék gyalogtávja eltér; a konkrét távot, terepet és téli körülményeket előre megadom. A telefonbeszélgetésben átbeszéljük a gyaloglási tapasztalataidat és a felkészültségedet.'],
+    ['Mennyit gyaloglunk? Bírni fogom?', 'A hétvégék gyalogtávja eltér; a konkrét távot, terepet és téli körülményeket előre megadom. A telefonbeszélgetésben átbeszéljük a gyaloglási tapasztalataidat és a felkészültségedet.', 'et-faq-walking'],
     ['Kell Tai Chi-tapasztalat?', 'Nem. Egyszerű mozdulatokkal dolgozunk, előképzettség nem szükséges.'],
     ['Kell beszélnem a személyes dolgaimról?', 'Te döntöd el, mennyit osztasz meg. Nem kell kész kérdéssel érkezned. Ha négyszemközt is szeretnél beszélgetni, biztosítok rá külön időt.'],
     ['Van vallásos része a programnak?', 'Ezen a hétvégén nincs külön vallásos programelem. A személyes hátterem keresztény gyökerű; felekezettől függetlenül várlak.'],

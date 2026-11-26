@@ -55,6 +55,19 @@ export function initConversion(config = {}) {
     if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {closeMenu(); menu.focus();}
   });
 
+  // The fragment always reaches a visible question; JavaScript also opens its
+  // answer, including direct links and a repeat click after closing the answer.
+  const walkingQuestion = document.querySelector('#et-faq-walking');
+  const openWalkingAnswer = () => { if (walkingQuestion) walkingQuestion.parentElement.open = true; };
+  document.querySelectorAll('a[href="#et-faq-walking"]').forEach(link => link.addEventListener('click', openWalkingAnswer));
+  if (location.hash === '#et-faq-walking') openWalkingAnswer();
+  window.addEventListener('hashchange', () => { if (location.hash === '#et-faq-walking') openWalkingAnswer(); });
+  window.addEventListener('load', () => document.fonts.ready.then(() => {
+    if (location.hash === '#et-faq-walking' && walkingQuestion) {
+      walkingQuestion.scrollIntoView({block: 'start', behavior: 'instant'});
+    }
+  }), {once: true});
+
   let selectedPackage = '';
   let selectedWeekends = [];
   let lastFingerprint = '';

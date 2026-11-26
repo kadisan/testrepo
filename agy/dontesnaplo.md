@@ -292,3 +292,9 @@ Az egy hétvége 60 000 Ft-os összköltsége két külön tétel: **30 000 Ft s
 ### A konkrét előnézet jóváhagyása
 
 A szerző az elkészült, linkelt tömörítési és díjbontási előnézet élesítési kérdésére **„Igen”** választ adott. A `1a622d2` alkalmazásforrás szerinti szövegrövidítés és négycsomagos bontás így jóváhagyott: egy hétvége 30 000 + 30 000 = 60 000 Ft; két hétvége 60 000 + 40 000 = 100 000 Ft; három hétvége 90 000 + 70 000 = 160 000 Ft; Télből tavaszba 90 000 + 70 000 + 40 000 Ft személyes folytatás = 200 000 Ft. Az előnézetre vonatkozó kiadási korlát e változatra feloldva. A gyakorlati kapaszkodók bővítése továbbra is későbbi kör.
+
+## 2026. november 26. — A „Mire számíts?” vázlat kritikus átdolgozása
+
+A szerző a vázlat kritikus értékelése után kéri az ajánlott rövid változat elkészítését. A mostani Életutak-oldal meglévő „A hétvége ritmusa” panelje bővül: téli körülmények, közös bázis, a terhelhetőség előzetes egyeztetése és a személyes megosztás szabadsága. A részletes válaszok a GYIK-ben, a díjak az árkártyákon maradnak; a meglévő betűk és színek folytatódnak.
+
+A Tavaszi ív másik ajánlatából nem emelünk át automatikusan dátumot, útvonalat, távot, ellátási vagy fizetési szabályt. A vázlat digitális csendje, vészhelyzeti száma, bármikori házba-visszatérése, részletfizetése és általános anyagi segítségígérete nem lett megerősített programszabály. A kész szöveg a korábban kért sorrend szerint előnézetben kerül a szerző elé; az új változat élesítését még jóváhagyja.

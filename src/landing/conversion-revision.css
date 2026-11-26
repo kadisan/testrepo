@@ -73,6 +73,11 @@
 .et-rhythm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.25rem; }
 .et-rhythm-grid h4 { font: 600 1.25rem/1.5 'Source Sans 3', sans-serif; margin-bottom: .5rem; }
 .et-rhythm-grid p { font-size: 1.25rem; }
+.et-page .et-practice .et-weekend-rhythm > .et-kicker { color: inherit; opacity: .85; margin-bottom: .5rem !important; }
+.et-page .et-rhythm-lead { max-width: 65ch; margin-top: 1rem; }
+.et-page .et-rhythm-choice { border-left: 2px solid currentColor; padding-left: 1rem; margin-top: 1.5rem; }
+.et-rhythm-links { display: flex; flex-wrap: wrap; gap: .25rem 2rem; }
+#et-faq-walking { scroll-margin-top: 5rem; }
 .et-page .et-rhythm-note { font-size: 1.125rem; border-top: 1px solid var(--et-line); padding-top: 1rem; margin-top: 1rem; }
 .et-page .et-gift-details { font-size: 1.125rem; }
 .et-page .et-form select {

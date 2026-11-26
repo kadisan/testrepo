@@ -43,6 +43,32 @@ test('the mobile hero offers a visible first step without scrolling',async({page
  await expect(page.locator('.et-hero .et-direct-call')).toHaveAttribute('href','tel:+36703161897');
 });
 
+test('the walking link opens its answer on click, repeated click and a direct visit',async({page})=>{
+ await callbackApi(page);await page.goto(path);
+ const question=page.locator('#et-faq-walking'),detail=question.locator('..');
+ const link=page.getByRole('link',{name:'Részletesen: Bírni fogom?',exact:true});
+ await link.click();await expect(detail).toHaveAttribute('open','');
+ await question.click();await expect(detail).not.toHaveAttribute('open','');
+ await link.click();await expect(detail).toHaveAttribute('open','');
+ await page.reload();await expect(detail).toHaveAttribute('open','');
+ await expect(question).toBeInViewport();
+});
+
+test('without JavaScript the walking link reaches a visible, operable FAQ question',async({browser})=>{
+ const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
+ try{
+  const page=await context.newPage();await page.goto(path);
+  const question=page.locator('#et-faq-walking'),detail=question.locator('..');
+  await expect(detail).not.toHaveAttribute('open','');
+  await page.getByRole('link',{name:'Részletesen: Bírni fogom?',exact:true}).click();
+  await expect(page).toHaveURL(/#et-faq-walking$/);
+  await expect(question).toBeInViewport();
+  await expect(question).toContainText('Mennyit gyaloglunk? Bírni fogom?');
+  await question.click();await expect(detail.locator('p')).toBeVisible();
+  await page.reload();await expect(question).toBeInViewport();
+ }finally{await context.close();}
+});
+
 test('only name, phone and consent are required; a reason and email are not needed',async({page})=>{
  const submissions=await callbackApi(page);await page.goto(path);await expect(page.locator('.et-submit')).toBeEnabled();
  await page.locator('.et-submit').click();
