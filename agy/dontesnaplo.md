@@ -288,3 +288,7 @@ A szerző a középső részek tömörítését kéri: az ismétlődő gondolato
 Az egy hétvége 60 000 Ft-os összköltsége két külön tétel: **30 000 Ft szállás és étkezés + 30 000 Ft programvezetés**. A zarandoklat.com jelentkezésén leírt tételes logikát kéri. A későbbi programok díjazásakor újra rá kell kérdezni, hogy azonos-e a bontási logika, és mik az aktuális tételek. A külön megadott négynapos összegek csak háttéradatok, nem kerülhetnek a mostani nyilvános ajánlatba.
 
 **Kiadási határ: előbb konkrét módosítás és szerzői jóváhagyás, csak utána élesítés.** Ez a mostani változatra felülírja az előző élesítési engedélyt. Külön előnézet készül; a saját domain november 26-i éles kiadása megmarad.
+
+### A konkrét előnézet jóváhagyása
+
+A szerző az elkészült, linkelt tömörítési és díjbontási előnézet élesítési kérdésére **„Igen”** választ adott. A `1a622d2` alkalmazásforrás szerinti szövegrövidítés és négycsomagos bontás így jóváhagyott: egy hétvége 30 000 + 30 000 = 60 000 Ft; két hétvége 60 000 + 40 000 = 100 000 Ft; három hétvége 90 000 + 70 000 = 160 000 Ft; Télből tavaszba 90 000 + 70 000 + 40 000 Ft személyes folytatás = 200 000 Ft. Az előnézetre vonatkozó kiadási korlát e változatra feloldva. A gyakorlati kapaszkodók bővítése továbbra is későbbi kör.

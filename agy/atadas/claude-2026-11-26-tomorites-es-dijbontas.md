@@ -31,3 +31,9 @@ Forrás: `1a622d2`, közös ágra feltöltve. Előnézet: https://eletutak-atnez
 A tényleges HTTPS-előnézet öt szélességben (320/390/768/1440/1920 px) átment az ellenőrzésen. A négy csomag díjtételeinek összege mindenütt helyes; a kiemelt teljes költségek 60/100/160/200 ezer Ft. Az összes kép betölt, a keresztnevek megmaradtak, nincs kilógás vagy betöltési hiba. A 390 px-es kétszeres szöveg is rendben. Nem történt valódi beküldés.
 
 Az éles `sarkadi-site` a külön előnézet feltöltése után is a korábbi `3bfa09cf-d7fc-4be6-b957-b762c8c3b184` verzión fut, a két kiadás API-azonosítója összevetve. **Élesítés nem történt; a következő lépés a szerző jóváhagyása.** A jóváhagyott változat jövőbeli élesítéséhez a teljes site-csomagolást kell használni; a mostani előnézeti feltöltőt nem szabad éles Workerre átirányítani.
+
+## Szerzői jóváhagyás után
+
+A konkrét előnézetet követő élesítési kérdésre a szerző **„Igen”** választ adott. Ez feloldja a fenti, időben korábbi előnézeti korlátot a `1a622d2` forrás szerinti tömörítésre és mind a négy csomag díjbontására. Az alkalmazáskód azóta változatlan. A gyakorlati kapaszkodókkal továbbra is várunk.
+
+A teljes site kiadása `scripts/package_site.py` és `wrangler.site.jsonc` használatával készül a meglévő `sarkadi-site` Workerre; kiadási jelölés: `2026-11-26-tomorites-es-dijbontas`. A korábbi éles kiadás és kötések privát mentése elkészült. Az élesítés tényleges eredményét és a saját domain ellenőrzését a következő bejegyzés rögzíti.
