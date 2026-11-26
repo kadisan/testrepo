@@ -551,3 +551,11 @@ A panel megtartja a gyaloglós képét, világos alapját és sötétzöld rámu
 48/48 alapteszt és build sikeres. A végső buildelt oldalon 33 böngészős eset sikeres volt; az egy hibázó közvetlen GYIK-megnyitás javítása után az érintett két GYIK-próba külön 2/2 sikeres. Öt buildelt nézetben (320/390/768/1440/1920 px) a képek, díjbontások és nevek helyesek, nincs kilógás vagy hibás erőforrás; 390 px-en kétszeres szöveg is rendben. A díjak, idézetek, dátumok és kapcsolatblokk HTML-egyezése, valamint a GYIK szövegegyezése külön igazolva. Asztali és mobilos panelkép, alap- és képes állapotban vizuálisan ellenőrizve. A helyi próbák nem küldtek valódi adatot. Bizonyítékok: `/workspace/artifacts/eletutak-2026-11-26-mire-szamits/`.
 
 A külön HTTPS-előnézet feltöltése következik, kizárólag az `eletutak-atnezes` Workerre. Éles saját domaines alapverzió: `a7818d42-f800-4258-b257-a79c8759d85c`. Az élesítési jóváhagyás még a konkrét szövegre vár.
+
+### Ellenőrzött „Mire számíts?” HTTPS-előnézet
+
+Végleges alkalmazásforrás: `94a346e1f957be7adcb658b24bd488abf22f9744`. Előnézet: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261126-mire-szamits#hetvege-ritmusa . Előnézeti Worker-verzió: `9cc25176-91d3-402d-b3df-7c047fc4326d`. A `/review-version.json` forrásazonosítója egyezik; módosításjelölése `practical-weekend-expectations`.
+
+A közvetlen GYIK-horgonyra igazítás a betűk és az oldal beérkezése után a következő képkockában történik, így a böngésző újratöltési görgetés-visszaállítása nem írja felül. A végső két célzott próba 2/2 sikeres. A teljes végleges build öt helyi nézete és az öt tényleges HTTPS-nézet is sikeres, beleértve a mobilos közvetlen GYIK-újratöltést, a JavaScript nélküli működő kérdést és a kétszeres mobilos szöveget. A csomagárak és bontások, képek, nevek helyesek; nincs kilógás, böngészőhiba, hibás erőforrás vagy valódi beküldés. A szerzőnek küldött közvetlen panelhorgony mobilos megérkezése külön igazolva. A HTTPS-panel asztali képe vizuálisan is ellenőrizve.
+
+Az éles `sarkadi-site` változatlanul `a7818d42-f800-4258-b257-a79c8759d85c` (100%); a külön előnézet utáni API-összevetés ezt igazolja. A saját domain, a levelezés és a fogadói API nem módosult. **A konkrét előnézet szerzői jóváhagyása a következő lépés; élesítés még nem történt.**
