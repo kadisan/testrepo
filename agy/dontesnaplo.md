@@ -279,3 +279,12 @@ A szerző a résztvevői blokk alapállapotát zöldes-bézses, finom átmenette
 A szerző kifejezetten kéri az eddig elkészült, közösen átnézett weboldal élesítését a saját domainen és a link visszaküldését. Ez feloldja a november 24-i előnézetre korlátozott kiadási határt. Nyilvános, kattintható kapcsolat: **melletted@sarkadisandor.hu**. A Substack- és Facebook-hivatkozás kerüljön ki; az Instagram a Zarándoklat fiókjára mutasson. A korábban jóváhagyott célok maradnak: `belsout.substack.com`, `facebook.com/kardosiandras`, `instagram.com/zarandoklat/`.
 
 A csatolt „Mire számíts?” vázlatot az élesítés **után**, közösen kell megvizsgálni; nem része az automatikus közzétételnek. A vázlat saját jelölése szerint jóváhagyásra és több program-/díjadat tisztázására vár.
+
+
+## 2026. november 26. — Tömörítés és díjbontás, jóváhagyás előtt
+
+A szerző a középső részek tömörítését kéri: az ismétlődő gondolatok egyszer, lényegre törően szerepeljenek, irodalmi átdolgozás nélkül. A gyakorlati kapaszkodók bővítését kifejezetten későbbre halasztja.
+
+Az egy hétvége 60 000 Ft-os összköltsége két külön tétel: **30 000 Ft szállás és étkezés + 30 000 Ft programvezetés**. A zarandoklat.com jelentkezésén leírt tételes logikát kéri. A későbbi programok díjazásakor újra rá kell kérdezni, hogy azonos-e a bontási logika, és mik az aktuális tételek. A külön megadott négynapos összegek csak háttéradatok, nem kerülhetnek a mostani nyilvános ajánlatba.
+
+**Kiadási határ: előbb konkrét módosítás és szerzői jóváhagyás, csak utána élesítés.** Ez a mostani változatra felülírja az előző élesítési engedélyt. Külön előnézet készül; a saját domain november 26-i éles kiadása megmarad.

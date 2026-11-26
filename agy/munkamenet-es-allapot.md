@@ -509,3 +509,14 @@ A tényleges éles domain három oldala 320/390/768/1440 px-en is átment a 12 n
 A meglévő, nem eszközjellegű Worker-kötések változatlanul megmaradtak. Mind a négy domainútvonal továbbra is a `sarkadi-site`-ra mutat. A robots és a három fő útvonalat felsoroló sitemap éles; az adatkezelés, impresszum és megőrzött angol változat 200 választ ad. DNS- és levelezési beállítás nem változott. Az előző verzió továbbra is visszaállítási alapként elérhető, a teljes mentés a privát munkamappában.
 
 Élesítés utáni szövegáttekintés: a csatolt „Mire számíts?” a saját megnevezése szerint a Tavaszi ív külön céloldalának bakonyi kártyája után, a Pannonhalma–Tihany kártya elé való, nem a főoldalra. A `/tavaszi-iv/` útvonal a tényleges éles ellenőrzésben jelenleg 404. Új oldal vagy nem végleges adat nem került ki. Közös tisztázás kell a programazonosság, dátum/bázis/táv, étkezés és különösen a 60 000 Ft-os díj és a szállás viszonyában, mielőtt a vázlat a végleges ajánlatba kerül. A korábban jóváhagyott, most éles ajánlati számok megmaradtak.
+
+
+### 2026-11-26 — Jóváhagyásra váró tömörítés és tételes árak
+
+A bevezetőből, programbemutatóból és kísérői bemutatkozásból kikerültek a megismételt általános figyelem-/csend-/hívásmondatok. A három rész 321-ről 216 szóra rövidült (33%). A címek, saját mondatként közölt résztvevői idézetek, képek, dátumkártyák, GYIK és visszahívási rész megmaradtak. A három utóbbi tartalmi blokk és az idézetek HTML-egyezését összehasonlítás is igazolja. Új gyakorlati adat, irodalmi változat vagy másik programoldal nem készült.
+
+A szállás és étkezés hétvégénként 30 000 Ft; az egyalkalmas összköltség továbbra is 60 000 Ft. A jóváhagyásra készített többhétvégés bontásban a szállás/étkezés rögzített költség, a meglévő csomagkedvezmény a programvezetésből kerül levonásra. Két hétvége: 60 000 + 40 000 = 100 000 Ft. Három hétvége: 90 000 + 70 000 = 160 000 Ft. Télből tavaszba: 90 000 + 70 000 + 40 000 Ft személyes folytatás = 200 000 Ft. A személyes folytatás külön sor, nem az alapvezetés díjához hozzáadott, megmagyarázatlan összeg. Ez a csomagfelosztás az előnézettel együtt szerzői jóváhagyásra vár.
+
+Ellenőrzés: 48/48 alapteszt, sikeres build, 32/32 érintett böngészős eset. Öt helyi szélességben (320/390/768/1440/1920 px) az összegek és a csomagösszegek egyeznek, nincs kilógás vagy betöltési hiba; 390 px-en kétszeres szöveggel is rendben. Nincs valódi beküldés. Bizonyítékok, előtte/utána összehasonlítás és kizárólag privát négynapos háttéradat: `/workspace/artifacts/eletutak-2026-11-26-tomorites-dijbontas/`.
+
+Most csak az `eletutak-atnezes` külön előnézet frissíthető. Az éles `sarkadi-site` kiadási azonosítója a munka kezdetén `3bfa09cf-d7fc-4be6-b957-b762c8c3b184`; a feltöltés után ennek változatlanságát is ellenőrizni kell.

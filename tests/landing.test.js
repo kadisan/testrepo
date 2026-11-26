@@ -4,7 +4,7 @@ import {copy,dates,packageIds,packagePrices,languagePath} from '../src/landing/c
 import {renderDocument} from '../src/landing/render.js';
 import {enquiryValues} from '../src/landing/form.js';
 import {payloadFor,fields} from '../src/form.js';
-import {conversionOffer} from '../src/landing/conversion-content.js';
+import {conversionOffer, conversionCosts} from '../src/landing/conversion-content.js';
 test('parked locales retain their content while every page has independent language URLs and static metadata',()=>{
  const keys=Object.keys(copy.hu).sort();
  for(const lang of ['hu','en','de','it']){
@@ -63,6 +63,22 @@ test('the November brief keeps comparison prices distinct from payable prices an
  assert.ok(staticEnquiries.length>=10);
  assert.ok(staticEnquiries.every(([tag])=>tag.includes('href="tel:+36703161897"')));
  assert.doesNotMatch(html,/visszaszámláló|szabad helyek:|jelentkezési határidő:/i);
+});
+test('the Hungarian costs separate stay and meals from guiding without increasing the package totals',()=>{
+ const expected=[
+  {stayAndMeals:30000,guiding:30000,continuation:0},
+  {stayAndMeals:60000,guiding:40000,continuation:0},
+  {stayAndMeals:90000,guiding:70000,continuation:0},
+  {stayAndMeals:90000,guiding:70000,continuation:40000},
+ ];
+ for(const [index,pack]of conversionOffer.packages.entries()){
+  const costs=conversionCosts(pack);
+  assert.deepEqual(costs,expected[index]);
+  assert.equal(Object.values(costs).reduce((sum,value)=>sum+value,0),pack.price);
+ }
+ const html=renderDocument('hu');
+ assert.equal((html.match(/class="et-cost-breakdown"/g)||[]).length,4);
+ assert.match(html,/Szállás és étkezés díja/);assert.match(html,/Programvezetés díja/);
 });
 test('the Hungarian callback asks only for the agreed required data and offers direct contact without JavaScript',()=>{
  const html=renderDocument('hu');

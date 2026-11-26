@@ -106,6 +106,9 @@ test('comparison prices, one recommendation and the gift request are clear and k
  await expect(page.locator('.et-package-bonus')).toHaveCount(1);
  await expect(page.locator('.et-package-bonus .et-package-note')).toHaveText('Ha a hétvégék után is szeretnél kísérést.');
  await expect(page.locator('.et-package-uplift')).toContainText(/\+40\s*000 Ft/);
+ for(const [id,amounts]of [['one',[30,30]],['two',[60,40]],['series',[90,70]],['plus',[90,70,40]]]){
+  await expect(page.locator(`#et-csomag-${id} .et-cost-breakdown dd`)).toHaveText(amounts.map(amount=>new RegExp(`${amount}\\s*000 Ft`)));
+ }
  const gift=page.locator('.et-package-bonus .et-gift-mark a');await gift.focus();await page.keyboard.press('Enter');
  await expect(page).toHaveURL(/#ajandek$/);
  await expect(page.locator('#ajandek')).toContainText('Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.');

@@ -136,6 +136,21 @@
 .et-package-description { color: var(--et-muted); font-size: 1.0625rem; }
 .et-package-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: .25rem .7rem; font-size: 2.125rem; font-weight: 600; line-height: 1.3 !important; margin-top: 1.3rem !important; letter-spacing: -.03em; }
 .et-package-price span { font-size: 1rem; font-weight: 400; letter-spacing: 0; }
+.et-page .et-cost-breakdown {
+  margin: 1.25rem 0; padding-block: .9rem; border-block: 1px solid var(--et-line);
+}
+.et-page .et-cost-breakdown > div {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: .75rem;
+}
+.et-page .et-cost-breakdown > div + div { margin-top: .6rem; }
+.et-page .et-cost-breakdown :is(dt, dd) { margin: 0; font-size: 1.25rem; line-height: 1.5; }
+.et-page .et-cost-breakdown dt { min-width: 0; overflow-wrap: anywhere; }
+.et-page .et-cost-breakdown dd { font-weight: 600; white-space: nowrap; }
+.et-page .et-cost-total-label { font-weight: 600; font-size: 1.125rem; }
+.et-page .et-cost-total-label + :is(.et-main-price, .et-package-price) { margin-top: .25rem !important; }
+@media (max-width: 640px) {
+  .et-page .et-cost-breakdown > div { grid-template-columns: 1fr; gap: .1rem; }
+}
 .et-package ul { list-style: none; padding: 0; margin: 1.2rem 0 1.5rem; }
 .et-package li { display: flex; align-items: flex-start; gap: .6rem; font-size: 1.0625rem; padding-block: .4rem; line-height: 1.55; }
 .et-package li svg { width: 1.2rem; height: 1.2rem; margin-top: .15rem; }

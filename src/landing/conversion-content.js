@@ -16,16 +16,18 @@ export const conversionOffer = {
   phoneDisplay: '+36 70 316 1897',
   email: 'melletted@sarkadisandor.hu',
   callback: 'Hétköznap 9–19 között érkező kérésedre egy órán belül visszahívlak.',
+  // Confirm this split with the owner again before using it for other programmes.
+  stayAndMealsPerWeekend: 30000,
   weekends: [
     {date: '2027-01-08', label: '2027. január 8–10.', month: 'Január', title: 'A szelíd erő útjai', text: 'Megérkezni az év elejére. Figyelmet adni annak, amiből most elindulnál.', image: 'kodos-erdei-fa.webp', alt: 'Ősöreg bükkfa a ködben, Ráktanyán', caption: 'Ráktanya · Ősöreg bükkfa a ködben.', width: 497, height: 882},
     {date: '2027-02-12', label: '2027. február 12–14.', month: 'Február', title: 'Összeérő utak', text: 'Teret hagyni a saját kérdéseidnek, a közös beszélgetésnek és a csendnek.', image: 'erdei-gyokerek.webp', alt: 'Tündérkút egy fa tövénél, a Bakonybél fölötti erdei ösvényen', caption: 'Tündérkút · A Bakonybél fölötti erdei ösvényen.', captionNote: 'Vízzel telt faüreg: dendrotelma.', width: 1200, height: 1604},
     {date: '2027-03-05', label: '2027. március 5–7.', month: 'Március', title: 'Csendes derű útja', text: 'Visszatekinteni a télre, és megfogalmazni, mit szeretnél továbbvinni.', image: 'marciusi-to.webp', alt: 'A bakonybéli Borostyánkút kevésbé fotózott oldala télen', caption: 'Bakonybél · A Borostyánkút kevésbé fotózott oldala, télen.', width: 1200, height: 1605},
   ],
   packages: [
-    {id: 'one', name: 'Egy hétvége', price: 60000, label: 'Egy szabadon választott alkalom', note: 'Első találkozásnak is', features: ['Vezetett hétvégi program', 'Két éjszaka szállás', 'Három étkezés', 'Tai Chi és erdei jelenlét', 'Igény szerint négyszemközti beszélgetés']},
-    {id: 'two', name: 'Két hétvége', price: 100000, comparisonPrice: 120000, label: 'Két szabadon választott alkalom', note: 'Két külön hétvége árához képest', features: ['Két teljes hétvége', 'Összesen négy éjszaka és hat étkezés']},
-    {id: 'series', name: 'Három hétvége', price: 160000, comparisonPrice: 180000, label: 'A teljes téli sorozat', note: 'Három külön hétvége árához képest', features: ['Mindhárom teljes hétvége', 'Összesen hat éjszaka és kilenc étkezés']},
-    {id: 'plus', name: 'Télből tavaszba', price: 200000, label: 'A teljes téli sorozat személyes folytatással.', note: 'Ha a hétvégék után is szeretnél kísérést.', recommended: true, features: ['Mindhárom teljes hétvége', 'Egy egyéni kísérési nap', 'Négyalkalmas Tai Chi-bérlet', '30% kedvezmény a megnevezett tavaszi út programdíjából']},
+    {id: 'one', name: 'Egy hétvége', price: 60000, weekendCount: 1, label: 'Egy szabadon választott alkalom', note: 'Első találkozásnak is', features: ['Vezetett hétvégi program', 'Két éjszaka szállás', 'Három étkezés', 'Tai Chi és erdei jelenlét', 'Igény szerint négyszemközti beszélgetés']},
+    {id: 'two', name: 'Két hétvége', price: 100000, weekendCount: 2, comparisonPrice: 120000, label: 'Két szabadon választott alkalom', note: 'Két külön hétvége árához képest', features: ['Két teljes hétvége', 'Összesen négy éjszaka és hat étkezés']},
+    {id: 'series', name: 'Három hétvége', price: 160000, weekendCount: 3, comparisonPrice: 180000, label: 'A teljes téli sorozat', note: 'Három külön hétvége árához képest', features: ['Mindhárom teljes hétvége', 'Összesen hat éjszaka és kilenc étkezés']},
+    {id: 'plus', name: 'Télből tavaszba', price: 200000, weekendCount: 3, label: 'A teljes téli sorozat személyes folytatással.', note: 'Ha a hétvégék után is szeretnél kísérést.', recommended: true, features: ['Mindhárom teljes hétvége', 'Egy egyéni kísérési nap', 'Négyalkalmas Tai Chi-bérlet', '30% kedvezmény a megnevezett tavaszi út programdíjából']},
   ],
   faq: [
     ['Egyedül is érkezhetek?', 'Igen. Akkor is csatlakozhatsz, ha most találkozol velem először. A közös programban és a saját csendedben is lehet helyed. A szobabeosztást előre egyeztetjük.'],
@@ -39,3 +41,9 @@ export const conversionOffer = {
 };
 
 export const conversionMoney = value => new Intl.NumberFormat('hu-HU').format(value) + ' Ft';
+
+export function conversionCosts(pack) {
+  const stayAndMeals = pack.weekendCount * conversionOffer.stayAndMealsPerWeekend;
+  const continuation = pack.id === 'plus' ? pack.price - conversionOffer.packages.find(item => item.id === 'series').price : 0;
+  return {stayAndMeals, guiding: pack.price - stayAndMeals - continuation, continuation};
+}
