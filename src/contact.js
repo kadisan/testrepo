@@ -2,7 +2,7 @@ export const contact={
   name:'Sarkadi Sándor',
   phone:'+36703161897',
   phoneDisplay:'+36 70 316 1897',
-  email:'kadisan@gmail.com',
+  email:'melletted@sarkadisandor.hu',
 };
 
 export const contactLabels={

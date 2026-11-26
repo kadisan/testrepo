@@ -77,7 +77,7 @@ test('an unconfigured receiver keeps online submission disabled and shows direct
  const submissions=await callbackApi(page,{enabled:false});await page.goto(path);
  await expect(page.locator('.et-submit')).toBeDisabled();await expect(page.locator('#et-form-availability')).toBeVisible();
  await expect(page.locator('#et-form-availability a[href="tel:+36703161897"]')).toBeVisible();
- await expect(page.locator('#et-form-availability a[href="mailto:kadisan@gmail.com"]')).toBeVisible();
+ await expect(page.locator('#et-form-availability a[href="mailto:melletted@sarkadisandor.hu"]')).toBeVisible();
  for(const link of await page.locator('[data-et-enquiry]').all()){
   await expect(link).toHaveAttribute('href','tel:+36703161897');
   await expect(link).toContainText('Hívj fel: +36 70 316 1897');
@@ -110,7 +110,7 @@ test('comparison prices, one recommendation and the gift request are clear and k
  await expect(page).toHaveURL(/#ajandek$/);
  await expect(page.locator('#ajandek')).toContainText('Bármelyik hétvége és a Télből tavaszba ajándékba is adható. Írj, és küldöm az utalványt.');
  await expect(page.locator('#ajandek [data-et-gift]')).toHaveAttribute('href','#kapcsolat');
- await expect(page.locator('#ajandek a[href^="mailto:"]')).toHaveAttribute('href',/^mailto:kadisan@gmail\.com\?subject=/);
+ await expect(page.locator('#ajandek a[href^="mailto:"]')).toHaveAttribute('href',/^mailto:melletted@sarkadisandor\.hu\?subject=/);
  await expect(page.locator('.et-header img')).toHaveAttribute('src','/images/logo/fejlec-logo-sotetzold.webp');
 });
 

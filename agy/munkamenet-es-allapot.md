@@ -486,3 +486,16 @@ A szerző pontosítása szerint Erika neve javítva. A teljes magyar felület é
 A 9 olvashatósági és a végső 3 képhatás-próba sikeres (12 érintett eset). A rámutatási mérés a kurzort közvetlenül mozgatja, így az automatikus böngészőgörgetés nem torzítja a helyben maradás ellenőrzését.
 
 Feltöltött forrás: `07a031a`. Ellenőrzött HTTPS-előnézet: https://eletutak-atnezes.kadisan.workers.dev/eletutak-talalkozasa/?v=20261124-erika-hover#resztvevoi-hangok . Worker-verzió: `dc1ff66c-588e-4b06-8ce5-ceea0cafbc99`. Öt HTTPS-szélességben is helyes a névsor, az alap 0%, rámutatás 18%, elhagyás 0%, a zöldes-bézses átmenet és a dőlt fontok. Mobilos kétszeres szöveg és külön érintéses mód rendben; nincs kilógás, betöltési hiba vagy valódi beküldés. Az éles saját domain kiadása változatlan: `c80192c9-dd90-4ba0-a4da-ebb18f9e749c`. A csomagolás és feltöltés scriptjei: `/tmp/package_eletutak_erika_hover_preview.py`, `/tmp/deploy_eletutak_erika_hover_preview.py`.
+
+
+### 2026-11-26 — A teljes aktuális oldal élesítése előkészítve
+
+Új, kifejezett szerzői élesítési kérés érkezett. A főoldal, Tai Chi és aktív magyar Életutak közvetlen e-mail-linkjei `melletted@sarkadisandor.hu` címre mutatnak, az ajándékkérő tárgysorát megőrizve. A közös kapcsolati adat és nyilvános konfiguráció is ezt tartalmazza; a generált nyelvi források csak az e-mail-adatban frissültek, a parkoltatott fordítások éles útvonalkezelése továbbra is a régi kiadáshoz kötött.
+
+A főoldal és a Tai Chi már meglévő Substack-, Facebook- és Instagram-céljai megmaradtak; a magyar Életutak új, mobilon tördelődő kapcsolat/közösségi láblécet kapott ugyanezekkel. A sötét lábléc világos szövegei, a mérési beállítás gombja és a logó mobilos flex-méretezése javítva. A november 24-i elfogadott zöldes-bézses/rámutatásos idézetháttér, Erika helyes neve, a kisebb dőlt idézetek, különböző csomagzöldek és egyetlen fotót használó árkártyák mind szerepelnek az új csomagban.
+
+A címre érkező levél Cloudflare → Gmail továbbítását a szerző korábban valódi levéllel igazolta. A nyilvános mailto-linkek közzététele nem állítja, hogy a külön Gmail SMTP-küldés már befejeződött; a szolgáltatói SMTP-létrehozási tiltás külön folyamat marad. Levelezési rekordot, titkot és fogadói API-t ez a kiadás nem módosít.
+
+Előzetes ellenőrzés: 47/47 alapteszt, build, 55/55 böngészős eset, teljes Worker száraz csomagolás. A tényleges éles kapcsolókat tartalmazó csomag három oldalának e-mail-/közösségi linkjei és képei négy szélességben rendben; 390 px-en kétszeres szöveggel is. A végső láblécjavítás után az érintett ellenőrzés ismétlendő. Bizonyítékok és a teljes előző Worker mentése: `/workspace/artifacts/sarkadi-2026-11-26-elesites/`. Előző éles verzió: `c80192c9-dd90-4ba0-a4da-ebb18f9e749c`.
+
+A végső láblécjavítás után 9/9 olvashatósági próba ismét sikeres. Az éles konfigurációjú csomag mindhárom oldala 320/390/768/1440 px-en ellenőrizve (12 nézet); 390 px-en kétszeres szöveggel is kilógásmentes. A hozzájárulás elutasítása után a közösségi és e-mail-linkek, a láblécgomb és a logó képernyőképpel ellenőrizve. A jelenlegi éles visszahívási readiness API valódi GET-kérése 200 / enabled=true; új adatbeküldés nincs. A forrás mentése és a meglévő Worker frissítése következik.

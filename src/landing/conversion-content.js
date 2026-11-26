@@ -14,7 +14,7 @@ export const conversionOffer = {
   ],
   phone: '+36703161897',
   phoneDisplay: '+36 70 316 1897',
-  email: 'kadisan@gmail.com',
+  email: 'melletted@sarkadisandor.hu',
   callback: 'Hétköznap 9–19 között érkező kérésedre egy órán belül visszahívlak.',
   weekends: [
     {date: '2027-01-08', label: '2027. január 8–10.', month: 'Január', title: 'A szelíd erő útjai', text: 'Megérkezni az év elejére. Figyelmet adni annak, amiből most elindulnál.', image: 'kodos-erdei-fa.webp', alt: 'Ősöreg bükkfa a ködben, Ráktanyán', caption: 'Ráktanya · Ősöreg bükkfa a ködben.', width: 497, height: 882},

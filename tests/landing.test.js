@@ -74,7 +74,7 @@ test('the Hungarian callback asks only for the agreed required data and offers d
  assert.ok(inputs.some(tag=>/name="reason"/.test(tag)&&!tag.includes('required')));
  assert.ok(inputs.every(tag=>!/(?:name="email"|name="call_window")/.test(tag)));
  assert.match(html,/href="tel:\+36703161897"/);
- assert.match(html,/href="mailto:kadisan@gmail\.com"/);
+ assert.match(html,/href="mailto:melletted@sarkadisandor\.hu"/);
  assert.match(html,/href="\/eletutak-talalkozasa\/adatkezeles\//);
 });
 test('an international enquiry preserves package, selected weekends, language and readable Hungarian callback window',()=>{

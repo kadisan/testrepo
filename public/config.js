@@ -21,6 +21,6 @@ window.SARKADI_CONFIG = {
   },
   privacyUrl: '/eletutak-talalkozasa/adatkezeles/',
   imprintUrl: '/eletutak-talalkozasa/impresszum/',
-  email: 'kadisan@gmail.com',
+  email: 'melletted@sarkadisandor.hu',
   phone: '+36703161897'
 };

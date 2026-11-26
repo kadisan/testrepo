@@ -58,5 +58,5 @@ if updates!={'flow':1,'measurement':1,'date':1}:
 (target / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>https://sarkadisandor.hu'+p+'</loc></url>' for p in ['/', '/tai-chi/', '/eletutak-talalkozasa/'])+'</urlset>\n')
 (target / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n\n/config.js\n  Cache-Control: no-store, max-age=0\n')
 commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
-(target / 'release-version.json').write_text(json.dumps({'sourceBranch':'site/csendes-konyv','sourceCommit':commit,'release':'fooldal-elobb-eletutak-utana','googleFormHandoffEnabled':True,'callbackReceiverVerified':True}, ensure_ascii=False, indent=2)+'\n')
+(target / 'release-version.json').write_text(json.dumps({'sourceBranch':'site/csendes-konyv','sourceCommit':commit,'release':'2026-11-26-kapcsolat-es-eletutak','googleFormHandoffEnabled':True,'callbackReceiverVerified':True}, ensure_ascii=False, indent=2)+'\n')
 print(f'Élesítésre előkészített webes csomag: {target}')
